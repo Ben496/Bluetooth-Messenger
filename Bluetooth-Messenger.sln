@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsMessenger", "WindowsMessenger\WindowsMessenger.csproj", "{1CC7E874-42F0-4D1E-9E7F-7906D39387D7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{030C46EC-E095-4DE0-85D5-277900911D3E}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Requirements.html = Documentation\Requirements.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
