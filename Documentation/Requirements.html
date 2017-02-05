@@ -1,30 +1,173 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Requirements</title>
-    <style>
-        h1 {
-            text-align: center;
-        }
-    </style>
+	<meta charset="utf-8">
+	<title>Requirements</title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-    <h1 style="text-align: center;">
-        Requirements<br>
-       Bluetooth Messenger<br>
-    </h1>
-    <div style="margin-left: 20px; margin-right: 20px; border: solid 1px black; padding: 20px;">
-        <h3>Desktop UI Requirements</h3>
-        <ol>
-            <li>
-                <p>
-                    <strong>Name:</strong> Something<br>
-                    <strong>Type:</strong> functional<br>
-                    <strong>Summary:</strong> Does stuff
-                </p>
-            </li>
-        </ol>
-        <h3>Mobile App Requirements</h3>
-    </body>
+	<h1 style="text-align: center;">
+		Requirements<br>
+		Bluetooth Messenger<br>
+	</h1>
+	<div style="margin-left: 20px; margin-right: 20px; padding: 20px;">
+		<h3>Desktop UI Requirements</h3>
+		<ol>
+			<li>
+				<p>
+					<strong>Name:</strong> bluetooth_contact_syncing<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to sync with app via bluetooth and send/receive
+					any contact adds/edits/deletions through desktop held contact list
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> bluetooth_message_syncing<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to sync with app via bluetooth and receive
+					all messages from two weeks or before
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> display_contacts<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to display all contacts received from phone
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> bluetooth_message_syncing<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to sync with app via bluetooth and receive
+					all messages from two weeks or before
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> add_contact<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Add contact to desktop held contact listing file  
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> delete_contact<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Delete contact from desktop held contact listing file
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> manage_contact_fields<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> be able to manage all potential fields of a contact
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_receive<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to receive individual messages from app within 1 second
+					of phone receiving message
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_send<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to send individual messages to app within 1 second
+					of desktop UI send key press
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_notification<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> display notification of received messages
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> minimize_to_taskbar<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to minimize to taskbar when running
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> emoji_handling<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Enable handling for emojis in text messages
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> multimedia_handling<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Enable handling of multimedia messages being received and sent
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> Windows10_combatitibility<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Must be combatible with Windows 10
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> xml_message_compliance<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Must comply with standard messaging protocol (i.e. XML) so that
+					app can send text messages over network correctly
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> secure_bluetooth_messages<br>
+					<strong>Type:</strong> risk<br>
+					<strong>Summary:</strong> Must have some form of password between app and desktop gui
+					so that bluetooth pairing is not only obstable to seeing messages. 
+				</p>
+			</li>
+		</ol>
+
+		<h3>Mobile App Requirements</h3>
+		<ol>
+			<li>
+				<p>
+					<strong>Name:</strong> bluetooth_contact_syncing<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to sync with desktop gui via bluetooth and send/receive
+					any contact adds/edits/deletions
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> bluetooth_message_syncing<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to sync with app via bluetooth and send
+					all messages from two weeks or before
+				</p>
+			</li>
+		</ol>
+
+</body>
 </html>
+
+<!--Desktop UI:
+
+App:
+Must run on Android 5.0 or later -- constraint
+Power Conservation between messages -- functional
+Secure bluetooth connection -- risk
+Edit all fields of contact file(s) -- functional
+Read contact file(s) -- functional
+Delete Contact Info from contact file(s)
+Add Contact Info to contact file(s)-->
