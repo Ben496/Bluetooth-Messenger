@@ -30,7 +30,7 @@
 					<strong>Name:</strong> bluetooth_message_syncing<br>
 					<strong>Type:</strong> functional<br>
 					<strong>Summary:</strong> Be able to sync with app via bluetooth and receive
-					all messages from two weeks or before
+					all messages from two weeks or later
 				</p>
 			</li>
 			<li>
@@ -38,6 +38,13 @@
 					<strong>Name:</strong> display_contacts<br>
 					<strong>Type:</strong> functional<br>
 					<strong>Summary:</strong> Be able to display all contacts received from phone
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> search_contacts<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to search by name all contacts received from phone
 				</p>
 			</li>
 			<li>
@@ -52,7 +59,7 @@
 				<p>
 					<strong>Name:</strong> add_contact<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Add contact to desktop held contact listing file  
+					<strong>Summary:</strong> Add contact to desktop held contact listing file
 				</p>
 			</li>
 			<li>
@@ -81,8 +88,29 @@
 				<p>
 					<strong>Name:</strong> message_send<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to send individual messages to app within 1 second
+					<strong>Summary:</strong> Be able to send individual messages (sms or mms) to app within 1 second
 					of desktop UI send key press
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_send_error<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Notify user if there was an error sending message.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_resend<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to resend a message
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_forward<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to forward a message to a person
 				</p>
 			</li>
 			<li>
@@ -110,7 +138,7 @@
 				<p>
 					<strong>Name:</strong> multimedia_handling<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Enable handling of multimedia messages being received and sent
+					<strong>Summary:</strong> Enable handling of multimedia messages (mms) being received and sent
 				</p>
 			</li>
 			<li>
@@ -128,12 +156,34 @@
 					app can send text messages over network correctly
 				</p>
 			</li>
+			<!-- <li>
+				<p>
+					<strong>Name:</strong> trusted_phones<br>
+					<strong>Type:</strong> risk<br>
+					<strong>Summary:</strong> Must only connect to trusted and select devices and not any device
+					connected via bluetooth
+				</p>
+			</li> -->
 			<li>
 				<p>
-					<strong>Name:</strong> secure_bluetooth_messages<br>
+					<strong>Name:</strong> connection_password<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> User must enter a password to initiate a connection to the phone
+					each time the phone is connected
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> connection_password_characters<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Must support alphanumeric and special characters up to 100 characters in length
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> connection_password_validation<br>
 					<strong>Type:</strong> risk<br>
-					<strong>Summary:</strong> Must have some form of password between app and desktop gui
-					so that bluetooth pairing is not only obstable to seeing messages. 
+					<strong>Summary:</strong> Must send password information in a secure way
 				</p>
 			</li>
 		</ol>
@@ -144,16 +194,61 @@
 				<p>
 					<strong>Name:</strong> bluetooth_contact_syncing<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to sync with desktop gui via bluetooth and send/receive
-					any contact adds/edits/deletions
+					<strong>Summary:</strong> Be able to sync phone's contacts with desktop gui via
+					bluetooth and update phone's contact book with any contact adds/edits/deletions
 				</p>
 			</li>
 			<li>
 				<p>
 					<strong>Name:</strong> bluetooth_message_syncing<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to sync with app via bluetooth and send
-					all messages from two weeks or before
+					<strong>Summary:</strong> Be able to sync with desktop gui via bluetooth and send
+					all messages from two weeks or later
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> receive_messages<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to forward received messages to the desktop gui within
+					1 second of the phone getting the message
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> send_messages<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Be able to send from the phone messages obtained from the desktop
+					gui
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> connection_password<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Must be able to set and change the connection password
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> connection_password_storage<br>
+					<strong>Type:</strong> risk<br>
+					<strong>Summary:</strong> Must not store the password and instead store the sha512 hash of the password
+					or store the password in a secure way
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> android_5.0_compatability<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Must run on Android 5.0 Lollipop
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> power_conservation<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Must be able to conserve power between messages
 				</p>
 			</li>
 		</ol>
@@ -164,10 +259,4 @@
 <!--Desktop UI:
 
 App:
-Must run on Android 5.0 or later -- constraint
-Power Conservation between messages -- functional
-Secure bluetooth connection -- risk
-Edit all fields of contact file(s) -- functional
-Read contact file(s) -- functional
-Delete Contact Info from contact file(s)
-Add Contact Info to contact file(s)-->
+Secure bluetooth connection -- risk-->
