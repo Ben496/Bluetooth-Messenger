@@ -7,6 +7,14 @@
 		h1 {
 			text-align: center;
 		}
+
+		h2 {
+			text-align: center;
+		}
+		h3 {
+			text-decoration: underline;
+		}
+
 	</style>
 </head>
 <body>
@@ -15,22 +23,90 @@
 		Bluetooth Messenger<br>
 	</h1>
 	<div style="margin-left: 20px; margin-right: 20px; padding: 20px;">
-		<h3>Desktop UI Requirements</h3>
+		<h2>Desktop UI Requirements</h2>
 		<ol>
+			<h3>Messaging</h3>
 			<li>
 				<p>
-					<strong>Name:</strong> bluetooth_contact_syncing<br>
-					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to sync with app via bluetooth and send/receive
-					any contact adds/edits/deletions through desktop held contact list
+					<strong>Name:</strong> bluetooth_message_syncing<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to sync with app via bluetooth and receive
+					all messages from two weeks or before
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> bluetooth_message_syncing<br>
+					<strong>Name:</strong> message_receive<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to receive individual messages from app within 1 second
+					of phone receiving message
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_send<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to send individual messages (sms or mms) to app within 1 second
+					of desktop UI send key press
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_send_error<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to sync with app via bluetooth and receive
-					all messages from two weeks or later
+					<strong>Summary:</strong> Notify user if there was an error sending message.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_error_handling<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Detect if message did not send correctly.
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_resend_handling<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to resend a message
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_forward_handling<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to forward a message to a person
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> multimedia_handling<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Enable handling of multimedia messages (mms) being received and sent
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> recent_messages_storage<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Storage structure for up to 100 text messages within individual conversations
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> conversation_storage <br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> store up to 100 conversations.
+				</p>
+			</li>
+
+			<h3>Contact Management</h3>
+			<li>
+				<p>
+					<strong>Name:</strong> bluetooth_contact_syncing<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to sync with app via bluetooth and send/receive
+					any contact adds/edits/deletions through desktop held contact list
 				</p>
 			</li>
 			<li>
@@ -45,14 +121,6 @@
 					<strong>Name:</strong> search_contacts<br>
 					<strong>Type:</strong> functional<br>
 					<strong>Summary:</strong> Be able to search by name all contacts received from phone
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>Name:</strong> bluetooth_message_syncing<br>
-					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to sync with app via bluetooth and receive
-					all messages from two weeks or before
 				</p>
 			</li>
 			<li>
@@ -76,41 +144,69 @@
 					<strong>Summary:</strong> be able to manage all potential fields of a contact
 				</p>
 			</li>
+
+
+			<h3>Display</h3>
 			<li>
 				<p>
-					<strong>Name:</strong> message_receive<br>
+					<strong>Name:</strong> message_entry_field<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to receive individual messages from app within 1 second
-					of phone receiving message
+					<strong>Summary:</strong> Field to enter text for outgoing sms/mms message.
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> message_send<br>
+					<strong>Name:</strong> message_send_button<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to send individual messages (sms or mms) to app within 1 second
-					of desktop UI send key press
+					<strong>Summary:</strong> Button to send message.
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> message_resend_button<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> button to resend message in case of failure
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> message_send_error<br>
+					<strong>Name:</strong> message_forward_button<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Notify user if there was an error sending message.
+					<strong>Summary:</strong> Button to forward message to a different contact
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> message_resend<br>
+					<strong>Name:</strong> attach_multimedia_button<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to resend a message
+					<strong>Summary:</strong> Button to attach multimedia to message (i.e. sound, pic, video)
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> message_forward<br>
+					<strong>Name:</strong> manual_sync_button<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to forward a message to a person
+					<strong>Summary:</strong> Button used to manually sync desktop and mobile app
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> display_conversation<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Displays messages from history (up to 100) between selected contact from history
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> contact_selection_menu<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Menu to select contact to message
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong>display_current_contact_name<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Displays current contact in conversation
 				</p>
 			</li>
 			<li>
@@ -122,23 +218,19 @@
 			</li>
 			<li>
 				<p>
+					<strong>Name:</strong> terminate_session_button<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Terminates app/desktop connectivity unless password supplied again
+				</p>
+			</li>
+
+
+			<h3>Misc.</h3>
+			<li>
+				<p>
 					<strong>Name:</strong> minimize_to_taskbar<br>
 					<strong>Type:</strong> functional<br>
 					<strong>Summary:</strong> Be able to minimize to taskbar when running
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>Name:</strong> emoji_handling<br>
-					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Enable handling for emojis in text messages
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>Name:</strong> multimedia_handling<br>
-					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Enable handling of multimedia messages (mms) being received and sent
 				</p>
 			</li>
 			<li>
@@ -156,14 +248,6 @@
 					app can send text messages over network correctly
 				</p>
 			</li>
-			<!-- <li>
-				<p>
-					<strong>Name:</strong> trusted_phones<br>
-					<strong>Type:</strong> risk<br>
-					<strong>Summary:</strong> Must only connect to trusted and select devices and not any device
-					connected via bluetooth
-				</p>
-			</li> -->
 			<li>
 				<p>
 					<strong>Name:</strong> connection_password<br>
@@ -186,22 +270,40 @@
 					<strong>Summary:</strong> Must send password information in a secure way
 				</p>
 			</li>
-		</ol>
-
-		<h3>Mobile App Requirements</h3>
-		<ol>
 			<li>
 				<p>
-					<strong>Name:</strong> bluetooth_contact_syncing<br>
-					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to sync phone's contacts with desktop gui via
-					bluetooth and update phone's contact book with any contact adds/edits/deletions
+					<strong>Name:</strong> hotkey_support<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Allow for support of hotkeys for common functions.
 				</p>
 			</li>
 			<li>
 				<p>
+					<strong>Name:</strong> auto_disconnect<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Upon bluetooth disconnection, password will be needed again
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> bluetooth_ping<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Pings desktop UI to check if connection still active
+				</p>
+			</li>
+		</ol>
+
+
+
+
+
+		<h2>Mobile App Requirements</h2>
+		<ol>
+			<h3>Messaging</h3>
+			<li>
+				<p>
 					<strong>Name:</strong> bluetooth_message_syncing<br>
-					<strong>Type:</strong> functional<br>
+					<strong>Type:</strong> constraint<br>
 					<strong>Summary:</strong> Be able to sync with desktop gui via bluetooth and send
 					all messages from two weeks or later
 				</p>
@@ -209,7 +311,7 @@
 			<li>
 				<p>
 					<strong>Name:</strong> receive_messages<br>
-					<strong>Type:</strong> functional<br>
+					<strong>Type:</strong> constraint<br>
 					<strong>Summary:</strong> Be able to forward received messages to the desktop gui within
 					1 second of the phone getting the message
 				</p>
@@ -217,15 +319,75 @@
 			<li>
 				<p>
 					<strong>Name:</strong> send_messages<br>
-					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Be able to send from the phone messages obtained from the desktop
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to send messages obtained from the desktop
 					gui
+				</p>
+			</li>
+
+
+			<h3>Contact Management</h3>
+			<li>
+				<p>
+					<strong>Name:</strong> bluetooth_contact_syncing<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to sync phone's contacts with desktop gui via
+					bluetooth and update phone's contact book with any contact adds/edits/deletions
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> connection_password<br>
+					<strong>Name:</strong> write_contacts<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to write over contacts file with new information synced from desktop
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> read_contacts<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Be able to read contacts for sending purposes.
+				</p>
+			</li>
+
+
+
+			<h3>Display</h3>
+			<li>
+				<p>
+					<strong>Name:</strong> manual_sync_button <br>
 					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Button for syncing desktop and movile app
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> activate_button<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Activates app for desktop syncing and usage
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> connection_password_set<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Button to set password for desktop secure connection
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> terminate_session_button<br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Terminates app/desktop connectivity unless password supplied again
+				</p>
+			</li>
+
+
+			<h3>Misc.</h3>
+			<li>
+				<p>
+					<strong>Name:</strong> connection_password<br>
+					<strong>Type:</strong> risk<br>
 					<strong>Summary:</strong> Must be able to set and change the connection password
 				</p>
 			</li>
@@ -251,7 +413,24 @@
 					<strong>Summary:</strong> Must be able to conserve power between messages
 				</p>
 			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> auto_disconnect<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Upon bluetooth disconnection, password will be needed again
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> bluetooth_ping<br>
+					<strong>Type:</strong> constraint<br>
+					<strong>Summary:</strong> Pings desktop UI to check if connection still active
+				</p>
+			</li>
 		</ol>
+
+
+
 
 </body>
 </html>
