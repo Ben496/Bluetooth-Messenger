@@ -14,7 +14,9 @@
 		h3 {
 			text-decoration: underline;
 		}
-
+		b {
+			color: red;
+		}
 	</style>
 </head>
 <body>
@@ -35,36 +37,36 @@
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> message_send_button<br>
+					<strong>Name:</strong> initiate_message_send <b>(Updated)</b><br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Button to send message.
+					<strong>Summary:</strong> Initiate sending message.
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> message_resend_button<br>
+					<strong>Name:</strong> initiate_message_resend <b>(Updated)</b><br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> button to resend message in case of failure
+					<strong>Summary:</strong> Initiate resending message in case of failure
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> message_forward_button<br>
+					<strong>Name:</strong> initiate_message_forward <b>(Updated)</b><br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Button to forward message to a different contact
+					<strong>Summary:</strong> Initiate forwarding message to a different contact
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> attach_multimedia_button<br>
+					<strong>Name:</strong> initiate_attach_multimedia <b>(Updated)</b><br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Button to attach multimedia to message (i.e. sound, pic, video)
+					<strong>Summary:</strong> Initiate attaching multimedia to message (i.e. sound, pic, video)
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> manual_sync_button<br>
+					<strong>Name:</strong> initiate_manual_sync <b>(Updated)</b><br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Button used to manually sync desktop and mobile app
+					<strong>Summary:</strong> Initiate a manually sync between desktop and mobile app
 				</p>
 			</li>
 			<li>
@@ -104,9 +106,16 @@
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> terminate_session_button<br>
+					<strong>Name:</strong> initiate_session_termination <b>(Updated)</b><br>
 					<strong>Type:</strong> functional<br>
 					<strong>Summary:</strong> Terminates app/desktop connectivity unless password supplied again
+				</p>
+			</li>
+			<li>
+				<p>
+					<strong>Name:</strong> initiate_media_request <b>(New)</b><br>
+					<strong>Type:</strong> functional<br>
+					<strong>Summary:</strong> Requests media from the phone.
 				</p>
 			</li>
 
@@ -307,23 +316,23 @@
 			<h3>Display</h3>
 			<li>
 				<p>
-					<strong>Name:</strong> manual_sync_button <br>
+					<strong>Name:</strong> initiate_manual_sync <b>(Updated)</b><br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Button for syncing desktop and movile app
+					<strong>Summary:</strong> Initiate syncing between desktop and movile app
 				</p>
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> activate_button<br>
+					<strong>Name:</strong> initiate_communtication<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Activates app for desktop syncing and usage
+					<strong>Summary:</strong> Initiate communication between desktop and mobile
 				</p>
 			</li>
 			<li>
 				<p>
 					<strong>Name:</strong> connection_password_set<br>
 					<strong>Type:</strong> functional<br>
-					<strong>Summary:</strong> Button to set password for desktop secure connection
+					<strong>Summary:</strong> Interface set password for desktop secure connection
 				</p>
 			</li>
 			<li>
@@ -335,7 +344,7 @@
 			</li>
 			<li>
 				<p>
-					<strong>Name:</strong> terminate_session_button<br>
+					<strong>Name:</strong> initiate_session_termination <b>(Updated)</b><br>
 					<strong>Type:</strong> functional<br>
 					<strong>Summary:</strong> Terminates app/desktop connectivity unless password supplied again
 				</p>

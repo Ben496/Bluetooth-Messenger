@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ef1fb5e3-332f-409e-81f2-d1e25ce9c9bc}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>UMLDiagrams</Name>
+    <RootNamespace>UMLDiagrams</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ConnectionManagement.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ConnectionManagement.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ConnectionManagement.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="ContactManagement.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContactManagement.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ContactManagement.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="ContactManagement.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContactManagement.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ContactManagement.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="MessageSend.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MessageSend.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>MessageSend.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="BluetoothMessenger.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="BluetoothMessenger.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>BluetoothMessenger.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="ConnectionManagement.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ConnectionManagement.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ConnectionManagement.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="MessageSend.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MessageSend.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>MessageSend.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\UMLDiagrams.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>
