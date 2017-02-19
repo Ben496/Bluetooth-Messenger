@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="6a0545e4-e563-41c1-968a-e69eb976f57f" name="DesktopUseCase" linkedPackageId="300150e7-1d77-48bd-aad3-957149861e01" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="fec06cac-7e81-41ac-85a0-9879fca1e4d8">
+      <profileInstance Id="3b0412a5-43a7-470a-943c-468c957e73c6" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="556f574e-7afe-4852-9270-40cb01f07768">
+      <profileInstance Id="3869518d-2c4f-4d9e-9fc0-46aaf427c9ae" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" name="Desktop Application" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ae4062ac-6012-405d-8c88-713404cd5acf" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="7c6304ba-169e-4ec2-a2cf-09549cf28f18" name="Human" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="15ae44d2-a5dc-4064-9975-3051952f5657" />
+        <targetEnds>
+          <association Id="e6498e26-e1a5-428e-8e70-64f76144a8a2" isDerived="false" sourceEndRoleName="Human" targetEndRoleName="Send Message" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7d943611-2d63-4a0c-b8dd-75a783bfbb0c" LastKnownName="Send Message" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="43e19906-f247-4c91-a601-e5bf12bab1ed" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ba8b54a3-983f-4e70-9154-3864b68402af" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a4d2e938-e6ef-4136-9004-234f0953f8f4" name="Send Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8efbd4d1-aa5b-46d6-8c82-7b683470fd2d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9c88ac62-4540-4447-a585-6fec7a7597f7" />
+          </association>
+          <association Id="71bb77c3-e5ad-40d7-b97f-879a9d71b289" isDerived="false" sourceEndRoleName="Human" targetEndRoleName="View Message" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="556821ed-2451-4e27-9559-4702398cb4be" LastKnownName="View Message" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="abdb1fe9-faa9-4299-b00c-e440626eb857" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="77d67e3a-d927-4def-897d-fc1da5b1d741" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aa6b51cb-e348-4a98-84f3-4b1c45811ebf" name="View Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="20908e28-ec1c-4313-b00d-a4bce3e6fd37" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="901b900e-761d-4dc0-b269-7e3fff2fb22c" />
+          </association>
+          <association Id="adc8da68-4d0c-454f-9fce-6351b2100c0c" isDerived="false" sourceEndRoleName="Human" targetEndRoleName="View Contact" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b346be03-98f6-4226-85fb-733473b1cf64" LastKnownName="View Contact" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7c9957be-46bc-4019-b5d0-9f189ff5e5f0" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="863c53ac-16eb-4516-86a8-12132b844945" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3d120a3d-8e51-4202-8667-d4e3f0ef8088" name="View Contact" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="40ecffd4-6f1f-423b-9dac-f50bceb6f118" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="939ef81c-5ba9-4c46-b3b3-e93ad3294da5" />
+          </association>
+          <association Id="3701cbd8-6106-44e4-8407-625da9ba53b1" isDerived="false" sourceEndRoleName="Human" targetEndRoleName="Edit Contact" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e843bf16-4fcc-45cc-b866-b75c633b5680" LastKnownName="Manage Contacts" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8d2e16b7-ed91-471c-b411-16c21afa3fe5" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="67759f55-fc58-4c64-8790-c1e5e41005aa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f617dd87-0933-4083-a966-d957b39e3d32" name="Edit Contact" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d65be5a8-4208-4b21-bee0-6618ac5c1273" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4df7cc90-55e6-44a7-9c77-1741d29484b7" />
+          </association>
+          <association Id="3b66e684-a47b-4269-8099-32d10902185d" isDerived="false" sourceEndRoleName="Human" targetEndRoleName="Connection" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5023ed4e-47c2-4a41-8379-bb5f89226592" LastKnownName="Connection" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="59650aaa-4935-44ef-b2c9-0ea67f93dcdc" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2dd18d3b-4f8c-4b12-a703-7efd9cee6a7e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c73e9792-1708-4a49-a059-e8b92e2dd447" name="Connection" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="642925b2-fb5a-4590-b9db-b91e2c85b96b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="be034671-eca9-4a5c-a5ec-43187051da68" />
+          </association>
+          <association Id="6caf9fd8-a6f9-4de5-ab0e-d085f8a518d7" isDerived="false" sourceEndRoleName="Human" targetEndRoleName="Enter Password" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="151c4171-1608-47b7-acbf-235e56f5815a" LastKnownName="Enter Password" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f0f6ea95-d3ed-447e-9e89-a2b171fa61db" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cae81e28-b500-4302-8af3-9350acf9a92d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b2a45ba5-75b0-404f-a453-462078f96eb1" name="Enter Password" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="510fc4d5-3a21-48e2-83fc-5156e9238d6b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b0815232-25d2-4983-ac78-d41800d5611d" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="f4f50366-7e6b-4111-b106-e2d44ed18d40" name="Cellular Network" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e1440d04-a460-4cba-b3de-80504bbf1506" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="667e624f-95d7-4224-a0c0-61a1ba84c758" name="Mobile Application" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8d469470-2c0f-4914-8602-b128c881ad2c" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="f96cf08e-b347-43e0-917b-b919fc4ced50" name="Set Password" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ea8a2e7a-4eea-486b-8e29-3e412f14eced" />
+        <additions>
+          <include Id="afa45b78-acc1-43e2-8e23-de22a26f6652">
+            <useCaseMoniker Id="5023ed4e-47c2-4a41-8379-bb5f89226592" LastKnownName="Connection" />
+            <elementDefinition Id="7b37fd52-c9fe-408d-a1dd-54c952b95d30" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="667e624f-95d7-4224-a0c0-61a1ba84c758" LastKnownName="Mobile Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="611b479f-9421-41d0-b278-4a2beea20362" name="Send Message" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9781df9b-8432-4eae-9c7b-1cbb73202cd5" />
+        <targetEnds>
+          <association Id="90d337a0-ac26-48bb-bc1b-3c53bd7b609d" isDerived="false" sourceEndRoleName="Send Message" targetEndRoleName="Cellular Network" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="f4f50366-7e6b-4111-b106-e2d44ed18d40" LastKnownName="Cellular Network" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8840829d-ddb7-4acc-a761-2b271ae33b6b" name="Send Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="27583836-4228-490f-95eb-1233d5c97083" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b90d2b8-9016-43f9-a16c-bee5c9be3ed1" name="Cellular Network" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="11de0db4-e13d-42ce-b862-de9a1d3a62a7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7855ea3c-de89-44cb-ba35-9d816a98d6aa" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="667e624f-95d7-4224-a0c0-61a1ba84c758" LastKnownName="Mobile Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="86a5d292-8fef-4988-a4c5-7315e89380ed" name="Contact Database" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d3ec1150-119c-4af6-a81e-6e5adf84adbe" />
+        <targetEnds>
+          <association Id="10a75dd2-e52c-413b-971b-cade2299ee21" isDerived="false" sourceEndRoleName="Contact Database" targetEndRoleName="View Contact" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="be3418b6-ebb7-4ace-81cb-239cdfe9cb8a" LastKnownName="View Contact" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f88c96c3-452d-450e-92aa-be05ed2ff206" name="Contact Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="79723325-04fe-4287-9b49-f3588a72391e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f8bfae80-b328-406a-9652-817f86e7ce85" name="View Contact" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d216d99a-9086-42ab-bf9f-dd8b43a75ae1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b0dc9164-07f3-41c0-b0ee-8f9d54628e33" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="b4dda4d7-22f3-4f9e-9a63-8092fc0ec5a7" name="Message Database" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eda5d25c-44a7-4097-b960-bae1c8b108cc" />
+        <targetEnds>
+          <association Id="3af2e5f1-eac5-4291-83a6-38a2cdf75848" isDerived="false" sourceEndRoleName="Message Database" targetEndRoleName="Receive Message" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5c446f8d-bce3-4b1e-9300-dcfdb8f65cc2" LastKnownName="Receive Message" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5ba9b929-57fc-4cea-b8cf-c5f145bad283" name="Message Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="71162730-2fa1-4401-95af-2200168b8d95" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a4d4ce02-001a-4cb6-9ba4-668622f30933" name="Receive Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e0423c5c-7750-430b-adca-a1033e76b8e7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3cbc9954-4cd1-477c-a23e-da485bd1e224" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="7d943611-2d63-4a0c-b8dd-75a783bfbb0c" name="Send Message" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="251b55d7-5d88-4008-b237-998ab11f4a64" />
+        <targetEnds>
+          <association Id="f0d88a48-0e85-4986-a3ed-81440818be70" isDerived="false" sourceEndRoleName="Send Message" targetEndRoleName="Bluetooth Message Sync" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="563af63b-0736-4564-9b8b-55e59a6187c0" LastKnownName="Bluetooth Message Sync" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="29d48dd5-4186-41d0-971b-1ab13d84848e" name="Send Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="80d365b5-6bfc-426c-952b-5616594908f4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="69e924c5-0e16-4775-869d-eee700615b10" name="Bluetooth Message Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="60f591ec-942c-468a-90bf-923028f6a773" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a292bee1-224e-4cd3-939f-0ea3f6644089" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="556821ed-2451-4e27-9559-4702398cb4be" name="View Message" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c22d0a7e-bb49-43cf-bb89-c1edaabc6793" />
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="b346be03-98f6-4226-85fb-733473b1cf64" name="View Contact" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cc2c4696-0e52-4727-bac5-bb073c9729c4" />
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e843bf16-4fcc-45cc-b866-b75c633b5680" name="Manage Contacts" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="540811d6-d66e-4ad2-b57d-4c58d3437840" />
+        <targetEnds>
+          <association Id="02e43ab0-bc82-431b-a3d4-f89b5949ccba" isDerived="false" sourceEndRoleName="Edit Contact" targetEndRoleName="Bluetooth Contact Sync" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="61e329ac-790e-4a5a-b63c-92ad78db6cdf" LastKnownName="Bluetooth Contact Sync" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5fb07927-b4f8-4e36-81fd-d9a2d7ebabcb" name="Edit Contact" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0571e252-c174-4fa7-a7ca-da8b08d89e50" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="74d62547-5538-45ce-bc98-517b4f6ec0eb" name="Bluetooth Contact Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="131dc9b4-871e-4c4f-8f0b-e1f148177574" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8811022d-47da-451e-8f06-7a8acd0dece8" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5c446f8d-bce3-4b1e-9300-dcfdb8f65cc2" name="Receive Message" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7c30d43f-4850-4ef3-a8b3-5a5c05c42b83" />
+        <targetEnds>
+          <association Id="43d2b7f2-b970-4156-aefb-772edfe70fb6" isDerived="false" sourceEndRoleName="Receive Message" targetEndRoleName="Bluetooth Message Sync" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9ca3eccd-6fd5-4ec0-8fe5-c1a6ede32405" LastKnownName="Bluetooth Message Sync" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="434fbfef-3cc7-42b9-acbb-79b4e2d31772" name="Receive Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e99ede9b-c81b-489c-a370-ad8e65df3064" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3986a803-2b90-4d84-aa30-a6ea114ff434" name="Bluetooth Message Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a1beae6e-0f1d-4b14-88fa-b4ee11412d8c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="00d305f9-1508-48b6-bcc5-f73e3a2a1cdc" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="667e624f-95d7-4224-a0c0-61a1ba84c758" LastKnownName="Mobile Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="1a8e4e19-8f5e-40c9-a787-d1ea8102355b" name="Edit Contact" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2e616dae-13f5-4577-8879-4f80918022ca" />
+        <targetEnds>
+          <association Id="d2cb136e-574f-4e3a-8728-0278a2336ca3" isDerived="false" sourceEndRoleName="Edit Contact" targetEndRoleName="Contact Database" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="86a5d292-8fef-4988-a4c5-7315e89380ed" LastKnownName="Contact Database" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="59f7c3f1-3a1f-45e8-b112-90670ec7664a" name="Edit Contact" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5b4d17a2-88a5-4301-ba13-83460c7d967d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="94fe95f1-4bc4-4156-ba10-cce996b2b106" name="Contact Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ac6b71cb-39c3-4c4b-a052-9ce5a22355d6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="259d4313-91de-4d36-b52a-62164abe82d9" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="667e624f-95d7-4224-a0c0-61a1ba84c758" LastKnownName="Mobile Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="be3418b6-ebb7-4ace-81cb-239cdfe9cb8a" name="View Contact" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6633834c-06c2-4dc9-ac49-da11daf32590" />
+        <targetEnds>
+          <association Id="b88a1f7c-55c3-4ec7-b36b-1390401b2c46" isDerived="false" sourceEndRoleName="View Contact" targetEndRoleName="Bluetooth Contact Sync" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c2b131a6-35f2-490c-854a-8e66f0fb0de6" LastKnownName="Bluetooth Contact Sync" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dc08f9ee-8c58-411a-b0b3-1cbfdd072dc3" name="View Contact" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8a5f66b8-a5a7-4a75-87ce-78eefb6d1553" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea382ed1-eeb2-4a52-9fc1-e9468a0811ad" name="Bluetooth Contact Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dfe458cc-340f-4bf7-aaf0-6aef4dc9e347" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1a783f8c-e3a2-475c-a5eb-5d3769409cb8" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="667e624f-95d7-4224-a0c0-61a1ba84c758" LastKnownName="Mobile Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e039576c-48a0-4776-ac54-495c51c56b80" name="Enter Message" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="afeea7a7-9eb3-4db1-bb2d-a8a807f36c43" />
+        <additions>
+          <include Id="0cb317f7-0556-4cb0-9fe9-84a405061e5a">
+            <useCaseMoniker Id="7d943611-2d63-4a0c-b8dd-75a783bfbb0c" LastKnownName="Send Message" />
+            <elementDefinition Id="16250356-7d55-45e2-949b-3cae878c240a" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="48baa932-dd84-4fb1-92a2-cf2f8163f1de" name="Messsage Resend" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="29793b74-612d-4c3f-9d63-377219b69310" />
+        <extendedCases>
+          <extend Id="1f2f0842-deae-421e-a47d-599fa21cc916">
+            <useCaseMoniker Id="7d943611-2d63-4a0c-b8dd-75a783bfbb0c" LastKnownName="Send Message" />
+            <elementDefinition Id="2414a67e-ccab-40f8-a040-d957bb7f5502" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="a1aebf00-6312-495a-8ec2-971ee07ca114" name="Forward Message" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="478c6151-44a4-4e01-bbed-ec4116e202a2" />
+        <extendedCases>
+          <extend Id="1e474ecf-d5f4-421c-9780-eabebcf32b94">
+            <useCaseMoniker Id="7d943611-2d63-4a0c-b8dd-75a783bfbb0c" LastKnownName="Send Message" />
+            <elementDefinition Id="108ae21c-24fd-4ab8-86f1-111508c18bfb" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="563af63b-0736-4564-9b8b-55e59a6187c0" name="Bluetooth Message Sync" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d827ba5a-6418-4978-b723-451113b0f29c" />
+        <targetEnds>
+          <association Id="ba408933-b92f-441b-8f17-a30e3269a337" isDerived="false" sourceEndRoleName="Bluetooth Message Sync" targetEndRoleName="Bluetooth Message Sync1" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9ca3eccd-6fd5-4ec0-8fe5-c1a6ede32405" LastKnownName="Bluetooth Message Sync" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="95a75e84-8a78-4fb0-a11c-4432897aed44" name="Bluetooth Message Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bef6f2f5-4eda-4511-b3b9-8d5026611e4a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea1525c6-553d-42e2-bd0d-29b0d7b95f96" name="Bluetooth Message Sync1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0d53df19-06e4-45f8-823e-9295e53da620" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="40fc53c3-661c-4164-beee-3dae438a6a0f" />
+          </association>
+          <association Id="4e51fa6b-b73b-4ecc-8e61-d01343d77fe4" isDerived="false" sourceEndRoleName="Bluetooth Message Sync" targetEndRoleName="View Message" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="556821ed-2451-4e27-9559-4702398cb4be" LastKnownName="View Message" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5c20aa85-c081-4364-858b-5186dd1b8b73" name="Bluetooth Message Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="37b9e00e-e0f0-463e-8762-9a6819510d39" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="edbcfc10-d9bf-451e-a5da-b0e339e608f0" name="View Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5b22ef45-4168-4ae0-a7d3-21092570514f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f9ab7ce0-b65a-439e-980f-42d13ca7a0f2" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="61e329ac-790e-4a5a-b63c-92ad78db6cdf" name="Bluetooth Contact Sync" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="85e028b8-d568-482b-8675-462c188dd2c7" />
+        <targetEnds>
+          <association Id="52d8043f-f796-4edb-ab70-2eccac11ebf5" isDerived="false" sourceEndRoleName="Bluetooth Contact Syncc" targetEndRoleName="Bluetooth Contact Syncc1" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c2b131a6-35f2-490c-854a-8e66f0fb0de6" LastKnownName="Bluetooth Contact Sync" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="738876df-a904-476c-a3c3-d9b0f9ef43c7" name="Bluetooth Contact Syncc" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fd96bb7b-eb7c-449d-a98b-31856a8382f6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8b95346c-4a9e-4399-aee6-0e934d21b890" name="Bluetooth Contact Syncc1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="34a163ef-797b-4f2a-a332-dbd4762de9cb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="be7633bc-a4ca-4d26-9ea8-a2a6bbfd9087" />
+          </association>
+          <association Id="86a0123d-16a0-4d18-bf9e-df3651beeaf0" isDerived="false" sourceEndRoleName="Bluetooth Contact Sync" targetEndRoleName="View Contact" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b346be03-98f6-4226-85fb-733473b1cf64" LastKnownName="View Contact" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d54b883e-3691-4b89-89b6-838b294f70b7" name="Bluetooth Contact Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9771da7c-89c0-4e56-bbc0-5d1eaeed7489" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7db68e66-60bb-4f34-864a-4e3d242f1658" name="View Contact" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="33934592-0b21-4ee6-bfe4-bdf1c40b37ce" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c4a3d266-54e1-4ec9-abf1-2814396c4b72" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="c2b131a6-35f2-490c-854a-8e66f0fb0de6" name="Bluetooth Contact Sync" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dcb53eef-4404-4e6f-8144-609e57cc5332" />
+        <targetEnds>
+          <association Id="e8f7e0c6-6444-466b-b25e-db8d6d9b6ee9" isDerived="false" sourceEndRoleName="Bluetooth Contact Syncc1" targetEndRoleName="Bluetooth Contact Syncc" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="61e329ac-790e-4a5a-b63c-92ad78db6cdf" LastKnownName="Bluetooth Contact Sync" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c98ffa7b-8061-4f4b-a2bc-172662883bcb" name="Bluetooth Contact Syncc1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="948ab8b7-b98c-43e7-97ee-17c4149af161" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a3cba3b8-eec6-4f62-bb1f-808a1ab855fc" name="Bluetooth Contact Syncc" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c056f43a-4b50-44c9-83fe-ee47bebc1e44" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="80841550-ba0f-4f35-8c62-70ea2a44976b" />
+          </association>
+          <association Id="0d371825-7330-47e3-9d2f-6e49dab098ca" isDerived="false" sourceEndRoleName="Bluetooth Contact Sync" targetEndRoleName="Edit Contact" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1a8e4e19-8f5e-40c9-a787-d1ea8102355b" LastKnownName="Edit Contact" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0f7e2c9c-780a-49b9-b52e-0fe00168bc2b" name="Bluetooth Contact Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3690a134-5ff4-47f1-b62c-6e27b9b42e18" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c1da1153-6461-4266-ad79-e490b0f5f27e" name="Edit Contact" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bd6a733b-ab46-4b6b-9ea6-6c3842a70792" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f1da8b59-9c9a-47a6-aa2e-10263aae9a55" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="667e624f-95d7-4224-a0c0-61a1ba84c758" LastKnownName="Mobile Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="9ca3eccd-6fd5-4ec0-8fe5-c1a6ede32405" name="Bluetooth Message Sync" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ee42f7dd-d733-4c29-a447-222f0e0cd15e" />
+        <targetEnds>
+          <association Id="db6c7a85-b84d-4bba-855a-dfd4270955c2" isDerived="false" sourceEndRoleName="Bluetooth Message Sync1" targetEndRoleName="Bluetooth Message Sync" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="563af63b-0736-4564-9b8b-55e59a6187c0" LastKnownName="Bluetooth Message Sync" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bf8b709d-3079-477c-aa05-7b96b1f7d108" name="Bluetooth Message Sync1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9c54d509-4e45-4cea-b1c6-98f3bb8cf144" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="815a5ff7-9dfd-45a6-b930-f98c68ab6b25" name="Bluetooth Message Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7834a02a-f50d-4f6d-b256-b9df14a55b95" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2a5820cf-b10b-49c1-9cc9-de8f46f0c583" />
+          </association>
+          <association Id="a8ec67f3-b87e-4a70-8c6e-989e574ce2a4" isDerived="false" sourceEndRoleName="Bluetooth Message Sync" targetEndRoleName="Send Message" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="611b479f-9421-41d0-b278-4a2beea20362" LastKnownName="Send Message" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dd41440e-b30f-4499-9879-304eb2046ff7" name="Bluetooth Message Sync" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c7ee17b1-8553-4df7-bc46-a21752316781" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8100898b-6763-4aed-9856-22fc549e4da4" name="Send Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5ffa6e44-c1e3-40e0-8d06-7359c9652f0c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="86f11b79-5203-43b6-990c-3788fd0dd8ec" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="667e624f-95d7-4224-a0c0-61a1ba84c758" LastKnownName="Mobile Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="3dd5084a-b291-4cc8-bc6e-7c9a17ce2d50" name="Attach Multimedia" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ea7c4de9-9437-48cd-8ee9-8a3d5b78375d" />
+        <additions>
+          <include Id="a713dd68-2f66-4962-87a3-6fff142c2135">
+            <useCaseMoniker Id="7d943611-2d63-4a0c-b8dd-75a783bfbb0c" LastKnownName="Send Message" />
+            <elementDefinition Id="51dd661a-d33f-4034-b265-1a3b2a47e050" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5023ed4e-47c2-4a41-8379-bb5f89226592" name="Connection" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8c2dc3ae-83b0-40b9-a856-e7faa5aa62ea" />
+        <subjects>
+          <subsystemMoniker Id="667e624f-95d7-4224-a0c0-61a1ba84c758" LastKnownName="Mobile Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="6f45a9c8-ffb6-47d8-bfa5-d03266bc093e" name="Connection" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b2ac67e5-8c8e-4349-8932-8c04ee6397e6" />
+        <additions>
+          <include Id="e7afba5d-e7ee-4531-a35b-eb353dee2212">
+            <useCaseMoniker Id="151c4171-1608-47b7-acbf-235e56f5815a" LastKnownName="Enter Password" />
+            <elementDefinition Id="06d91b7b-99a4-4d86-827c-8a76c64ae955" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="151c4171-1608-47b7-acbf-235e56f5815a" name="Enter Password" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="02d3a13d-74b2-4c74-956b-d360e11d6310" />
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="7077f5b3-0d54-479e-8898-bdb80c87dc4b" name="Choose Contact" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7f314086-2a83-4bc0-a616-de2b23036206" />
+        <additions>
+          <include Id="01086805-e453-4321-b3ec-3f80fb65ce45">
+            <useCaseMoniker Id="7d943611-2d63-4a0c-b8dd-75a783bfbb0c" LastKnownName="Send Message" />
+            <elementDefinition Id="dfa2e47d-baa8-4f8b-bfdb-57ffef494d5a" />
+          </include>
+          <include Id="f5d481f7-9e82-49e4-9b32-a64ed78f7608">
+            <useCaseMoniker Id="61e329ac-790e-4a5a-b63c-92ad78db6cdf" LastKnownName="Bluetooth Contact Sync" />
+            <elementDefinition Id="6e511d8e-6049-4898-9c24-1dc83baceeeb" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e9d15f8e-8363-4b08-8993-5ff91b55d183" name="Edit Contact" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f86841e7-5654-4725-a51d-c8bfad6ccab9" />
+        <extendedCases>
+          <extend Id="e96a9da5-872a-4c40-a4f6-82d955cf4307">
+            <useCaseMoniker Id="e843bf16-4fcc-45cc-b866-b75c633b5680" LastKnownName="Manage Contacts" />
+            <elementDefinition Id="949f2bdc-4f10-40dc-bcb5-6fae7d1e051a" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e6a1e74f-cb73-413a-86ef-dfa555a3ac15" name="Delete Contact" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0010bd87-45cf-4695-98fd-48fbe78c8b6c" />
+        <extendedCases>
+          <extend Id="9859cce6-0cba-4d19-9322-bdd40b08964d">
+            <useCaseMoniker Id="e843bf16-4fcc-45cc-b866-b75c633b5680" LastKnownName="Manage Contacts" />
+            <elementDefinition Id="fb70c338-28f5-463f-8481-ebc9152a139a" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="23b1d291-936c-4167-acc9-fdd6be446dbb" name="Add Contact" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dfdb4dbc-94e1-44c7-bdef-32c4d626df12" />
+        <extendedCases>
+          <extend Id="6b071207-5bf7-40f5-bc48-e35f3ece82dd">
+            <useCaseMoniker Id="e843bf16-4fcc-45cc-b866-b75c633b5680" LastKnownName="Manage Contacts" />
+            <elementDefinition Id="8de54d85-b1c8-4302-93a3-53274d7f3e76" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="bcab5e06-36d8-4927-93ad-26ac0479d30c" LastKnownName="Desktop Application" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="300150e7-1d77-48bd-aad3-957149861e01" name="UMLDiagrams">
+    <elementDefinition Id="c73459c3-493e-4b80-86eb-2061ad4501d0" />
+  </package>
+</useCaseModelRoot>
