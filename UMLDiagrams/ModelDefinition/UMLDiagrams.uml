@@ -1405,6 +1405,554 @@
         </subjects>
       </useCase>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="d0ee7379-698a-4679-89c9-23af239387a2"
+        name="ConnectionManagement"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="303fb0c2-9c07-409b-8131-a828fff11eea"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="44ef533c-6404-414d-985f-ea80fa7ee095"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d340e58c-37fe-4b64-9714-7eabba0025dd"
+                  LastKnownName="Establish Connection between Phone and PC"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="d340e58c-37fe-4b64-9714-7eabba0025dd"
+            name="Establish Connection between Phone and PC"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="df8faa41-7725-42f0-8f49-bfa975221a82"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c3c03ef9-f357-47fd-97b1-6670ae03f414"
+                  LastKnownName="Sync Contacts"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="2d206445-a735-4716-be17-b0a9d462937d"
+            name="Sync Messages"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0192375f-8d6e-4084-b996-9a95c05a5a6c"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="0e3b4c39-b49f-4efa-9dfe-5a42811efd6e"
+                  LastKnownName="Send Bluetooth Signal Ping"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c3c03ef9-f357-47fd-97b1-6670ae03f414"
+            name="Sync Contacts"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8039dac7-79e7-450e-9500-d80b0d5e5b2b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2d206445-a735-4716-be17-b0a9d462937d"
+                  LastKnownName="Sync Messages"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <sendSignalAction
+            Id="0e3b4c39-b49f-4efa-9dfe-5a42811efd6e"
+            name="Send Bluetooth Signal Ping"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ab36435b-2107-4dd1-866c-39d7bbd8409a"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="547dad3e-11ae-46b3-ba47-688cbd9356da"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <decisionNode
+            Id="547dad3e-11ae-46b3-ba47-688cbd9356da"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2d76ecf0-4030-4596-804c-8b72b6bccac7"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="74963af7-9fe4-4ce8-a22a-e528922f0da6"
+                  LastKnownName="No Connection Signal Found after signal ping"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="33da123d-d0b0-4fca-a038-896b527727a0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1a272591-a583-4ea5-b4c5-0a86a722c373"
+                  LastKnownName="Press Disconnect on Phone or Computer"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="dc484012-87e0-4971-a6fe-af08a35594f3"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="ed1f040c-bd7c-40a2-9039-4dd8e0602ce2"
+                  LastKnownName="Connection Signal Found / No Disconnect"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="1a272591-a583-4ea5-b4c5-0a86a722c373"
+            name="Press Disconnect on Phone or Computer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f72ab984-0aa9-4a21-a4c1-f98c7d44f9db"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d0f398ee-dd3d-4e06-956d-cc5629fe9774"
+                  LastKnownName="Session Terminated, All unsaved messages deleted from memory"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <acceptEventAction
+            Id="74963af7-9fe4-4ce8-a22a-e528922f0da6"
+            name="No Connection Signal Found after signal ping"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="699f27f1-117f-469e-b233-fa10be588c23"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d0f398ee-dd3d-4e06-956d-cc5629fe9774"
+                  LastKnownName="Session Terminated, All unsaved messages deleted from memory"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <sendSignalAction
+            Id="ed1f040c-bd7c-40a2-9039-4dd8e0602ce2"
+            name="Connection Signal Found / No Disconnect"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="05dcddc1-b7b9-426c-93e3-0c1e823e34ed"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2d206445-a735-4716-be17-b0a9d462937d"
+                  LastKnownName="Sync Messages"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction
+            Id="d0f398ee-dd3d-4e06-956d-cc5629fe9774"
+            name="Session Terminated, All unsaved messages deleted from memory"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="26711e38-0019-47a1-82a2-6aeae40e559b"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="a70c39ca-bd30-4b0d-abf3-2afcaf5a5b0a"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="a70c39ca-bd30-4b0d-abf3-2afcaf5a5b0a"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="2cab1181-9361-4ddd-a02f-3a7f6f0ba4a0"
+        name="ContactManagement"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="82b77845-1f82-4b32-bc44-26fd3f0e875e"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9b109120-170f-43cb-9b09-eae1dd7603b1"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5d43ad6f-2434-4990-878d-79255a69eb29"
+                  LastKnownName="Open Contact Listing"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="5d43ad6f-2434-4990-878d-79255a69eb29"
+            name="Open Contact Listing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3b44f5c3-4252-470b-bdf3-0705602e3960"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="3a67b38d-1c59-4949-befa-5568aee25f86"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="1a3d7af4-df59-4a54-a3c3-715a596e1b3a"
+            name="Select Contact to View"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2f09bbf9-f5e3-40e8-bcfc-6e2e2fead3a1"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7d6bf623-2e36-405b-b563-88520330425c"
+                  LastKnownName="View Contact Details"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="3a67b38d-1c59-4949-befa-5568aee25f86"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ee6f90da-50b3-4ed2-aa2b-ed2b90e870fa"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="320043ff-76d2-420f-a206-d36e1ec16f05"
+                  LastKnownName="Add Contact"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="164d04f7-b938-4155-b14d-bb0cc3c27081"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1a3d7af4-df59-4a54-a3c3-715a596e1b3a"
+                  LastKnownName="Select Contact to View"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="21fa15c5-523a-4571-ad44-17e23aa08cf5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a9157740-06b1-4603-8209-5bfdfa7474c9"
+                  LastKnownName="Exit Contact Listing"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="320043ff-76d2-420f-a206-d36e1ec16f05"
+            name="Add Contact"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6b0a0770-5af5-4e0d-ac6b-6a9202e44a98"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="034ec194-ac06-4f1a-bb97-27150ab91583"
+                  LastKnownName="Manage Contact Details"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode
+            Id="6fc3b0a3-a453-40a3-afa5-ce3a6087006d"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f638af60-37e6-42c9-a8cb-e4a8fa427b86"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7fc2ff94-1e35-41db-8b7d-43f8863ba89c"
+                  LastKnownName="Enter/edit any other info (email, address, etc.)"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c602c005-cd59-42ad-bb78-7d32f0d8e39e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="80121d59-51d7-4179-a079-9fc09a10836d"
+                  LastKnownName="Enter/edit Number"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c9d364bf-bebf-4b90-8342-f46d6e773d27"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="30b67e19-04f7-4d96-8572-86b86d6c6eab"
+                  LastKnownName="Enter/edit Name"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction
+            Id="30b67e19-04f7-4d96-8572-86b86d6c6eab"
+            name="Enter/edit Name"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4991af1d-a7ea-4170-8208-1eada1dd24e9"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d"
+                  LastKnownName="Join1"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="80121d59-51d7-4179-a079-9fc09a10836d"
+            name="Enter/edit Number"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1a03258c-fe05-4db8-9b19-894a55130ec1"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d"
+                  LastKnownName="Join1"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="7fc2ff94-1e35-41db-8b7d-43f8863ba89c"
+            name="Enter/edit any other info (email, address, etc.)"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4a953ce4-fe56-42ea-8937-a4363eee59c1"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d"
+                  LastKnownName="Join1"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="11d4b923-f87b-4196-acde-3557a4754cd8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="57bdb96c-16fb-49fc-a9c2-2d5afaf0a699"
+                  LastKnownName="Return to Contact Listing"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction
+            Id="7d6bf623-2e36-405b-b563-88520330425c"
+            name="View Contact Details"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="28773816-f6ba-4768-9463-32f993c29fe7"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="e8766329-ae1d-4f1f-9cc8-8c6119a3545c"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="e8766329-ae1d-4f1f-9cc8-8c6119a3545c"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="57b8edd2-ba5c-4e34-a6ff-4f8296c645a4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="966672ed-3aa4-4f14-938c-49925c5a34fc"
+                  LastKnownName="Edit Contact"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="076f74b1-98ec-488c-94bc-d0f4ac503170"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6d54cef6-c94e-4756-a86b-b9facf6c5d2e"
+                  LastKnownName="Select Send Message"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="b6f63ced-4d87-42d9-90b0-22e8565cfce7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="34977305-e416-454a-9a45-6558a949ca52"
+                  LastKnownName="Delete Contact"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c90454fb-6c21-45a4-be5d-eb25627c92b3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="57bdb96c-16fb-49fc-a9c2-2d5afaf0a699"
+                  LastKnownName="Return to Contact Listing"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="966672ed-3aa4-4f14-938c-49925c5a34fc"
+            name="Edit Contact"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9b3ac48f-b381-405a-9f94-d45f0b0f783b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="034ec194-ac06-4f1a-bb97-27150ab91583"
+                  LastKnownName="Manage Contact Details"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6d54cef6-c94e-4756-a86b-b9facf6c5d2e"
+            name="Select Send Message"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f5b3b603-5641-4b43-a82c-66ab0f6e6bf7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1ab6165d-392e-41db-bf27-5e3b2dee9504"
+                  LastKnownName="Open Conversation with Contact"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="34977305-e416-454a-9a45-6558a949ca52"
+            name="Delete Contact"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="641f047e-28ec-497f-ac09-a5d4175fce60"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="57bdb96c-16fb-49fc-a9c2-2d5afaf0a699"
+                  LastKnownName="Return to Contact Listing"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="57bdb96c-16fb-49fc-a9c2-2d5afaf0a699"
+            name="Return to Contact Listing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0687306e-2d22-402e-b674-8fca4365725d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5d43ad6f-2434-4990-878d-79255a69eb29"
+                  LastKnownName="Open Contact Listing"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="034ec194-ac06-4f1a-bb97-27150ab91583"
+            name="Manage Contact Details"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e5c282d8-420d-488f-b271-0c74414f89b3"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="6fc3b0a3-a453-40a3-afa5-ce3a6087006d"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a9157740-06b1-4603-8209-5bfdfa7474c9"
+            name="Exit Contact Listing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9046d472-1444-49cc-89ce-179fb33d3017"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="ac9ed26d-eaa9-49a6-839c-e11aa6069d18"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="1ab6165d-392e-41db-bf27-5e3b2dee9504"
+            name="Open Conversation with Contact"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1c3e3999-6fc4-44ac-9ce3-7344575505de"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="40f42316-6d5a-4f53-9671-1071301a3b70"
+                  LastKnownName="ActivityFinal2"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="ac9ed26d-eaa9-49a6-839c-e11aa6069d18"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <activityFinalNode
+            Id="40f42316-6d5a-4f53-9671-1071301a3b70"
+            name="ActivityFinal2"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
