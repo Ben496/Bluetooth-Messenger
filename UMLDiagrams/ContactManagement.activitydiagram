@@ -1,1 +1,234 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="1716b1c1-fddb-4085-b09c-2260e8bcd2c8" name="ContactManagement" linkedPackageId="da7b7a93-d00d-4f90-a922-8113efee2282" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="e7144667-11f1-457b-b44f-bbacc0a979d4" name="ContactManagement" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="2cab1181-9361-4ddd-a02f-3a7f6f0ba4a0" />
+        <nodes>
+          <initialNode Id="d102110e-69bd-4cb6-910b-cce471d7ddf2" name="Initial1" isLeaf="false">
+            <elementDefinition Id="82b77845-1f82-4b32-bc44-26fd3f0e875e" />
+            <flowNodeTargets>
+              <controlFlow Id="4134ac71-ebdc-42ff-87d5-5ab5c2413a7c" isLeaf="false">
+                <opaqueActionMoniker Id="85f7db29-4656-4101-bbc9-0d96de4559e2" LastKnownName="Open Contact Listing" />
+                <elementDefinition Id="9b109120-170f-43cb-9b09-eae1dd7603b1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="85f7db29-4656-4101-bbc9-0d96de4559e2" name="Open Contact Listing" isLeaf="false">
+            <elementDefinition Id="5d43ad6f-2434-4990-878d-79255a69eb29" />
+            <flowNodeTargets>
+              <controlFlow Id="700f4e08-cc31-4ecc-9c84-66df0ce4ea7a" isLeaf="false">
+                <decisionNodeMoniker Id="21f608d9-0ace-4143-9bd6-ae86b4a717bb" LastKnownName="Decision1" />
+                <elementDefinition Id="3b44f5c3-4252-470b-bdf3-0705602e3960" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="bb21fcf7-b743-459c-bf83-9132821f38cc" name="Select Contact to View" isLeaf="false">
+            <elementDefinition Id="1a3d7af4-df59-4a54-a3c3-715a596e1b3a" />
+            <flowNodeTargets>
+              <controlFlow Id="36b2809e-7dad-496d-85ad-7ca25f9985bd" isLeaf="false">
+                <opaqueActionMoniker Id="4fed9290-094e-449f-84ec-95439797ed0a" LastKnownName="View Contact Details" />
+                <elementDefinition Id="2f09bbf9-f5e3-40e8-bcfc-6e2e2fead3a1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="21f608d9-0ace-4143-9bd6-ae86b4a717bb" name="Decision1" isLeaf="false">
+            <elementDefinition Id="3a67b38d-1c59-4949-befa-5568aee25f86" />
+            <flowNodeTargets>
+              <controlFlow Id="35136650-d796-4ac4-9e44-c5e68f92a072" isLeaf="false">
+                <opaqueActionMoniker Id="db2e9bee-c95e-4746-8500-d04a4cd73c34" LastKnownName="Add Contact" />
+                <elementDefinition Id="ee6f90da-50b3-4ed2-aa2b-ed2b90e870fa" />
+              </controlFlow>
+              <controlFlow Id="0d16ffcc-ea8e-41a4-9ea4-ce7729dd3295" isLeaf="false">
+                <opaqueActionMoniker Id="bb21fcf7-b743-459c-bf83-9132821f38cc" LastKnownName="Select Contact to View" />
+                <elementDefinition Id="164d04f7-b938-4155-b14d-bb0cc3c27081" />
+              </controlFlow>
+              <controlFlow Id="1930800e-88cb-4f25-bf9a-a2d0757224e2" isLeaf="false">
+                <opaqueActionMoniker Id="16ae1855-97f5-47b4-89d1-64569fa0ce26" LastKnownName="Exit Contact Listing" />
+                <elementDefinition Id="21fa15c5-523a-4571-ad44-17e23aa08cf5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="db2e9bee-c95e-4746-8500-d04a4cd73c34" name="Add Contact" isLeaf="false">
+            <elementDefinition Id="320043ff-76d2-420f-a206-d36e1ec16f05" />
+            <flowNodeTargets>
+              <controlFlow Id="bbefe73e-8379-4609-abe2-c6b796de5fa7" isLeaf="false">
+                <opaqueActionMoniker Id="37ea74d4-95ef-4cde-b36c-1db238441048" LastKnownName="Manage Contact Details" />
+                <elementDefinition Id="6b0a0770-5af5-4e0d-ac6b-6a9202e44a98" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode Id="0beb4f29-9e3e-48b0-90b0-ccd11846ffc5" name="Fork1" isLeaf="false">
+            <elementDefinition Id="6fc3b0a3-a453-40a3-afa5-ce3a6087006d" />
+            <flowNodeTargets>
+              <controlFlow Id="685e984a-fdd6-4f1e-85b7-fb2a13eb8b00" isLeaf="false">
+                <opaqueActionMoniker Id="0d20b6b4-c936-4d30-8c7a-1e778ee138e2" LastKnownName="Enter/edit any other info (email, address, etc.)" />
+                <elementDefinition Id="f638af60-37e6-42c9-a8cb-e4a8fa427b86" />
+              </controlFlow>
+              <controlFlow Id="136f4c0c-82f3-4ab1-83e8-32acf5238d8b" isLeaf="false">
+                <opaqueActionMoniker Id="ffc72c90-d614-4f03-a41d-eefaa631bbf0" LastKnownName="Enter/edit Number" />
+                <elementDefinition Id="c602c005-cd59-42ad-bb78-7d32f0d8e39e" />
+              </controlFlow>
+              <controlFlow Id="ea3921ae-e512-48e8-9da6-a8a268d392c5" isLeaf="false">
+                <opaqueActionMoniker Id="b9d0586f-9f8d-4bc8-b59a-4728808a2d0f" LastKnownName="Enter/edit Name" />
+                <elementDefinition Id="c9d364bf-bebf-4b90-8342-f46d6e773d27" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="b9d0586f-9f8d-4bc8-b59a-4728808a2d0f" name="Enter/edit Name" isLeaf="false">
+            <elementDefinition Id="30b67e19-04f7-4d96-8572-86b86d6c6eab" />
+            <flowNodeTargets>
+              <controlFlow Id="1b3a71b1-3b85-41f8-b7de-bc87d989ceb2" isLeaf="false">
+                <joinNodeMoniker Id="c03be3a1-5c94-4748-8899-02df492d3a59" LastKnownName="Join1" />
+                <elementDefinition Id="4991af1d-a7ea-4170-8208-1eada1dd24e9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ffc72c90-d614-4f03-a41d-eefaa631bbf0" name="Enter/edit Number" isLeaf="false">
+            <elementDefinition Id="80121d59-51d7-4179-a079-9fc09a10836d" />
+            <flowNodeTargets>
+              <controlFlow Id="18c33cfb-e607-4e58-8d3f-6800a2aa5688" isLeaf="false">
+                <joinNodeMoniker Id="c03be3a1-5c94-4748-8899-02df492d3a59" LastKnownName="Join1" />
+                <elementDefinition Id="1a03258c-fe05-4db8-9b19-894a55130ec1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="0d20b6b4-c936-4d30-8c7a-1e778ee138e2" name="Enter/edit any other info (email, address, etc.)" isLeaf="false">
+            <elementDefinition Id="7fc2ff94-1e35-41db-8b7d-43f8863ba89c" />
+            <flowNodeTargets>
+              <controlFlow Id="5f66e598-21f8-46f4-bfa9-00ea8288f24b" isLeaf="false">
+                <joinNodeMoniker Id="c03be3a1-5c94-4748-8899-02df492d3a59" LastKnownName="Join1" />
+                <elementDefinition Id="4a953ce4-fe56-42ea-8937-a4363eee59c1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="c03be3a1-5c94-4748-8899-02df492d3a59" name="Join1" isLeaf="false">
+            <elementDefinition Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d" />
+            <flowNodeTargets>
+              <controlFlow Id="df339093-deca-40fb-a3ee-bd9f9bfcdd1d" isLeaf="false">
+                <opaqueActionMoniker Id="3126f09b-b6f4-4398-8569-1c69083362c4" LastKnownName="Return to Contact Listing" />
+                <elementDefinition Id="11d4b923-f87b-4196-acde-3557a4754cd8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="4fed9290-094e-449f-84ec-95439797ed0a" name="View Contact Details" isLeaf="false">
+            <elementDefinition Id="7d6bf623-2e36-405b-b563-88520330425c" />
+            <flowNodeTargets>
+              <controlFlow Id="be5ca8fb-8902-4624-90a5-015411a1755c" isLeaf="false">
+                <decisionNodeMoniker Id="c9f1afaa-2986-40e6-8eed-0b691518d21c" LastKnownName="Decision2" />
+                <elementDefinition Id="28773816-f6ba-4768-9463-32f993c29fe7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="c9f1afaa-2986-40e6-8eed-0b691518d21c" name="Decision2" isLeaf="false">
+            <elementDefinition Id="e8766329-ae1d-4f1f-9cc8-8c6119a3545c" />
+            <flowNodeTargets>
+              <controlFlow Id="899b8af9-be5e-4434-a9c2-0dbe0664fdd6" isLeaf="false">
+                <opaqueActionMoniker Id="7afca6b6-ace2-48b3-a67b-66ba13b34a07" LastKnownName="Edit Contact" />
+                <elementDefinition Id="57b8edd2-ba5c-4e34-a6ff-4f8296c645a4" />
+              </controlFlow>
+              <controlFlow Id="a04a269c-c2f7-4c52-8c40-03a27b8e7547" isLeaf="false">
+                <opaqueActionMoniker Id="ec731a8a-dd9f-439a-8846-4bb40287b1bd" LastKnownName="Select Send Message" />
+                <elementDefinition Id="076f74b1-98ec-488c-94bc-d0f4ac503170" />
+              </controlFlow>
+              <controlFlow Id="a0ed4641-66d1-435b-b761-4bd05ea81d0b" isLeaf="false">
+                <opaqueActionMoniker Id="1edef390-6d68-44c7-b33e-cbb3f46e0b82" LastKnownName="Delete Contact" />
+                <elementDefinition Id="b6f63ced-4d87-42d9-90b0-22e8565cfce7" />
+              </controlFlow>
+              <controlFlow Id="048e88c2-11eb-4ed7-9f82-00ca16088319" isLeaf="false">
+                <opaqueActionMoniker Id="3126f09b-b6f4-4398-8569-1c69083362c4" LastKnownName="Return to Contact Listing" />
+                <elementDefinition Id="c90454fb-6c21-45a4-be5d-eb25627c92b3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="7afca6b6-ace2-48b3-a67b-66ba13b34a07" name="Edit Contact" isLeaf="false">
+            <elementDefinition Id="966672ed-3aa4-4f14-938c-49925c5a34fc" />
+            <flowNodeTargets>
+              <controlFlow Id="7bf6922c-35a2-4838-be65-22e35e5f0cd8" isLeaf="false">
+                <opaqueActionMoniker Id="37ea74d4-95ef-4cde-b36c-1db238441048" LastKnownName="Manage Contact Details" />
+                <elementDefinition Id="9b3ac48f-b381-405a-9f94-d45f0b0f783b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ec731a8a-dd9f-439a-8846-4bb40287b1bd" name="Select Send Message" isLeaf="false">
+            <elementDefinition Id="6d54cef6-c94e-4756-a86b-b9facf6c5d2e" />
+            <flowNodeTargets>
+              <controlFlow Id="dbba0516-aa76-4b60-abd1-24019bba4734" isLeaf="false">
+                <opaqueActionMoniker Id="b6d8021c-c82a-4d46-ae65-ae6974c3b876" LastKnownName="Open Conversation with Contact" />
+                <elementDefinition Id="f5b3b603-5641-4b43-a82c-66ab0f6e6bf7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="1edef390-6d68-44c7-b33e-cbb3f46e0b82" name="Delete Contact" isLeaf="false">
+            <elementDefinition Id="34977305-e416-454a-9a45-6558a949ca52" />
+            <flowNodeTargets>
+              <controlFlow Id="21ff49c4-a2ba-4d0f-91a4-e3ca3518571d" isLeaf="false">
+                <opaqueActionMoniker Id="3126f09b-b6f4-4398-8569-1c69083362c4" LastKnownName="Return to Contact Listing" />
+                <elementDefinition Id="641f047e-28ec-497f-ac09-a5d4175fce60" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3126f09b-b6f4-4398-8569-1c69083362c4" name="Return to Contact Listing" isLeaf="false">
+            <elementDefinition Id="57bdb96c-16fb-49fc-a9c2-2d5afaf0a699" />
+            <flowNodeTargets>
+              <controlFlow Id="1efc228f-c587-4732-9774-48088d475929" isLeaf="false">
+                <opaqueActionMoniker Id="85f7db29-4656-4101-bbc9-0d96de4559e2" LastKnownName="Open Contact Listing" />
+                <elementDefinition Id="0687306e-2d22-402e-b674-8fca4365725d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="37ea74d4-95ef-4cde-b36c-1db238441048" name="Manage Contact Details" isLeaf="false">
+            <elementDefinition Id="034ec194-ac06-4f1a-bb97-27150ab91583" />
+            <flowNodeTargets>
+              <controlFlow Id="cc170205-10f8-438a-b9c0-716027b10db3" isLeaf="false">
+                <forkNodeMoniker Id="0beb4f29-9e3e-48b0-90b0-ccd11846ffc5" LastKnownName="Fork1" />
+                <elementDefinition Id="e5c282d8-420d-488f-b271-0c74414f89b3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="16ae1855-97f5-47b4-89d1-64569fa0ce26" name="Exit Contact Listing" isLeaf="false">
+            <elementDefinition Id="a9157740-06b1-4603-8209-5bfdfa7474c9" />
+            <flowNodeTargets>
+              <controlFlow Id="5e92f0fa-4e96-4aad-9df1-8cf93136e595" isLeaf="false">
+                <activityFinalNodeMoniker Id="67aea55e-22ed-4587-8bed-a73da360dab4" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="9046d472-1444-49cc-89ce-179fb33d3017" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b6d8021c-c82a-4d46-ae65-ae6974c3b876" name="Open Conversation with Contact" isLeaf="false">
+            <elementDefinition Id="1ab6165d-392e-41db-bf27-5e3b2dee9504" />
+            <flowNodeTargets>
+              <controlFlow Id="c7327b0f-e443-4fa3-9a65-a4f6698dc52f" isLeaf="false">
+                <activityFinalNodeMoniker Id="9166428c-01e2-490b-8ea1-b7f74f27d714" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="1c3e3999-6fc4-44ac-9ce3-7344575505de" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="67aea55e-22ed-4587-8bed-a73da360dab4" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="ac9ed26d-eaa9-49a6-839c-e11aa6069d18" />
+          </activityFinalNode>
+          <activityFinalNode Id="9166428c-01e2-490b-8ea1-b7f74f27d714" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="40f42316-6d5a-4f53-9671-1071301a3b70" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="da7b7a93-d00d-4f90-a922-8113efee2282" name="UMLDiagrams">
+    <elementDefinition Id="c73459c3-493e-4b80-86eb-2061ad4501d0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="3cca663b-1acc-4f02-8da0-70095004cad9">
+        <profileInstance Id="61afeac3-a5c8-4e81-a8af-dbc9c3a57ced" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a3469991-6b8f-4e1f-955d-59d134b6923e">
+        <profileInstance Id="41e59b19-038f-4774-9b0a-5945c8b84e68" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>
