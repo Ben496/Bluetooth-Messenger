@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b1289ce5-96eb-4b77-a3dc-bdf3cac3d00f" name="ConnectionManagement" linkedPackageId="1ae2e2fc-4d12-404a-a74b-a22f3a432a48" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="5851e149-5110-42e9-a359-ea9b32139861">
-      <profileInstance Id="745974be-a9b1-4c09-9c00-47486b9bdd54" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="422b85fb-c958-4258-92a2-8485e62ae3e9">
-      <profileInstance Id="47d588cc-8088-4afd-bd15-d4f2260bdf80" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="a85dc7cd-e1e4-48ec-902b-b7aa93e7e405" name="ConnectionManagement" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -67,26 +53,26 @@
           <decisionNode Id="6e6ba960-9fd9-4608-8a72-e267dcb37090" name="Decision1" isLeaf="false">
             <elementDefinition Id="547dad3e-11ae-46b3-ba47-688cbd9356da" />
             <flowNodeTargets>
-              <controlFlow Id="89eabdcf-567f-45bf-b1da-f6eaf71c6f42" isLeaf="false">
+              <controlFlow Id="89eabdcf-567f-45bf-b1da-f6eaf71c6f42" guard="No Connection Found" isLeaf="false">
                 <acceptEventActionMoniker Id="828d7f90-4265-4077-829b-060cd72b331b" LastKnownName="No Connection Signal Found after signal ping" />
                 <elementDefinition Id="2d76ecf0-4030-4596-804c-8b72b6bccac7" />
               </controlFlow>
-              <controlFlow Id="37e7e698-2cae-43e3-a983-7a2c2709cca8" isLeaf="false">
+              <controlFlow Id="37e7e698-2cae-43e3-a983-7a2c2709cca8" guard="Manual Disconnect" isLeaf="false">
                 <opaqueActionMoniker Id="e8e5b44d-193a-411c-b06b-a723dd7ab0d4" LastKnownName="Press Disconnect on Phone or Computer" />
                 <elementDefinition Id="33da123d-d0b0-4fca-a038-896b527727a0" />
               </controlFlow>
-              <controlFlow Id="d1f1bc84-a2d5-41a4-b616-7e5c1f01788e" isLeaf="false">
-                <sendSignalActionMoniker Id="d080b9a2-0861-407d-8ab6-0476b83d4a3e" LastKnownName="Connection Signal Found / No Disconnect" />
-                <elementDefinition Id="dc484012-87e0-4971-a6fe-af08a35594f3" />
+              <controlFlow Id="a8a0b8a5-430a-4b84-a303-522e1a0918ed" guard="Connection Found" isLeaf="false">
+                <acceptEventActionMoniker Id="36f554d9-2830-474f-9667-a7572ce55928" LastKnownName="Connection Signal Found / No Disconnect" />
+                <elementDefinition Id="09aea357-17b2-43a1-82de-2458c83957ee" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
           <opaqueAction Id="e8e5b44d-193a-411c-b06b-a723dd7ab0d4" name="Press Disconnect on Phone or Computer" isLeaf="false">
             <elementDefinition Id="1a272591-a583-4ea5-b4c5-0a86a722c373" />
             <flowNodeTargets>
-              <controlFlow Id="e103d197-03bf-4a31-8e28-b64561ed7139" isLeaf="false">
-                <opaqueActionMoniker Id="88d6d669-ec02-46ec-b15e-3f78501706e1" LastKnownName="Session Terminated, All unsaved messages deleted from memory" />
-                <elementDefinition Id="f72ab984-0aa9-4a21-a4c1-f98c7d44f9db" />
+              <controlFlow Id="c7d8ad7a-e5df-44c1-874c-74c3cf0e1157" isLeaf="false">
+                <opaqueActionMoniker Id="2f476fdb-1f47-4436-9e48-6c92db05bf52" LastKnownName="Sync Contacts" />
+                <elementDefinition Id="1e683c6a-d9d6-4db2-b2ea-899d08695321" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
@@ -99,15 +85,6 @@
               </controlFlow>
             </flowNodeTargets>
           </acceptEventAction>
-          <sendSignalAction Id="d080b9a2-0861-407d-8ab6-0476b83d4a3e" name="Connection Signal Found / No Disconnect" isLeaf="false">
-            <elementDefinition Id="ed1f040c-bd7c-40a2-9039-4dd8e0602ce2" />
-            <flowNodeTargets>
-              <controlFlow Id="8907b3b1-fc90-490b-8e21-18bdfd86e79e" isLeaf="false">
-                <opaqueActionMoniker Id="80c4e2f2-0d47-4e74-9d9d-38a29e0c0241" LastKnownName="Sync Messages" />
-                <elementDefinition Id="05dcddc1-b7b9-426c-93e3-0c1e823e34ed" />
-              </controlFlow>
-            </flowNodeTargets>
-          </sendSignalAction>
           <opaqueAction Id="88d6d669-ec02-46ec-b15e-3f78501706e1" name="Session Terminated, All unsaved messages deleted from memory" isLeaf="false">
             <elementDefinition Id="d0f398ee-dd3d-4e06-956d-cc5629fe9774" />
             <flowNodeTargets>
@@ -120,11 +97,43 @@
           <activityFinalNode Id="99edf2af-6b87-413d-a3a9-0a9be08ed0b7" name="ActivityFinal1" isLeaf="false">
             <elementDefinition Id="a70c39ca-bd30-4b0d-abf3-2afcaf5a5b0a" />
           </activityFinalNode>
+          <acceptEventAction Id="36f554d9-2830-474f-9667-a7572ce55928" name="Connection Signal Found / No Disconnect" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="9757e229-6ac8-43c2-8f45-8b70fdc57871" />
+            <flowNodeTargets>
+              <controlFlow Id="ff91784a-9c95-4efc-a022-dcac7e04c2bf" isLeaf="false">
+                <opaqueActionMoniker Id="80c4e2f2-0d47-4e74-9d9d-38a29e0c0241" LastKnownName="Sync Messages" />
+                <elementDefinition Id="8d061e68-7465-424a-b20a-220e827e7b27" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <opaqueAction Id="2f476fdb-1f47-4436-9e48-6c92db05bf52" name="Sync Contacts" isLeaf="false">
+            <elementDefinition Id="c67fc619-88d5-4c76-a59a-7c19a8c9872f" />
+            <flowNodeTargets>
+              <controlFlow Id="4b357c62-e287-4040-8e85-76b6603b2d5b" isLeaf="false">
+                <opaqueActionMoniker Id="88d6d669-ec02-46ec-b15e-3f78501706e1" LastKnownName="Session Terminated, All unsaved messages deleted from memory" />
+                <elementDefinition Id="aac83a4e-869a-44e1-abd3-7d94c3972778" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
         </nodes>
       </activity>
     </activityRootModelHasActivity>
   </packagedElements>
   <package Id="1ae2e2fc-4d12-404a-a74b-a22f3a432a48" name="UMLDiagrams">
     <elementDefinition Id="c73459c3-493e-4b80-86eb-2061ad4501d0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="5851e149-5110-42e9-a359-ea9b32139861">
+        <profileInstance Id="745974be-a9b1-4c09-9c00-47486b9bdd54" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="422b85fb-c958-4258-92a2-8485e62ae3e9">
+        <profileInstance Id="47d588cc-8088-4afd-bd15-d4f2260bdf80" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>
