@@ -1913,11 +1913,11 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="7da51d57-7b52-4c79-904f-75eb73df1446"
+                Id="8a7637e8-696d-4522-9dd6-9127b5243b2e"
                 isLeaf="false">
-                <joinNodeMoniker
-                  Id="594d7fbd-c339-4caa-b18a-7c6f44f45022"
-                  LastKnownName="Join1"
+                <forkNodeMoniker
+                  Id="b556a263-a642-4411-b74a-79742e42703b"
+                  LastKnownName="Fork1"
                   LastKnownLocation="UMLDiagrams.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1982,21 +1982,21 @@
                   LastKnownLocation="UMLDiagrams.uml" />
               </controlFlow>
               <controlFlow
-                Id="726793ad-f73f-4af5-a2e7-67a29c9b51dd"
-                guard="Create New Conversation"
-                isLeaf="false">
-                <forkNodeMoniker
-                  Id="b556a263-a642-4411-b74a-79742e42703b"
-                  LastKnownName="Fork1"
-                  LastKnownLocation="UMLDiagrams.uml" />
-              </controlFlow>
-              <controlFlow
                 Id="9ec70990-9370-4896-9b97-09070f0b35cc"
                 guard="Done Using App"
                 isLeaf="false">
                 <activityFinalNodeMoniker
                   Id="71f2e98e-757c-4300-81db-12b39f5cc8b6"
                   LastKnownName="ActivityFinal1"
+                  LastKnownLocation="UMLDiagrams.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="9b11a0a1-ae20-4ae0-84ee-909e1627b1bc"
+                guard="Create New Conversation"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2b841c18-d238-49a5-a507-dc1ade98b920"
+                  LastKnownName="Select Contact"
                   LastKnownLocation="UMLDiagrams.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -2021,14 +2021,6 @@
             name="Fork1"
             isLeaf="false">
             <flowNodeTargets>
-              <controlFlow
-                Id="a40d0c0c-919b-4415-89d5-a0e72558303d"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="2b841c18-d238-49a5-a507-dc1ade98b920"
-                  LastKnownName="Select Contact"
-                  LastKnownLocation="UMLDiagrams.uml" />
-              </controlFlow>
               <controlFlow
                 Id="a5bce977-eafe-42ac-9d1f-573811baac4a"
                 isLeaf="false">
@@ -2291,6 +2283,18 @@
         isAbstract="false"
         isLeaf="false"
         isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="4532eec6-1b22-424a-b8a6-666b680967b8">
+            <body>The old diagram that heavily needs improvement.</body>
+            <annotatedElements>
+              <combinedFragmentMoniker
+                Id="d94b94d4-57b6-4495-a0da-2f95589f3a1f"
+                LastKnownName="CombinedFragment3"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
         <fragments>
           <combinedFragment
             Id="d94b94d4-57b6-4495-a0da-2f95589f3a1f"
@@ -2657,22 +2661,22 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
-            Id="5ec445e1-5b17-44ca-bc95-75186f5fb1f8"
-            name="OperandOccurrenceSpecification35">
-            <covered>
-              <lifelineMoniker
-                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
-                LastKnownName="User"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="c423fca2-153f-436b-b63e-7321ddc42e61"
             name="OperandOccurrenceSpecification33">
             <covered>
               <lifelineMoniker
                 Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
                 LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="5ec445e1-5b17-44ca-bc95-75186f5fb1f8"
+            name="OperandOccurrenceSpecification35">
+            <covered>
+              <lifelineMoniker
+                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2737,22 +2741,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="e71b704e-02d8-4cc8-9b43-f28e428b67d9"
-            name="MessageOccurrenceSpecification2">
-            <covered>
-              <lifelineMoniker
-                Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
-                LastKnownName="Message"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="d48d7dd5-8e23-45b6-bea1-15496599aebf"
             name="MessageOccurrenceSpecification1">
             <covered>
               <lifelineMoniker
                 Id="744fa916-85c8-43a4-ad31-72000757f7c0"
                 LastKnownName="User"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e71b704e-02d8-4cc8-9b43-f28e428b67d9"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
+                LastKnownName="Message"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2795,6 +2799,16 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
+            Id="ea16184e-e4a1-4176-a163-5383c2562ea6"
+            name="OperandOccurrenceSpecification59">
+            <covered>
+              <lifelineMoniker
+                Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
+                LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="fb9b3e41-1261-452f-9602-0257983c30d5"
             name="OperandOccurrenceSpecification53">
             <covered>
@@ -2811,16 +2825,6 @@
               <lifelineMoniker
                 Id="d6468eb7-42a0-401a-a56f-921342c76968"
                 LastKnownName="Contact"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="ea16184e-e4a1-4176-a163-5383c2562ea6"
-            name="OperandOccurrenceSpecification59">
-            <covered>
-              <lifelineMoniker
-                Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
-                LastKnownName="Message"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2895,22 +2899,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="3f15565c-a357-4ccb-9b8e-1eeaf2cbddd7"
-            name="MessageOccurrenceSpecification24">
-            <covered>
-              <lifelineMoniker
-                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
-                LastKnownName="User"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="fe37e620-aab1-4ccb-97f2-3cc7dbba2362"
             name="MessageOccurrenceSpecification23">
             <covered>
               <lifelineMoniker
                 Id="d6468eb7-42a0-401a-a56f-921342c76968"
                 LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3f15565c-a357-4ccb-9b8e-1eeaf2cbddd7"
+            name="MessageOccurrenceSpecification24">
+            <covered>
+              <lifelineMoniker
+                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2979,22 +2983,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="c0c061d4-08aa-4be2-aa0e-82ec7ef28fbb"
-            name="MessageOccurrenceSpecification20">
-            <covered>
-              <lifelineMoniker
-                Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
-                LastKnownName="Message"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="2fa4f054-500e-4064-9ed6-ade8db96666d"
             name="MessageOccurrenceSpecification19">
             <covered>
               <lifelineMoniker
                 Id="744fa916-85c8-43a4-ad31-72000757f7c0"
                 LastKnownName="User"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c0c061d4-08aa-4be2-aa0e-82ec7ef28fbb"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
+                LastKnownName="Message"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3083,22 +3087,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="fa814a10-06ff-43b5-b8a2-790be8fd6f65"
-            name="MessageOccurrenceSpecification25">
-            <covered>
-              <lifelineMoniker
-                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
-                LastKnownName="User"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="e0c08d27-1e99-44c6-a687-0b1cf0efe294"
             name="MessageOccurrenceSpecification26">
             <covered>
               <lifelineMoniker
                 Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
                 LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="fa814a10-06ff-43b5-b8a2-790be8fd6f65"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3141,12 +3145,12 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="d5e53985-cda4-46e1-a844-ddcac6c86a0f"
-            name="OperandOccurrenceSpecification54">
+            Id="a89aa25c-e48f-4404-8760-be5cbeeb57ca"
+            name="OperandOccurrenceSpecification52">
             <covered>
               <lifelineMoniker
-                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
-                LastKnownName="User"
+                Id="d6468eb7-42a0-401a-a56f-921342c76968"
+                LastKnownName="Contact"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3161,12 +3165,12 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="a89aa25c-e48f-4404-8760-be5cbeeb57ca"
-            name="OperandOccurrenceSpecification52">
+            Id="d5e53985-cda4-46e1-a844-ddcac6c86a0f"
+            name="OperandOccurrenceSpecification54">
             <covered>
               <lifelineMoniker
-                Id="d6468eb7-42a0-401a-a56f-921342c76968"
-                LastKnownName="Contact"
+                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3181,22 +3185,22 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="4676ee5f-f86a-4653-b40d-1d664b7b4126"
-            name="OperandOccurrenceSpecification55">
-            <covered>
-              <lifelineMoniker
-                Id="d6468eb7-42a0-401a-a56f-921342c76968"
-                LastKnownName="Contact"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="b3c36959-a67a-44c7-98ea-d7a535ce5e39"
             name="OperandOccurrenceSpecification61">
             <covered>
               <lifelineMoniker
                 Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
                 LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="4676ee5f-f86a-4653-b40d-1d664b7b4126"
+            name="OperandOccurrenceSpecification55">
+            <covered>
+              <lifelineMoniker
+                Id="d6468eb7-42a0-401a-a56f-921342c76968"
+                LastKnownName="Contact"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3247,22 +3251,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="2eb4b719-e010-41d6-9510-d945d3e47de4"
-            name="MessageOccurrenceSpecification11">
-            <covered>
-              <lifelineMoniker
-                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
-                LastKnownName="User"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="88a4a09c-b628-48f2-a51b-14579264616a"
             name="MessageOccurrenceSpecification12">
             <covered>
               <lifelineMoniker
                 Id="d6468eb7-42a0-401a-a56f-921342c76968"
                 LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2eb4b719-e010-41d6-9510-d945d3e47de4"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3369,22 +3373,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="596ffd0f-aded-48ab-b8ba-611126c486d4"
-            name="OperandOccurrenceSpecification69">
-            <covered>
-              <lifelineMoniker
-                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
-                LastKnownName="User"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="fd718a2a-660b-47a4-94a1-d17eb4b66075"
             name="OperandOccurrenceSpecification67">
             <covered>
               <lifelineMoniker
                 Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
                 LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="596ffd0f-aded-48ab-b8ba-611126c486d4"
+            name="OperandOccurrenceSpecification69">
+            <covered>
+              <lifelineMoniker
+                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3473,16 +3477,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="b9f1ff7f-f5a2-4f89-b622-15d5de0ae674"
-            name="OperandOccurrenceSpecification68">
-            <covered>
-              <lifelineMoniker
-                Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
-                LastKnownName="Message"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="d7086ebe-664e-4293-ba58-29a480b65be9"
             name="OperandOccurrenceSpecification70">
             <covered>
@@ -3493,12 +3487,12 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="a49a83b3-3fc2-47d5-bb92-88f5f56ec5f6"
-            name="OperandOccurrenceSpecification56">
+            Id="b9f1ff7f-f5a2-4f89-b622-15d5de0ae674"
+            name="OperandOccurrenceSpecification68">
             <covered>
               <lifelineMoniker
-                Id="d6468eb7-42a0-401a-a56f-921342c76968"
-                LastKnownName="Contact"
+                Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
+                LastKnownName="Message"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3519,6 +3513,16 @@
               <lifelineMoniker
                 Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
                 LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="a49a83b3-3fc2-47d5-bb92-88f5f56ec5f6"
+            name="OperandOccurrenceSpecification56">
+            <covered>
+              <lifelineMoniker
+                Id="d6468eb7-42a0-401a-a56f-921342c76968"
+                LastKnownName="Contact"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3721,22 +3725,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="460e6ddc-c30d-40ce-b912-957bc01e5ed3"
-            name="MessageOccurrenceSpecification34">
-            <covered>
-              <lifelineMoniker
-                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
-                LastKnownName="User"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="4b7a5a00-cda5-47d6-a86c-143dc258b2e8"
             name="MessageOccurrenceSpecification33">
             <covered>
               <lifelineMoniker
                 Id="d531577d-e541-42e8-aac6-7505f1f3d0eb"
                 LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="460e6ddc-c30d-40ce-b912-957bc01e5ed3"
+            name="MessageOccurrenceSpecification34">
+            <covered>
+              <lifelineMoniker
+                Id="744fa916-85c8-43a4-ad31-72000757f7c0"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3779,16 +3783,6 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="2bfa8c56-91c1-4049-bb36-abf8213f1679"
-            name="OperandOccurrenceSpecification38">
-            <covered>
-              <lifelineMoniker
-                Id="d6468eb7-42a0-401a-a56f-921342c76968"
-                LastKnownName="Contact"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="f8176519-3e4d-4105-9f6c-316275d547d4"
             name="OperandOccurrenceSpecification34">
             <covered>
@@ -3808,8 +3802,48 @@
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="2bfa8c56-91c1-4049-bb36-abf8213f1679"
+            name="OperandOccurrenceSpecification38">
+            <covered>
+              <lifelineMoniker
+                Id="d6468eb7-42a0-401a-a56f-921342c76968"
+                LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
         </fragments>
         <lifelines>
+          <lifeline
+            Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+            name="Application Launch"
+            isActor="false"
+            lifelineDisplayName="Application Launch" />
+          <lifeline
+            Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
+            name="Conversation List"
+            isActor="false"
+            lifelineDisplayName="Conversation List" />
+          <lifeline
+            Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
+            name="Conversation"
+            isActor="false"
+            lifelineDisplayName="Conversation" />
+          <lifeline
+            Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+            name="Message"
+            isActor="false"
+            lifelineDisplayName="Message" />
+          <lifeline
+            Id="1df34889-c480-44b7-9a93-02cca4fc8439"
+            name="Contact"
+            isActor="false"
+            lifelineDisplayName="Contact" />
+          <lifeline
+            Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
+            name="Contact List"
+            isActor="false"
+            lifelineDisplayName="Contact List" />
           <lifeline
             Id="744fa916-85c8-43a4-ad31-72000757f7c0"
             name="User"
@@ -4436,16 +4470,16 @@
             interactionOperator="Loop">
             <coveredLifelines>
               <lifelineMoniker
-                Id="362c0222-d733-49bd-83ed-9c3626cd881d"
-                LastKnownName="Contact List"
-                LastKnownLocation="UMLDiagrams.uml" />
-              <lifelineMoniker
                 Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                 LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
               <lifelineMoniker
                 Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
                 LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+              <lifelineMoniker
+                Id="362c0222-d733-49bd-83ed-9c3626cd881d"
+                LastKnownName="Contact List"
                 LastKnownLocation="UMLDiagrams.uml" />
             </coveredLifelines>
             <operands>
@@ -4454,10 +4488,6 @@
                 name="InteractionOperand1">
                 <coveredLifelines>
                   <lifelineMoniker
-                    Id="362c0222-d733-49bd-83ed-9c3626cd881d"
-                    LastKnownName="Contact List"
-                    LastKnownLocation="UMLDiagrams.uml" />
-                  <lifelineMoniker
                     Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                     LastKnownName="User"
                     LastKnownLocation="UMLDiagrams.uml" />
@@ -4465,20 +4495,168 @@
                     Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
                     LastKnownName="Contact"
                     LastKnownLocation="UMLDiagrams.uml" />
+                  <lifelineMoniker
+                    Id="362c0222-d733-49bd-83ed-9c3626cd881d"
+                    LastKnownName="Contact List"
+                    LastKnownLocation="UMLDiagrams.uml" />
                 </coveredLifelines>
                 <fragments>
+                  <combinedFragment
+                    Id="ed97113a-2e27-4b5e-936d-6042d1cab567"
+                    name="CombinedFragment4"
+                    interactionOperator="Opt">
+                    <coveredLifelines>
+                      <lifelineMoniker
+                        Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
+                        LastKnownName="User"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                        LastKnownName="Contact"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                    </coveredLifelines>
+                    <operands>
+                      <interactionOperand
+                        Id="4464cd87-b382-4cda-8bf3-a3111a4b1ad0"
+                        name="InteractionOperand1">
+                        <coveredLifelines>
+                          <lifelineMoniker
+                            Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
+                            LastKnownName="User"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                            LastKnownName="Contact"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                        </coveredLifelines>
+                        <guard>
+                          <interactionConstraint
+                            Id="40c4728e-8328-4aea-997f-441a507cd4bf" />
+                        </guard>
+                        <operandOccurrenceSpecifications>
+                          <operandOccurrenceSpecificationMoniker
+                            Id="8ea70e34-dc1d-4de3-b049-0ebcafc3b7be"
+                            LastKnownName="OperandOccurrenceSpecification43"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="c52967b7-8981-4272-a274-d5deb7e60912"
+                            LastKnownName="OperandOccurrenceSpecification44"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="b9f797f9-72a2-4e88-9776-598ce2ca73c0"
+                            LastKnownName="OperandOccurrenceSpecification45"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="d9e68daf-696d-4572-98d4-4e6eb70fee4a"
+                            LastKnownName="OperandOccurrenceSpecification46"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                        </operandOccurrenceSpecifications>
+                      </interactionOperand>
+                    </operands>
+                  </combinedFragment>
+                  <combinedFragment
+                    Id="720b7fd6-bbb9-4bce-8fa1-15ab412d0c30"
+                    name="CombinedFragment3"
+                    interactionOperator="Alt">
+                    <coveredLifelines>
+                      <lifelineMoniker
+                        Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
+                        LastKnownName="User"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                        LastKnownName="Contact"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                    </coveredLifelines>
+                    <operands>
+                      <interactionOperand
+                        Id="78227714-6ca1-4ece-844d-06edf516694b"
+                        name="InteractionOperand1">
+                        <coveredLifelines>
+                          <lifelineMoniker
+                            Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
+                            LastKnownName="User"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                            LastKnownName="Contact"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                        </coveredLifelines>
+                        <guard>
+                          <interactionConstraint
+                            Id="2f1dcc6c-4eff-4308-91ff-ffcb6ce00ca9"
+                            guardText="Edit Existing Contact" />
+                        </guard>
+                        <operandOccurrenceSpecifications>
+                          <operandOccurrenceSpecificationMoniker
+                            Id="8c337843-de4d-4ed6-984b-0dc8fd35585e"
+                            LastKnownName="OperandOccurrenceSpecification35"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="6c39eb8f-6876-4eec-9f18-94eca10eccba"
+                            LastKnownName="OperandOccurrenceSpecification36"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="d299f68b-f7aa-43f6-99c2-653f6b079f3f"
+                            LastKnownName="OperandOccurrenceSpecification37"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="1ace6396-95d8-4977-b0b8-94142d6c463b"
+                            LastKnownName="OperandOccurrenceSpecification38"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                        </operandOccurrenceSpecifications>
+                      </interactionOperand>
+                      <interactionOperand
+                        Id="4a818208-d461-4d79-9f33-5298a3685318"
+                        name="InteractionOperand2">
+                        <coveredLifelines>
+                          <lifelineMoniker
+                            Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
+                            LastKnownName="User"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                            LastKnownName="Contact"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                        </coveredLifelines>
+                        <guard>
+                          <interactionConstraint
+                            Id="dd319bf4-570b-4473-9eb3-fe39b143de51"
+                            guardText="Create New Contact" />
+                        </guard>
+                        <operandOccurrenceSpecifications>
+                          <operandOccurrenceSpecificationMoniker
+                            Id="8b433719-d9d9-47bc-b4ae-d2d60c303731"
+                            LastKnownName="OperandOccurrenceSpecification39"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="0f352124-400a-4fc3-a804-1efe9c2c1e0d"
+                            LastKnownName="OperandOccurrenceSpecification40"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="b7d76735-9466-44a6-8af1-099837aedb04"
+                            LastKnownName="OperandOccurrenceSpecification41"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="7143338d-f13c-43a9-b311-f58325ee4145"
+                            LastKnownName="OperandOccurrenceSpecification42"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                        </operandOccurrenceSpecifications>
+                      </interactionOperand>
+                    </operands>
+                  </combinedFragment>
                   <combinedFragment
                     Id="a19c8d93-4fcc-4b0b-870a-626916b6269a"
                     name="CombinedFragment1"
                     interactionOperator="Opt">
                     <coveredLifelines>
                       <lifelineMoniker
-                        Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                        LastKnownName="Contact"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
                         Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                         LastKnownName="User"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                        LastKnownName="Contact"
                         LastKnownLocation="UMLDiagrams.uml" />
                     </coveredLifelines>
                     <operands>
@@ -4487,12 +4665,12 @@
                         name="InteractionOperand1">
                         <coveredLifelines>
                           <lifelineMoniker
-                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                            LastKnownName="Contact"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
                             Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                             LastKnownName="User"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                            LastKnownName="Contact"
                             LastKnownLocation="UMLDiagrams.uml" />
                         </coveredLifelines>
                         <guard>
@@ -4526,12 +4704,12 @@
                     interactionOperator="Opt">
                     <coveredLifelines>
                       <lifelineMoniker
-                        Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                        LastKnownName="Contact"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
                         Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                         LastKnownName="User"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                        LastKnownName="Contact"
                         LastKnownLocation="UMLDiagrams.uml" />
                     </coveredLifelines>
                     <operands>
@@ -4540,12 +4718,12 @@
                         name="InteractionOperand1">
                         <coveredLifelines>
                           <lifelineMoniker
-                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                            LastKnownName="Contact"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
                             Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                             LastKnownName="User"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                            LastKnownName="Contact"
                             LastKnownLocation="UMLDiagrams.uml" />
                         </coveredLifelines>
                         <guard>
@@ -4568,150 +4746,6 @@
                           <operandOccurrenceSpecificationMoniker
                             Id="c9b594fa-c95b-4438-920f-285b5a35d8ab"
                             LastKnownName="OperandOccurrenceSpecification22"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                        </operandOccurrenceSpecifications>
-                      </interactionOperand>
-                    </operands>
-                  </combinedFragment>
-                  <combinedFragment
-                    Id="720b7fd6-bbb9-4bce-8fa1-15ab412d0c30"
-                    name="CombinedFragment3"
-                    interactionOperator="Alt">
-                    <coveredLifelines>
-                      <lifelineMoniker
-                        Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                        LastKnownName="Contact"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
-                        Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
-                        LastKnownName="User"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                    </coveredLifelines>
-                    <operands>
-                      <interactionOperand
-                        Id="78227714-6ca1-4ece-844d-06edf516694b"
-                        name="InteractionOperand1">
-                        <coveredLifelines>
-                          <lifelineMoniker
-                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                            LastKnownName="Contact"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
-                            LastKnownName="User"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                        </coveredLifelines>
-                        <guard>
-                          <interactionConstraint
-                            Id="2f1dcc6c-4eff-4308-91ff-ffcb6ce00ca9"
-                            guardText="Edit Existing Contact" />
-                        </guard>
-                        <operandOccurrenceSpecifications>
-                          <operandOccurrenceSpecificationMoniker
-                            Id="8c337843-de4d-4ed6-984b-0dc8fd35585e"
-                            LastKnownName="OperandOccurrenceSpecification35"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <operandOccurrenceSpecificationMoniker
-                            Id="6c39eb8f-6876-4eec-9f18-94eca10eccba"
-                            LastKnownName="OperandOccurrenceSpecification36"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <operandOccurrenceSpecificationMoniker
-                            Id="d299f68b-f7aa-43f6-99c2-653f6b079f3f"
-                            LastKnownName="OperandOccurrenceSpecification37"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <operandOccurrenceSpecificationMoniker
-                            Id="1ace6396-95d8-4977-b0b8-94142d6c463b"
-                            LastKnownName="OperandOccurrenceSpecification38"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                        </operandOccurrenceSpecifications>
-                      </interactionOperand>
-                      <interactionOperand
-                        Id="4a818208-d461-4d79-9f33-5298a3685318"
-                        name="InteractionOperand2">
-                        <coveredLifelines>
-                          <lifelineMoniker
-                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                            LastKnownName="Contact"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
-                            LastKnownName="User"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                        </coveredLifelines>
-                        <guard>
-                          <interactionConstraint
-                            Id="dd319bf4-570b-4473-9eb3-fe39b143de51"
-                            guardText="Create New Contact" />
-                        </guard>
-                        <operandOccurrenceSpecifications>
-                          <operandOccurrenceSpecificationMoniker
-                            Id="8b433719-d9d9-47bc-b4ae-d2d60c303731"
-                            LastKnownName="OperandOccurrenceSpecification39"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <operandOccurrenceSpecificationMoniker
-                            Id="0f352124-400a-4fc3-a804-1efe9c2c1e0d"
-                            LastKnownName="OperandOccurrenceSpecification40"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <operandOccurrenceSpecificationMoniker
-                            Id="b7d76735-9466-44a6-8af1-099837aedb04"
-                            LastKnownName="OperandOccurrenceSpecification41"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <operandOccurrenceSpecificationMoniker
-                            Id="7143338d-f13c-43a9-b311-f58325ee4145"
-                            LastKnownName="OperandOccurrenceSpecification42"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                        </operandOccurrenceSpecifications>
-                      </interactionOperand>
-                    </operands>
-                  </combinedFragment>
-                  <combinedFragment
-                    Id="ed97113a-2e27-4b5e-936d-6042d1cab567"
-                    name="CombinedFragment4"
-                    interactionOperator="Opt">
-                    <coveredLifelines>
-                      <lifelineMoniker
-                        Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                        LastKnownName="Contact"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
-                        Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
-                        LastKnownName="User"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                    </coveredLifelines>
-                    <operands>
-                      <interactionOperand
-                        Id="4464cd87-b382-4cda-8bf3-a3111a4b1ad0"
-                        name="InteractionOperand1">
-                        <coveredLifelines>
-                          <lifelineMoniker
-                            Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                            LastKnownName="Contact"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
-                            LastKnownName="User"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                        </coveredLifelines>
-                        <guard>
-                          <interactionConstraint
-                            Id="40c4728e-8328-4aea-997f-441a507cd4bf" />
-                        </guard>
-                        <operandOccurrenceSpecifications>
-                          <operandOccurrenceSpecificationMoniker
-                            Id="8ea70e34-dc1d-4de3-b049-0ebcafc3b7be"
-                            LastKnownName="OperandOccurrenceSpecification43"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <operandOccurrenceSpecificationMoniker
-                            Id="c52967b7-8981-4272-a274-d5deb7e60912"
-                            LastKnownName="OperandOccurrenceSpecification44"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <operandOccurrenceSpecificationMoniker
-                            Id="b9f797f9-72a2-4e88-9776-598ce2ca73c0"
-                            LastKnownName="OperandOccurrenceSpecification45"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <operandOccurrenceSpecificationMoniker
-                            Id="d9e68daf-696d-4572-98d4-4e6eb70fee4a"
-                            LastKnownName="OperandOccurrenceSpecification46"
                             LastKnownLocation="UMLDiagrams.uml" />
                         </operandOccurrenceSpecifications>
                       </interactionOperand>
@@ -4863,22 +4897,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="b10c69e2-7ee4-4382-bfdb-502cd1422a29"
-            name="MessageOccurrenceSpecification3">
-            <covered>
-              <lifelineMoniker
-                Id="362c0222-d733-49bd-83ed-9c3626cd881d"
-                LastKnownName="Contact List"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="45f60a3b-bd26-4b6d-9c3c-08efd0607bf2"
             name="MessageOccurrenceSpecification4">
             <covered>
               <lifelineMoniker
                 Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                 LastKnownName="User"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b10c69e2-7ee4-4382-bfdb-502cd1422a29"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="362c0222-d733-49bd-83ed-9c3626cd881d"
+                LastKnownName="Contact List"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4991,22 +5025,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="6e36b33e-e756-412d-9af3-8c1f30789116"
-            name="MessageOccurrenceSpecification55">
-            <covered>
-              <lifelineMoniker
-                Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                LastKnownName="Contact"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="a057bce1-d5a4-41ff-8ed4-44acdd37961e"
             name="MessageOccurrenceSpecification56">
             <covered>
               <lifelineMoniker
                 Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                 LastKnownName="User"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6e36b33e-e756-412d-9af3-8c1f30789116"
+            name="MessageOccurrenceSpecification55">
+            <covered>
+              <lifelineMoniker
+                Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                LastKnownName="Contact"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5119,22 +5153,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="45fc78b2-bbd0-4c1c-b08f-fe11c882b508"
-            name="MessageOccurrenceSpecification9">
-            <covered>
-              <lifelineMoniker
-                Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
-                LastKnownName="User"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="4ff0382e-12d4-4f06-bb86-c7114e5906c0"
             name="MessageOccurrenceSpecification10">
             <covered>
               <lifelineMoniker
                 Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
                 LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="45fc78b2-bbd0-4c1c-b08f-fe11c882b508"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5267,22 +5301,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="e7438968-83d2-4759-8dfd-a1e63709cc33"
-            name="MessageOccurrenceSpecification50">
-            <covered>
-              <lifelineMoniker
-                Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                LastKnownName="Contact"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="c3855ccc-8170-47f1-9774-0c36e3098175"
             name="MessageOccurrenceSpecification49">
             <covered>
               <lifelineMoniker
                 Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                 LastKnownName="User"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e7438968-83d2-4759-8dfd-a1e63709cc33"
+            name="MessageOccurrenceSpecification50">
+            <covered>
+              <lifelineMoniker
+                Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                LastKnownName="Contact"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5391,22 +5425,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="1fbdd09c-bdda-4390-a291-da53a7a98376"
-            name="MessageOccurrenceSpecification38">
-            <covered>
-              <lifelineMoniker
-                Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
-                LastKnownName="Contact"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="ac83c3f6-a951-495e-a14a-4b47adbe3895"
             name="MessageOccurrenceSpecification37">
             <covered>
               <lifelineMoniker
                 Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
                 LastKnownName="User"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1fbdd09c-bdda-4390-a291-da53a7a98376"
+            name="MessageOccurrenceSpecification38">
+            <covered>
+              <lifelineMoniker
+                Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
+                LastKnownName="Contact"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5533,22 +5567,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="85916fdf-0ed0-4ea3-8cc6-ec99a6e2d019"
-            name="OperandOccurrenceSpecification18">
-            <covered>
-              <lifelineMoniker
-                Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
-                LastKnownName="User"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="f6bd981b-15c2-4f3f-9839-9cafc6f9df72"
             name="OperandOccurrenceSpecification16">
             <covered>
               <lifelineMoniker
                 Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
                 LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="85916fdf-0ed0-4ea3-8cc6-ec99a6e2d019"
+            name="OperandOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -5747,22 +5781,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="4efb77eb-a13f-4ff9-9a64-0d8c8df25dd8"
-            name="MessageOccurrenceSpecification48">
-            <covered>
-              <lifelineMoniker
-                Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
-                LastKnownName="User"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="b2d03bd1-6862-4169-b99c-0eec68405e92"
             name="MessageOccurrenceSpecification47">
             <covered>
               <lifelineMoniker
                 Id="362c0222-d733-49bd-83ed-9c3626cd881d"
                 LastKnownName="Contact List"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4efb77eb-a13f-4ff9-9a64-0d8c8df25dd8"
+            name="MessageOccurrenceSpecification48">
+            <covered>
+              <lifelineMoniker
+                Id="19df0809-611a-40ef-9fbc-b7ade8324f9e"
+                LastKnownName="User"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5785,22 +5819,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="f0dd5833-c409-4f38-ad82-fab6a3a110c6"
-            name="OperandOccurrenceSpecification10">
-            <covered>
-              <lifelineMoniker
-                Id="362c0222-d733-49bd-83ed-9c3626cd881d"
-                LastKnownName="Contact List"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="1d6ebb10-0145-45cf-b884-7df1bd342ef8"
             name="OperandOccurrenceSpecification14">
             <covered>
               <lifelineMoniker
                 Id="282977be-936c-4fbb-a5e8-5d90adee0cc0"
                 LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="f0dd5833-c409-4f38-ad82-fab6a3a110c6"
+            name="OperandOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="362c0222-d733-49bd-83ed-9c3626cd881d"
+                LastKnownName="Contact List"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -6575,22 +6609,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="82fff1d9-25df-4698-b042-c6034b65e02a"
-            name="MessageOccurrenceSpecification25">
-            <covered>
-              <lifelineMoniker
-                Id="70fb8fed-233b-473f-871a-f143401b5a61"
-                LastKnownName="Bluetooth Connection"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="3583049a-b5ce-49b5-abd0-02e7d9659120"
             name="MessageOccurrenceSpecification26">
             <covered>
               <lifelineMoniker
                 Id="7f41d516-dc89-41a8-ba44-6bee58c6125d"
                 LastKnownName="Phone"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="82fff1d9-25df-4698-b042-c6034b65e02a"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="70fb8fed-233b-473f-871a-f143401b5a61"
+                LastKnownName="Bluetooth Connection"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -6876,22 +6910,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="787abe24-6e01-4a1d-b5eb-b26ff8d17433"
-            name="MessageOccurrenceSpecification10">
-            <covered>
-              <lifelineMoniker
-                Id="7f41d516-dc89-41a8-ba44-6bee58c6125d"
-                LastKnownName="Phone"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="3613367c-157b-43ee-86cb-c22a499120d5"
             name="MessageOccurrenceSpecification9">
             <covered>
               <lifelineMoniker
                 Id="12db429c-0e0d-4ac5-850f-39d2b516ec28"
                 LastKnownName="PC"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="787abe24-6e01-4a1d-b5eb-b26ff8d17433"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="7f41d516-dc89-41a8-ba44-6bee58c6125d"
+                LastKnownName="Phone"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -7112,22 +7146,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="f325b2b3-576d-4abd-bc75-0309a24566e0"
-            name="MessageOccurrenceSpecification34">
-            <covered>
-              <lifelineMoniker
-                Id="7f41d516-dc89-41a8-ba44-6bee58c6125d"
-                LastKnownName="Phone"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="770593d9-34fe-40e0-b974-8004fb70e9cc"
             name="MessageOccurrenceSpecification33">
             <covered>
               <lifelineMoniker
                 Id="70fb8fed-233b-473f-871a-f143401b5a61"
                 LastKnownName="Bluetooth Connection"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f325b2b3-576d-4abd-bc75-0309a24566e0"
+            name="MessageOccurrenceSpecification34">
+            <covered>
+              <lifelineMoniker
+                Id="7f41d516-dc89-41a8-ba44-6bee58c6125d"
+                LastKnownName="Phone"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -7348,22 +7382,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="1ed621a0-5e40-4672-b7b4-435f09b65d7c"
-            name="MessageOccurrenceSpecification43">
-            <covered>
-              <lifelineMoniker
-                Id="12db429c-0e0d-4ac5-850f-39d2b516ec28"
-                LastKnownName="PC"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="9dbb1100-58e0-4bd4-9add-b1fa15db6bc1"
             name="MessageOccurrenceSpecification44">
             <covered>
               <lifelineMoniker
                 Id="20336395-c496-4e45-b5d4-cc37fb6df7c8"
                 LastKnownName="User"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1ed621a0-5e40-4672-b7b4-435f09b65d7c"
+            name="MessageOccurrenceSpecification43">
+            <covered>
+              <lifelineMoniker
+                Id="12db429c-0e0d-4ac5-850f-39d2b516ec28"
+                LastKnownName="PC"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
