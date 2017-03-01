@@ -2027,6 +2027,7 @@
               <messageOccurrenceSpecificationMoniker Id="2ebf1b6f-9ff1-4b6d-879f-662c8e2826ae" LastKnownName="MessageOccurrenceSpecification74" />
             </receiveEvent>
           </message>
+          <message Id="e0acec8c-567b-4df7-88ee-49f76153c182" name="Exit Message Editor" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
             <elementDefinition Id="76823e43-c56f-46c3-9533-52de8d47151c" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="0192f40b-41fb-45c6-95ac-7f16999d64aa" LastKnownName="MessageOccurrenceSpecification83" />
