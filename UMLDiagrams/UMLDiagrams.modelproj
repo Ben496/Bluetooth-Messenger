@@ -23,12 +23,12 @@
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
     <Folder Include="ModelDefinition\" />
-    <Content Include="ClassDiagram.classdiagram">
+    <Content Include="BluetoothMessengerLib.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ClassDiagram.classdiagram.layout">
+    <Content Include="BluetoothMessengerLib.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>ClassDiagram.classdiagram</DependentUpon>
+      <DependentUpon>BluetoothMessengerLib.classdiagram</DependentUpon>
     </Content>
     <Content Include="ConnectionManagement.sequencediagram">
       <SubType>Content</SubType>

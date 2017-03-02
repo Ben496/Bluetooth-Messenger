@@ -1,17 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="b9d75f4e-9aa7-4ef6-87d5-af304ef5e8f4" name="ConnectionManagement" linkedPackageId="a8d9ad2c-f91a-4842-9bdd-6b9fc3616c36" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="38773430-b358-46f6-bd3a-eccde1f5b0c7" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="876d07fc-371c-4917-8cee-28f53d113345" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="c3abc961-dcc0-4783-9287-20a968cb7762">
+          <propertyInstance Id="a8927321-45d8-413e-b074-345b62a2a555" name="BaseName">
+            <elementDefinition Id="d3ecf66f-21a8-4ae9-a854-a4dd4d0b7627" />
+          </propertyInstance>
+          <elementDefinition Id="7bce4a4e-f1ef-48a6-9c80-17c4d33cd7ca" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="da821c88-4697-4ea7-823a-812f639fb2c4">
+          <propertyInstance Id="49f89d5a-30db-4b14-9072-4fd512cd7b89" name="ClrAttributes">
+            <elementDefinition Id="81447930-a690-4eab-9ab3-dd715203ecba" />
+          </propertyInstance>
+          <elementDefinition Id="984f8608-f4dc-4e4d-b28d-51d2c04e847a" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="2b27bf1e-a697-405f-a475-790bcca8a7d0">
+          <propertyInstance Id="c8b7c717-8499-42ae-96ee-5667b0d990e8" name="Usings">
+            <elementDefinition Id="e13ec832-3955-4e08-89c2-c53c79336fd7" />
+          </propertyInstance>
+          <elementDefinition Id="089efacf-d8ac-4f88-856d-fd53e0f844cd" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="acc19cef-9b3d-49d6-98e4-08962c235955" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="5ee5f259-6b8f-4cbe-b6d3-7c6884309226" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="abab3dbd-a861-403e-ad8d-7e0fb258fdb5">
+          <propertyInstance Id="be67ee3a-142e-4ea8-9e99-37fd177418f5" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="b48d58ed-4e13-48d1-8e5a-0181d990fb57" />
+          </propertyInstance>
+          <elementDefinition Id="b01e69f6-1a31-4b59-bfdc-858ff0458d0e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="a8ef6f9e-2195-4e2b-b8b9-2d9761645c1b">
+          <propertyInstance Id="5c717407-84b0-4a9e-8d16-7242a6ac9c38" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="b68d5c24-850a-4682-8125-97fcaf891af7" />
+          </propertyInstance>
+          <elementDefinition Id="7140bda6-af89-4489-8fd2-62bacca7022e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="94ccb54c-9764-45da-a42a-4bc2304b2cb1">
+          <propertyInstance Id="cad2002a-16b5-4ca4-b91b-ada3237acf46" name="ProjectPath" value="ClassTemplate=..\UMLDiagramsLib\UMLDiagramsLib.csproj|EnumTemplate=..\UMLDiagramsLib\UMLDiagramsLib.csproj|InterfaceTemplate=..\UMLDiagramsLib\UMLDiagramsLib.csproj|StructTemplate=..\UMLDiagramsLib\UMLDiagramsLib.csproj">
+            <elementDefinition Id="0c796163-4191-4a86-bd14-e9f14fc8e6fa" />
+          </propertyInstance>
+          <elementDefinition Id="ffb8a226-610c-43c2-8366-df67c9333e7c" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="396c5d18-3957-4250-95ac-47a283241bf6">
+          <propertyInstance Id="72b2f8a2-894d-4496-a23b-bd07446c4e04" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="547c9130-02b5-411b-a5e1-a7ee58375e82" />
+          </propertyInstance>
+          <elementDefinition Id="f971a9a4-cb8d-4336-9c3a-ba8b6d3dbf6e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="3d429eda-6ad8-4910-b87d-11593a038aa5">
+          <propertyInstance Id="f8144687-f94a-493b-8f21-6700657c52b8" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="1cbb17e7-2002-4d98-9b43-6c70423c939f" />
+          </propertyInstance>
+          <elementDefinition Id="a81e59de-7434-4a99-a37e-c1ba3b9f09a2" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="b722319a-eeea-43e9-aeb5-7555c142be4e">
+          <propertyInstance Id="22546ffc-5966-4871-9107-969f45068163" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="718e5a33-26df-4548-9417-c2f837519f59" />
+          </propertyInstance>
+          <elementDefinition Id="21f41935-8494-418e-8cef-27c1fee8ecc0" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="bd844675-163c-4f31-b1e5-3ba187a2ee3a">
+          <propertyInstance Id="fa44de15-e9b1-4a33-8370-1c3193930d99" name="Parameters">
+            <elementDefinition Id="ebe23c11-8430-4693-a3c9-3fc34e5f4937" />
+          </propertyInstance>
+          <elementDefinition Id="8d70f634-2c6c-4131-ae2e-8fdde77a12ab" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
   <profileInstances>
-    <packageHasProfileInstances Id="6e9c52f7-83ed-4d1a-b10b-e02149049689">
-      <profileInstance Id="6277dea5-79f7-4e01-bc34-62f804dc050b" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="1f082409-5711-42c6-9285-3da8300e1da4">
+      <profileInstance Id="50f279cb-b544-472a-9000-8b0ee25ef4a4" name="CSharpProfile">
+        <elementDefinition Id="0ecb4ca8-fc15-49e6-ada6-09af2cc350af" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      <elementDefinition Id="2df13f62-dc3e-411a-9b17-ecb7217113dc" />
     </packageHasProfileInstances>
-    <packageHasProfileInstances Id="616a45e1-a334-494f-9ca8-3ae83ed027fc">
-      <profileInstance Id="1332f710-885f-46c0-ac1f-13a0902431a8" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+    <packageHasProfileInstances Id="fcb3bb28-7bd8-4211-a71b-1c2dd35e6de0">
+      <profileInstance Id="cfe1e4b2-918a-441f-be80-9d4578167b13" name="TextTemplateBindings">
+        <elementDefinition Id="68d4d7d5-cbe4-409d-b96e-fe4cdbd82fd8" />
       </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="ce655b95-7ba6-4642-b34f-a2bba306e2cc" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
@@ -157,16 +229,16 @@
               <lifelineMoniker Id="5d12e01d-4322-4a76-8c59-7f3caa903d0b" LastKnownName="Phone" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="cb26a665-fa3f-4240-8de0-ce519b3a148d" name="MessageOccurrenceSpecification25">
-            <elementDefinition Id="82fff1d9-25df-4698-b042-c6034b65e02a" />
-            <covered>
-              <lifelineMoniker Id="61b87447-3d3b-41bb-8d6c-2b3ec356d166" LastKnownName="Bluetooth Connection" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="51ab4b2d-bd84-4e9e-bd63-2d57f0aa509a" name="MessageOccurrenceSpecification26">
             <elementDefinition Id="3583049a-b5ce-49b5-abd0-02e7d9659120" />
             <covered>
               <lifelineMoniker Id="5d12e01d-4322-4a76-8c59-7f3caa903d0b" LastKnownName="Phone" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="cb26a665-fa3f-4240-8de0-ce519b3a148d" name="MessageOccurrenceSpecification25">
+            <elementDefinition Id="82fff1d9-25df-4698-b042-c6034b65e02a" />
+            <covered>
+              <lifelineMoniker Id="61b87447-3d3b-41bb-8d6c-2b3ec356d166" LastKnownName="Bluetooth Connection" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="a9f5a3b7-e16a-45b1-981c-de2928c4f083" name="MessageOccurrenceSpecification27">
@@ -330,16 +402,16 @@
               <lifelineMoniker Id="5d12e01d-4322-4a76-8c59-7f3caa903d0b" LastKnownName="Phone" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="81276cd8-2916-4676-be59-38c043911fc7" name="MessageOccurrenceSpecification10">
-            <elementDefinition Id="787abe24-6e01-4a1d-b5eb-b26ff8d17433" />
-            <covered>
-              <lifelineMoniker Id="5d12e01d-4322-4a76-8c59-7f3caa903d0b" LastKnownName="Phone" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="2f69197f-58a6-4c6f-a615-b6c7672ecdef" name="MessageOccurrenceSpecification9">
             <elementDefinition Id="3613367c-157b-43ee-86cb-c22a499120d5" />
             <covered>
               <lifelineMoniker Id="781ef1a2-55be-414e-9754-b04fbce35eb4" LastKnownName="PC" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="81276cd8-2916-4676-be59-38c043911fc7" name="MessageOccurrenceSpecification10">
+            <elementDefinition Id="787abe24-6e01-4a1d-b5eb-b26ff8d17433" />
+            <covered>
+              <lifelineMoniker Id="5d12e01d-4322-4a76-8c59-7f3caa903d0b" LastKnownName="Phone" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="5c4c2cdf-5f85-4d60-9c6b-7e580b73ebaf" name="MessageOccurrenceSpecification12">
@@ -466,16 +538,16 @@
               <lifelineMoniker Id="5d12e01d-4322-4a76-8c59-7f3caa903d0b" LastKnownName="Phone" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="9ac7434b-5ce6-419b-a523-e68f8e1269a4" name="MessageOccurrenceSpecification34">
-            <elementDefinition Id="f325b2b3-576d-4abd-bc75-0309a24566e0" />
-            <covered>
-              <lifelineMoniker Id="5d12e01d-4322-4a76-8c59-7f3caa903d0b" LastKnownName="Phone" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="002f84bc-b3ee-47f7-8f2c-5fef2a8c0ddb" name="MessageOccurrenceSpecification33">
             <elementDefinition Id="770593d9-34fe-40e0-b974-8004fb70e9cc" />
             <covered>
               <lifelineMoniker Id="61b87447-3d3b-41bb-8d6c-2b3ec356d166" LastKnownName="Bluetooth Connection" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="9ac7434b-5ce6-419b-a523-e68f8e1269a4" name="MessageOccurrenceSpecification34">
+            <elementDefinition Id="f325b2b3-576d-4abd-bc75-0309a24566e0" />
+            <covered>
+              <lifelineMoniker Id="5d12e01d-4322-4a76-8c59-7f3caa903d0b" LastKnownName="Phone" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="6fc47331-b213-4f42-bc72-59cf6c2366ad" name="MessageOccurrenceSpecification35">
@@ -602,16 +674,16 @@
               <lifelineMoniker Id="781ef1a2-55be-414e-9754-b04fbce35eb4" LastKnownName="PC" />
             </covered>
           </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="0f13daa9-ac05-4629-8481-1d0f37f3d4b1" name="MessageOccurrenceSpecification43">
-            <elementDefinition Id="1ed621a0-5e40-4672-b7b4-435f09b65d7c" />
-            <covered>
-              <lifelineMoniker Id="781ef1a2-55be-414e-9754-b04fbce35eb4" LastKnownName="PC" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="9a17f1b1-c1f9-41f9-a8e2-411a61d9330d" name="MessageOccurrenceSpecification44">
             <elementDefinition Id="9dbb1100-58e0-4bd4-9add-b1fa15db6bc1" />
             <covered>
               <lifelineMoniker Id="95ce67f6-5895-4887-9516-6b1a95f596e5" LastKnownName="User" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="0f13daa9-ac05-4629-8481-1d0f37f3d4b1" name="MessageOccurrenceSpecification43">
+            <elementDefinition Id="1ed621a0-5e40-4672-b7b4-435f09b65d7c" />
+            <covered>
+              <lifelineMoniker Id="781ef1a2-55be-414e-9754-b04fbce35eb4" LastKnownName="PC" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="98e870ef-ec5d-420a-91ca-9245620b9d00" name="ExecutionOccurrenceSpecification24">
@@ -937,5 +1009,19 @@
   </packagedElements>
   <package Id="a8d9ad2c-f91a-4842-9bdd-6b9fc3616c36" name="UMLDiagrams">
     <elementDefinition Id="c73459c3-493e-4b80-86eb-2061ad4501d0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="6e9c52f7-83ed-4d1a-b10b-e02149049689">
+        <profileInstance Id="6277dea5-79f7-4e01-bc34-62f804dc050b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="616a45e1-a334-494f-9ca8-3ae83ed027fc">
+        <profileInstance Id="1332f710-885f-46c0-ac1f-13a0902431a8" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </SequenceDesignerModel>
