@@ -16,6 +16,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidMessenger", "Android
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluetoothMessengerLib", "BluetoothMessengerLib\BluetoothMessengerLib.csproj", "{089D8096-2614-4925-8C00-67D50D6DB4A5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{54F0E8BB-40B7-48CE-8E36-3F45B5E40D5A}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\Icon.ai = Resources\Icon.ai
+		Resources\Icon.png = Resources\Icon.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
