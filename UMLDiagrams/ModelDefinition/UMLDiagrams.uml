@@ -3,6 +3,88 @@
   dslVersion="1.0.0.0"
   Id="c73459c3-493e-4b80-86eb-2061ad4501d0"
   name="UMLDiagrams" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <appliedStereotypesInternal>
+    <stereotypeInstance
+      Id="876d07fc-371c-4917-8cee-28f53d113345"
+      name="namespace"
+      profile="CSharpProfile">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="7bce4a4e-f1ef-48a6-9c80-17c4d33cd7ca">
+          <propertyInstance
+            Id="d3ecf66f-21a8-4ae9-a854-a4dd4d0b7627"
+            name="BaseName" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="984f8608-f4dc-4e4d-b28d-51d2c04e847a">
+          <propertyInstance
+            Id="81447930-a690-4eab-9ab3-dd715203ecba"
+            name="ClrAttributes" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="089efacf-d8ac-4f88-856d-fd53e0f844cd">
+          <propertyInstance
+            Id="e13ec832-3955-4e08-89c2-c53c79336fd7"
+            name="Usings" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance
+      Id="5ee5f259-6b8f-4cbe-b6d3-7c6884309226"
+      name="TextTemplateBindings"
+      profile="TextTemplateBindings">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="b01e69f6-1a31-4b59-bfdc-858ff0458d0e">
+          <propertyInstance
+            Id="b48d58ed-4e13-48d1-8e5a-0181d990fb57"
+            name="Alias"
+            value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="7140bda6-af89-4489-8fd2-62bacca7022e">
+          <propertyInstance
+            Id="b68d5c24-850a-4682-8125-97fcaf891af7"
+            name="TemplateFilePath"
+            value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="ffb8a226-610c-43c2-8366-df67c9333e7c">
+          <propertyInstance
+            Id="0c796163-4191-4a86-bd14-e9f14fc8e6fa"
+            name="ProjectPath"
+            value="ClassTemplate=..\UMLDiagramsLib\UMLDiagramsLib.csproj|EnumTemplate=..\UMLDiagramsLib\UMLDiagramsLib.csproj|InterfaceTemplate=..\UMLDiagramsLib\UMLDiagramsLib.csproj|StructTemplate=..\UMLDiagramsLib\UMLDiagramsLib.csproj" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="f971a9a4-cb8d-4336-9c3a-ba8b6d3dbf6e">
+          <propertyInstance
+            Id="547c9130-02b5-411b-a5e1-a7ee58375e82"
+            name="TargetDirectory"
+            value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="a81e59de-7434-4a99-a37e-c1ba3b9f09a2">
+          <propertyInstance
+            Id="1cbb17e7-2002-4d98-9b43-6c70423c939f"
+            name="TargetName"
+            value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="21f41935-8494-418e-8cef-27c1fee8ecc0">
+          <propertyInstance
+            Id="718e5a33-26df-4548-9417-c2f837519f59"
+            name="Overwrite"
+            value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="8d70f634-2c6c-4131-ae2e-8fdde77a12ab">
+          <propertyInstance
+            Id="ebe23c11-8430-4693-a3c9-3fc34e5f4937"
+            name="Parameters" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -15,6 +97,18 @@
       <profileInstance
         Id="532ea607-fb19-44b8-8502-3351b05452be"
         name="StandardProfileL3" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="2df13f62-dc3e-411a-9b17-ecb7217113dc">
+      <profileInstance
+        Id="0ecb4ca8-fc15-49e6-ada6-09af2cc350af"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="ce655b95-7ba6-4642-b34f-a2bba306e2cc">
+      <profileInstance
+        Id="68d4d7d5-cbe4-409d-b96e-fe4cdbd82fd8"
+        name="TextTemplateBindings" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
@@ -2290,24 +2384,28 @@
             interactionOperator="Loop">
             <coveredLifelines>
               <lifelineMoniker
+                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+                LastKnownName="Application Launch"
+                LastKnownLocation="UMLDiagrams.uml" />
+              <lifelineMoniker
                 Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
                 LastKnownName="Conversation List"
                 LastKnownLocation="UMLDiagrams.uml" />
               <lifelineMoniker
-                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
-                LastKnownName="Application Launch"
+                Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
+                LastKnownName="Conversation"
                 LastKnownLocation="UMLDiagrams.uml" />
               <lifelineMoniker
                 Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                 LastKnownName="Message"
                 LastKnownLocation="UMLDiagrams.uml" />
               <lifelineMoniker
-                Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
-                LastKnownName="Contact List"
-                LastKnownLocation="UMLDiagrams.uml" />
-              <lifelineMoniker
                 Id="1df34889-c480-44b7-9a93-02cca4fc8439"
                 LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+              <lifelineMoniker
+                Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
+                LastKnownName="Contact List"
                 LastKnownLocation="UMLDiagrams.uml" />
               <lifelineMoniker
                 Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
@@ -2317,10 +2415,6 @@
                 Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
                 LastKnownName="Media"
                 LastKnownLocation="UMLDiagrams.uml" />
-              <lifelineMoniker
-                Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
-                LastKnownName="Conversation"
-                LastKnownLocation="UMLDiagrams.uml" />
             </coveredLifelines>
             <operands>
               <interactionOperand
@@ -2328,24 +2422,28 @@
                 name="InteractionOperand1">
                 <coveredLifelines>
                   <lifelineMoniker
+                    Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+                    LastKnownName="Application Launch"
+                    LastKnownLocation="UMLDiagrams.uml" />
+                  <lifelineMoniker
                     Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
                     LastKnownName="Conversation List"
                     LastKnownLocation="UMLDiagrams.uml" />
                   <lifelineMoniker
-                    Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
-                    LastKnownName="Application Launch"
+                    Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
+                    LastKnownName="Conversation"
                     LastKnownLocation="UMLDiagrams.uml" />
                   <lifelineMoniker
                     Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                     LastKnownName="Message"
                     LastKnownLocation="UMLDiagrams.uml" />
                   <lifelineMoniker
-                    Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
-                    LastKnownName="Contact List"
-                    LastKnownLocation="UMLDiagrams.uml" />
-                  <lifelineMoniker
                     Id="1df34889-c480-44b7-9a93-02cca4fc8439"
                     LastKnownName="Contact"
+                    LastKnownLocation="UMLDiagrams.uml" />
+                  <lifelineMoniker
+                    Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
+                    LastKnownName="Contact List"
                     LastKnownLocation="UMLDiagrams.uml" />
                   <lifelineMoniker
                     Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
@@ -2355,10 +2453,6 @@
                     Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
                     LastKnownName="Media"
                     LastKnownLocation="UMLDiagrams.uml" />
-                  <lifelineMoniker
-                    Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
-                    LastKnownName="Conversation"
-                    LastKnownLocation="UMLDiagrams.uml" />
                 </coveredLifelines>
                 <fragments>
                   <combinedFragment
@@ -2367,28 +2461,8 @@
                     interactionOperator="Alt">
                     <coveredLifelines>
                       <lifelineMoniker
-                        Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                        LastKnownName="Message"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
                         Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                         LastKnownName="Application Launch"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
-                        Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
-                        LastKnownName="Contact List"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
-                        Id="1df34889-c480-44b7-9a93-02cca4fc8439"
-                        LastKnownName="Contact"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
-                        Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                        LastKnownName="Message Content"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
-                        Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                        LastKnownName="Media"
                         LastKnownLocation="UMLDiagrams.uml" />
                       <lifelineMoniker
                         Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
@@ -2398,6 +2472,26 @@
                         Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
                         LastKnownName="Conversation"
                         LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                        LastKnownName="Message"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="1df34889-c480-44b7-9a93-02cca4fc8439"
+                        LastKnownName="Contact"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
+                        LastKnownName="Contact List"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                        LastKnownName="Message Content"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                        LastKnownName="Media"
+                        LastKnownLocation="UMLDiagrams.uml" />
                     </coveredLifelines>
                     <operands>
                       <interactionOperand
@@ -2405,28 +2499,8 @@
                         name="InteractionOperand1">
                         <coveredLifelines>
                           <lifelineMoniker
-                            Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                            LastKnownName="Message"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
                             Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                             LastKnownName="Application Launch"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
-                            LastKnownName="Contact List"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="1df34889-c480-44b7-9a93-02cca4fc8439"
-                            LastKnownName="Contact"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                            LastKnownName="Message Content"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                            LastKnownName="Media"
                             LastKnownLocation="UMLDiagrams.uml" />
                           <lifelineMoniker
                             Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
@@ -2436,6 +2510,26 @@
                             Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
                             LastKnownName="Conversation"
                             LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                            LastKnownName="Message"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="1df34889-c480-44b7-9a93-02cca4fc8439"
+                            LastKnownName="Contact"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
+                            LastKnownName="Contact List"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                            LastKnownName="Message Content"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                            LastKnownName="Media"
+                            LastKnownLocation="UMLDiagrams.uml" />
                         </coveredLifelines>
                         <fragments>
                           <combinedFragment
@@ -2444,12 +2538,12 @@
                             interactionOperator="Par">
                             <coveredLifelines>
                               <lifelineMoniker
-                                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                                LastKnownName="Message Content"
-                                LastKnownLocation="UMLDiagrams.uml" />
-                              <lifelineMoniker
                                 Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                                 LastKnownName="Message"
+                                LastKnownLocation="UMLDiagrams.uml" />
+                              <lifelineMoniker
+                                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                                LastKnownName="Message Content"
                                 LastKnownLocation="UMLDiagrams.uml" />
                               <lifelineMoniker
                                 Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
@@ -2462,12 +2556,12 @@
                                 name="InteractionOperand1">
                                 <coveredLifelines>
                                   <lifelineMoniker
-                                    Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                                    LastKnownName="Message Content"
-                                    LastKnownLocation="UMLDiagrams.uml" />
-                                  <lifelineMoniker
                                     Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                                     LastKnownName="Message"
+                                    LastKnownLocation="UMLDiagrams.uml" />
+                                  <lifelineMoniker
+                                    Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                                    LastKnownName="Message Content"
                                     LastKnownLocation="UMLDiagrams.uml" />
                                   <lifelineMoniker
                                     Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
@@ -2510,12 +2604,12 @@
                                 name="InteractionOperand2">
                                 <coveredLifelines>
                                   <lifelineMoniker
-                                    Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                                    LastKnownName="Message Content"
-                                    LastKnownLocation="UMLDiagrams.uml" />
-                                  <lifelineMoniker
                                     Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                                     LastKnownName="Message"
+                                    LastKnownLocation="UMLDiagrams.uml" />
+                                  <lifelineMoniker
+                                    Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                                    LastKnownName="Message Content"
                                     LastKnownLocation="UMLDiagrams.uml" />
                                   <lifelineMoniker
                                     Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
@@ -2633,28 +2727,8 @@
                         name="InteractionOperand2">
                         <coveredLifelines>
                           <lifelineMoniker
-                            Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                            LastKnownName="Message"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
                             Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                             LastKnownName="Application Launch"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
-                            LastKnownName="Contact List"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="1df34889-c480-44b7-9a93-02cca4fc8439"
-                            LastKnownName="Contact"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                            LastKnownName="Message Content"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
-                            Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                            LastKnownName="Media"
                             LastKnownLocation="UMLDiagrams.uml" />
                           <lifelineMoniker
                             Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
@@ -2664,6 +2738,26 @@
                             Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
                             LastKnownName="Conversation"
                             LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                            LastKnownName="Message"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="1df34889-c480-44b7-9a93-02cca4fc8439"
+                            LastKnownName="Contact"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
+                            LastKnownName="Contact List"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                            LastKnownName="Message Content"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                            LastKnownName="Media"
+                            LastKnownLocation="UMLDiagrams.uml" />
                         </coveredLifelines>
                         <fragments>
                           <combinedFragment
@@ -2672,12 +2766,12 @@
                             interactionOperator="Par">
                             <coveredLifelines>
                               <lifelineMoniker
-                                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                                LastKnownName="Message Content"
-                                LastKnownLocation="UMLDiagrams.uml" />
-                              <lifelineMoniker
                                 Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                                 LastKnownName="Message"
+                                LastKnownLocation="UMLDiagrams.uml" />
+                              <lifelineMoniker
+                                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                                LastKnownName="Message Content"
                                 LastKnownLocation="UMLDiagrams.uml" />
                               <lifelineMoniker
                                 Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
@@ -2690,12 +2784,12 @@
                                 name="InteractionOperand1">
                                 <coveredLifelines>
                                   <lifelineMoniker
-                                    Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                                    LastKnownName="Message Content"
-                                    LastKnownLocation="UMLDiagrams.uml" />
-                                  <lifelineMoniker
                                     Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                                     LastKnownName="Message"
+                                    LastKnownLocation="UMLDiagrams.uml" />
+                                  <lifelineMoniker
+                                    Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                                    LastKnownName="Message Content"
                                     LastKnownLocation="UMLDiagrams.uml" />
                                   <lifelineMoniker
                                     Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
@@ -2738,12 +2832,12 @@
                                 name="InteractionOperand2">
                                 <coveredLifelines>
                                   <lifelineMoniker
-                                    Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                                    LastKnownName="Message Content"
-                                    LastKnownLocation="UMLDiagrams.uml" />
-                                  <lifelineMoniker
                                     Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                                     LastKnownName="Message"
+                                    LastKnownLocation="UMLDiagrams.uml" />
+                                  <lifelineMoniker
+                                    Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                                    LastKnownName="Message Content"
                                     LastKnownLocation="UMLDiagrams.uml" />
                                   <lifelineMoniker
                                     Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
@@ -2864,12 +2958,12 @@
                     interactionOperator="Loop">
                     <coveredLifelines>
                       <lifelineMoniker
-                        Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                        LastKnownName="Message"
-                        LastKnownLocation="UMLDiagrams.uml" />
-                      <lifelineMoniker
                         Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                         LastKnownName="Application Launch"
+                        LastKnownLocation="UMLDiagrams.uml" />
+                      <lifelineMoniker
+                        Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                        LastKnownName="Message"
                         LastKnownLocation="UMLDiagrams.uml" />
                     </coveredLifelines>
                     <operands>
@@ -2878,12 +2972,12 @@
                         name="InteractionOperand1">
                         <coveredLifelines>
                           <lifelineMoniker
-                            Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                            LastKnownName="Message"
-                            LastKnownLocation="UMLDiagrams.uml" />
-                          <lifelineMoniker
                             Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                             LastKnownName="Application Launch"
+                            LastKnownLocation="UMLDiagrams.uml" />
+                          <lifelineMoniker
+                            Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                            LastKnownName="Message"
                             LastKnownLocation="UMLDiagrams.uml" />
                         </coveredLifelines>
                         <fragments>
@@ -2893,12 +2987,12 @@
                             interactionOperator="Alt">
                             <coveredLifelines>
                               <lifelineMoniker
-                                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                                LastKnownName="Message"
-                                LastKnownLocation="UMLDiagrams.uml" />
-                              <lifelineMoniker
                                 Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                                 LastKnownName="Application Launch"
+                                LastKnownLocation="UMLDiagrams.uml" />
+                              <lifelineMoniker
+                                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                                LastKnownName="Message"
                                 LastKnownLocation="UMLDiagrams.uml" />
                             </coveredLifelines>
                             <operands>
@@ -2907,12 +3001,12 @@
                                 name="InteractionOperand1">
                                 <coveredLifelines>
                                   <lifelineMoniker
-                                    Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                                    LastKnownName="Message"
-                                    LastKnownLocation="UMLDiagrams.uml" />
-                                  <lifelineMoniker
                                     Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                                     LastKnownName="Application Launch"
+                                    LastKnownLocation="UMLDiagrams.uml" />
+                                  <lifelineMoniker
+                                    Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                                    LastKnownName="Message"
                                     LastKnownLocation="UMLDiagrams.uml" />
                                 </coveredLifelines>
                                 <guard>
@@ -2944,12 +3038,12 @@
                                 name="InteractionOperand2">
                                 <coveredLifelines>
                                   <lifelineMoniker
-                                    Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                                    LastKnownName="Message"
-                                    LastKnownLocation="UMLDiagrams.uml" />
-                                  <lifelineMoniker
                                     Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                                     LastKnownName="Application Launch"
+                                    LastKnownLocation="UMLDiagrams.uml" />
+                                  <lifelineMoniker
+                                    Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                                    LastKnownName="Message"
                                     LastKnownLocation="UMLDiagrams.uml" />
                                 </coveredLifelines>
                                 <guard>
@@ -3291,42 +3385,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="282dff7d-1c98-4416-a8d7-788b82aa9001"
-            name="OperandOccurrenceSpecification95">
+            Id="09b83109-7cb6-4712-b584-567eed9de4a6"
+            name="OperandOccurrenceSpecification89">
             <covered>
               <lifelineMoniker
-                Id="1df34889-c480-44b7-9a93-02cca4fc8439"
-                LastKnownName="Contact"
+                Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
+                LastKnownName="Contact List"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="103785c3-235b-4659-be30-bef4199ab9bc"
-            name="OperandOccurrenceSpecification81">
+            Id="ea247e7f-3de4-4744-b4d0-c2f43419d9a9"
+            name="OperandOccurrenceSpecification101">
             <covered>
               <lifelineMoniker
-                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                LastKnownName="Message"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="83652416-f78f-4774-a34e-e8e71f8a7354"
-            name="OperandOccurrenceSpecification107">
-            <covered>
-              <lifelineMoniker
-                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                LastKnownName="Media"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="0ba584df-30dd-4af6-a5c9-f16f95b67566"
-            name="OperandOccurrenceSpecification83">
-            <covered>
-              <lifelineMoniker
-                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
-                LastKnownName="Application Launch"
+                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                LastKnownName="Message Content"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3351,22 +3425,42 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="ea247e7f-3de4-4744-b4d0-c2f43419d9a9"
-            name="OperandOccurrenceSpecification101">
+            Id="83652416-f78f-4774-a34e-e8e71f8a7354"
+            name="OperandOccurrenceSpecification107">
             <covered>
               <lifelineMoniker
-                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                LastKnownName="Message Content"
+                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                LastKnownName="Media"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="09b83109-7cb6-4712-b584-567eed9de4a6"
-            name="OperandOccurrenceSpecification89">
+            Id="0ba584df-30dd-4af6-a5c9-f16f95b67566"
+            name="OperandOccurrenceSpecification83">
             <covered>
               <lifelineMoniker
-                Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
-                LastKnownName="Contact List"
+                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+                LastKnownName="Application Launch"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="103785c3-235b-4659-be30-bef4199ab9bc"
+            name="OperandOccurrenceSpecification81">
+            <covered>
+              <lifelineMoniker
+                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="282dff7d-1c98-4416-a8d7-788b82aa9001"
+            name="OperandOccurrenceSpecification95">
+            <covered>
+              <lifelineMoniker
+                Id="1df34889-c480-44b7-9a93-02cca4fc8439"
+                LastKnownName="Contact"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3531,22 +3625,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="694d1fd3-b3b2-4ba5-b313-a5829723e6bd"
-            name="MessageOccurrenceSpecification43">
-            <covered>
-              <lifelineMoniker
-                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                LastKnownName="Message"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="3bff07e7-9382-4a95-bfbf-af14fa8cbff3"
             name="MessageOccurrenceSpecification44">
             <covered>
               <lifelineMoniker
                 Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
                 LastKnownName="Contact List"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="694d1fd3-b3b2-4ba5-b313-a5829723e6bd"
+            name="MessageOccurrenceSpecification43">
+            <covered>
+              <lifelineMoniker
+                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                LastKnownName="Message"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3697,12 +3791,12 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="fd28f33c-372b-4f48-9ff3-42e4b6c9ec09"
-            name="OperandOccurrenceSpecification147">
+            Id="077856ad-db44-4b6e-8c8a-0617d4e151f1"
+            name="OperandOccurrenceSpecification139">
             <covered>
               <lifelineMoniker
-                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                LastKnownName="Media"
+                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                LastKnownName="Message Content"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3717,12 +3811,12 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="077856ad-db44-4b6e-8c8a-0617d4e151f1"
-            name="OperandOccurrenceSpecification139">
+            Id="fd28f33c-372b-4f48-9ff3-42e4b6c9ec09"
+            name="OperandOccurrenceSpecification147">
             <covered>
               <lifelineMoniker
-                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                LastKnownName="Message Content"
+                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                LastKnownName="Media"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3841,6 +3935,16 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
+            Id="86c10154-ce5f-4c4c-ad7a-bc6c70fdc18d"
+            name="OperandOccurrenceSpecification149">
+            <covered>
+              <lifelineMoniker
+                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                LastKnownName="Media"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="f2818463-669f-4a54-b4e6-60ab1a411d8a"
             name="OperandOccurrenceSpecification143">
             <covered>
@@ -3857,16 +3961,6 @@
               <lifelineMoniker
                 Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                 LastKnownName="Message"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="86c10154-ce5f-4c4c-ad7a-bc6c70fdc18d"
-            name="OperandOccurrenceSpecification149">
-            <covered>
-              <lifelineMoniker
-                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                LastKnownName="Media"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3955,22 +4049,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="f6e309da-e493-47dc-b7cc-a679eaec26e2"
-            name="OperandOccurrenceSpecification144">
-            <covered>
-              <lifelineMoniker
-                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                LastKnownName="Message Content"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="b2694046-ac83-4377-b517-a3a3b547479d"
             name="OperandOccurrenceSpecification150">
             <covered>
               <lifelineMoniker
                 Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
                 LastKnownName="Media"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="f6e309da-e493-47dc-b7cc-a679eaec26e2"
+            name="OperandOccurrenceSpecification144">
+            <covered>
+              <lifelineMoniker
+                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                LastKnownName="Message Content"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -3985,22 +4079,22 @@
             </covered>
           </operandOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="3ad759da-c5ff-43ac-b813-dbd1e0bb8f8d"
-            name="MessageOccurrenceSpecification42">
-            <covered>
-              <lifelineMoniker
-                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
-                LastKnownName="Application Launch"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="1eb1a2ba-f215-4393-bad3-b0849295a1e9"
             name="MessageOccurrenceSpecification41">
             <covered>
               <lifelineMoniker
                 Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                 LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3ad759da-c5ff-43ac-b813-dbd1e0bb8f8d"
+            name="MessageOccurrenceSpecification42">
+            <covered>
+              <lifelineMoniker
+                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+                LastKnownName="Application Launch"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4022,6 +4116,16 @@
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="be088030-d5d7-4dda-b2a7-b9a9a3541001"
+            name="OperandOccurrenceSpecification114">
+            <covered>
+              <lifelineMoniker
+                Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
+                LastKnownName="Conversation List"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
             Id="cbe45b33-7302-4a9f-bbad-8bdc7a7fc78a"
             name="OperandOccurrenceSpecification90">
@@ -4093,22 +4197,42 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="be088030-d5d7-4dda-b2a7-b9a9a3541001"
-            name="OperandOccurrenceSpecification114">
+            Id="f6228b91-46a0-4087-ba88-8729d6bb117b"
+            name="OperandOccurrenceSpecification119">
             <covered>
               <lifelineMoniker
-                Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
-                LastKnownName="Conversation List"
+                Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
+                LastKnownName="Conversation"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="a1490cab-20e6-414d-a1fc-49e282b73e73"
-            name="OperandOccurrenceSpecification109">
+            Id="c880a6e8-6998-4bb5-87fc-970c6c9f0091"
+            name="OperandOccurrenceSpecification103">
             <covered>
               <lifelineMoniker
-                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                LastKnownName="Media"
+                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                LastKnownName="Message Content"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="ad3210ce-b7b4-44f3-ba13-820aa603b922"
+            name="OperandOccurrenceSpecification87">
+            <covered>
+              <lifelineMoniker
+                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+                LastKnownName="Application Launch"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="e99458e5-a497-4888-bcd4-67b421bd7d08"
+            name="OperandOccurrenceSpecification91">
+            <covered>
+              <lifelineMoniker
+                Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
+                LastKnownName="Contact List"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -4133,52 +4257,22 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
+            Id="a1490cab-20e6-414d-a1fc-49e282b73e73"
+            name="OperandOccurrenceSpecification109">
+            <covered>
+              <lifelineMoniker
+                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                LastKnownName="Media"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="128d7951-7777-4927-9ed9-9e3c6c262577"
             name="OperandOccurrenceSpecification97">
             <covered>
               <lifelineMoniker
                 Id="1df34889-c480-44b7-9a93-02cca4fc8439"
                 LastKnownName="Contact"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="e99458e5-a497-4888-bcd4-67b421bd7d08"
-            name="OperandOccurrenceSpecification91">
-            <covered>
-              <lifelineMoniker
-                Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
-                LastKnownName="Contact List"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="ad3210ce-b7b4-44f3-ba13-820aa603b922"
-            name="OperandOccurrenceSpecification87">
-            <covered>
-              <lifelineMoniker
-                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
-                LastKnownName="Application Launch"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="c880a6e8-6998-4bb5-87fc-970c6c9f0091"
-            name="OperandOccurrenceSpecification103">
-            <covered>
-              <lifelineMoniker
-                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                LastKnownName="Message Content"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="f6228b91-46a0-4087-ba88-8729d6bb117b"
-            name="OperandOccurrenceSpecification119">
-            <covered>
-              <lifelineMoniker
-                Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
-                LastKnownName="Conversation"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -4233,16 +4327,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="6a7d3643-a2e2-4d55-8533-a4cbd6c38726"
-            name="MessageOccurrenceSpecification55">
-            <covered>
-              <lifelineMoniker
-                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
-                LastKnownName="Application Launch"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="6f8f3154-f9ea-45f2-b1c2-791587156b39"
             name="MessageOccurrenceSpecification56">
             <covered>
@@ -4253,12 +4337,12 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="88792aab-e6be-4dce-9bd4-85893f92f019"
-            name="MessageOccurrenceSpecification57">
+            Id="6a7d3643-a2e2-4d55-8533-a4cbd6c38726"
+            name="MessageOccurrenceSpecification55">
             <covered>
               <lifelineMoniker
-                Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
-                LastKnownName="Conversation List"
+                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+                LastKnownName="Application Launch"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4269,6 +4353,16 @@
               <lifelineMoniker
                 Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                 LastKnownName="Application Launch"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="88792aab-e6be-4dce-9bd4-85893f92f019"
+            name="MessageOccurrenceSpecification57">
+            <covered>
+              <lifelineMoniker
+                Id="01cf2387-f044-4f36-9039-f9eb625a51f4"
+                LastKnownName="Conversation List"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4713,22 +4807,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="2ad89c6e-3f6a-4f66-ae40-c65d6e9293d2"
-            name="MessageOccurrenceSpecification70">
-            <covered>
-              <lifelineMoniker
-                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                LastKnownName="Media"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="8072ce35-48e5-4894-a2f6-7654aac264f0"
             name="MessageOccurrenceSpecification69">
             <covered>
               <lifelineMoniker
                 Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                 LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2ad89c6e-3f6a-4f66-ae40-c65d6e9293d2"
+            name="MessageOccurrenceSpecification70">
+            <covered>
+              <lifelineMoniker
+                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                LastKnownName="Media"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4819,42 +4913,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="c78eecaa-7232-440b-a51c-af6f82a2459c"
-            name="OperandOccurrenceSpecification104">
+            Id="e6a6c887-7934-4455-be0c-240a264e9f25"
+            name="OperandOccurrenceSpecification88">
             <covered>
               <lifelineMoniker
-                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
-                LastKnownName="Message Content"
+                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+                LastKnownName="Application Launch"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="80d5ef48-ee8d-4df6-8212-31fd1566c984"
-            name="OperandOccurrenceSpecification120">
+            Id="624dfc2b-123e-4b1d-b464-a8e4711345b0"
+            name="OperandOccurrenceSpecification92">
             <covered>
               <lifelineMoniker
-                Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
-                LastKnownName="Conversation"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="6a0270ce-ed10-4f4c-a7cd-ef0a9d10c8b3"
-            name="OperandOccurrenceSpecification98">
-            <covered>
-              <lifelineMoniker
-                Id="1df34889-c480-44b7-9a93-02cca4fc8439"
-                LastKnownName="Contact"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="2bf34ee0-401b-43c4-900b-dbab5874d72f"
-            name="OperandOccurrenceSpecification110">
-            <covered>
-              <lifelineMoniker
-                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                LastKnownName="Media"
+                Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
+                LastKnownName="Contact List"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -4879,22 +4953,42 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="e6a6c887-7934-4455-be0c-240a264e9f25"
-            name="OperandOccurrenceSpecification88">
+            Id="6a0270ce-ed10-4f4c-a7cd-ef0a9d10c8b3"
+            name="OperandOccurrenceSpecification98">
             <covered>
               <lifelineMoniker
-                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
-                LastKnownName="Application Launch"
+                Id="1df34889-c480-44b7-9a93-02cca4fc8439"
+                LastKnownName="Contact"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="624dfc2b-123e-4b1d-b464-a8e4711345b0"
-            name="OperandOccurrenceSpecification92">
+            Id="2bf34ee0-401b-43c4-900b-dbab5874d72f"
+            name="OperandOccurrenceSpecification110">
             <covered>
               <lifelineMoniker
-                Id="aa9841d9-dc79-46f0-9ed7-f508461021e8"
-                LastKnownName="Contact List"
+                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                LastKnownName="Media"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="80d5ef48-ee8d-4df6-8212-31fd1566c984"
+            name="OperandOccurrenceSpecification120">
+            <covered>
+              <lifelineMoniker
+                Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
+                LastKnownName="Conversation"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="c78eecaa-7232-440b-a51c-af6f82a2459c"
+            name="OperandOccurrenceSpecification104">
+            <covered>
+              <lifelineMoniker
+                Id="2c5acdee-e41f-4c81-be0a-b4713a1a5c11"
+                LastKnownName="Message Content"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -4989,22 +5083,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="2bd3331c-29f4-41f1-9e96-eeaffcd42142"
-            name="MessageOccurrenceSpecification72">
-            <covered>
-              <lifelineMoniker
-                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                LastKnownName="Message"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="8bf0e65a-8b83-425c-8e6a-4fd052dec276"
             name="MessageOccurrenceSpecification71">
             <covered>
               <lifelineMoniker
                 Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                 LastKnownName="Application Launch"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2bd3331c-29f4-41f1-9e96-eeaffcd42142"
+            name="MessageOccurrenceSpecification72">
+            <covered>
+              <lifelineMoniker
+                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                LastKnownName="Message"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5137,22 +5231,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="9a5c921b-9f20-40f3-898e-4ef04f97f724"
-            name="MessageOccurrenceSpecification83">
-            <covered>
-              <lifelineMoniker
-                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
-                LastKnownName="Application Launch"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="ad6c577d-9366-443a-a17a-358fcbcaa612"
             name="MessageOccurrenceSpecification84">
             <covered>
               <lifelineMoniker
                 Id="491b74f7-de5e-4be3-a283-58c7986d728a"
                 LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9a5c921b-9f20-40f3-898e-4ef04f97f724"
+            name="MessageOccurrenceSpecification83">
+            <covered>
+              <lifelineMoniker
+                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+                LastKnownName="Application Launch"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5285,22 +5379,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="a6c073de-b8fa-4237-852e-3d0d001b8408"
-            name="MessageOccurrenceSpecification89">
-            <covered>
-              <lifelineMoniker
-                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                LastKnownName="Message"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="fc391f32-77bb-446d-a6ec-d39855a80c25"
             name="MessageOccurrenceSpecification90">
             <covered>
               <lifelineMoniker
                 Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
                 LastKnownName="Application Launch"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a6c073de-b8fa-4237-852e-3d0d001b8408"
+            name="MessageOccurrenceSpecification89">
+            <covered>
+              <lifelineMoniker
+                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                LastKnownName="Message"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5343,46 +5437,6 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="c25df49b-e1dc-4cfa-a557-a39481ef49d0"
-            name="OperandOccurrenceSpecification78">
-            <covered>
-              <lifelineMoniker
-                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
-                LastKnownName="Application Launch"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="6adc03d7-1922-4bf6-a954-9841d3b14d5f"
-            name="OperandOccurrenceSpecification122">
-            <covered>
-              <lifelineMoniker
-                Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
-                LastKnownName="Conversation"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="472067cf-7318-4ed8-8c3d-970ec3541558"
-            name="OperandOccurrenceSpecification112">
-            <covered>
-              <lifelineMoniker
-                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
-                LastKnownName="Media"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="bdb3d22e-e75e-44d1-9767-6a7775edebd5"
-            name="OperandOccurrenceSpecification80">
-            <covered>
-              <lifelineMoniker
-                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
-                LastKnownName="Message"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="bf473400-e78c-44c2-b237-9b4420e34b58"
             name="OperandOccurrenceSpecification106">
             <covered>
@@ -5403,12 +5457,52 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
+            Id="bdb3d22e-e75e-44d1-9767-6a7775edebd5"
+            name="OperandOccurrenceSpecification80">
+            <covered>
+              <lifelineMoniker
+                Id="491b74f7-de5e-4be3-a283-58c7986d728a"
+                LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="58cefc63-94e4-49e1-b5e7-fb618bdbbb04"
             name="OperandOccurrenceSpecification100">
             <covered>
               <lifelineMoniker
                 Id="1df34889-c480-44b7-9a93-02cca4fc8439"
                 LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="6adc03d7-1922-4bf6-a954-9841d3b14d5f"
+            name="OperandOccurrenceSpecification122">
+            <covered>
+              <lifelineMoniker
+                Id="1e9740f3-3600-4bc6-94db-db86dbf9b9cb"
+                LastKnownName="Conversation"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="c25df49b-e1dc-4cfa-a557-a39481ef49d0"
+            name="OperandOccurrenceSpecification78">
+            <covered>
+              <lifelineMoniker
+                Id="1552ac3d-418f-4aba-9d98-16d0d7e65fef"
+                LastKnownName="Application Launch"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="472067cf-7318-4ed8-8c3d-970ec3541558"
+            name="OperandOccurrenceSpecification112">
+            <covered>
+              <lifelineMoniker
+                Id="ded70671-b5bb-4a77-8d90-02115ea603d9"
+                LastKnownName="Media"
                 LastKnownLocation="UMLDiagrams.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -10211,6 +10305,1084 @@
       <executionEvent
         Id="839a6971-b7bb-433d-8cbf-8b3b5b98c0d2"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="baa8d4c3-33aa-4cc8-8534-419956a5e0e4"
+        name="ContactList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3236a813-8b72-49cc-ae30-e2aaab6b9439"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="da4ed04f-bd1f-422b-943b-71452b7781e6">
+                <propertyInstance
+                  Id="fdf3b92b-80e7-4ef5-a093-510d4bb05c8d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="65e8fb5a-2cf4-4b17-8f18-4909f5653fc8">
+                <propertyInstance
+                  Id="eda65cf5-4bb9-47f0-92cd-8c7fc3ce46aa"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eadc18d1-f039-48d9-9302-349c6a853d0f">
+                <propertyInstance
+                  Id="8559fff0-0880-430c-a3fc-41f69f4661f1"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5a996c96-f873-43b3-9879-20bbcfdbc225">
+                <propertyInstance
+                  Id="9be35325-b41f-4b1f-b52e-6b25af259b09"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1f23acd9-2948-41d4-ba75-1be304f24d76">
+                <propertyInstance
+                  Id="db47b4f9-19eb-4136-8107-2bf337511728"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="cdfa9501-f95d-4df2-b397-0466085f5fdd"
+            isDerived="false"
+            sourceEndRoleName="ContactList"
+            targetEndRoleName="Contact"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="42cdf442-578f-470f-a202-0a8d6edcd2b2"
+              LastKnownName="Contact"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="76cc27a2-696c-48aa-bd70-d16cf5dfe9f0"
+                  name="ContactList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c11c1120-668e-43bb-82e4-65d7550ea122"
+                  name="Contact"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="3ba2aa5e-8c35-4f0c-a38e-fb8078598aaa"
+            name="contacts"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9bbe3585-0d92-47b4-bb7c-19d273b3d128"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1d0238f3-4103-4de0-a121-82bd9f1d5841">
+                    <propertyInstance
+                      Id="a9fe14b4-4b9f-437f-85c3-29486c6519c2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76b6fab2-402c-4db7-bb5a-1932e085e19b">
+                    <propertyInstance
+                      Id="39d08a57-b71f-4042-8898-d69fb415841a"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1907dcfd-b953-4603-8266-75763cd4e337">
+                    <propertyInstance
+                      Id="43aa2777-5f94-49be-8aa4-7ba51d6e5f12"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61e75432-0447-4b09-a942-ca79c77182b9">
+                    <propertyInstance
+                      Id="ca92614e-9f66-4724-8e4a-63306922951c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f0a67e0e-9cad-440e-83cc-7dba3723832c">
+                    <propertyInstance
+                      Id="141e6ef8-3de7-4110-aa4e-2c8c558d736d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1950b178-2619-4585-811a-c6ffbc85d973">
+                    <propertyInstance
+                      Id="269bc407-84bb-497a-9830-92e820b90214"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81aeae8d-862c-4c10-a546-ba65c922fdde">
+                    <propertyInstance
+                      Id="65dc0478-c497-4f75-8391-74094198efa4"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d47b0622-9fb7-4a6c-bdaa-2d3282b44b37"
+                LastKnownName="List&lt;Contact&gt;"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b2a9a8a8-b358-40de-b7bb-cc3130130caf"
+            name="generateContacts"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c0039cb3-3218-4e7d-9cd0-fbad4c4df932"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d47b0622-9fb7-4a6c-bdaa-2d3282b44b37"
+                      LastKnownName="List&lt;Contact&gt;"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4640b904-4de2-4f35-b733-ec29c000da04"
+            name="getContact"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d8ddc037-6d32-4e7c-b7d5-5c91d63f863b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="42cdf442-578f-470f-a202-0a8d6edcd2b2"
+                      LastKnownName="Contact"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="090990b8-c72a-4bf5-9ee3-a21345307680"
+                  name="location"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1770af4a-66a2-46bc-a1ed-f27b7bfdf847"
+                      LastKnownName="int"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="42cdf442-578f-470f-a202-0a8d6edcd2b2"
+        name="Contact"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c9fd378b-1e83-4757-9742-2cfe846396e5"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9ac69ea1-4f93-450d-a287-22664cf17493">
+                <propertyInstance
+                  Id="1393d71e-0d0e-416f-a3fa-23356250a905"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c64ff1f7-54f5-4777-8aea-2e808135c39c">
+                <propertyInstance
+                  Id="0a2e00a6-6779-4106-9168-a0c4d8b6717b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="daa20c9e-db5d-4c10-98f3-5ea7f01fe1e5">
+                <propertyInstance
+                  Id="e07697b5-32d3-4258-8a44-83317101a2dd"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fd804931-b502-4741-a2b3-85bf18f4f1ea">
+                <propertyInstance
+                  Id="0c0f70e6-f906-414d-bdda-03dc8bec7c51"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="45440b81-5361-49f5-a140-186e81d10b02">
+                <propertyInstance
+                  Id="7fd0be61-279b-450c-83f4-20cfce7a1d9f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="dfb5658d-2190-41d2-ae59-3f2941168b6d"
+            isDerived="false"
+            sourceEndRoleName="Contact"
+            targetEndRoleName="PhoneNumber"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="293cf5ce-66dd-4023-9d31-7519f418487f"
+              LastKnownName="PhoneNumber"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="05f513fe-4054-47b4-a2a1-05067a05b87b"
+                  name="Contact"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="06134252-d3d3-45ad-ad12-1fedc8f7c5f9"
+                  name="PhoneNumber"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="7eb08da5-b458-45f7-89cb-7a51d4ffc588"
+            name="name"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1fe0c686-5a48-4a12-8be8-323818be60d6"
+            name="picture"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7400cf86-19c4-49c2-94a1-cdbce95c5508"
+                LastKnownName="???"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9c0878a0-4fb4-4826-9028-8085fb5f09db"
+            name="numbers"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fee271fd-2e4e-4c14-8098-3e0be7f80065"
+                LastKnownName="List&lt;PhoneNum&gt;"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+        name="Message"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="feefe74e-20cd-4123-a80b-44c7b0ea940e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="78b6175b-29e3-4d51-be99-3865eec299e5">
+                <propertyInstance
+                  Id="5280c625-5854-4ebc-bfa7-3b82d21ac8aa"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eb17f570-1737-4028-a3c6-9b3c032a872d">
+                <propertyInstance
+                  Id="cd69be05-4fd3-41aa-91e5-178cd46f9624"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="efda398e-1299-4c16-b231-bda0f9d274b5">
+                <propertyInstance
+                  Id="186e51bc-2a90-4e1b-bdc9-e06868dfe87d"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="43a316f8-1de4-4ac6-9c8e-11e52d88b3c7">
+                <propertyInstance
+                  Id="8c1ba73e-24c8-4502-867d-788a0295c64e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3eb0bf01-7fa8-461f-ba6e-a9003b7e3a6b">
+                <propertyInstance
+                  Id="790841d8-db04-4255-a390-18b4e31b25de"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="1ac9d841-9cfb-4e92-add9-1fdc43b2b039"
+            name="text"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                LastKnownName="string"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="73c78bac-26f4-4991-b236-0753ba003777"
+            name="multi"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7400cf86-19c4-49c2-94a1-cdbce95c5508"
+                LastKnownName="???"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5a313ca5-298f-4789-9a9f-3bb684ca979d"
+            name="phoneNum"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                LastKnownName="string"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f2a7709e-335d-471c-9f9d-d10e3272904c"
+            name="isMMS"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                LastKnownName="bool"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="85e851e9-de06-43c3-b367-1eaec8e8ae18"
+        name="Connection"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="36989873-0add-48ab-b4d9-be13e0d792eb"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d2148920-cfdd-4cfe-b4f9-c6e3669cf8b9">
+                <propertyInstance
+                  Id="a5108c2f-b1f2-43b1-b56b-9396a9b21a2b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="003ae14c-cef6-40e7-9df3-c375895a995e">
+                <propertyInstance
+                  Id="e719470d-eff0-4b5e-9083-4097dfef52dc"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="649748bb-2bef-440f-8577-b69312ed34c9">
+                <propertyInstance
+                  Id="06a862c1-935e-487d-a87c-b436c5c3e787"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5a40d318-475e-4d31-a2fa-b13cba0f2693">
+                <propertyInstance
+                  Id="a2800bdb-7be0-4f28-8eaa-9a0f856698bb"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8a0fe6d3-2919-4f16-a80c-41fe70078426">
+                <propertyInstance
+                  Id="c5e66432-d881-49be-8c7b-01b6cb116796"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="9d201d48-e680-4bdb-9461-6b31d3e09de5"
+            name="isActive"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                LastKnownName="bool"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9a8e5ad6-b693-4c9b-b325-d0ce1d1ba264"
+            name="deviceID"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                LastKnownName="string"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a04bda8e-580e-4e37-9b5e-bb0c892266dd"
+            name="Ping"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="59d4efa8-b39a-4e7e-a0c5-0a8b348164ff"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                      LastKnownName="bool"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7400cf86-19c4-49c2-94a1-cdbce95c5508"
+        name="???" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+        name="bool" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="047b7f48-38f6-44b2-952f-63b39a9d5c83"
+        name="vector&lt;Contact&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d47b0622-9fb7-4a6c-bdaa-2d3282b44b37"
+        name="List&lt;Contact&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="fee271fd-2e4e-4c14-8098-3e0be7f80065"
+        name="List&lt;PhoneNum&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="1770af4a-66a2-46bc-a1ed-f27b7bfdf847"
+        name="int" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="293cf5ce-66dd-4023-9d31-7519f418487f"
+        name="PhoneNumber"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="9a46b119-c316-4020-b89d-8d3e83235bc5"
+            name="number"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                LastKnownName="string"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7891da6c-ccd5-4bc5-9b97-a622c0906ad2"
+            name="type"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                LastKnownName="string"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="71116ea4-79b6-4a34-b084-a3306c0c3f73"
+        name="Conversation"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="ba63e732-5d35-4fba-b5cc-2a074ae2a0da"
+            isDerived="false"
+            sourceEndRoleName="Conversation"
+            targetEndRoleName="Contact"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="42cdf442-578f-470f-a202-0a8d6edcd2b2"
+              LastKnownName="Contact"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="697da89a-74d9-4c55-8936-e76e58ff735e"
+                  name="Conversation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="89294383-bc7d-40ce-b367-e4e6e73939ea"
+                  name="Contact"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1ff6e79e-fad6-49a1-8c59-2a07b62558c3"
+            isDerived="false"
+            sourceEndRoleName="Conversation"
+            targetEndRoleName="Message"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+              LastKnownName="Message"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="14840117-5ac7-4b06-a8bf-38db56625414"
+                  name="Conversation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2407129b-8741-45fd-885c-395c385b3307"
+                  name="Message"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="ccf67305-8378-48fc-9045-dbed138bc6f6"
+            name="messages"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fde56122-f53b-4508-a7a6-46cc6d6aa71e"
+                LastKnownName="List&lt;Message&gt;"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="bfb956f7-f364-4dae-89be-a9863f191aa3"
+            name="who"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="42cdf442-578f-470f-a202-0a8d6edcd2b2"
+                LastKnownName="Contact"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0bceb6a7-e4c0-41a6-8e3b-659a209e18ba"
+            name="addMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2ba05ce8-58e9-4749-b283-e31d78d745f3"
+                  name="mess"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+                      LastKnownName="Message"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1b129284-6796-4265-952f-9c7d7520876e"
+            name="delMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fa8bd729-b5b6-488d-b649-f251c0680619"
+                  name="location"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="25c0ae07-6c46-4231-bcfc-17bae3ad19c2"
+                      LastKnownName="Int"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="36d33142-499c-4feb-b6e7-4cbcbce57df2"
+            name="getMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5dceea6b-e74b-4914-ae91-b52bb252876a"
+                  name="location"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1770af4a-66a2-46bc-a1ed-f27b7bfdf847"
+                      LastKnownName="int"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="fde56122-f53b-4508-a7a6-46cc6d6aa71e"
+        name="List&lt;Message&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b3f187ba-926d-4c5d-ba9e-0d1593651b72"
+        name="ConversationList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="4b492dcc-bf78-4cd7-a87c-e57a8462ff01"
+            isDerived="false"
+            sourceEndRoleName="ConversationList"
+            targetEndRoleName="Conversation"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="71116ea4-79b6-4a34-b084-a3306c0c3f73"
+              LastKnownName="Conversation"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cfce1cd4-6e5a-4847-8a2c-5a87b3b992f8"
+                  name="ConversationList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5deb9ba6-1786-4f89-9f24-6fb370e1af1e"
+                  name="Conversation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="514ce7ef-d5f1-4f07-bd48-d247c4ca565d"
+            name="conversations"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="1ca04f52-8d89-4edb-a362-99372fa62479"
+                LastKnownName="List&lt;Conversation&gt;"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="9bf8a1a9-c1d3-4dc9-8d2f-8885902a01c3"
+            name="generateConversations"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6e110977-38f9-49b4-a295-0b35ded9badc"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1ca04f52-8d89-4edb-a362-99372fa62479"
+                      LastKnownName="List&lt;Conversation&gt;"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="95b085aa-e29a-44b1-acf2-557732f5df40"
+            name="accessConversation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6ca533f4-8609-48f9-b340-e841118df3e7"
+                  name="location"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1770af4a-66a2-46bc-a1ed-f27b7bfdf847"
+                      LastKnownName="int"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="810cfead-e91a-45d4-aba9-df065e0c987c"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="71116ea4-79b6-4a34-b084-a3306c0c3f73"
+                      LastKnownName="Conversation"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="1ca04f52-8d89-4edb-a362-99372fa62479"
+        name="List&lt;Conversation&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4f55dfee-7989-4ca5-8f9f-e8346db59ba6"
+        name="List&lt;Con" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="25c0ae07-6c46-4231-bcfc-17bae3ad19c2"
+        name="Int" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

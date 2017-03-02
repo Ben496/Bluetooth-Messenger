@@ -114,7 +114,7 @@
         <forkNodeShapeMoniker Id="52193c1d-7ee5-4be8-a924-de1e64b16994" />
       </nodes>
     </controlFlowConnector>
-    <controlFlowConnector edgePoints="[(4.4062505 : 6); (4.4062505 : 5.50260416666667); (4.60416666666667 : 5.50260416666667 : JumpStart); (4.77083333333333 : 5.50260416666667 : JumpEnd); (5.67708333333333 : 5.50260416666667); (5.67708333333333 : 1.5625); (5.25 : 1.5625)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <controlFlowConnector edgePoints="[(4.4062505 : 6); (4.4062505 : 5.50260416666667); (4.60416666666667 : 5.50260416666667 : JumpStart); (4.77083333333333 : 5.50260416666667 : JumpEnd); (5.67708333333333 : 5.50260416666667); (5.67708333333333 : 1.5625); (5.25 : 1.5625)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="1efc228f-c587-4732-9774-48088d475929" />
       <relativeChildShapes />
       <nodes>

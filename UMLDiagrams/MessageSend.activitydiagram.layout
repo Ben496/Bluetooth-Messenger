@@ -32,7 +32,7 @@
     <actionShape Id="b7256a71-65f7-46f3-b03f-10344982bdc5" absoluteBounds="1.375, 2.75, 1.125, 0.375" customColor="161, 199, 231">
       <opaqueActionMoniker Id="dbf1f31a-b82c-40a5-8404-cfdbb7bcb568" LastKnownName="Choose Existing Conversation" />
     </actionShape>
-    <controlFlowConnector edgePoints="[(4.5 : 2.9375); (2.5 : 2.9375)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
+    <controlFlowConnector edgePoints="[(4.5 : 2.9375); (3.52083333333333 : 2.9375 : JumpStart); (3.35416666666667 : 2.9375 : JumpEnd); (2.5 : 2.9375)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="3bcb6063-0443-4424-ae56-a9e0af3025db" />
       <relativeChildShapes />
       <nodes>
@@ -255,7 +255,7 @@
         <actionShapeMoniker Id="58d73b32-5c6f-4096-898b-1dfd8f2a1de8" />
       </nodes>
     </controlFlowConnector>
-    <controlFlowConnector edgePoints="[(4.562498 : 8.125002); (4.562498 : 7.625); (4.25 : 7.625); (4.25 : 6.25); (4.54166666666667 : 6.25 : JumpStart); (4.70833333333333 : 6.25 : JumpEnd); (5 : 6.25); (5 : 4.125); (4.25 : 4.125); (4.25 : 3.062502); (3.52083333333333 : 3.062502 : JumpStart); (3.35416666666667 : 3.062502 : JumpEnd); (2.5 : 3.062502)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <controlFlowConnector edgePoints="[(4.562498 : 8.125002); (4.562498 : 7.625); (4.25 : 7.625); (4.25 : 6.25); (4.54166666666667 : 6.25 : JumpStart); (4.70833333333333 : 6.25 : JumpEnd); (5 : 6.25); (5 : 4.125); (4.25 : 4.125); (4.25 : 3.062502); (3.52083333333333 : 3.062502 : JumpStart); (3.35416666666667 : 3.062502 : JumpEnd); (2.5 : 3.062502)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="3915a3f6-fa4a-4208-8bff-4a8d19dd96e0" />
       <relativeChildShapes />
       <nodes>
