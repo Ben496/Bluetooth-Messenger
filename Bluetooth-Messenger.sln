@@ -12,6 +12,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UMLDiagrams", "UMLDiagrams\UMLDiagrams.modelproj", "{EF1FB5E3-332F-409E-81F2-D1E25CE9C9BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidMessenger", "AndroidMessenger\AndroidMessenger.csproj", "{E713B85E-63C2-459A-9DAB-191D5A183107}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluetoothMessengerLib", "BluetoothMessengerLib\BluetoothMessengerLib.csproj", "{089D8096-2614-4925-8C00-67D50D6DB4A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{54F0E8BB-40B7-48CE-8E36-3F45B5E40D5A}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\Icon.ai = Resources\Icon.ai
+		Resources\Icon.png = Resources\Icon.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +36,16 @@ Global
 		{EF1FB5E3-332F-409E-81F2-D1E25CE9C9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF1FB5E3-332F-409E-81F2-D1E25CE9C9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF1FB5E3-332F-409E-81F2-D1E25CE9C9BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E713B85E-63C2-459A-9DAB-191D5A183107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E713B85E-63C2-459A-9DAB-191D5A183107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E713B85E-63C2-459A-9DAB-191D5A183107}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E713B85E-63C2-459A-9DAB-191D5A183107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E713B85E-63C2-459A-9DAB-191D5A183107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E713B85E-63C2-459A-9DAB-191D5A183107}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{089D8096-2614-4925-8C00-67D50D6DB4A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089D8096-2614-4925-8C00-67D50D6DB4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089D8096-2614-4925-8C00-67D50D6DB4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089D8096-2614-4925-8C00-67D50D6DB4A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

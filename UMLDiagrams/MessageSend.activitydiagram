@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="d2e62d9a-88af-4ce8-84a3-bd2ee2525862" name="MessageSend" linkedPackageId="61d7b753-6c55-4d76-8041-462fed95e756" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="6d625db2-3abd-448d-93a3-35eba06d5b22">
-      <profileInstance Id="87b2366b-d7e0-4a75-8ac3-4445c5d0a524" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="a0d36596-67f4-4abe-be3a-44049936478d">
-      <profileInstance Id="ef7ed6cf-eb93-4a03-a7be-a634ea9ec464" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="68321fe0-d33d-4c15-861a-282de8ea70a8" name="MessageSend" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -31,9 +17,9 @@
           <opaqueAction Id="7384ae6a-e6ed-4f2d-b6ad-c32e198eef00" name="Select Contact" isLeaf="false">
             <elementDefinition Id="2b841c18-d238-49a5-a507-dc1ade98b920" />
             <flowNodeTargets>
-              <controlFlow Id="31504901-3ed5-4c03-b379-42d71b8e5b59" isLeaf="false">
-                <joinNodeMoniker Id="7f808988-0a18-41ad-8f0f-03533d4f78be" LastKnownName="Join1" />
-                <elementDefinition Id="7da51d57-7b52-4c79-904f-75eb73df1446" />
+              <controlFlow Id="2b2c7b07-0dcb-4e54-b0c3-2225e69414e4" isLeaf="false">
+                <forkNodeMoniker Id="7e446723-0706-42d6-8b1d-2e3cfeed8f74" LastKnownName="Fork1" />
+                <elementDefinition Id="8a7637e8-696d-4522-9dd6-9127b5243b2e" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
@@ -71,13 +57,13 @@
                 <opaqueActionMoniker Id="dbf1f31a-b82c-40a5-8404-cfdbb7bcb568" LastKnownName="Choose Existing Conversation" />
                 <elementDefinition Id="9b9b0cdf-abb0-447b-812f-1f2fc4be27cb" />
               </controlFlow>
-              <controlFlow Id="8e2f9926-9a17-4aff-b01e-4c09fc12860b" guard="Create New Conversation" isLeaf="false">
-                <forkNodeMoniker Id="7e446723-0706-42d6-8b1d-2e3cfeed8f74" LastKnownName="Fork1" />
-                <elementDefinition Id="726793ad-f73f-4af5-a2e7-67a29c9b51dd" />
-              </controlFlow>
               <controlFlow Id="36eb3c0b-1015-4767-8fb0-3710d0b3650e" guard="Done Using App" isLeaf="false">
                 <activityFinalNodeMoniker Id="1d9c96b9-098e-473e-8c94-f98d023008bd" LastKnownName="ActivityFinal1" />
                 <elementDefinition Id="9ec70990-9370-4896-9b97-09070f0b35cc" />
+              </controlFlow>
+              <controlFlow Id="448f9f9f-6ac7-490c-ac86-0f2147756513" guard="Create New Conversation" isLeaf="false">
+                <opaqueActionMoniker Id="7384ae6a-e6ed-4f2d-b6ad-c32e198eef00" LastKnownName="Select Contact" />
+                <elementDefinition Id="9b11a0a1-ae20-4ae0-84ee-909e1627b1bc" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -93,10 +79,6 @@
           <forkNode Id="7e446723-0706-42d6-8b1d-2e3cfeed8f74" name="Fork1" isLeaf="false">
             <elementDefinition Id="b556a263-a642-4411-b74a-79742e42703b" />
             <flowNodeTargets>
-              <controlFlow Id="9028ef0c-af5d-4240-8b61-abcc9dab6ef1" isLeaf="false">
-                <opaqueActionMoniker Id="7384ae6a-e6ed-4f2d-b6ad-c32e198eef00" LastKnownName="Select Contact" />
-                <elementDefinition Id="a40d0c0c-919b-4415-89d5-a0e72558303d" />
-              </controlFlow>
               <controlFlow Id="8513eccc-72a3-43b4-a179-5dc0376bfbe0" isLeaf="false">
                 <opaqueActionMoniker Id="f197f719-d1d0-40fa-bb23-ce55b41b8133" LastKnownName="Write Message" />
                 <elementDefinition Id="a5bce977-eafe-42ac-9d1f-573811baac4a" />
@@ -244,5 +226,19 @@
   </packagedElements>
   <package Id="61d7b753-6c55-4d76-8041-462fed95e756" name="UMLDiagrams">
     <elementDefinition Id="c73459c3-493e-4b80-86eb-2061ad4501d0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="6d625db2-3abd-448d-93a3-35eba06d5b22">
+        <profileInstance Id="87b2366b-d7e0-4a75-8ac3-4445c5d0a524" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a0d36596-67f4-4abe-be3a-44049936478d">
+        <profileInstance Id="ef7ed6cf-eb93-4a03-a7be-a634ea9ec464" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>
