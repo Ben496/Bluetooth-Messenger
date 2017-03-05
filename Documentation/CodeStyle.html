@@ -1,0 +1,84 @@
+<head>
+<title>Code Style</title>
+	<style type="text/css">
+		.pre{
+			border-color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>C# Coding Style</h1>
+	<p>
+		This is not an all inclusive document on coding style that should be used.
+		The purpose of this document is to cover the most common situations and
+		show the general patterns. For frequent situations
+		that are not contained in this document they will be decided then.
+	</p>
+	<ol>
+		<li>
+			<p>
+				All indention will be done with tabs. Spaces are not ment to be used for indention.
+			</p>
+		</li>
+		<li>
+			<p>
+				All class, function, and variable names will be descriptive.
+				They should accurately describe what it refers to.
+				This means that variable/object/class names should be noun (subject) based and
+				functions should be verb (predicate) based. Variables should not contain abbreviations,
+				this is to prevent confusion between meanings of the abbreviation. Temporary variables however
+				can be abbreviated. Thus <code>tmp</code> is ok to use but <code>delItem</code> should not be
+				used instead of <code>deleteItem</code>
+			</p>
+		</li>
+		<li>
+			<p>All variable, property, and function names will be camelCase.</p>
+			<pre><code>
+void createConversation();
+int createId;
+			</code></pre>
+		</li>
+		<li>
+			<p>All class names will be PascalCase.</p>
+		</li>
+		<li>
+			<p>
+				Opening braces should never be on a new line, instead always place them at
+				the end of the previous line with a space between the brace and the previous code.
+			</p>
+		</li>
+		<li>
+			<p>
+				Closing braces should always be on a line of their own. If, for example, you have an if else statement it should
+				be like this:
+				<pre><code>
+if (x == y) {
+	return x * y;
+}
+else if (y != 0) {
+	return x / y;
+}
+				</code></pre>
+				The reason that this is the case is to improve readability when using folding. This way you can fold
+				individual elements of the if statement (or other statement) and not get confused as to what code
+				relates to what condition.
+			</p>
+		</li>
+		<li>
+			<p>
+				All binary operators (+, -, *, /, &&, ||, ...) must have a space on either side of the operator.
+			</p>
+		</li>
+		<li>
+			<p>
+				All unary operators must be touching the value that they operate on. Ex: <code>i++</code>
+			</p>
+		</li>
+		<li>
+			<p>
+				There will never be a space on the inside of parentheses. Ex: <code>(x + 3) / 2;</code>
+			</p>
+		</li>
+	</ol>
+</body>
