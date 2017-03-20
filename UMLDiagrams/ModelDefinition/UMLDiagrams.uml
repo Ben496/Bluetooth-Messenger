@@ -1779,48 +1779,17 @@
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
-          <forkNode
-            Id="6fc3b0a3-a453-40a3-afa5-ce3a6087006d"
-            name="Fork1"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="f638af60-37e6-42c9-a8cb-e4a8fa427b86"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="7fc2ff94-1e35-41db-8b7d-43f8863ba89c"
-                  LastKnownName="Enter/edit any other info (email, address, etc.)"
-                  LastKnownLocation="UMLDiagrams.uml" />
-              </controlFlow>
-              <controlFlow
-                Id="c602c005-cd59-42ad-bb78-7d32f0d8e39e"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="80121d59-51d7-4179-a079-9fc09a10836d"
-                  LastKnownName="Enter/edit Number"
-                  LastKnownLocation="UMLDiagrams.uml" />
-              </controlFlow>
-              <controlFlow
-                Id="c9d364bf-bebf-4b90-8342-f46d6e773d27"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="30b67e19-04f7-4d96-8572-86b86d6c6eab"
-                  LastKnownName="Enter/edit Name"
-                  LastKnownLocation="UMLDiagrams.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </forkNode>
           <opaqueAction
             Id="30b67e19-04f7-4d96-8572-86b86d6c6eab"
             name="Enter/edit Name"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="4991af1d-a7ea-4170-8208-1eada1dd24e9"
+                Id="dcbad892-ea59-43c0-b353-72669033102a"
                 isLeaf="false">
-                <joinNodeMoniker
-                  Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d"
-                  LastKnownName="Join1"
+                <opaqueActionMoniker
+                  Id="80121d59-51d7-4179-a079-9fc09a10836d"
+                  LastKnownName="Enter/edit Number"
                   LastKnownLocation="UMLDiagrams.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1831,11 +1800,11 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="1a03258c-fe05-4db8-9b19-894a55130ec1"
+                Id="63077d9f-ab4f-4d88-ab98-d74030567dd8"
                 isLeaf="false">
-                <joinNodeMoniker
-                  Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d"
-                  LastKnownName="Join1"
+                <opaqueActionMoniker
+                  Id="7fc2ff94-1e35-41db-8b7d-43f8863ba89c"
+                  LastKnownName="Enter/edit any other info (email, address, etc.)"
                   LastKnownLocation="UMLDiagrams.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1846,22 +1815,7 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="4a953ce4-fe56-42ea-8937-a4363eee59c1"
-                isLeaf="false">
-                <joinNodeMoniker
-                  Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d"
-                  LastKnownName="Join1"
-                  LastKnownLocation="UMLDiagrams.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </opaqueAction>
-          <joinNode
-            Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d"
-            name="Join1"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="11d4b923-f87b-4196-acde-3557a4754cd8"
+                Id="deecab31-612b-49a7-beb8-d816f1652313"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="57bdb96c-16fb-49fc-a9c2-2d5afaf0a699"
@@ -1869,7 +1823,7 @@
                   LastKnownLocation="UMLDiagrams.uml" />
               </controlFlow>
             </flowNodeTargets>
-          </joinNode>
+          </opaqueAction>
           <opaqueAction
             Id="7d6bf623-2e36-405b-b563-88520330425c"
             name="View Contact Details"
@@ -1940,11 +1894,11 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="e5c282d8-420d-488f-b271-0c74414f89b3"
+                Id="56e2d7da-4f82-4569-b375-e5a3e6986f01"
                 isLeaf="false">
-                <forkNodeMoniker
-                  Id="6fc3b0a3-a453-40a3-afa5-ce3a6087006d"
-                  LastKnownName="Fork1"
+                <opaqueActionMoniker
+                  Id="30b67e19-04f7-4d96-8572-86b86d6c6eab"
+                  LastKnownName="Enter/edit Name"
                   LastKnownLocation="UMLDiagrams.uml" />
               </controlFlow>
             </flowNodeTargets>

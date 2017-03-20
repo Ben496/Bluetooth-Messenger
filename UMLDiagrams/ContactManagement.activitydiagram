@@ -72,20 +72,6 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="921c37a4-c232-43b8-a8cc-db7a5d9c2921">
-      <profileInstance Id="73ce8bcb-2e44-458d-82b9-0a702a57023e" name="CSharpProfile">
-        <elementDefinition Id="0ecb4ca8-fc15-49e6-ada6-09af2cc350af" />
-      </profileInstance>
-      <elementDefinition Id="2df13f62-dc3e-411a-9b17-ecb7217113dc" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="cff5cd94-d5c1-4973-901a-e28d89d56b48">
-      <profileInstance Id="a8a988ac-0cf1-473d-9563-1d94c82036a7" name="TextTemplateBindings">
-        <elementDefinition Id="68d4d7d5-cbe4-409d-b96e-fe4cdbd82fd8" />
-      </profileInstance>
-      <elementDefinition Id="ce655b95-7ba6-4642-b34f-a2bba306e2cc" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="e7144667-11f1-457b-b44f-bbacc0a979d4" name="ContactManagement" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -126,59 +112,33 @@
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
-          <forkNode Id="0beb4f29-9e3e-48b0-90b0-ccd11846ffc5" name="Fork1" isLeaf="false">
-            <elementDefinition Id="6fc3b0a3-a453-40a3-afa5-ce3a6087006d" />
-            <flowNodeTargets>
-              <controlFlow Id="685e984a-fdd6-4f1e-85b7-fb2a13eb8b00" isLeaf="false">
-                <opaqueActionMoniker Id="0d20b6b4-c936-4d30-8c7a-1e778ee138e2" LastKnownName="Enter/edit any other info (email, address, etc.)" />
-                <elementDefinition Id="f638af60-37e6-42c9-a8cb-e4a8fa427b86" />
-              </controlFlow>
-              <controlFlow Id="136f4c0c-82f3-4ab1-83e8-32acf5238d8b" isLeaf="false">
-                <opaqueActionMoniker Id="ffc72c90-d614-4f03-a41d-eefaa631bbf0" LastKnownName="Enter/edit Number" />
-                <elementDefinition Id="c602c005-cd59-42ad-bb78-7d32f0d8e39e" />
-              </controlFlow>
-              <controlFlow Id="ea3921ae-e512-48e8-9da6-a8a268d392c5" isLeaf="false">
-                <opaqueActionMoniker Id="b9d0586f-9f8d-4bc8-b59a-4728808a2d0f" LastKnownName="Enter/edit Name" />
-                <elementDefinition Id="c9d364bf-bebf-4b90-8342-f46d6e773d27" />
-              </controlFlow>
-            </flowNodeTargets>
-          </forkNode>
           <opaqueAction Id="b9d0586f-9f8d-4bc8-b59a-4728808a2d0f" name="Enter/edit Name" isLeaf="false">
             <elementDefinition Id="30b67e19-04f7-4d96-8572-86b86d6c6eab" />
             <flowNodeTargets>
-              <controlFlow Id="1b3a71b1-3b85-41f8-b7de-bc87d989ceb2" isLeaf="false">
-                <joinNodeMoniker Id="c03be3a1-5c94-4748-8899-02df492d3a59" LastKnownName="Join1" />
-                <elementDefinition Id="4991af1d-a7ea-4170-8208-1eada1dd24e9" />
+              <controlFlow Id="f302c80d-a933-4483-84a1-78a995b7f4f3" isLeaf="false">
+                <opaqueActionMoniker Id="ffc72c90-d614-4f03-a41d-eefaa631bbf0" LastKnownName="Enter/edit Number" />
+                <elementDefinition Id="dcbad892-ea59-43c0-b353-72669033102a" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction Id="ffc72c90-d614-4f03-a41d-eefaa631bbf0" name="Enter/edit Number" isLeaf="false">
             <elementDefinition Id="80121d59-51d7-4179-a079-9fc09a10836d" />
             <flowNodeTargets>
-              <controlFlow Id="18c33cfb-e607-4e58-8d3f-6800a2aa5688" isLeaf="false">
-                <joinNodeMoniker Id="c03be3a1-5c94-4748-8899-02df492d3a59" LastKnownName="Join1" />
-                <elementDefinition Id="1a03258c-fe05-4db8-9b19-894a55130ec1" />
+              <controlFlow Id="7a4d02ae-8ffb-4c4f-ac27-f75cda3614a5" isLeaf="false">
+                <opaqueActionMoniker Id="0d20b6b4-c936-4d30-8c7a-1e778ee138e2" LastKnownName="Enter/edit any other info (email, address, etc.)" />
+                <elementDefinition Id="63077d9f-ab4f-4d88-ab98-d74030567dd8" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction Id="0d20b6b4-c936-4d30-8c7a-1e778ee138e2" name="Enter/edit any other info (email, address, etc.)" isLeaf="false">
             <elementDefinition Id="7fc2ff94-1e35-41db-8b7d-43f8863ba89c" />
             <flowNodeTargets>
-              <controlFlow Id="5f66e598-21f8-46f4-bfa9-00ea8288f24b" isLeaf="false">
-                <joinNodeMoniker Id="c03be3a1-5c94-4748-8899-02df492d3a59" LastKnownName="Join1" />
-                <elementDefinition Id="4a953ce4-fe56-42ea-8937-a4363eee59c1" />
+              <controlFlow Id="8ddf612d-f535-4a60-97d4-4e0511cfa184" isLeaf="false">
+                <opaqueActionMoniker Id="3126f09b-b6f4-4398-8569-1c69083362c4" LastKnownName="Return to Contact Listing" />
+                <elementDefinition Id="deecab31-612b-49a7-beb8-d816f1652313" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <joinNode Id="c03be3a1-5c94-4748-8899-02df492d3a59" name="Join1" isLeaf="false">
-            <elementDefinition Id="5133cd8e-2729-4715-9f98-aeb84dc4b23d" />
-            <flowNodeTargets>
-              <controlFlow Id="df339093-deca-40fb-a3ee-bd9f9bfcdd1d" isLeaf="false">
-                <opaqueActionMoniker Id="3126f09b-b6f4-4398-8569-1c69083362c4" LastKnownName="Return to Contact Listing" />
-                <elementDefinition Id="11d4b923-f87b-4196-acde-3557a4754cd8" />
-              </controlFlow>
-            </flowNodeTargets>
-          </joinNode>
           <opaqueAction Id="4fed9290-094e-449f-84ec-95439797ed0a" name="View Contact Details" isLeaf="false">
             <elementDefinition Id="7d6bf623-2e36-405b-b563-88520330425c" />
             <flowNodeTargets>
@@ -217,9 +177,9 @@
           <opaqueAction Id="37ea74d4-95ef-4cde-b36c-1db238441048" name="Manage Contact Details" isLeaf="false">
             <elementDefinition Id="034ec194-ac06-4f1a-bb97-27150ab91583" />
             <flowNodeTargets>
-              <controlFlow Id="cc170205-10f8-438a-b9c0-716027b10db3" isLeaf="false">
-                <forkNodeMoniker Id="0beb4f29-9e3e-48b0-90b0-ccd11846ffc5" LastKnownName="Fork1" />
-                <elementDefinition Id="e5c282d8-420d-488f-b271-0c74414f89b3" />
+              <controlFlow Id="c66e370e-6c98-4bc9-9d56-801b0d7c5124" isLeaf="false">
+                <opaqueActionMoniker Id="b9d0586f-9f8d-4bc8-b59a-4728808a2d0f" LastKnownName="Enter/edit Name" />
+                <elementDefinition Id="56e2d7da-4f82-4569-b375-e5a3e6986f01" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
@@ -256,6 +216,18 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="921c37a4-c232-43b8-a8cc-db7a5d9c2921">
+        <profileInstance Id="73ce8bcb-2e44-458d-82b9-0a702a57023e" name="CSharpProfile">
+          <elementDefinition Id="0ecb4ca8-fc15-49e6-ada6-09af2cc350af" />
+        </profileInstance>
+        <elementDefinition Id="2df13f62-dc3e-411a-9b17-ecb7217113dc" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="cff5cd94-d5c1-4973-901a-e28d89d56b48">
+        <profileInstance Id="a8a988ac-0cf1-473d-9563-1d94c82036a7" name="TextTemplateBindings">
+          <elementDefinition Id="68d4d7d5-cbe4-409d-b96e-fe4cdbd82fd8" />
+        </profileInstance>
+        <elementDefinition Id="ce655b95-7ba6-4642-b34f-a2bba306e2cc" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>
