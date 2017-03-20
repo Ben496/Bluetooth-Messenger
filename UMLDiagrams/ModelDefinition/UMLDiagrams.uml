@@ -3,6 +3,12 @@
   dslVersion="1.0.0.0"
   Id="c73459c3-493e-4b80-86eb-2061ad4501d0"
   name="UMLDiagrams" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="e1de7e4a-4a06-4bfe-af6b-8e9512de9b68">
+      <body>Currently not handeling batch processing.</body>
+    </comment>
+  </ownedCommentsInternal>
   <appliedStereotypesInternal>
     <stereotypeInstance
       Id="876d07fc-371c-4917-8cee-28f53d113345"
@@ -11091,7 +11097,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="fcb532da-9f7e-483d-a86b-253fa14c0fb5"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e04f4b8e-29ab-4055-9970-5afb37046a4c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -11337,6 +11356,60 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="8862e2af-16d2-494e-ae23-0656063ea468"
+            isDerived="false"
+            sourceEndRoleName="Connection"
+            targetEndRoleName="Command"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7109bb71-71b4-4cca-884d-afd97f77ca11"
+              LastKnownName="Command"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4eae5d5e-29ca-41be-9747-264ad6afb443"
+                  name="Connection"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ddce18c3-8036-4355-8056-b8ce0e2581e1"
+                  name="Command"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="07478287-1973-495f-86ee-8f606805e312"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e1cfc0c5-a273-451c-a1c5-c63d2e3f393f"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="9d201d48-e680-4bdb-9461-6b31d3e09de5"
@@ -11570,7 +11643,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7f5b82af-06c3-494f-9447-55636c72abd4"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="54b9c66e-467e-4816-9ab9-1227cd4d64e1"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -11614,6 +11700,18 @@
                 LastKnownLocation="UMLDiagrams.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="145c8fa3-d53b-47a2-85ab-bb59702aa9f1"
+            name="phoneNumber"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -11627,8 +11725,8 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="2ba05ce8-58e9-4749-b283-e31d78d745f3"
-                  name="mess"
+                  Id="8f8e5017-032d-4248-b859-fed6286eb5b8"
+                  name="message"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
@@ -11742,7 +11840,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="9fe2feb9-d143-4fbd-98b4-143e604aa0ea"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c8f437b5-0cbf-480a-aff4-2b700173b092"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -11988,6 +12099,77 @@
       <executionEvent
         Id="c5ca66e5-5020-413d-b3fe-ef0a33d8e99e"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7109bb71-71b4-4cca-884d-afd97f77ca11"
+        name="Command"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="d39acf16-5050-43c2-87bd-22029216464b"
+            isDerived="false"
+            sourceEndRoleName="Command"
+            targetEndRoleName="Message"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+              LastKnownName="Message"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1d33a421-c242-486a-937c-057c0e3715c7"
+                  name="Command"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9981760c-374f-4a2c-9256-dff7dabc224e"
+                  name="Message"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="f917c7a2-585f-4a34-9f33-5fef6135edfa"
+            name="action"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
