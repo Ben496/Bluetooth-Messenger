@@ -10871,7 +10871,7 @@
         <ownedAttributesInternal>
           <property
             Id="3ba2aa5e-8c35-4f0c-a38e-fb8078598aaa"
-            name="contacts"
+            name="_contacts"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11118,7 +11118,7 @@
         <ownedAttributesInternal>
           <property
             Id="7eb08da5-b458-45f7-89cb-7a51d4ffc588"
-            name="name"
+            name="_name"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11137,7 +11137,7 @@
           </property>
           <property
             Id="1fe0c686-5a48-4a12-8be8-323818be60d6"
-            name="picture"
+            name="_picture"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11156,7 +11156,7 @@
           </property>
           <property
             Id="9c0878a0-4fb4-4826-9028-8085fb5f09db"
-            name="numbers"
+            name="_numbers"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11229,7 +11229,7 @@
         <ownedAttributesInternal>
           <property
             Id="1ac9d841-9cfb-4e92-add9-1fdc43b2b039"
-            name="text"
+            name="_text"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11248,7 +11248,7 @@
           </property>
           <property
             Id="73c78bac-26f4-4991-b236-0753ba003777"
-            name="multi"
+            name="_multi"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11267,7 +11267,7 @@
           </property>
           <property
             Id="5a313ca5-298f-4789-9a9f-3bb684ca979d"
-            name="phoneNum"
+            name="_phoneNumber"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11286,7 +11286,7 @@
           </property>
           <property
             Id="f2a7709e-335d-471c-9f9d-d10e3272904c"
-            name="isMMS"
+            name="_isMMS"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11413,7 +11413,7 @@
         <ownedAttributesInternal>
           <property
             Id="9d201d48-e680-4bdb-9461-6b31d3e09de5"
-            name="isActive"
+            name="_isActive"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11432,7 +11432,7 @@
           </property>
           <property
             Id="9a8e5ad6-b693-4c9b-b325-d0ce1d1ba264"
-            name="deviceID"
+            name="_deviceID"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11522,7 +11522,7 @@
         <ownedAttributesInternal>
           <property
             Id="9a46b119-c316-4020-b89d-8d3e83235bc5"
-            name="number"
+            name="_number"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11541,7 +11541,7 @@
           </property>
           <property
             Id="7891da6c-ccd5-4bc5-9b97-a622c0906ad2"
-            name="type"
+            name="_type"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11664,7 +11664,7 @@
         <ownedAttributesInternal>
           <property
             Id="ccf67305-8378-48fc-9045-dbed138bc6f6"
-            name="messages"
+            name="_messages"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11683,7 +11683,7 @@
           </property>
           <property
             Id="bfb956f7-f364-4dae-89be-a9863f191aa3"
-            name="who"
+            name="_who"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11702,7 +11702,7 @@
           </property>
           <property
             Id="145c8fa3-d53b-47a2-85ab-bb59702aa9f1"
-            name="phoneNumber"
+            name="_phoneNumber"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11861,7 +11861,7 @@
         <ownedAttributesInternal>
           <property
             Id="514ce7ef-d5f1-4f07-bd48-d247c4ca565d"
-            name="conversations"
+            name="_conversations"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -11936,6 +11936,31 @@
                     <classMoniker
                       Id="71116ea4-79b6-4a34-b084-a3306c0c3f73"
                       LastKnownName="Conversation"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="acd9febc-cd7c-43f2-a5e7-251b5d537d1c"
+            name="addNewConversation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0df98a0b-8663-4c77-896d-67ecbcca633e"
+                  name="contact"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="42cdf442-578f-470f-a202-0a8d6edcd2b2"
+                      LastKnownName="Contact"
                       LastKnownLocation="UMLDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -12151,7 +12176,7 @@
         <ownedAttributesInternal>
           <property
             Id="f917c7a2-585f-4a34-9f33-5fef6135edfa"
-            name="action"
+            name="_action"
             visibility="Private"
             isLeaf="false"
             isStatic="false"

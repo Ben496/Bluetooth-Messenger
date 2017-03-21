@@ -60,7 +60,7 @@
         <OperationElementListCompartment Id="70e7c44f-3bc5-433a-b735-2cdabefdd457" absoluteBounds="7.39, 4.2066406026482586, 2.5949999999999998, 0.68164060264825821" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.375 : 3.87907405475775); (5.75 : 3.87907405475775)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
+    <associationConnector edgePoints="[(7.375 : 3.87907405475775); (5.75 : 3.87907405475775)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
       <associationMoniker Id="f7f66883-54de-4bd7-a7fb-ec640b60eede" />
       <relativeChildShapes />
       <nodes>
@@ -68,7 +68,7 @@
         <classShapeMoniker Id="bd37748c-0258-4629-acc0-c1306f068737" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.125 : 4.98828120529652); (8.125 : 5.75)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="*">
+    <associationConnector edgePoints="[(8.125 : 4.98828120529652); (8.125 : 5.75)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="*">
       <associationMoniker Id="40f0c033-71b7-46e0-894a-6bcd66ccf589" />
       <relativeChildShapes />
       <nodes>
@@ -76,14 +76,14 @@
         <classShapeMoniker Id="7d731a76-d432-48ab-b9d0-35ead073979d" />
       </nodes>
     </associationConnector>
-    <classShape Id="e8f3f78e-d478-4b57-8fed-175c627b8259" absoluteBounds="7.375, 1, 3, 1.3828124701976776" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+    <classShape Id="e8f3f78e-d478-4b57-8fed-175c627b8259" absoluteBounds="7.375, 1, 3, 1.5429687152306237" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="86d46d20-b5a1-4daa-bff9-773b4fa38d7e" LastKnownName="ConversationList" />
       <nestedChildShapes>
         <AttributeElementListCompartment Id="16fdcf18-177e-437c-a575-79162d1e30e5" absoluteBounds="7.39, 1.3900000000000001, 2.9699999999999998, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="539eab49-128f-436f-b9ab-73c0ae0a693b" absoluteBounds="7.39, 1.7613281125823657, 2.9699999999999998, 0.52148435761531187" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="539eab49-128f-436f-b9ab-73c0ae0a693b" absoluteBounds="7.39, 1.7613281125823657, 2.9699999999999998, 0.68164060264825821" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.6875 : 2.38281247019768); (8.6875 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="*">
+    <associationConnector edgePoints="[(8.6875 : 2.54296871523062); (8.6875 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="*">
       <associationMoniker Id="0b63256d-a393-4e77-bad3-c3b8cce826ae" />
       <relativeChildShapes />
       <nodes>
@@ -106,7 +106,7 @@
         <classShapeMoniker Id="7d731a76-d432-48ab-b9d0-35ead073979d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.78125 : 3.625); (11.78125 : 2.93749998013178)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
+    <associationConnector edgePoints="[(11.78125 : 3.625); (11.78125 : 2.93749998013178)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
       <associationMoniker Id="eed29814-900f-48d5-b159-1559550b6c0d" />
       <relativeChildShapes />
       <nodes>

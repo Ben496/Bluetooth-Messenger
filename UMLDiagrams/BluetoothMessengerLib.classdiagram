@@ -138,7 +138,7 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="f29e80e7-4d83-45ac-b075-7fe569856162" name="contacts" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="f29e80e7-4d83-45ac-b075-7fe569856162" name="_contacts" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="9f752367-258f-472e-8ad7-8cfb44911e6d" name="property" profile="CSharpProfile">
                 <elementDefinition Id="9bbe3585-0d92-47b4-bb7c-19d273b3d128" />
@@ -301,19 +301,19 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="d7ad7f7d-509a-49a4-a534-65e41c8e43f0" name="name" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="d7ad7f7d-509a-49a4-a534-65e41c8e43f0" name="_name" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="7eb08da5-b458-45f7-89cb-7a51d4ffc588" />
             <type_NamedElement>
               <referencedTypeMoniker Id="c21efba7-be0e-4160-a89e-044b4bed3446" LastKnownName="String" />
             </type_NamedElement>
           </property>
-          <property Id="30211f3d-ad75-4e17-92d8-c87419c42487" name="picture" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="30211f3d-ad75-4e17-92d8-c87419c42487" name="_picture" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="1fe0c686-5a48-4a12-8be8-323818be60d6" />
             <type_NamedElement>
               <referencedTypeMoniker Id="7635f8e0-5d39-4e15-a1d2-0b102266bcf9" LastKnownName="???" />
             </type_NamedElement>
           </property>
-          <property Id="4ec85b7c-723f-4128-ab0e-b9f0f00781dd" name="numbers" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="4ec85b7c-723f-4128-ab0e-b9f0f00781dd" name="_numbers" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="9c0878a0-4fb4-4826-9028-8085fb5f09db" />
             <type_NamedElement>
               <referencedTypeMoniker Id="117107f0-ac1e-4fdf-8e24-71cbe587ae43" LastKnownName="List&lt;PhoneNum&gt;" />
@@ -363,25 +363,25 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="2412f9a1-0f8a-4056-980b-00fd5781c51d" />
         <ownedAttributesInternal>
-          <property Id="aab7daa4-ee8c-4343-a89d-00a60c22b531" name="text" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="aab7daa4-ee8c-4343-a89d-00a60c22b531" name="_text" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="1ac9d841-9cfb-4e92-add9-1fdc43b2b039" />
             <type_NamedElement>
               <referencedTypeMoniker Id="a2828fad-40a7-4eda-bedd-8355e3016e01" LastKnownName="string" />
             </type_NamedElement>
           </property>
-          <property Id="8fa6f48a-de60-44c6-835e-53a76f7c5f4f" name="multi" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="8fa6f48a-de60-44c6-835e-53a76f7c5f4f" name="_multi" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="73c78bac-26f4-4991-b236-0753ba003777" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="e83564f8-b573-42fb-b6b0-70454e37f9cf" LastKnownName="???" />
+              <referencedTypeMoniker Id="1946d262-c1c4-48b9-8dd3-ea466d3e5353" LastKnownName="???" />
             </type_NamedElement>
           </property>
-          <property Id="8ac89ec4-70b5-43ce-85ac-5ba96685f701" name="phoneNum" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="8ac89ec4-70b5-43ce-85ac-5ba96685f701" name="_phoneNumber" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="5a313ca5-298f-4789-9a9f-3bb684ca979d" />
             <type_NamedElement>
               <referencedTypeMoniker Id="c551b773-7640-45b7-bbc7-77a8a5f72a79" LastKnownName="string" />
             </type_NamedElement>
           </property>
-          <property Id="3fa8029e-032c-4307-ac78-3c695bc25796" name="isMMS" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="3fa8029e-032c-4307-ac78-3c695bc25796" name="_isMMS" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f2a7709e-335d-471c-9f9d-d10e3272904c" />
             <type_NamedElement>
               <referencedTypeMoniker Id="083be459-0f35-404d-8982-a3482061e9ba" LastKnownName="bool" />
@@ -459,13 +459,13 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="7cca55a2-63ad-4a58-a887-b009b7c62c11" name="isActive" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="7cca55a2-63ad-4a58-a887-b009b7c62c11" name="_isActive" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="9d201d48-e680-4bdb-9461-6b31d3e09de5" />
             <type_NamedElement>
               <referencedTypeMoniker Id="083be459-0f35-404d-8982-a3482061e9ba" LastKnownName="bool" />
             </type_NamedElement>
           </property>
-          <property Id="901122cd-3122-405d-8b9e-1b1593912ba6" name="deviceID" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="901122cd-3122-405d-8b9e-1b1593912ba6" name="_deviceID" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="9a8e5ad6-b693-4c9b-b325-d0ce1d1ba264" />
             <type_NamedElement>
               <referencedTypeMoniker Id="a849d842-36f8-474e-acd7-7bdb34652404" LastKnownName="string" />
@@ -489,11 +489,6 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="e83564f8-b573-42fb-b6b0-70454e37f9cf" name="???" isAbstract="false" isLeaf="false" cachedFullName="???">
-        <elementDefinition Id="7400cf86-19c4-49c2-94a1-cdbce95c5508" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="083be459-0f35-404d-8982-a3482061e9ba" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
         <elementDefinition Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17" />
@@ -553,13 +548,13 @@
       <class Id="96e94776-b503-48e8-819b-5735de0a34fb" name="PhoneNumber" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="293cf5ce-66dd-4023-9d31-7519f418487f" />
         <ownedAttributesInternal>
-          <property Id="9accca8f-1dff-4b47-88f7-69d5cac6a54c" name="number" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="9accca8f-1dff-4b47-88f7-69d5cac6a54c" name="_number" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="9a46b119-c316-4020-b89d-8d3e83235bc5" />
             <type_NamedElement>
               <referencedTypeMoniker Id="7d296932-fb85-4b64-8ba3-74d79c5cc606" LastKnownName="string" />
             </type_NamedElement>
           </property>
-          <property Id="166ec47e-104a-4ac0-b231-71604ade040a" name="type" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="166ec47e-104a-4ac0-b231-71604ade040a" name="_type" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="7891da6c-ccd5-4bc5-9b97-a622c0906ad2" />
             <type_NamedElement>
               <referencedTypeMoniker Id="1ce094e8-6cb1-4875-85c5-7f0210156dbb" LastKnownName="string" />
@@ -631,19 +626,19 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="a119c8bb-cac2-4741-98f6-9043613f1491" name="messages" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="a119c8bb-cac2-4741-98f6-9043613f1491" name="_messages" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="ccf67305-8378-48fc-9045-dbed138bc6f6" />
             <type_NamedElement>
               <referencedTypeMoniker Id="864a8a3f-0ef9-47c7-8678-ac7b9470659d" LastKnownName="List&lt;Message&gt;" />
             </type_NamedElement>
           </property>
-          <property Id="770ce893-9c6b-4943-be84-4609c7b76af5" name="who" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="770ce893-9c6b-4943-be84-4609c7b76af5" name="_who" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="bfb956f7-f364-4dae-89be-a9863f191aa3" />
             <type_NamedElement>
               <referencedTypeMoniker Id="5f93e15e-3268-48f6-a36c-3145e78d6c5e" LastKnownName="Contact" />
             </type_NamedElement>
           </property>
-          <property Id="62d6fd77-2916-4b7e-a7cf-54d23b3a5961" name="phoneNumber" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="62d6fd77-2916-4b7e-a7cf-54d23b3a5961" name="_phoneNumber" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="145c8fa3-d53b-47a2-85ab-bb59702aa9f1" />
           </property>
         </ownedAttributesInternal>
@@ -727,7 +722,7 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="2b191a2c-9038-4251-ab15-cc2a5dbf4ae6" name="conversations" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="2b191a2c-9038-4251-ab15-cc2a5dbf4ae6" name="_conversations" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="514ce7ef-d5f1-4f07-bd48-d247c4ca565d" />
             <type_NamedElement>
               <referencedTypeMoniker Id="4a08114b-ab80-45d9-ae21-186560a19d49" LastKnownName="List&lt;Conversation&gt;" />
@@ -764,6 +759,19 @@
                   <elementDefinition Id="810cfead-e91a-45d4-aba9-df065e0c987c" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="e06e00b8-192d-4152-9bc5-ba02412d171f" LastKnownName="Conversation" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="aedee01c-197d-42da-afcd-dbe0482fb50a" name="addNewConversation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="acd9febc-cd7c-43f2-a5e7-251b5d537d1c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4066ecc6-33fa-4ce7-8ac3-874e2410f215" name="contact" direction="In" isUnique="false">
+                  <elementDefinition Id="0df98a0b-8663-4c77-896d-67ecbcca633e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5f93e15e-3268-48f6-a36c-3145e78d6c5e" LastKnownName="Contact" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -819,7 +827,7 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="669fce38-a869-4319-bafa-3d8e1a68a8ba" name="action" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="669fce38-a869-4319-bafa-3d8e1a68a8ba" name="_action" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f917c7a2-585f-4a34-9f33-5fef6135edfa" />
             <type_NamedElement>
               <referencedTypeMoniker Id="c21efba7-be0e-4160-a89e-044b4bed3446" LastKnownName="String" />
@@ -828,6 +836,11 @@
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="1946d262-c1c4-48b9-8dd3-ea466d3e5353" name="???" isAbstract="false" isLeaf="false" cachedFullName="???">
+        <elementDefinition Id="7400cf86-19c4-49c2-94a1-cdbce95c5508" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="a9e303fd-a464-404b-8853-ab4733cdff80" name="UMLDiagrams">
     <elementDefinition Id="c73459c3-493e-4b80-86eb-2061ad4501d0" />
