@@ -195,7 +195,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="8a8a16b4-b8d9-4d04-aa80-2fb811d47665" name="generateContacts" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="8a8a16b4-b8d9-4d04-aa80-2fb811d47665" name="GenerateContacts" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b2a9a8a8-b358-40de-b7bb-cc3130130caf" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -208,7 +208,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="bfd8e6ac-e69f-4ab7-b5f8-10b3dfa9ff74" name="getContact" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="bfd8e6ac-e69f-4ab7-b5f8-10b3dfa9ff74" name="GetContact" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="4640b904-4de2-4f35-b733-ec29c000da04" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -643,7 +643,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="84693342-468f-4076-96ea-b4676826faec" name="addMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="84693342-468f-4076-96ea-b4676826faec" name="AddMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="0bceb6a7-e4c0-41a6-8e3b-659a209e18ba" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -656,7 +656,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="b96381e1-121e-461c-9bf4-7d5b25caf1a3" name="delMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="b96381e1-121e-461c-9bf4-7d5b25caf1a3" name="DeleteMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="1b129284-6796-4265-952f-9c7d7520876e" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -669,7 +669,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="b1a24e11-cdf8-4c75-90a5-e1fcf4e72717" name="getMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="b1a24e11-cdf8-4c75-90a5-e1fcf4e72717" name="GetMessage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="36d33142-499c-4feb-b6e7-4cbcbce57df2" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -730,7 +730,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="dc533eca-7a07-46f6-8ae2-1dafbc0e7074" name="generateConversations" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="dc533eca-7a07-46f6-8ae2-1dafbc0e7074" name="GenerateConversations" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="9bf8a1a9-c1d3-4dc9-8d2f-8885902a01c3" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -743,7 +743,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="3f7530cc-5d52-4d7e-9132-ec93b9c5b2a6" name="accessConversation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="3f7530cc-5d52-4d7e-9132-ec93b9c5b2a6" name="AccessConversation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="95b085aa-e29a-44b1-acf2-557732f5df40" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -764,7 +764,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="aedee01c-197d-42da-afcd-dbe0482fb50a" name="addNewConversation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="aedee01c-197d-42da-afcd-dbe0482fb50a" name="AddNewConversation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="acd9febc-cd7c-43f2-a5e7-251b5d537d1c" />
             <ownedParameters>
               <operationHasOwnedParameters>

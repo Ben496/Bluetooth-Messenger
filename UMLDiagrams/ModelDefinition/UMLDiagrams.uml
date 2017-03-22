@@ -10949,7 +10949,7 @@
         <ownedOperationsInternal>
           <operation
             Id="b2a9a8a8-b358-40de-b7bb-cc3130130caf"
-            name="generateContacts"
+            name="GenerateContacts"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -10972,7 +10972,7 @@
           </operation>
           <operation
             Id="4640b904-4de2-4f35-b733-ec29c000da04"
-            name="getContact"
+            name="GetContact"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -11716,7 +11716,7 @@
         <ownedOperationsInternal>
           <operation
             Id="0bceb6a7-e4c0-41a6-8e3b-659a209e18ba"
-            name="addMessage"
+            name="AddMessage"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -11741,7 +11741,7 @@
           </operation>
           <operation
             Id="1b129284-6796-4265-952f-9c7d7520876e"
-            name="delMessage"
+            name="DeleteMessage"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -11766,7 +11766,7 @@
           </operation>
           <operation
             Id="36d33142-499c-4feb-b6e7-4cbcbce57df2"
-            name="getMessage"
+            name="GetMessage"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -11882,7 +11882,7 @@
         <ownedOperationsInternal>
           <operation
             Id="9bf8a1a9-c1d3-4dc9-8d2f-8885902a01c3"
-            name="generateConversations"
+            name="GenerateConversations"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -11906,7 +11906,7 @@
           </operation>
           <operation
             Id="95b085aa-e29a-44b1-acf2-557732f5df40"
-            name="accessConversation"
+            name="AccessConversation"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -11944,7 +11944,7 @@
           </operation>
           <operation
             Id="acd9febc-cd7c-43f2-a5e7-251b5d537d1c"
-            name="addNewConversation"
+            name="AddNewConversation"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
