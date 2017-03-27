@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsMessenger", "Windows
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{030C46EC-E095-4DE0-85D5-277900911D3E}"
 	ProjectSection(SolutionItems) = preProject
+		Documentation\CodeStyle.html = Documentation\CodeStyle.html
 		Documentation\Requirements.html = Documentation\Requirements.html
 	EndProjectSection
 EndProject

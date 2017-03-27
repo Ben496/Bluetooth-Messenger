@@ -1,7 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Code Style</title>
+	<title>Code Style</title>
 	<style type="text/css">
-		.pre{
+		.pre {
 			border-color: black;
 		}
 	</style>
@@ -33,14 +35,23 @@
 			</p>
 		</li>
 		<li>
-			<p>All variable, property, and function names will be camelCase.</p>
+			<p>All local variable names will be camelCase.</p>
 			<pre><code>
 void createConversation();
 int createId;
 			</code></pre>
 		</li>
 		<li>
-			<p>All class names will be PascalCase.</p>
+			<p>All member variables will begin with an "_" and use camelCase.</p>
+			<pre><code>
+private int _count;
+			</code></pre>
+		</li>
+		<li>
+			<p>All properties will refer to one or more member variables.</p>
+		</li>
+		<li>
+			<p>All class, property, and function names will be PascalCase.</p>
 		</li>
 		<li>
 			<p>
@@ -82,3 +93,4 @@ else if (y != 0) {
 		</li>
 	</ol>
 </body>
+</html>
