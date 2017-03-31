@@ -38,6 +38,15 @@
     <Folder Include="ClassLib\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bluetooth.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="ContactList.cs" />
+    <Compile Include="Conversation.cs" />
+    <Compile Include="ConversationList.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="PhoneNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
