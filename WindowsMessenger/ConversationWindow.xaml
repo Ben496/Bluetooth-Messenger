@@ -1,17 +1,12 @@
-﻿<Window x:Class="WindowsMessenger.MainWindow"
+﻿<Window x:Class="WindowsMessenger.ConversationWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowsMessenger"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="ConversationWindow" Height="300" Width="300">
     <Grid>
-		<DataGrid x:Name="dataGrid" 
-		ItemsSource="{Binding Students}"
-        DisplayMemberPath="Contact Name"         
-        SelectedItem="{Binding SelectedPerson}"
-		HorizontalAlignment="Left" Height="302" Margin="10,10,0,0" VerticalAlignment="Top" Width="237"/>
-
+		<DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="252" Width="111"/>
 	</Grid>
 </Window>
