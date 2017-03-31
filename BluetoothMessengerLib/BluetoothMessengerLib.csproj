@@ -37,6 +37,7 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bluetooth.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Contact.cs" />
