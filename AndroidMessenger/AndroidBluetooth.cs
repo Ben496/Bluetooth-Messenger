@@ -22,8 +22,8 @@ namespace AndroidMessenger {
 	// TO DO: add server socket functionality
 	class AndroidBluetooth : Bluetooth {
 		private static readonly UUID _uuid = UUID.FromString(UuidString);
-		private static BluetoothAdapter _adapter;
-		private static List<BluetoothDevice> _pairedDevices;
+		private BluetoothAdapter _adapter;
+		private List<BluetoothDevice> _pairedDevices;
 		private BluetoothSocket _inputSocket;	// add functionality for this field
 		private BluetoothSocket _outputSocket;	// add functionality for this field
 
@@ -31,7 +31,7 @@ namespace AndroidMessenger {
 			get { return _uuid; }
 		}
 
-		public static BluetoothAdapter Adapter {
+		public BluetoothAdapter Adapter {
 			get { return _adapter; }
 		}
 
@@ -42,10 +42,11 @@ namespace AndroidMessenger {
 
 		// Gets a list of paired devices.
 		// Returns null if bluetooth is disabled.
-		public static List<BluetoothDevice> GetPairedDevices() {
+		public List<BluetoothDevice> GetPairedDevices() {
 			if (_adapter.IsEnabled) {
 				List<BluetoothDevice> devices = new List<BluetoothDevice>();
 				devices = (List<BluetoothDevice>)_adapter.BondedDevices;
+				_pairedDevices = devices;
 				return devices;
 			}
 			else {

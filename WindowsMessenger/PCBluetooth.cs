@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace WindowsMessenger {
 	class PCBluetooth : Bluetooth {
 		private static readonly Guid _uuid = new Guid(UuidString);
 		private BluetoothClient _bluetoothConnection;
-		private static List<BluetoothDeviceInfo> _pairedDevices;
+		private List<BluetoothDeviceInfo> _pairedDevices;
 
 		public static Guid Uuid {
 			get { return _uuid; }
@@ -30,6 +31,40 @@ namespace WindowsMessenger {
 		
 		public PCBluetooth() {
 			_bluetoothConnection = new BluetoothClient();
+		}
+
+		public List<BluetoothDeviceInfo> GetDeviceNames() {
+
+			List<BluetoothDeviceInfo> deviceNames = new List<BluetoothDeviceInfo>();
+			var array = _bluetoothConnection.DiscoverDevices();
+			foreach (BluetoothDeviceInfo i in array) {
+				deviceNames.Add(i);
+			}
+			_pairedDevices = deviceNames;
+			return deviceNames;
+		}
+
+		// Returns connects to selected device and returns the associated bluetooth stream
+		public Stream Connect(BluetoothDeviceInfo device) {
+			try {
+				var endPoint = new BluetoothEndPoint(device.DeviceAddress, _uuid);
+				_bluetoothConnection.Connect(endPoint);
+				return _bluetoothConnection.GetStream();
+			}
+			catch {
+				return null;
+			}
+		}
+
+		
+		public bool Disconnect() {
+			try {
+				_bluetoothConnection.Close();
+				return true;
+			}
+			catch {
+				return false;
+			}
 		}
 	}
 }
