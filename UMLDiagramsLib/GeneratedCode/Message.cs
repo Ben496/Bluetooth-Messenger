@@ -17,11 +17,11 @@ public class Message
 		set;
 	}
 
-	private ??? _multi
+	/*private ??? _multi
 	{
 		get;
 		set;
-	}
+	}*/
 
 	private string _phoneNumber
 	{
