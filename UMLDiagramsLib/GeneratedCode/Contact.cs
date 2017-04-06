@@ -17,11 +17,11 @@ public class Contact
 		set;
 	}
 
-	private ??? _picture
+/*	private ??? _picture
 	{
 		get;
 		set;
-	}
+	} */
 
 	private List<PhoneNum> _numbers
 	{
