@@ -11363,8 +11363,8 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="7400cf86-19c4-49c2-94a1-cdbce95c5508"
-                LastKnownName="???"
+                Id="b0610bfb-3766-4263-8828-a0d1430eb33b"
+                LastKnownName="Stream"
                 LastKnownLocation="UMLDiagrams.uml" />
             </type_NamedElement>
           </property>
@@ -11645,8 +11645,8 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="7400cf86-19c4-49c2-94a1-cdbce95c5508"
-                LastKnownName="???"
+                Id="b0610bfb-3766-4263-8828-a0d1430eb33b"
+                LastKnownName="Stream"
                 LastKnownLocation="UMLDiagrams.uml" />
             </type_NamedElement>
           </property>
@@ -13730,6 +13730,11 @@
           </property>
         </ownedAttributesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b0610bfb-3766-4263-8828-a0d1430eb33b"
+        name="Stream" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
