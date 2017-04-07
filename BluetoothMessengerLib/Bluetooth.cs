@@ -16,6 +16,8 @@ namespace BluetoothMessengerLib {
 			get { return _uuidString; }
 		}
 
+		// TODO: rework this so it doesn't connect / disconnect each time.
+		// Writes a single object to a given stream.
 		protected bool Send(Stream connectionStream, object data) {
 			string output = JsonConvert.SerializeObject(data);
 			var buffer = System.Text.Encoding.UTF8.GetBytes(output);
@@ -26,6 +28,8 @@ namespace BluetoothMessengerLib {
 			return true;
 		}
 
+		// This method is so terrible that i know it can be done better.
+		// Extracts a single object from a given stream
 		protected object Get(Stream connectionStream) {
 			LinkedList<byte> bytes = new LinkedList<byte>();
 			while (true) {

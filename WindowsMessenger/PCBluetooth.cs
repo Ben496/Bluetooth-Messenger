@@ -66,10 +66,9 @@ namespace WindowsMessenger {
 				return false;
 			}
 		}
-
-		// TODO: rework this so it doesn't connect / disconnect each time.
-		// Returns true when sending succeeded.
-		// False when sending failed.
+		
+		// Sends an object. Serialized the object into a JSON string.
+		// Then sends the object 
 		public bool SendObject(Stream connectionStream, object data) {
 			bool succeed = false;
 			if (_bluetoothConnection.Connected) {
@@ -80,8 +79,7 @@ namespace WindowsMessenger {
 			return succeed;
 		}
 
-		// Returns an received object. from the phone
-		//
+		// Receives an object from a designated socket and returns it.
 		public object ReceiveObject(Stream connectionStream) {
 			return Get(connectionStream);
 		}

@@ -94,9 +94,8 @@ namespace AndroidMessenger {
 			}
 			return false;
 		}
-
-		// This method is so terrible that i know it can be done better.
-		// Receives an object from a designated socket.
+		
+		// Receives an object from a designated socket and returns it.
 		public object ReceiveObject(BluetoothSocket socket) {
 			Stream inStream = socket.InputStream;
 			return Get(inStream);
