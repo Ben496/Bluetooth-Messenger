@@ -89,10 +89,7 @@ namespace AndroidMessenger {
 		public bool SendObject(BluetoothSocket socket, Object obj) {
 			if (socket.IsConnected) {
 				var outStream = socket.OutputStream;
-				var output = JsonConvert.SerializeObject(obj);
-				var buffer = Encoding.UTF8.GetBytes(output);
-				outStream.Write(buffer, 0, buffer.Length);
-				outStream.Flush();
+				Send(outStream, obj);
 				return true;
 			}
 			return false;
@@ -102,39 +99,7 @@ namespace AndroidMessenger {
 		// Receives an object from a designated socket.
 		public object ReceiveObject(BluetoothSocket socket) {
 			Stream inStream = socket.InputStream;
-			LinkedList<byte> linkList = new LinkedList<byte>();
-			while (true) {
-				if (inStream != null) {
-					try {
-						int tmp = 0;
-						while (true) {
-							try {
-								tmp = inStream.ReadByte();
-							}
-							catch (Java.IO.IOException) {
-								break;
-							}
-							if (tmp != -1)
-								linkList.AddLast((byte)tmp);
-							else
-								break;
-						}
-						byte[] arr = new byte[linkList.Count];
-						int i = 0;
-						foreach (byte b in linkList) {
-							arr[i] = b;
-							i++;
-						}
-						string input = Encoding.UTF8.GetString(arr);
-						object obj = JsonConvert.DeserializeObject<Object>(input);
-						return obj;
-					}
-					catch {
-						return null;
-					}
-				}
-				return null;
-			}
+			return Get(inStream);
 		}
 	}
 }

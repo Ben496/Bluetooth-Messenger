@@ -66,5 +66,24 @@ namespace WindowsMessenger {
 				return false;
 			}
 		}
+
+		// TODO: rework this so it doesn't connect / disconnect each time.
+		// Returns true when sending succeeded.
+		// False when sending failed.
+		public bool SendObject(Stream connectionStream, object data) {
+			bool succeed = false;
+			if (_bluetoothConnection.Connected) {
+				succeed = Send(connectionStream, data);
+				if (succeed)
+					Disconnect();
+			}
+			return succeed;
+		}
+
+		// Returns an received object. from the phone
+		//
+		public object ReceiveObject(Stream connectionStream) {
+			return Get(connectionStream);
+		}
 	}
 }
