@@ -4,10 +4,6 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 public class Message
 {
@@ -17,11 +13,11 @@ public class Message
 		set;
 	}
 
-	/*private ??? _multi
+	private Stream _multi
 	{
 		get;
 		set;
-	}*/
+	}
 
 	private string _phoneNumber
 	{

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.IO;
 
 public class Message
 {
@@ -55,6 +51,10 @@ public class Message
 		_multi = null;
 		_phoneNumber = phoneNumber;
 		_isMMS = mms;
+	}
+
+	public override string ToString() {
+		return _phoneNumber + " " + _text;
 	}
 
 }

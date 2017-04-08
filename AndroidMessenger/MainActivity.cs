@@ -1,21 +1,17 @@
 ﻿using Android.App;
-using Android.Widget;
 using Android.OS;
 using Android.Net;
-using BluetoothMessengerLib;
 using Android.Content;
-using Android.Runtime;
-using Android.Telephony;
-using Android.Util;
 using Android.Database;
 
 namespace AndroidMessenger {
-	[Activity(Label = "AndroidMessenger", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity {
 		protected override void OnCreate(Bundle bundle) {
 			base.OnCreate(bundle);
-			
-			
+
+			// Launch the test activity
+			StartActivity(typeof(TestActivity));
 
 			// Set our view from the "main" layout resource
 			// SetContentView (Resource.Layout.Main);

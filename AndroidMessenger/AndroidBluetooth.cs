@@ -1,20 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Bluetooth;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 using Java.Util;
-
-using Newtonsoft.Json;
 
 using BluetoothMessengerLib;
 
@@ -23,7 +11,7 @@ namespace AndroidMessenger {
 	class AndroidBluetooth : Bluetooth {
 		private static readonly UUID _uuid = UUID.FromString(UuidString);
 		private BluetoothAdapter _adapter;
-		private List<BluetoothDevice> _pairedDevices;
+		private ICollection<BluetoothDevice> _pairedDevices;
 		private BluetoothSocket _inputSocket;	// add functionality for this field
 		private BluetoothSocket _outputSocket;	// add functionality for this field
 
@@ -42,11 +30,10 @@ namespace AndroidMessenger {
 
 		// Gets a list of paired devices.
 		// Returns null if bluetooth is disabled.
-		public List<BluetoothDevice> GetPairedDevices() {
+		public ICollection<BluetoothDevice> GetPairedDevices() {
 			if (_adapter.IsEnabled) {
-				List<BluetoothDevice> devices = new List<BluetoothDevice>();
-				devices = (List<BluetoothDevice>)_adapter.BondedDevices;
-				_pairedDevices = devices;
+				ICollection<BluetoothDevice> devices = new List<BluetoothDevice>();
+				devices = _adapter.BondedDevices;
 				return devices;
 			}
 			else {
@@ -86,55 +73,26 @@ namespace AndroidMessenger {
 
 		// Sends an object. Serialized the object into a JSON string.
 		// Then sends the object 
-		public bool SendObject(BluetoothSocket socket, Object obj) {
+		public bool SendObject<T>(BluetoothSocket socket, T data) {
 			if (socket.IsConnected) {
 				var outStream = socket.OutputStream;
-				var output = JsonConvert.SerializeObject(obj);
-				var buffer = Encoding.UTF8.GetBytes(output);
-				outStream.Write(buffer, 0, buffer.Length);
-				outStream.Flush();
+				Send<T>(outStream, data);
 				return true;
 			}
 			return false;
 		}
-
-		// This method is so terrible that i know it can be done better.
-		// Receives an object from a designated socket.
-		public object ReceiveObject(BluetoothSocket socket) {
+		
+		// Receives an object from a designated socket and returns it.
+		public T ReceiveObject<T>(BluetoothSocket socket) {
 			Stream inStream = socket.InputStream;
-			LinkedList<byte> linkList = new LinkedList<byte>();
-			while (true) {
-				if (inStream != null) {
-					try {
-						int tmp = 0;
-						while (true) {
-							try {
-								tmp = inStream.ReadByte();
-							}
-							catch (Java.IO.IOException) {
-								break;
-							}
-							if (tmp != -1)
-								linkList.AddLast((byte)tmp);
-							else
-								break;
-						}
-						byte[] arr = new byte[linkList.Count];
-						int i = 0;
-						foreach (byte b in linkList) {
-							arr[i] = b;
-							i++;
-						}
-						string input = Encoding.UTF8.GetString(arr);
-						object obj = JsonConvert.DeserializeObject<Object>(input);
-						return obj;
-					}
-					catch {
-						return null;
-					}
-				}
-				return null;
-			}
+			return Get<T>(inStream);
+		}
+
+		public BluetoothSocket GetConnection() {
+			BluetoothServerSocket serverSock = _adapter.ListenUsingRfcommWithServiceRecord("Android Bluetooth Messenger", _uuid);
+			BluetoothSocket inSock = serverSock.Accept();
+			serverSock.Close(); // don't need any more connections comming in
+			return inSock;
 		}
 	}
 }

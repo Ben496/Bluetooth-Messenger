@@ -57,11 +57,33 @@ namespace AndroidMessenger
 			}
 		}
 		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f050001
+			public const int SentObject = 2131034113;
+			
+			// aapt resource value: 0x7f050000
+			public const int StartServer = 2131034112;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
+			{
+			}
+		}
+		
 		public partial class Layout
 		{
 			
 			// aapt resource value: 0x7f030000
 			public const int Main = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Test = 2130903041;
 			
 			static Layout()
 			{

@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using InTheHand.Net;
 using InTheHand.Net.Sockets;
-using Newtonsoft.Json;
 
 using BluetoothMessengerLib;
 
@@ -65,6 +61,23 @@ namespace WindowsMessenger {
 			catch {
 				return false;
 			}
+		}
+		
+		// Sends an object. Serialized the object into a JSON string.
+		// Then sends the object 
+		public bool SendObject<T>(Stream connectionStream, T data) {
+			bool succeed = false;
+			if (_bluetoothConnection.Connected) {
+				succeed = Send<T>(connectionStream, data);
+				if (succeed)
+					Disconnect();
+			}
+			return succeed;
+		}
+
+		// Receives an object from a designated socket and returns it.
+		public T ReceiveObject<T>(Stream connectionStream) {
+			return Get<T>(connectionStream);
 		}
 	}
 }
