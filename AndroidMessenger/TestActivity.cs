@@ -32,7 +32,8 @@ namespace AndroidMessenger {
 			_startServer.Click += (object sender, EventArgs e) => {
 				BluetoothSocket input = _connection.GetConnection();
 				_sentOutput.Text = "Connected\n";
-				Message msg = (Message)_connection.ReceiveObject(input);
+				object msg = _connection.ReceiveObject(input);
+				_sentOutput.Text += msg.ToString();
 			};
 
 			// Create your application here

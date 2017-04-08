@@ -57,5 +57,9 @@ public class Message
 		_isMMS = mms;
 	}
 
+	public override string ToString() {
+		return _phoneNumber + _text;
+	}
+
 }
 

@@ -57,7 +57,7 @@ namespace BluetoothMessengerLib {
 						// For some reaosn I cannot use the version that only accepts (byte[])
 						// instead I have to specify the start and end locations.
 						string input = Encoding.UTF8.GetString(tmpArray, 0, bytes.Count);
-						object item = JsonConvert.DeserializeObject<Object>(input);
+						object item = JsonConvert.DeserializeObject<object>(input);
 						return item;
 					}
 					catch {

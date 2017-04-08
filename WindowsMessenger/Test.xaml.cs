@@ -39,11 +39,11 @@ namespace WindowsMessenger {
 			// Generating message
 			string messageContent;
 			string messageNumber;
-			try {
+			if(text.Text != "" && phoneNumber.Text != "") {
 				messageContent = text.Text;
 				messageNumber = phoneNumber.Text;
 			}
-			catch {
+			else {
 				messageNumber = "1234567890";
 				messageContent = "Hello World!";
 			}
@@ -55,7 +55,7 @@ namespace WindowsMessenger {
 					if (string.Equals(i.DeviceName, "ASUS_Z00AD") || string.Equals(i.DeviceName, "ASUSZ00AD")) {
 						Stream buffer = _connection.Connect(i);
 						_connection.SendObject(buffer, testMessage);
-						status.Content = "Status: sending complete";
+						status.Content = "Status: sending complete" + testMessage.ToString();
 					}
 				}
 			}
