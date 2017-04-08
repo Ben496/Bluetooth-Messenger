@@ -8,9 +8,9 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
 		<DataGrid x:Name="dataGrid" 
-		ItemsSource="{Binding Students}"
+		ItemsSource="{Binding Conversations}"
         DisplayMemberPath="Contact Name"         
-        SelectedItem="{Binding SelectedPerson}"
+        SelectedItem="{Binding PhoneNumber}"
 		HorizontalAlignment="Left" Height="302" Margin="10,10,0,0" VerticalAlignment="Top" Width="237"/>
 
 	</Grid>

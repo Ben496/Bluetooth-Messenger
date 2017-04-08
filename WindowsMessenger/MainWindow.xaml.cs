@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using WindowsMessenger.ViewModel;
 
 namespace WindowsMessenger {
 	/// <summary>
@@ -8,9 +9,12 @@ namespace WindowsMessenger {
 		public MainWindow() {
 			InitializeComponent();
 
+			ConversationViewModel cvm = new ConversationViewModel();
+			DataContext = cvm;
+
 			// Show test window.
-			Window win = new Test();
-			win.Show();
+			//	Window win = new Test();
+			//	win.Show();
 
 		}
 	}

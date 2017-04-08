@@ -25,12 +25,17 @@ public class Conversation
 	}
 
 	public Conversation(Message sms) {
+		_who = null;
 		_phoneNumber = sms.PhoneNumber;
+		_messages = new List<Message>();
 		_messages.Add(sms);
 	}
 
 	public void AddMessage(Message sms)
 	{
+		if (_messages == null) {
+			_messages = new List<Message>();
+		}
 		_messages.Add(sms);
 	}
 
