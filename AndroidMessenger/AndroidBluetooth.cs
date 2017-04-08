@@ -1,20 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Bluetooth;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 using Java.Util;
-
-using Newtonsoft.Json;
 
 using BluetoothMessengerLib;
 
@@ -85,10 +73,10 @@ namespace AndroidMessenger {
 
 		// Sends an object. Serialized the object into a JSON string.
 		// Then sends the object 
-		public bool SendObject<T>(BluetoothSocket socket, T obj) {
+		public bool SendObject<T>(BluetoothSocket socket, T data) {
 			if (socket.IsConnected) {
 				var outStream = socket.OutputStream;
-				Send<T>(outStream, obj);
+				Send<T>(outStream, data);
 				return true;
 			}
 			return false;

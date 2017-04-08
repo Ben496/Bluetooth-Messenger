@@ -1,12 +1,7 @@
 ﻿using Android.App;
-using Android.Widget;
 using Android.OS;
 using Android.Net;
-using BluetoothMessengerLib;
 using Android.Content;
-using Android.Runtime;
-using Android.Telephony;
-using Android.Util;
 using Android.Database;
 
 namespace AndroidMessenger {

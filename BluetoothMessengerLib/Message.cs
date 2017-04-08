@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.IO;
 
 public class Message
 {
@@ -58,7 +54,7 @@ public class Message
 	}
 
 	public override string ToString() {
-		return _phoneNumber + _text;
+		return _phoneNumber + " " + _text;
 	}
 
 }
