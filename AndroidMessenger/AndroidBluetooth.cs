@@ -85,19 +85,19 @@ namespace AndroidMessenger {
 
 		// Sends an object. Serialized the object into a JSON string.
 		// Then sends the object 
-		public bool SendObject(BluetoothSocket socket, Object obj) {
+		public bool SendObject<T>(BluetoothSocket socket, T obj) {
 			if (socket.IsConnected) {
 				var outStream = socket.OutputStream;
-				Send(outStream, obj);
+				Send<T>(outStream, obj);
 				return true;
 			}
 			return false;
 		}
 		
 		// Receives an object from a designated socket and returns it.
-		public object ReceiveObject(BluetoothSocket socket) {
+		public T ReceiveObject<T>(BluetoothSocket socket) {
 			Stream inStream = socket.InputStream;
-			return Get(inStream);
+			return Get<T>(inStream);
 		}
 
 		public BluetoothSocket GetConnection() {

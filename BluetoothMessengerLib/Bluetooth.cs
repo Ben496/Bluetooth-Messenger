@@ -18,7 +18,7 @@ namespace BluetoothMessengerLib {
 
 		// TODO: rework this so it doesn't connect / disconnect each time.
 		// Writes a single object to a given stream.
-		protected bool Send(Stream connectionStream, object data) {
+		protected bool Send<T>(Stream connectionStream, T data) {
 			string output = JsonConvert.SerializeObject(data);
 			var buffer = System.Text.Encoding.UTF8.GetBytes(output);
 			//BinaryWriter writeLength = new BinaryWriter(connectionStream);
@@ -30,7 +30,7 @@ namespace BluetoothMessengerLib {
 
 		// This method is so terrible that i know it can be done better.
 		// Extracts a single object from a given stream
-		protected object Get(Stream connectionStream) {
+		protected T Get<T>(Stream connectionStream) {
 			LinkedList<byte> bytes = new LinkedList<byte>();
 			while (true) {
 				if (connectionStream != null) {
@@ -57,11 +57,12 @@ namespace BluetoothMessengerLib {
 						// For some reaosn I cannot use the version that only accepts (byte[])
 						// instead I have to specify the start and end locations.
 						string input = Encoding.UTF8.GetString(tmpArray, 0, bytes.Count);
-						object item = JsonConvert.DeserializeObject<object>(input);
+						T item = JsonConvert.DeserializeObject<T>(input);
 						return item;
 					}
 					catch {
-						return null;
+						// TODO: Put something here that works
+						//return null;
 					}
 				}
 			}
