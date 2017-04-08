@@ -14,8 +14,9 @@ namespace AndroidMessenger {
 	public class MainActivity : Activity {
 		protected override void OnCreate(Bundle bundle) {
 			base.OnCreate(bundle);
-			
-			
+
+			// Launch the test activity
+			StartActivity(typeof(TestActivity));
 
 			// Set our view from the "main" layout resource
 			// SetContentView (Resource.Layout.Main);
