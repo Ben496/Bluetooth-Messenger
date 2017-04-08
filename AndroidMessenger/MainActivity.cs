@@ -10,7 +10,7 @@ using Android.Util;
 using Android.Database;
 
 namespace AndroidMessenger {
-	[Activity(Label = "AndroidMessenger", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity {
 		protected override void OnCreate(Bundle bundle) {
 			base.OnCreate(bundle);
