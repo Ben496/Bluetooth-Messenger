@@ -18,7 +18,7 @@ namespace AndroidMessenger {
 		}
 
 		public ConversationList generateConversations() {
-			Uri inboxURI = Uri.Parse("content://sms/inbox");
+			Uri inboxURI = Uri.Parse("content://sms/");
 			ConversationList conversations = new ConversationList();
 			ContentResolver cr = this.ContentResolver;
 			ICursor c = cr.Query(inboxURI, null, null, null, null);
@@ -27,6 +27,7 @@ namespace AndroidMessenger {
 					Message sms = new Message();
 					sms.Text = c.GetString(c.GetColumnIndexOrThrow("body")).ToString();
 					sms.PhoneNumber = c.GetString(c.GetColumnIndexOrThrow("address")).ToString();
+					sms.Time = c.GetInt(c.GetColumnIndexOrThrow("date"));
 					conversations.addMessage(sms);
 				}
 			}

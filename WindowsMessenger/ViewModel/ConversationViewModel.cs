@@ -9,6 +9,12 @@ namespace WindowsMessenger.ViewModel {
 
 		public ConversationViewModel() {
 			ObservableCollection<Conversation> tmp = new ObservableCollection<Conversation>();
+			Conversation convo = new Conversation(new Message("HEY FRIEND", "6156300003"));
+			convo.AddMessage(new Message("WADDUP", "6156300003"));
+			tmp.Add(convo);
+
+			Conversations = tmp;
+			
 
 
 		}	
