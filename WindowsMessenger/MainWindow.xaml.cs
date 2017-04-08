@@ -20,6 +20,11 @@ namespace WindowsMessenger {
 	public partial class MainWindow : Window {
 		public MainWindow() {
 			InitializeComponent();
+
+			// Show test window.
+			Window win = new Test();
+			win.Show();
+
 		}
 	}
 }

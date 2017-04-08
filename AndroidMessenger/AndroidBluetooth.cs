@@ -23,7 +23,7 @@ namespace AndroidMessenger {
 	class AndroidBluetooth : Bluetooth {
 		private static readonly UUID _uuid = UUID.FromString(UuidString);
 		private BluetoothAdapter _adapter;
-		private List<BluetoothDevice> _pairedDevices;
+		private ICollection<BluetoothDevice> _pairedDevices;
 		private BluetoothSocket _inputSocket;	// add functionality for this field
 		private BluetoothSocket _outputSocket;	// add functionality for this field
 
@@ -42,11 +42,10 @@ namespace AndroidMessenger {
 
 		// Gets a list of paired devices.
 		// Returns null if bluetooth is disabled.
-		public List<BluetoothDevice> GetPairedDevices() {
+		public ICollection<BluetoothDevice> GetPairedDevices() {
 			if (_adapter.IsEnabled) {
-				List<BluetoothDevice> devices = new List<BluetoothDevice>();
-				devices = (List<BluetoothDevice>)_adapter.BondedDevices;
-				_pairedDevices = devices;
+				ICollection<BluetoothDevice> devices = new List<BluetoothDevice>();
+				devices = _adapter.BondedDevices;
 				return devices;
 			}
 			else {
@@ -99,6 +98,13 @@ namespace AndroidMessenger {
 		public object ReceiveObject(BluetoothSocket socket) {
 			Stream inStream = socket.InputStream;
 			return Get(inStream);
+		}
+
+		public BluetoothSocket GetConnection() {
+			BluetoothServerSocket serverSock = _adapter.ListenUsingRfcommWithServiceRecord("Android Bluetooth Messenger", _uuid);
+			BluetoothSocket inSock = serverSock.Accept();
+			serverSock.Close(); // don't need any more connections comming in
+			return inSock;
 		}
 	}
 }
