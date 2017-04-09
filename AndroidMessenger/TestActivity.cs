@@ -43,11 +43,25 @@ namespace AndroidMessenger {
 			}
 
 			_getPairedDevices.Click += (object sender, EventArgs e) => {
-
+				_getPairedDevices.Text = "This button does nothing";
 			};
 
 			_send.Click += (object sender, EventArgs e) => {
-
+				Message newMessage = new Message(_messageContent.Text, _phoneNumber.Text);
+				foreach (BluetoothDevice i in devices) {
+					if (i.Name.Equals("TESLA-WIN")) {
+						try {
+							connection.Connect(i);
+							connection.SendObject<Message>(newMessage);
+							_status.Text += "Sending Success";
+							return;
+						}
+						catch {
+							_status.Text += "Connecting Failed";
+						}
+					}
+				}
+				_status.Text += "Device not found";
 			};
 
 			// Create your application here

@@ -13,8 +13,8 @@ namespace WindowsMessenger {
 			DataContext = cvm;
 
 			// Show test window.
-			//	Window win = new Test();
-			//	win.Show();
+			Window win = new Test();
+			win.Show();
 
 		}
 	}

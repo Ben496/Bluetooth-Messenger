@@ -45,9 +45,9 @@ namespace AndroidMessenger {
 
 		// Gets a connection socket from a device address.
 		// Returns true/false based on connection success.
-		public bool Connect(string address) {
+		public bool Connect(BluetoothDevice device) {
 			foreach (BluetoothDevice i in _pairedDevices) {
-				if (string.Equals(i.Address, address)) {
+				if (string.Equals(i.Address, device.Address)) {
 					BluetoothSocket sock = i.CreateRfcommSocketToServiceRecord(_uuid);
 					try {
 						sock.Connect();
@@ -78,11 +78,13 @@ namespace AndroidMessenger {
 		// Sends an object. Serialized the object into a JSON string.
 		// Then sends the object 
 		public bool SendObject<T>(T data) {
+			bool succeed = false;
 			if (_socket.IsConnected) {
-				Send<T>(_socket.OutputStream, data);
-				return true;
+				succeed = Send<T>(_socket.OutputStream, data);
+				if (succeed)
+					Disconnect();
 			}
-			return false;
+			return succeed;
 		}
 		
 		// Receives an object from a designated socket and returns it.
@@ -92,7 +94,7 @@ namespace AndroidMessenger {
 		}
 
 		// This function is used for listening for an incomming connection
-		public bool GetConnection() {
+		public bool GetIncommingConnection() {
 			try {
 				BluetoothServerSocket serverSock = _adapter.ListenUsingRfcommWithServiceRecord("Android Bluetooth Messenger", _uuid);
 				BluetoothSocket inSock = serverSock.Accept();

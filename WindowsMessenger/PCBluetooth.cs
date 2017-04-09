@@ -83,5 +83,18 @@ namespace WindowsMessenger {
 		public T ReceiveObject<T>() {
 			return Get<T>(_bluetoothStream);
 		}
+
+		public bool GetIncommingConnection() {
+			try {
+				BluetoothListener listener = new BluetoothListener(_uuid);
+				listener.Start();
+				var client = listener.AcceptBluetoothClient();
+				_bluetoothStream = client.GetStream();
+				return true;
+			}
+			catch {
+				return false;
+			}
+		}
 	}
 }

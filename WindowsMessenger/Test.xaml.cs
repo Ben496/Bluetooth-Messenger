@@ -47,5 +47,11 @@ namespace WindowsMessenger {
 				}
 			}
 		}
+
+		private void listenButton_Click(object sender, RoutedEventArgs e) {
+			_connection.GetIncommingConnection();
+			Message receivedMessage = _connection.ReceiveObject<Message>();
+			messageLabel.Content += receivedMessage.ToString();
+		}
 	}
 }
