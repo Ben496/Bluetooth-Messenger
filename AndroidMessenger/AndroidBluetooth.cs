@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+
 using Android.Bluetooth;
 
 using Java.Util;
@@ -30,11 +32,11 @@ namespace AndroidMessenger {
 
 		// Gets a list of paired devices.
 		// Returns null if bluetooth is disabled.
-		public ICollection<BluetoothDevice> GetPairedDevices() {
+		public List<BluetoothDevice> GetPairedDevices() {
 			if (_adapter.IsEnabled) {
 				ICollection<BluetoothDevice> devices = new List<BluetoothDevice>();
 				devices = _adapter.BondedDevices;
-				return devices;
+				return devices.ToList();
 			}
 			else {
 				return null;
