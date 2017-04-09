@@ -9,11 +9,13 @@ using BluetoothMessengerLib;
 
 namespace WindowsMessenger {
 	class PCBluetooth : Bluetooth {
-		private static readonly Guid _uuid = new Guid(UuidString);
-		private BluetoothClient _bluetoothConnection;
-		private List<BluetoothDeviceInfo> _pairedDevices;
+		private readonly Guid _uuid = new Guid(UuidString);
+		private BluetoothClient _bluetoothConnection = null;
+		private List<BluetoothDeviceInfo> _pairedDevices = null;
+		private BluetoothDeviceInfo _device = null;
+		private Stream _bluetoothStream = null;
 
-		public static Guid Uuid {
+		public Guid Uuid {
 			get { return _uuid; }
 		}
 
@@ -40,15 +42,16 @@ namespace WindowsMessenger {
 			return deviceNames;
 		}
 
-		// Returns connects to selected device and returns the associated bluetooth stream
-		public Stream Connect(BluetoothDeviceInfo device) {
+		// Connects to selected device and returns true/false based on success
+		public bool Connect(BluetoothDeviceInfo device) {
 			try {
 				var endPoint = new BluetoothEndPoint(device.DeviceAddress, _uuid);
 				_bluetoothConnection.Connect(endPoint);
-				return _bluetoothConnection.GetStream();
+				_bluetoothStream = _bluetoothConnection.GetStream();
+				return true;
 			}
 			catch {
-				return null;
+				return false;
 			}
 		}
 
@@ -56,6 +59,7 @@ namespace WindowsMessenger {
 		public bool Disconnect() {
 			try {
 				_bluetoothConnection.Close();
+				_bluetoothStream = null;
 				return true;
 			}
 			catch {
@@ -65,10 +69,10 @@ namespace WindowsMessenger {
 		
 		// Sends an object. Serialized the object into a JSON string.
 		// Then sends the object 
-		public bool SendObject<T>(Stream connectionStream, T data) {
+		public bool SendObject<T>(T data) {
 			bool succeed = false;
 			if (_bluetoothConnection.Connected) {
-				succeed = Send<T>(connectionStream, data);
+				succeed = Send<T>(_bluetoothStream, data);
 				if (succeed)
 					Disconnect();
 			}
@@ -76,8 +80,8 @@ namespace WindowsMessenger {
 		}
 
 		// Receives an object from a designated socket and returns it.
-		public T ReceiveObject<T>(Stream connectionStream) {
-			return Get<T>(connectionStream);
+		public T ReceiveObject<T>() {
+			return Get<T>(_bluetoothStream);
 		}
 	}
 }

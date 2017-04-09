@@ -40,8 +40,8 @@ namespace WindowsMessenger {
 			if (_devices != null) {
 				foreach (var i in _devices) {
 					if (string.Equals(i.DeviceName, "ASUS_Z00AD") || string.Equals(i.DeviceName, "ASUSZ00AD")) {
-						Stream buffer = _connection.Connect(i);
-						_connection.SendObject<Message>(buffer, testMessage);
+						_connection.Connect(i);
+						_connection.SendObject<Message>(testMessage);
 						status.Content = "Status: sending complete" + testMessage.ToString();
 					}
 				}

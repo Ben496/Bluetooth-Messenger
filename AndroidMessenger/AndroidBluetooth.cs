@@ -11,13 +11,13 @@ using BluetoothMessengerLib;
 namespace AndroidMessenger {
 	// TO DO: add server socket functionality
 	class AndroidBluetooth : Bluetooth {
-		private static readonly UUID _uuid = UUID.FromString(UuidString);
-		private BluetoothAdapter _adapter;
-		private ICollection<BluetoothDevice> _pairedDevices;
-		private BluetoothSocket _inputSocket;	// add functionality for this field
-		private BluetoothSocket _outputSocket;	// add functionality for this field
+		private readonly UUID _uuid = UUID.FromString(UuidString);
+		private BluetoothAdapter _adapter = null;
+		private ICollection<BluetoothDevice> _pairedDevices = null;
+		private BluetoothDevice _device = null;
+		private BluetoothSocket _socket = null;
 
-		public static UUID Uuid {
+		public UUID Uuid {
 			get { return _uuid; }
 		}
 
@@ -44,28 +44,30 @@ namespace AndroidMessenger {
 		}
 
 		// Gets a connection socket from a device address.
-		// Returns null if could not connect or device is not found.
-		public BluetoothSocket Connect(string address) {
+		// Returns true/false based on connection success.
+		public bool Connect(string address) {
 			foreach (BluetoothDevice i in _pairedDevices) {
 				if (string.Equals(i.Address, address)) {
 					BluetoothSocket sock = i.CreateRfcommSocketToServiceRecord(_uuid);
 					try {
 						sock.Connect();
-						return sock;
+						_device = i;
+						_socket = sock;
+						return true;
 					}
 					catch {
-						return null;
+						return false;
 					}
 				}
 			}
-			return null;
+			return false;
 		}
 
 		// Closes socket connection. Returns true if it succeeds.
 		// Returns false if cannot Close the connection.
-		public bool Disconnect(BluetoothSocket socket) {
+		public bool Disconnect() {
 			try {
-				socket.Close();
+				_socket.Close();
 				return true;
 			}
 			catch {
@@ -75,26 +77,31 @@ namespace AndroidMessenger {
 
 		// Sends an object. Serialized the object into a JSON string.
 		// Then sends the object 
-		public bool SendObject<T>(BluetoothSocket socket, T data) {
-			if (socket.IsConnected) {
-				var outStream = socket.OutputStream;
-				Send<T>(outStream, data);
+		public bool SendObject<T>(T data) {
+			if (_socket.IsConnected) {
+				Send<T>(_socket.OutputStream, data);
 				return true;
 			}
 			return false;
 		}
 		
 		// Receives an object from a designated socket and returns it.
-		public T ReceiveObject<T>(BluetoothSocket socket) {
-			Stream inStream = socket.InputStream;
+		public T ReceiveObject<T>() {
+			Stream inStream = _socket.InputStream;
 			return Get<T>(inStream);
 		}
 
-		public BluetoothSocket GetConnection() {
-			BluetoothServerSocket serverSock = _adapter.ListenUsingRfcommWithServiceRecord("Android Bluetooth Messenger", _uuid);
-			BluetoothSocket inSock = serverSock.Accept();
-			serverSock.Close(); // don't need any more connections comming in
-			return inSock;
+		// This function is used for listening for an incomming connection
+		public bool GetConnection() {
+			try {
+				BluetoothServerSocket serverSock = _adapter.ListenUsingRfcommWithServiceRecord("Android Bluetooth Messenger", _uuid);
+				BluetoothSocket inSock = serverSock.Accept();
+				serverSock.Close(); // don't need any more connections comming in
+				return true;
+			}
+			catch {
+				return false;
+			}
 		}
 	}
 }
