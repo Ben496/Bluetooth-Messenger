@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="ff30684c-dcb6-418a-a97d-415c513b36fd" name="ClassDiagram" linkedPackageId="a9e303fd-a464-404b-8853-ab4733cdff80" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="e5a32ca5-4b70-4af5-a8cb-9988255aedf5">
+      <elementDefinition Id="9c3ced18-e6b8-4c4b-9e78-0a3ec2bc331f" />
+      <body>These two subclasses are not in the library since they are device specific. They are however included here to provide information on how data is sent and received. The subclasses call the Get and Send methods in the parent class.</body>
+    </comment>
+  </ownedCommentsInternal>
   <appliedStereotypesInternal>
     <stereotypeInstance Id="e356d3f7-f17d-4d61-bfb5-b3de41ab1f25" name="namespace" profile="CSharpProfile">
       <elementDefinition Id="876d07fc-371c-4917-8cee-28f53d113345" />
@@ -1923,6 +1929,18 @@
               <referencedTypeMoniker Id="4f9d3c8d-c2a9-4930-ad34-9a56da89eed2" LastKnownName="List&lt;BluetoothDeviceInfo&gt;" />
             </type_NamedElement>
           </property>
+          <property Id="3b06b83d-5eb2-4a51-83a5-913f55dce9ae" name="_device" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="033e03bf-9161-4047-b3f8-791f1dd63a42" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="39b57b8a-3754-4dc9-8d2b-6a34261285aa" LastKnownName="BluetoothDeviceInfo" />
+            </type_NamedElement>
+          </property>
+          <property Id="b0a79aea-7264-4b30-bc3b-2076564115b6" name="_bluetoothStream" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="df497b66-3cc0-4131-a0a7-fe51c158b2e3" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6a0aad36-1055-4b51-8e68-210d5ef2d561" LastKnownName="Stream" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="0cb3bc12-66d6-4fd2-b9d5-9a666983f5a1" name="GetDeviceNames" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -1942,18 +1960,18 @@
             <elementDefinition Id="cd7269bd-ea5d-49c3-98f6-c271872f0282" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="caa6a71b-5e7e-43e7-abbe-26dbc7c93b6a" name="device" direction="In" isUnique="false">
-                  <elementDefinition Id="a2741471-4f9a-4d5b-8077-f05308079c6c" />
+                <parameter Id="6cfbcdd7-fd58-44ac-b3ab-24cd3df0009f" direction="Return" isUnique="false">
+                  <elementDefinition Id="1af45af8-3d7e-42c4-94d6-7a9323143969" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="39b57b8a-3754-4dc9-8d2b-6a34261285aa" LastKnownName="BluetoothDeviceInfo" />
+                    <referencedTypeMoniker Id="083be459-0f35-404d-8982-a3482061e9ba" LastKnownName="bool" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="6cfbcdd7-fd58-44ac-b3ab-24cd3df0009f" direction="Return" isUnique="false">
-                  <elementDefinition Id="1af45af8-3d7e-42c4-94d6-7a9323143969" />
+                <parameter Id="044242fe-0cc5-47be-a14f-2f27cd555f79" name="device" direction="In" isUnique="false">
+                  <elementDefinition Id="e930ee84-d4fb-46f1-a831-bffe87907148" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="6a0aad36-1055-4b51-8e68-210d5ef2d561" LastKnownName="Stream" />
+                    <referencedTypeMoniker Id="39b57b8a-3754-4dc9-8d2b-6a34261285aa" LastKnownName="BluetoothDeviceInfo" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1976,16 +1994,8 @@
             <elementDefinition Id="8b071ab9-50e7-4e07-b04d-556dda56f777" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="66882121-d1f3-4580-a0d6-c5f79f8061b9" name="connectionStream" direction="In" isUnique="false">
+                <parameter Id="66882121-d1f3-4580-a0d6-c5f79f8061b9" name="data" direction="In" isUnique="false">
                   <elementDefinition Id="bab4fdc9-f4cf-42b7-bd28-d45b5f65f440" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="6a0aad36-1055-4b51-8e68-210d5ef2d561" LastKnownName="Stream" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="6e7dc709-1dab-49a3-b0a8-d73cc8a65d14" name="data" direction="In" isUnique="false">
-                  <elementDefinition Id="6ee9f98c-f608-4c0a-81e2-f0596463227b" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="b00b131f-6896-494f-bd86-a053cd1c5eb5" LastKnownName="T" />
                   </type_NamedElement>
@@ -2012,11 +2022,16 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3fb52ae7-e3d9-407b-8eb6-0b142a3ca2df" name="GetIncommingConnection" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3cc0e6f7-4326-47ac-9feb-28215bbedac0" />
+            <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="89d8dc30-1ed8-4c82-8472-9cbf39958dfa" name="connectionStream" direction="In" isUnique="false">
-                  <elementDefinition Id="ebf9b2c7-efa8-4652-a838-e3d1bb8505e8" />
+                <parameter Id="ba14e779-08a3-4664-b72b-fcf397ed0c26" direction="Return" isUnique="false">
+                  <elementDefinition Id="975dcf47-99c6-44f0-b53f-9aeaffe8fab8" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="6a0aad36-1055-4b51-8e68-210d5ef2d561" LastKnownName="Stream" />
+                    <referencedTypeMoniker Id="083be459-0f35-404d-8982-a3482061e9ba" LastKnownName="bool" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2067,6 +2082,18 @@
               <referencedTypeMoniker Id="10bc291b-4343-4638-8dba-98e595c3c8df" LastKnownName="ICollection&lt;BluetoothDevice&gt;" />
             </type_NamedElement>
           </property>
+          <property Id="f1ac9cef-25e8-4db7-9067-6ebaad0afdbe" name="_device" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8ce2601b-f01d-4868-ac72-0722c1356ecc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="1eaf3973-413d-482b-a616-182ca558db23" LastKnownName="BluetoothDevice" />
+            </type_NamedElement>
+          </property>
+          <property Id="e53816a4-85c3-430c-9f43-c8684072e420" name="_socket" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d52fddcd-5a66-4ace-87ab-0d3489c63564" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="1af7fd35-95eb-4c72-aab7-957a233bbce6" LastKnownName="BluetoothSocket" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="ee97042e-5d5e-4d51-beed-3edcf38aae2c" name="GetPairedDevices" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -2076,7 +2103,7 @@
                 <parameter Id="a0d326b2-d918-46c1-99b0-3e06d8093874" direction="Return" isUnique="false">
                   <elementDefinition Id="47b70c51-09ea-4527-9104-0fd9a11a446d" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="10bc291b-4343-4638-8dba-98e595c3c8df" LastKnownName="ICollection&lt;BluetoothDevice&gt;" />
+                    <referencedTypeMoniker Id="51c0ae9c-cb6d-4ac9-8a98-f438a17d2da5" LastKnownName="List&lt;BluetoothDevice&gt;" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2086,18 +2113,18 @@
             <elementDefinition Id="98ecc5dd-fa05-40ef-8bed-1c5082f02eb5" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="d631ec28-719d-4a24-9c25-82979e24b882" name="address" direction="In" isUnique="false">
-                  <elementDefinition Id="57d226b3-736f-492f-94e2-44ae44b9d1eb" />
+                <parameter Id="773cd238-a6cf-4dca-89b7-1bbff6001523" direction="Return" isUnique="false">
+                  <elementDefinition Id="365d30b4-8255-43db-87aa-48bec2f5bad4" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="a2828fad-40a7-4eda-bedd-8355e3016e01" LastKnownName="string" />
+                    <referencedTypeMoniker Id="083be459-0f35-404d-8982-a3482061e9ba" LastKnownName="bool" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="773cd238-a6cf-4dca-89b7-1bbff6001523" direction="Return" isUnique="false">
-                  <elementDefinition Id="365d30b4-8255-43db-87aa-48bec2f5bad4" />
+                <parameter Id="f754a6a9-ab74-406a-9d28-28e1de3ca721" name="device" direction="In" isUnique="false">
+                  <elementDefinition Id="6f7b595d-f1c7-4572-8197-3841e524afaa" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="1af7fd35-95eb-4c72-aab7-957a233bbce6" LastKnownName="BluetoothSocket" />
+                    <referencedTypeMoniker Id="1eaf3973-413d-482b-a616-182ca558db23" LastKnownName="BluetoothDevice" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2128,26 +2155,18 @@
             <elementDefinition Id="e8e73691-cb18-4ea0-b7f7-f862ff484251" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="0485265c-8f6a-4a2e-8393-d3654df264ae" name="socket" direction="In" isUnique="false">
-                  <elementDefinition Id="6fa5500c-1a95-4a43-9b4f-62361b17e3f3" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="1af7fd35-95eb-4c72-aab7-957a233bbce6" LastKnownName="BluetoothSocket" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="307b45f4-f65b-4779-8e0b-c6a2511adc16" name="data" direction="In" isUnique="false">
-                  <elementDefinition Id="26fe871f-5765-4e9f-b154-12495a0a6ed4" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="b00b131f-6896-494f-bd86-a053cd1c5eb5" LastKnownName="T" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="03742a17-614c-4892-ba10-b9bd85d4c493" direction="Return" isUnique="false">
                   <elementDefinition Id="44954129-ff32-4ca3-a305-c20c1c637108" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="083be459-0f35-404d-8982-a3482061e9ba" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="309eb95a-8cba-4d49-b74d-064cd6f23bb7" name="data" direction="In" isUnique="false">
+                  <elementDefinition Id="4f326c28-68bf-4edf-a75c-690584325595" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b00b131f-6896-494f-bd86-a053cd1c5eb5" LastKnownName="T" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2156,14 +2175,6 @@
           <operation Id="460f098f-1413-44e7-9e89-4b5d7239ed45" name="ReceiveObject&lt;T&gt;" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="5afe00f7-c2a1-4851-811f-046b6ada50f9" />
             <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="59942dda-6b68-4249-b329-a2ef76b57891" name="socket" direction="In" isUnique="false">
-                  <elementDefinition Id="f543a073-3e1c-4dc7-9404-777a876bca12" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="1af7fd35-95eb-4c72-aab7-957a233bbce6" LastKnownName="BluetoothSocket" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="7e94a322-e628-4249-a99c-574e4fd05293" direction="Return" isUnique="false">
                   <elementDefinition Id="b6b0ca53-b4c5-4ff0-83de-5bdd6eaf102e" />
@@ -2174,14 +2185,14 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="8983843b-76cb-4a34-9543-2284734d6063" name="GetConnection" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="8983843b-76cb-4a34-9543-2284734d6063" name="GetIncommingConnection" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b4332629-6c45-4cdb-a5ad-a069546e30e9" />
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="5a5b9b13-fc39-4b08-9479-9bb601cbd9f7" direction="Return" isUnique="false">
                   <elementDefinition Id="a790262b-b1b9-4e3a-9a4f-8ab4d9f7dd64" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="1af7fd35-95eb-4c72-aab7-957a233bbce6" LastKnownName="BluetoothSocket" />
+                    <referencedTypeMoniker Id="083be459-0f35-404d-8982-a3482061e9ba" LastKnownName="bool" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2208,6 +2219,16 @@
     <packageHasNamedElement>
       <referencedType Id="1af7fd35-95eb-4c72-aab7-957a233bbce6" name="BluetoothSocket" isAbstract="false" isLeaf="false" cachedFullName="BluetoothSocket">
         <elementDefinition Id="391faa51-c354-43e0-bc0a-78aa97a90870" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1eaf3973-413d-482b-a616-182ca558db23" name="BluetoothDevice" isAbstract="false" isLeaf="false" cachedFullName="BluetoothDevice">
+        <elementDefinition Id="4544321e-33d4-48a3-b650-c4398438437b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="51c0ae9c-cb6d-4ac9-8a98-f438a17d2da5" name="List&lt;BluetoothDevice&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;BluetoothDevice&gt;">
+        <elementDefinition Id="e872dbf6-9e72-4b9a-b993-ca091e3e1cdf" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
