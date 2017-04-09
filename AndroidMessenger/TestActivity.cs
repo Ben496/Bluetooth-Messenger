@@ -32,15 +32,17 @@ namespace AndroidMessenger {
 
 			AndroidBluetooth connection = new AndroidBluetooth();
 			List<BluetoothDevice> devices = connection.GetPairedDevices();
-			//_deviceList.ItemsSource = devices.Name;
-			string[] str = new string [] { "Hello", "World" };
-			IListAdapter adapter = new ArrayAdapter<string>(this, Resource.Id.DeviceList, str);
-			//_deviceList.ItemsSource = str;
-			//_status.Text = adapter.Count.ToString() + "\n";
-			_status.Text = "";
-			foreach (BluetoothDevice i in devices) {
-				_status.Text += i.Name + "\n";
+			string[] deviceNames = new string[devices.Count];
+			for (int i = 0; i < devices.Count; i++) {
+				deviceNames[i] = devices[i].Name;
 			}
+			ArrayAdapter<string> adapter =
+				new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, deviceNames);
+			_deviceList.Adapter = adapter;
+			_status.Text = "";
+			//foreach (BluetoothDevice i in devices) {
+			//	_status.Text += i.Name + "\n";
+			//}
 
 			_getPairedDevices.Click += (object sender, EventArgs e) => {
 				_getPairedDevices.Text = "This button does nothing";
