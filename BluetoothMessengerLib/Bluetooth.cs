@@ -12,8 +12,7 @@ namespace BluetoothMessengerLib {
 		public static string UuidString {
 			get { return _uuidString; }
 		}
-
-		// This method replaces the previous method.
+		
 		// The first 4 bytes sent indicate the size of the object.
 		protected bool Send<T>(Stream connectionStream, T data) {
 			string output = JsonConvert.SerializeObject(data);
@@ -25,14 +24,13 @@ namespace BluetoothMessengerLib {
 			connectionStream.Flush();
 			return true;
 		}
-
-		// This method replaces the previous method.
+		
 		// The first 4 bytes received indicate the size of the object.
 		protected T Get<T>(Stream connectionStream) {
 			while (true) {
 				if (connectionStream != null) {
-					BinaryReader bin = new BinaryReader(connectionStream, System.Text.Encoding.UTF8);
-					int length = bin.ReadInt32();
+					BinaryReader readLength = new BinaryReader(connectionStream, System.Text.Encoding.UTF8);
+					int length = readLength.ReadInt32();
 					byte[] buffer = new byte[length];
 					connectionStream.Read(buffer, 0, length);
 					string input = Encoding.UTF8.GetString(buffer, 0, length);
