@@ -17,8 +17,9 @@ namespace WindowsMessenger {
 
 		private void button_Click(object sender, RoutedEventArgs e) {
 			_devices = _connection.GetDeviceNames();
+			label.Content = "";
 			foreach (BluetoothDeviceInfo i in _devices) {
-				label.Content = i.DeviceName;
+				label.Content += i.DeviceName + "\n";
 			}
 		}
 
@@ -40,12 +41,19 @@ namespace WindowsMessenger {
 			if (_devices != null) {
 				foreach (var i in _devices) {
 					if (string.Equals(i.DeviceName, "ASUS_Z00AD") || string.Equals(i.DeviceName, "ASUSZ00AD")) {
-						Stream buffer = _connection.Connect(i);
-						_connection.SendObject<Message>(buffer, testMessage);
+						_connection.Connect(i);
+						_connection.SendObject<Message>(testMessage);
 						status.Content = "Status: sending complete" + testMessage.ToString();
 					}
 				}
 			}
+		}
+
+		private void listenButton_Click(object sender, RoutedEventArgs e) {
+			_connection.GetIncommingConnection();
+			Message receivedMessage = _connection.ReceiveObject<Message>();
+			messageLabel.Content += receivedMessage.ToString();
+			_connection.Disconnect();
 		}
 	}
 }
