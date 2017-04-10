@@ -39,6 +39,7 @@ namespace AndroidMessenger {
 			ArrayAdapter<string> adapter =
 				new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, deviceNames);
 			_deviceList.Adapter = adapter;
+			_deviceList.SetSelector(Android.Resource.Drawable.AlertLightFrame);
 			_status.Text = "";
 			//foreach (BluetoothDevice i in devices) {
 			//	_status.Text += i.Name + "\n";
@@ -49,17 +50,18 @@ namespace AndroidMessenger {
 			};
 
 			_send.Click += (object sender, EventArgs e) => {
+				_status.Text = "";
 				Message newMessage = new Message(_messageContent.Text, _phoneNumber.Text);
 				foreach (BluetoothDevice i in devices) {
-					if (i.Name.Equals("TESLA-WIN")) {
+					if (i.Name.Equals("TESLA-WIN") || i.Name.Equals("KEPLER-WIN")) {
 						try {
 							connection.Connect(i);
 							connection.SendObject<Message>(newMessage);
-							_status.Text += "Sending Success";
+							_status.Text += "Sending Success\n";
 							return;
 						}
 						catch {
-							_status.Text += "Connecting Failed";
+							_status.Text += "Connecting Failed to " + i.Name + "\n";
 						}
 					}
 				}
