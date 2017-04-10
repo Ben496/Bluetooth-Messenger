@@ -13,54 +13,31 @@ namespace BluetoothMessengerLib {
 			get { return _uuidString; }
 		}
 
-		// TODO: rework this so it doesn't connect / disconnect each time.
-		// Writes a single object to a given stream.
+		// This method replaces the previous method.
+		// The first 4 bytes sent indicate the size of the object.
 		protected bool Send<T>(Stream connectionStream, T data) {
 			string output = JsonConvert.SerializeObject(data);
+			int length = output.Length;
 			var buffer = System.Text.Encoding.UTF8.GetBytes(output);
-			//BinaryWriter writeLength = new BinaryWriter(connectionStream);
-			//writeLength.Write(buffer.Length);
+			BinaryWriter writeLength = new BinaryWriter(connectionStream);
+			writeLength.Write(length);
 			connectionStream.Write(buffer, 0, buffer.Length);
 			connectionStream.Flush();
 			return true;
 		}
 
-		// This method is so terrible that I know it can be done better.
-		// Extracts a single object from a given stream
+		// This method replaces the previous method.
+		// The first 4 bytes received indicate the size of the object.
 		protected T Get<T>(Stream connectionStream) {
-			LinkedList<byte> bytes = new LinkedList<byte>();
 			while (true) {
 				if (connectionStream != null) {
-					try {
-						int tmp = 0;
-						while (true) {
-							try {
-								tmp = connectionStream.ReadByte();
-							}
-							catch {
-								break;
-							}
-							if (tmp != -1)
-								bytes.AddLast((byte)tmp);
-							else
-								break;
-						}
-						byte[] tmpArray = new byte[bytes.Count];
-						int i = 0;
-						foreach (byte b in bytes) {
-							tmpArray[i] = b;
-							i++;
-						}
-						// For some reaosn I cannot use the version that only accepts (byte[])
-						// instead I have to specify the start and end locations.
-						string input = Encoding.UTF8.GetString(tmpArray, 0, bytes.Count);
-						T item = JsonConvert.DeserializeObject<T>(input);
-						return item;
-					}
-					catch {
-						// TODO: Put something here that works
-						//return null;
-					}
+					BinaryReader bin = new BinaryReader(connectionStream, System.Text.Encoding.UTF8);
+					int length = bin.ReadInt32();
+					byte[] buffer = new byte[length];
+					connectionStream.Read(buffer, 0, length);
+					string input = Encoding.UTF8.GetString(buffer, 0, length);
+					T dat = JsonConvert.DeserializeObject<T>(input);
+					return dat;
 				}
 			}
 		}

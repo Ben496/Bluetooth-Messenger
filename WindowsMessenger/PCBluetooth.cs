@@ -14,6 +14,7 @@ namespace WindowsMessenger {
 		private List<BluetoothDeviceInfo> _pairedDevices = null;
 		private BluetoothDeviceInfo _device = null;
 		private Stream _bluetoothStream = null;
+		private int _length;
 
 		public Guid Uuid {
 			get { return _uuid; }
@@ -83,8 +84,6 @@ namespace WindowsMessenger {
 
 		// Receives an object from a designated socket and returns it.
 		public T ReceiveObject<T>() {
-			// maybe I can do something with BluetoothClient.Available
-			// to improve the following function
 			return Get<T>(_bluetoothStream);
 		}
 
@@ -93,6 +92,7 @@ namespace WindowsMessenger {
 				BluetoothListener listener = new BluetoothListener(_uuid);
 				listener.Start();
 				var client = listener.AcceptBluetoothClient();
+				_length = client.Available;
 				_bluetoothStream = client.GetStream();
 				return true;
 			}
