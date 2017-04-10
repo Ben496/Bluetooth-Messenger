@@ -52,6 +52,7 @@ namespace WindowsMessenger {
 			_connection.GetIncommingConnection();
 			Message receivedMessage = _connection.ReceiveObject<Message>();
 			messageLabel.Content += receivedMessage.ToString();
+			_connection.Disconnect();
 		}
 	}
 }

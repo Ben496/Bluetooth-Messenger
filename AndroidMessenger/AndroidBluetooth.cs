@@ -46,21 +46,20 @@ namespace AndroidMessenger {
 		// Gets a connection socket from a device address.
 		// Returns true/false based on connection success.
 		public bool Connect(BluetoothDevice device) {
-			foreach (BluetoothDevice i in _pairedDevices) {
-				if (string.Equals(i.Address, device.Address)) {
-					BluetoothSocket sock = i.CreateRfcommSocketToServiceRecord(_uuid);
-					try {
-						sock.Connect();
+			if (_device == null)
+				foreach (BluetoothDevice i in _pairedDevices)
+					if (string.Equals(i.Address, device.Address))
 						_device = i;
-						_socket = sock;
-						return true;
-					}
-					catch {
-						return false;
-					}
-				}
+			BluetoothSocket sock = _device.CreateRfcommSocketToServiceRecord(_uuid);
+			try {
+				sock.Connect();
+				_socket = sock;
+				return true;
 			}
-			return false;
+			catch {
+				_device = null;
+				return false;
+			}
 		}
 
 		// Closes socket connection. Returns true if it succeeds.
