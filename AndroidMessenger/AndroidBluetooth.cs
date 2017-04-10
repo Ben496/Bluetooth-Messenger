@@ -89,6 +89,8 @@ namespace AndroidMessenger {
 		// Receives an object from a designated socket and returns it.
 		public T ReceiveObject<T>() {
 			Stream inStream = _socket.InputStream;
+			// Maybe can do something with String.Length to
+			// improve the following method
 			return Get<T>(inStream);
 		}
 

@@ -48,9 +48,11 @@ namespace WindowsMessenger {
 				var endPoint = new BluetoothEndPoint(device.DeviceAddress, _uuid);
 				_bluetoothConnection.Connect(endPoint);
 				_bluetoothStream = _bluetoothConnection.GetStream();
+				_device = device;
 				return true;
 			}
 			catch {
+				_device = null;
 				return false;
 			}
 		}
@@ -81,6 +83,8 @@ namespace WindowsMessenger {
 
 		// Receives an object from a designated socket and returns it.
 		public T ReceiveObject<T>() {
+			// maybe I can do something with BluetoothClient.Available
+			// to improve the following function
 			return Get<T>(_bluetoothStream);
 		}
 

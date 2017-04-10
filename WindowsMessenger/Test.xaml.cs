@@ -17,8 +17,9 @@ namespace WindowsMessenger {
 
 		private void button_Click(object sender, RoutedEventArgs e) {
 			_devices = _connection.GetDeviceNames();
+			label.Content = "";
 			foreach (BluetoothDeviceInfo i in _devices) {
-				label.Content = i.DeviceName;
+				label.Content += i.DeviceName + "\n";
 			}
 		}
 

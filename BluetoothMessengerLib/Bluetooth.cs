@@ -25,7 +25,7 @@ namespace BluetoothMessengerLib {
 			return true;
 		}
 
-		// This method is so terrible that i know it can be done better.
+		// This method is so terrible that I know it can be done better.
 		// Extracts a single object from a given stream
 		protected T Get<T>(Stream connectionStream) {
 			LinkedList<byte> bytes = new LinkedList<byte>();
