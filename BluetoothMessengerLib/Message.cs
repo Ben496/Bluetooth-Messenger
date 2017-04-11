@@ -7,10 +7,15 @@ public class Message
 	private Stream _multi;		// not implemented yet
 	private string _phoneNumber;
 	private bool _isMMS;
-
+	private bool _isSent;
 	public string Text {
 		get { return _text; }
 		set { _text = value; }
+	}
+
+	public bool isSent {
+		get { return _isSent; }
+		set { _isSent = value; }
 	}
 
 	// TODO add check to make sure phone number is valid
@@ -35,6 +40,7 @@ public class Message
 		_multi = null;
 		_phoneNumber = null;
 		_isMMS = false;
+		_isSent = false;
 	}
 
 	public Message(string text) {
@@ -43,6 +49,7 @@ public class Message
 		_multi = null;
 		_phoneNumber = null;
 		_isMMS = false;
+		_isSent = false;
 	}
 
 	// TODO add check to make sure phone number is valid
@@ -52,22 +59,33 @@ public class Message
 		_multi = null;
 		_phoneNumber = phoneNumber;
 		_isMMS = false;
+		_isSent = false;
 	}
 
 	// TODO add check to make sure phone number is valid
-	public Message(string text, string phoneNumber, bool mms) {
+	public Message(string text, string phoneNumber, bool sent) {
 		_timeStamp = 0;
 		_text = text;
 		_multi = null;
 		_phoneNumber = phoneNumber;
-		_isMMS = mms;
+		_isMMS = false;
+		_isSent = sent;
 	}
 
-
+	public Message(string text, string phoneNumber, bool sent, int time) {
+		_timeStamp = time;
+		_text = text;
+		_multi = null;
+		_phoneNumber = phoneNumber;
+		_isMMS = false;
+		_isSent = sent;
+	}
 
 	public override string ToString() {
-		return _phoneNumber + " " + _text;
+		if (_isSent) {
+			return "Me: " + _text + "\n";
+		}
+		return _phoneNumber + ": " + _text + "\n";
 	}
-
 }
 

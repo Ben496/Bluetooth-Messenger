@@ -8,6 +8,7 @@ public class Conversation
 	private List<Message> _messages;
 	private Contact _who;
 	private String _phoneNumber;
+	private String _text;
 
 	public Contact Who {
 		get { return _who; }
@@ -44,10 +45,26 @@ public class Conversation
 		_messages.RemoveAt(location);
 	}
 
-	public void GetMessageString(int location)
+	public override String ToString()
 	{
-		throw new System.NotImplementedException();
+		String result = "";
+		for (int i = 0; i < _messages.Count; i++) {
+			result += _messages[i].ToString();
+		}
+		return result;
 	}
 
+	public String Text {
+		get {
+			return ToString();
+		}
+		set {
+			_text = value;
+		}
+	}
+
+	public void Sort() {
+		_messages.Sort((a, b) => a.Time.CompareTo(b.Time));
+	}
 }
 
