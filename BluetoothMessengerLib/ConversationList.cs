@@ -3,11 +3,29 @@ using System.Collections.Generic;
 
 public class ConversationList
 {
-	private List<Conversation> _conversations;
+	private List<Conversation> _conversations = new List<Conversation>();
 
-	public virtual Conversation AccessConversation(int location)
+	public Conversation AccessConversation(String number)
 	{
-		throw new System.NotImplementedException();
+		if (_conversations == null) return null;
+		for (int i = 0; i < _conversations.Count; i++) {
+			if (_conversations[i].PhoneNumber == number) {
+				return _conversations[i];
+			}
+		}
+		return null;
+	}
+
+	public Conversation get(int i) {
+		if (_conversations != null)
+			return _conversations[i];
+		else return null;
+	}
+
+		
+
+	public int Size() {
+		return _conversations.Count;
 	}
 
 	public void AddNewConversation(Message sms)
@@ -17,7 +35,7 @@ public class ConversationList
 	}
 
 	public int hasConversation(String phoneNumber) {
-		if (_conversations.Count == 0) return -1;
+		if (_conversations == null) return -1;
 		for (int i = 0; i < _conversations.Count; i++) {
 			if (_conversations[i].PhoneNumber == phoneNumber) return i;
 		}

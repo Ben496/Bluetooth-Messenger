@@ -28,6 +28,10 @@ namespace AndroidMessenger {
 					sms.Text = c.GetString(c.GetColumnIndexOrThrow("body")).ToString();
 					sms.PhoneNumber = c.GetString(c.GetColumnIndexOrThrow("address")).ToString();
 					sms.Time = c.GetInt(c.GetColumnIndexOrThrow("date"));
+					if (c.GetInt(c.GetColumnIndexOrThrow("type")) == 2) {
+						sms.isSent = true;
+					}
+					else sms.isSent = false;
 					conversations.addMessage(sms);
 				}
 			}

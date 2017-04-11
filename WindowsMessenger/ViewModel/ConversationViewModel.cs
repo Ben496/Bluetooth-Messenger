@@ -8,16 +8,25 @@ namespace WindowsMessenger.ViewModel {
 		}
 
 		public ConversationViewModel() {
-			ObservableCollection<Conversation> tmp = new ObservableCollection<Conversation>();
-			Conversation convo = new Conversation(new Message("HEY FRIEND", "6156300003"));
-			convo.AddMessage(new Message("WADDUP", "6156300003"));
-			tmp.Add(convo);
-
-			Conversations = tmp;
 			
+		}
 
+		public ConversationViewModel(ConversationList convos) {
+			ObservableCollection<Conversation> tmp = new ObservableCollection<Conversation>();
+			for (int i = 0; i < convos.Size(); i++) {
+				tmp.Add(convos.get(i));
+			}
+			Conversations = tmp;
+		}
 
-		}	
-
+		private object _selected;
+		public object Selected {
+			get {
+				return _selected;
+			}
+			set {
+				_selected = value;
+			}
+		}
 	}
 }
