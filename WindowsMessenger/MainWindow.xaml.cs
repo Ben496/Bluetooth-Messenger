@@ -1,7 +1,4 @@
-﻿using InTheHand.Net.Sockets;
-using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using WindowsMessenger.ViewModel;
 
 namespace WindowsMessenger {

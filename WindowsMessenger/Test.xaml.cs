@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
-using System.IO;
 using InTheHand.Net.Sockets;
 
 namespace WindowsMessenger {
