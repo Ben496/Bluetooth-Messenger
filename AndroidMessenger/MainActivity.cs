@@ -6,10 +6,8 @@ using Android.Database;
 using Android.Telephony;
 
 namespace AndroidMessenger {
-	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
 	[BroadcastReceiver]
 	[IntentFilter(new[] { "android.provider.Telephony.SMS_RECEIVED" })]
-
 	public class SmsReceiver : BroadcastReceiver {
 		public override void OnReceive(Context context, Intent intent) {
 			if (intent.HasExtra("pdus")) {
@@ -28,8 +26,7 @@ namespace AndroidMessenger {
 		}
 	}
 
-
-
+	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity {
 		protected override void OnCreate(Bundle bundle) {
 			base.OnCreate(bundle);
