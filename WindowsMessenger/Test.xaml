@@ -14,6 +14,9 @@
 		<TextBox x:Name="text" HorizontalAlignment="Left" Height="23" Margin="123,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<Label x:Name="status" Content="Status: none" HorizontalAlignment="Left" Margin="123,173,0,0" VerticalAlignment="Top"/>
 		<Button x:Name="listenButton" Content="Listen" HorizontalAlignment="Left" Margin="34,244,0,0" VerticalAlignment="Top" Width="75" Click="listenButton_Click"/>
-		<Label x:Name="messageLabel" Content="Message: " HorizontalAlignment="Left" Margin="139,241,0,0" VerticalAlignment="Top"/>
+		<Label x:Name="messageLabel" Content="Message: " HorizontalAlignment="Left" Margin="135,290,0,0" VerticalAlignment="Top"/>
+		<Button x:Name="getMessage" Content="Get Message" HorizontalAlignment="Left" Margin="34,296,0,0" VerticalAlignment="Top" Width="75" Click="getMessage_Click"/>
+		<Label x:Name="connectionStatus" Content="Connection Status: " HorizontalAlignment="Left" Margin="135,241,0,0" VerticalAlignment="Top"/>
+		<Button x:Name="disconnect" Content="Disconnect" HorizontalAlignment="Left" Margin="34,347,0,0" VerticalAlignment="Top" Width="75" Click="disconnect_Click"/>
 	</Grid>
 </Window>

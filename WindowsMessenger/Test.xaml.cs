@@ -51,9 +51,18 @@ namespace WindowsMessenger {
 
 		private void listenButton_Click(object sender, RoutedEventArgs e) {
 			_connection.GetIncommingConnection();
+			connectionStatus.Content = "Connection Status: Connected";
+			
+		}
+
+		private void getMessage_Click(object sender, RoutedEventArgs e) {
 			Message receivedMessage = _connection.ReceiveObject<Message>();
 			messageLabel.Content += receivedMessage.ToString();
+		}
+
+		private void disconnect_Click(object sender, RoutedEventArgs e) {
 			_connection.Disconnect();
+			connectionStatus.Content = "Connection Status: Disconnected";
 		}
 	}
 }

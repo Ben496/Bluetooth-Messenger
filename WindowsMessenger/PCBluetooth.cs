@@ -76,8 +76,8 @@ namespace WindowsMessenger {
 			bool succeed = false;
 			if (_bluetoothConnection.Connected) {
 				succeed = Send<T>(_bluetoothStream, data);
-				if (succeed)
-					Disconnect();
+				//if (succeed)
+				//	Disconnect();
 			}
 			return succeed;
 		}
