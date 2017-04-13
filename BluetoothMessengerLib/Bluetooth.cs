@@ -35,6 +35,7 @@ namespace BluetoothMessengerLib {
 				T dat = JsonConvert.DeserializeObject<T>(input);
 				return dat;
 			}
+			return default(T);
 		}
 	}
 }
