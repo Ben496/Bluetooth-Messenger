@@ -9,8 +9,14 @@ namespace WindowsMessenger {
 		//	PCBluetooth _connection;
 		//	List<BluetoothDeviceInfo> _devices;
 		ConversationList convos = new ConversationList();
+		BluetoothController _bluetooth;
+
 		public MainWindow() {
 			InitializeComponent();
+
+			_bluetooth = new BluetoothController();
+			_bluetooth.UpdateMessageList += addNewMessage;
+
 			//		_connection = new PCBluetooth();
 			convos.addMessage(new Message("HEY FRIEND", "6156300003", true, 1));
 			convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
@@ -23,9 +29,13 @@ namespace WindowsMessenger {
 			DataContext = cvm;
 
 			// Show test window.
-			Window win = new Test();
-			win.Show();
+			//Window win = new Test();
+			//win.Show();
 
+		}
+
+		public void addNewMessage(Message newMessage) {
+			convos.addMessage(newMessage);
 		}
 
 		private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
