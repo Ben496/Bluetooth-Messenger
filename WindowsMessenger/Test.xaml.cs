@@ -76,7 +76,7 @@ namespace WindowsMessenger {
 
 		private void incommingConnection() {
 			_connection.GetIncommingConnection();
-			_updateIncommingConnectionStatus.Invoke();
+			Application.Current.Dispatcher.Invoke(_updateIncommingConnectionStatus);
 			//startListenForNewMessage();
 		}
 
