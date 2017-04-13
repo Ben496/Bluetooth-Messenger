@@ -44,6 +44,7 @@ namespace WindowsMessenger {
 		// The thread that is runing this will loop until terminated.
 		// Waiting for a new message to be received and then passes the message on.
 		private void listenForNewMessage() {
+			// Improve this so that the thread running this can be aborted/stopped.
 			while (true) {
 				Message receivedMessage = _connection.ReceiveObject<Message>();
 				Application.Current.Dispatcher.Invoke(_updateMessageList, receivedMessage);
@@ -58,6 +59,10 @@ namespace WindowsMessenger {
 			catch {
 				throw;
 			}
+		}
+
+		public void stopListentingForMessages() {
+			_listenForNewMessage.Abort();
 		}
 	}
 }

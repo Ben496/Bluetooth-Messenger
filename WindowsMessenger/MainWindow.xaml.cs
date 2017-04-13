@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using WindowsMessenger.ViewModel;
 
 namespace WindowsMessenger {
@@ -78,6 +79,10 @@ namespace WindowsMessenger {
 						status.Content = "Status: sending complete" + testMessage.ToString();
 				}
 			}*/
+		}
+
+		private void On_Closing(object sender, CancelEventArgs e) {
+			_bluetooth.stopListentingForMessages();
 		}
 	}
 }
