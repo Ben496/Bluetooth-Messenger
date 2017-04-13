@@ -14,17 +14,20 @@ namespace WindowsMessenger {
 		Thread _incommingConnection;
 		Thread _listenForNewMessage;
 		event Action _updateIncommingConnectionStatus;
+		event Action<Message> _updateMessageList;
 
 		public Test() {
 			InitializeComponent();
 			_connection = new PCBluetooth();
 
 			_updateIncommingConnectionStatus += updateConnectionStatus;
+			_updateIncommingConnectionStatus += startListenForNewMessage;
 
 			_incommingConnection = new Thread(incommingConnection);
 			_incommingConnection.Start();
 
-			//_listenForNewMessage = new Thread(listenForNewMessage);
+			_listenForNewMessage = new Thread(listenForNewMessage);
+			_updateMessageList += updateReceivedMessages;
 		}
 
 		private void button_Click(object sender, RoutedEventArgs e) {
@@ -77,7 +80,6 @@ namespace WindowsMessenger {
 		private void incommingConnection() {
 			_connection.GetIncommingConnection();
 			Application.Current.Dispatcher.Invoke(_updateIncommingConnectionStatus);
-			//startListenForNewMessage();
 		}
 
 		public void updateConnectionStatus() {
@@ -85,22 +87,26 @@ namespace WindowsMessenger {
 			return;
 		}
 
-		//private void startListenForNewMessage() {
-		//	if (_listenForNewMessage.ThreadState == ThreadState.Unstarted)
-		//		_listenForNewMessage.Start();
-		//	else
-		//		MessageBox.Show("Somehow listening for messages already started: "
-		//			+ _listenForNewMessage.ThreadState.ToString());
-		//	return;
-		//}
+		private void startListenForNewMessage() {
+			if (_listenForNewMessage.ThreadState == ThreadState.Unstarted)
+				_listenForNewMessage.Start();
+			else
+				MessageBox.Show("Somehow listening for messages already started: "
+					+ _listenForNewMessage.ThreadState.ToString());
+			return;
+		}
 
-		//private void listenForNewMessage() {
-		//	Message receivedMessage = _connection.ReceiveObject<Message>();
-		//	updateReceivedMessages(receivedMessage);
-		//}
+		// loop and wait for a new message
+		// TODO: handle stopping this thread somewhere.
+		private void listenForNewMessage() {
+			while (true) {
+				Message receivedMessage = _connection.ReceiveObject<Message>();
+				Application.Current.Dispatcher.Invoke(_updateMessageList, receivedMessage);
+			}
+		}
 
-		//public void updateReceivedMessages(Message receivedMessage) {
-		//	messageLabel.Content += receivedMessage.ToString();
-		//}
+		public void updateReceivedMessages(Message receivedMessage) {
+			messageLabel.Content += receivedMessage.ToString();
+		}
 	}
 }
