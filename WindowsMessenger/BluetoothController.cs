@@ -14,11 +14,13 @@ namespace WindowsMessenger {
 		Thread _listenForNewMessage;
 		PCBluetooth _connection;
 
+		// Subscirbe using this action to be called when a device is connected.
 		public event Action IncommingConnectionSuccess {
 			add { _incommingConnectionSuccess += value; }
 			remove { _incommingConnectionSuccess -= value; }
 		}
 
+		// Subscribe using this action to be called when a new message is received.
 		public event Action<Message> UpdateMessageList {
 			add { _updateMessageList += value; }
 			remove { _updateMessageList -= value; }
@@ -32,12 +34,15 @@ namespace WindowsMessenger {
 			_incommingConnection.Start();
 		}
 
+		// The thread that is running this locks until an incomming connection is received.
 		private void incommingConnectionListener() {
 			_connection.GetIncommingConnection();
 			if(_incommingConnectionSuccess != null)
 				Application.Current.Dispatcher.Invoke(_incommingConnectionSuccess);
 		}
 
+		// The thread that is runing this will loop until terminated.
+		// Waiting for a new message to be received and then passes the message on.
 		private void listenForNewMessage() {
 			while (true) {
 				Message receivedMessage = _connection.ReceiveObject<Message>();
@@ -45,7 +50,8 @@ namespace WindowsMessenger {
 			}
 		}
 
-		private void startListeningForMessages() {
+		// This method is used to start a message listening thread.
+		public void startListeningForMessages() {
 			try {
 				_listenForNewMessage.Start();
 			}
