@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
+using System.Threading;
 using InTheHand.Net.Sockets;
+using System;
 
 namespace WindowsMessenger {
 	/// <summary>
@@ -9,9 +11,20 @@ namespace WindowsMessenger {
 	public partial class Test : Window {
 		PCBluetooth _connection;
 		List<BluetoothDeviceInfo> _devices;
+		Thread _incommingConnection;
+		Thread _listenForNewMessage;
+		event Action _updateIncommingConnectionStatus;
+
 		public Test() {
 			InitializeComponent();
 			_connection = new PCBluetooth();
+
+			_updateIncommingConnectionStatus += updateConnectionStatus;
+
+			_incommingConnection = new Thread(incommingConnection);
+			_incommingConnection.Start();
+
+			//_listenForNewMessage = new Thread(listenForNewMessage);
 		}
 
 		private void button_Click(object sender, RoutedEventArgs e) {
@@ -49,19 +62,45 @@ namespace WindowsMessenger {
 		}
 
 		private void listenButton_Click(object sender, RoutedEventArgs e) {
-			_connection.GetIncommingConnection();
-			connectionStatus.Content = "Connection Status: Connected";
-			
+			listenButton.Content = "This button does nothing";
 		}
 
 		private void getMessage_Click(object sender, RoutedEventArgs e) {
-			Message receivedMessage = _connection.ReceiveObject<Message>();
-			messageLabel.Content += receivedMessage.ToString();
+			getMessage.Content = "This button does nothing";
 		}
 
 		private void disconnect_Click(object sender, RoutedEventArgs e) {
 			_connection.Disconnect();
 			connectionStatus.Content = "Connection Status: Disconnected";
 		}
+
+		private void incommingConnection() {
+			_connection.GetIncommingConnection();
+			_updateIncommingConnectionStatus.Invoke();
+			//startListenForNewMessage();
+		}
+
+		public void updateConnectionStatus() {
+			connectionStatus.Content = "Connection Status: Connected";
+			return;
+		}
+
+		//private void startListenForNewMessage() {
+		//	if (_listenForNewMessage.ThreadState == ThreadState.Unstarted)
+		//		_listenForNewMessage.Start();
+		//	else
+		//		MessageBox.Show("Somehow listening for messages already started: "
+		//			+ _listenForNewMessage.ThreadState.ToString());
+		//	return;
+		//}
+
+		//private void listenForNewMessage() {
+		//	Message receivedMessage = _connection.ReceiveObject<Message>();
+		//	updateReceivedMessages(receivedMessage);
+		//}
+
+		//public void updateReceivedMessages(Message receivedMessage) {
+		//	messageLabel.Content += receivedMessage.ToString();
+		//}
 	}
 }
