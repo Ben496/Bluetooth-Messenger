@@ -15,6 +15,7 @@ namespace WindowsMessenger {
 			InitializeComponent();
 
 			_bluetooth = new BluetoothController();
+			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.UpdateMessageList += addNewMessage;
 
 			//		_connection = new PCBluetooth();
@@ -36,6 +37,11 @@ namespace WindowsMessenger {
 
 		public void addNewMessage(Message newMessage) {
 			convos.addMessage(newMessage);
+		}
+
+		// Temporary function to display a message box when application is connected.
+		public void connectedInfo() {
+			MessageBox.Show("Connected to device");
 		}
 
 		private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
