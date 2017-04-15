@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 namespace WindowsMessenger {
-	class BluetoothController {
+	class PCBluetoothController {
 		event Action _incommingConnectionSuccess;
 		event Action<Message> _updateMessageList;
 		Thread _incommingConnection;
@@ -26,7 +26,7 @@ namespace WindowsMessenger {
 			remove { _updateMessageList -= value; }
 		}
 
-		public BluetoothController() {
+		public PCBluetoothController() {
 			_connection = new PCBluetooth();
 			_incommingConnection = new Thread(incommingConnectionListener);
 			_listenForNewMessage = new Thread(listenForNewMessage);

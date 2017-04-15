@@ -10,12 +10,12 @@ namespace WindowsMessenger {
 		//	PCBluetooth _connection;
 		//	List<BluetoothDeviceInfo> _devices;
 		ConversationList convos = new ConversationList();
-		BluetoothController _bluetooth;
+		PCBluetoothController _bluetooth;
 
 		public MainWindow() {
 			InitializeComponent();
 
-			_bluetooth = new BluetoothController();
+			_bluetooth = new PCBluetoothController();
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.UpdateMessageList += addNewMessage;
 
