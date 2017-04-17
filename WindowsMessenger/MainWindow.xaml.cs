@@ -15,7 +15,7 @@ namespace WindowsMessenger {
 		public MainWindow() {
 			InitializeComponent();
 
-			_bluetooth = new PCBluetoothController();
+			_bluetooth = new PCBluetoothController(true);
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.UpdateMessageList += addNewMessage;
 
@@ -29,6 +29,10 @@ namespace WindowsMessenger {
 
 			ConversationViewModel cvm = new ConversationViewModel(convos);
 			DataContext = cvm;
+
+			// creating testing interface
+			Window messageTesting = new TestMessageCreator(_bluetooth);
+			messageTesting.Show();
 
 			// Show test window.
 			//Window win = new Test();

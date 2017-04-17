@@ -1,18 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 
+
+// Be very careful when inheriting this class
+// everything is protected so you will probably break everything.
+// This is so that I could implement the temporary class for testing
+// functionality (as if it came over bluetooth) without actually needing
+// a bluetooth adapter.
+// THERE SHOULD BE ABSOLUTELY NO REASON TO INHERIT THIS CLASS FOR FUNCTIONALITY!
+// IF YOU ARE TRYING TO DO SO THINK OF A BETTER WAY.
 namespace WindowsMessenger {
-	class PCBluetoothController {
-		event Action _incommingConnectionSuccess;
-		event Action<Message> _updateMessageList;
-		Thread _incommingConnection;
-		Thread _listenForNewMessage;
-		PCBluetooth _connection;
+	public class PCBluetoothController {
+		private event Action _incommingConnectionSuccess;
+		private event Action<Message> _updateMessageList;
+		private Thread _incommingConnection;
+		private Thread _listenForNewMessage;
+		private PCBluetooth _connection;
+		private bool _bluetoothDisable;
 
 		// Subscirbe using this action to be called when a device is connected.
 		public event Action IncommingConnectionSuccess {
@@ -32,6 +37,22 @@ namespace WindowsMessenger {
 			_listenForNewMessage = new Thread(listenForNewMessage);
 			_incommingConnectionSuccess += startListeningForMessages; // <=== TODO: should do something else for this later
 			_incommingConnection.Start();
+		}
+
+		public PCBluetoothController(bool bluetoothDisable) {
+			if (bluetoothDisable) {
+				_connection = null;
+				_incommingConnection = null;
+				_listenForNewMessage = null;
+				_incommingConnectionSuccess += startListeningForMessages; // <=== TODO: should do something else for this later
+				_bluetoothDisable = true;
+			}
+			else {
+				_connection = new PCBluetooth();
+				_incommingConnection = new Thread(incommingConnectionListener);
+				_listenForNewMessage = new Thread(listenForNewMessage);
+				_incommingConnectionSuccess += null;
+			}
 		}
 
 		// The thread that is running this locks until an incomming connection is received.
@@ -63,6 +84,12 @@ namespace WindowsMessenger {
 
 		public void stopListentingForMessages() {
 			_listenForNewMessage.Abort();
+		}
+
+		// This method is purely for testing purposes.
+		// gives a single method to send all spoofed messages through
+		public void createNewMessages(Message newMessage) {
+			Application.Current.Dispatcher.Invoke(_updateMessageList, newMessage);
 		}
 	}
 }
