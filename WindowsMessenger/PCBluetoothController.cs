@@ -2,14 +2,6 @@
 using System.Threading;
 using System.Windows;
 
-
-// Be very careful when inheriting this class
-// everything is protected so you will probably break everything.
-// This is so that I could implement the temporary class for testing
-// functionality (as if it came over bluetooth) without actually needing
-// a bluetooth adapter.
-// THERE SHOULD BE ABSOLUTELY NO REASON TO INHERIT THIS CLASS FOR FUNCTIONALITY!
-// IF YOU ARE TRYING TO DO SO THINK OF A BETTER WAY.
 namespace WindowsMessenger {
 	public class PCBluetoothController {
 		private event Action _incommingConnectionSuccess;
@@ -17,7 +9,7 @@ namespace WindowsMessenger {
 		private Thread _incommingConnection;
 		private Thread _listenForNewMessage;
 		private PCBluetooth _connection;
-		private bool _bluetoothDisable;
+		private bool _bluetoothDisable = false;
 
 		// Subscirbe using this action to be called when a device is connected.
 		public event Action IncommingConnectionSuccess {
@@ -52,6 +44,7 @@ namespace WindowsMessenger {
 				_incommingConnection = new Thread(incommingConnectionListener);
 				_listenForNewMessage = new Thread(listenForNewMessage);
 				_incommingConnectionSuccess += null;
+				_bluetoothDisable = false;
 			}
 		}
 
