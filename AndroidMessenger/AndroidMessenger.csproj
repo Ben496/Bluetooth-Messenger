@@ -60,9 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidBluetooth.cs" />
+    <Compile Include="AndroidBluetoothController.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmsReceiver.cs" />
     <Compile Include="TestActivity.cs" />
   </ItemGroup>
   <ItemGroup>

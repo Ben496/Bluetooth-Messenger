@@ -60,11 +60,14 @@ namespace AndroidMessenger
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050005
-			public const int DeviceList = 2131034117;
-			
 			// aapt resource value: 0x7f050001
-			public const int GetPairedDevices = 2131034113;
+			public const int ConnectDevice = 2131034113;
+			
+			// aapt resource value: 0x7f050006
+			public const int DeviceList = 2131034118;
+			
+			// aapt resource value: 0x7f050005
+			public const int Disconnect = 2131034117;
 			
 			// aapt resource value: 0x7f050003
 			public const int MessageContent = 2131034115;

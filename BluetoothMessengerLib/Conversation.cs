@@ -7,8 +7,8 @@ public class Conversation
 {
 	private List<Message> _messages;
 	private Contact _who;
-	private String _phoneNumber;
-	private String _text;
+	private string _phoneNumber;
+	private string _text;
 
 	public Contact Who {
 		get { return _who; }
@@ -20,7 +20,7 @@ public class Conversation
 		set { _messages = value; }
 	}
 
-	public String PhoneNumber {
+	public string PhoneNumber {
 		get { return _phoneNumber; }
 		set { _phoneNumber = value; }
 	}
@@ -45,16 +45,16 @@ public class Conversation
 		_messages.RemoveAt(location);
 	}
 
-	public override String ToString()
+	public override string ToString()
 	{
-		String result = "";
+		string result = "";
 		for (int i = 0; i < _messages.Count; i++) {
 			result += _messages[i].ToString();
 		}
 		return result;
 	}
 
-	public String Text {
+	public string Text {
 		get {
 			return ToString();
 		}

@@ -5,7 +5,7 @@ public class ConversationList
 {
 	private List<Conversation> _conversations = new List<Conversation>();
 
-	public Conversation AccessConversation(String number)
+	public Conversation AccessConversation(string number)
 	{
 		if (_conversations == null) return null;
 		for (int i = 0; i < _conversations.Count; i++) {
@@ -34,7 +34,7 @@ public class ConversationList
 		_conversations.Add(newConvo);
 	}
 
-	public int hasConversation(String phoneNumber) {
+	public int hasConversation(string phoneNumber) {
 		if (_conversations == null) return -1;
 		for (int i = 0; i < _conversations.Count; i++) {
 			if (_conversations[i].PhoneNumber == phoneNumber) return i;

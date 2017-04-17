@@ -80,8 +80,8 @@ namespace AndroidMessenger {
 			bool succeed = false;
 			if (_socket.IsConnected) {
 				succeed = Send<T>(_socket.OutputStream, data);
-				if (succeed)
-					Disconnect();
+				//if (succeed)
+				//	Disconnect();
 			}
 			return succeed;
 		}

@@ -10,10 +10,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/SentObject" />
     <Button
-        android:text="Get Paired Devices"
+        android:text="Connect To Device"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/GetPairedDevices" />
+        android:id="@+id/ConnectDevice" />
     <EditText
         android:inputType="phone"
         android:layout_width="match_parent"
@@ -28,6 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Send" />
+    <Button
+        android:text="Disconnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Disconnect" />
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"

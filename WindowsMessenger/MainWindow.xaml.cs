@@ -1,6 +1,4 @@
-﻿using InTheHand.Net.Sockets;
-using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel;
 using System.Windows;
 using WindowsMessenger.ViewModel;
 
@@ -12,8 +10,15 @@ namespace WindowsMessenger {
 		//	PCBluetooth _connection;
 		//	List<BluetoothDeviceInfo> _devices;
 		ConversationList convos = new ConversationList();
+		PCBluetoothController _bluetooth;
+
 		public MainWindow() {
 			InitializeComponent();
+
+			_bluetooth = new PCBluetoothController();
+			_bluetooth.IncommingConnectionSuccess += connectedInfo;
+			_bluetooth.UpdateMessageList += addNewMessage;
+
 			//		_connection = new PCBluetooth();
 			convos.addMessage(new Message("HEY FRIEND", "6156300003", true, 1));
 			convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
@@ -29,6 +34,15 @@ namespace WindowsMessenger {
 			//Window win = new Test();
 			//win.Show();
 
+		}
+
+		public void addNewMessage(Message newMessage) {
+			convos.addMessage(newMessage);
+		}
+
+		// Temporary function to display a message box when application is connected.
+		public void connectedInfo() {
+			MessageBox.Show("Connected to device");
 		}
 
 		private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
@@ -65,6 +79,10 @@ namespace WindowsMessenger {
 						status.Content = "Status: sending complete" + testMessage.ToString();
 				}
 			}*/
+		}
+
+		private void On_Closing(object sender, CancelEventArgs e) {
+			_bluetooth.stopListentingForMessages();
 		}
 	}
 }
