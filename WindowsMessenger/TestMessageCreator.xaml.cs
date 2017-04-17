@@ -18,9 +18,11 @@ namespace WindowsMessenger {
 
 		// This method goes through the BluetoothController testing setup.
 		private void sendTestMessage_Click(object sender, RoutedEventArgs e) {
-			string messageNumber = number.Text;
+			// Eliminates the \r\n at the end in a quick and dirty way.
+			long tmp = long.Parse(number.Text);
+			string messageNumber = tmp.ToString();
 			string messageContent = message.Text;
-			Message newMessage = new Message(messageNumber, messageContent);
+			Message newMessage = new Message(messageContent, messageNumber);
 			_controller.createNewMessages(newMessage);
 		}
 	}

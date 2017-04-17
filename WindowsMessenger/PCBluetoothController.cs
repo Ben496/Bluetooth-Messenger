@@ -76,7 +76,8 @@ namespace WindowsMessenger {
 		}
 
 		public void stopListentingForMessages() {
-			_listenForNewMessage.Abort();
+			if(_listenForNewMessage != null)
+				_listenForNewMessage.Abort();
 		}
 
 		// This method is purely for testing purposes.
