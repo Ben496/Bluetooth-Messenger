@@ -50,7 +50,7 @@ namespace AndroidMessenger {
 			_connectToDevice.Click += (object sender, EventArgs e) => {
 				_status.Text = "";
 				foreach (BluetoothDevice i in devices) {
-					if (i.Name.Equals("TESLA-WIN")) { // || i.Name.Equals("KEPLER-WIN")
+					if (i.Name.Equals("KEPLER-WIN")) { // || i.Name.Equals("KEPLER-WIN")
 						try {
 							connection.Connect(i);
 							_status.Text += "Connecting Success\n";
