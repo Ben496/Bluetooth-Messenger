@@ -18,8 +18,7 @@ namespace WindowsMessenger {
 			_bluetooth = new PCBluetoothController();
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.UpdateMessageList += addNewMessage;
-
-			//		_connection = new PCBluetooth();
+			
 			convos.addMessage(new Message("HEY FRIEND", "6156300003", true, 1));
 			convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
 			convos.addMessage(new Message("NAW", "6156300003", true, 2));

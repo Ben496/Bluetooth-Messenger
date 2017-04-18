@@ -17,7 +17,7 @@ namespace AndroidMessenger {
 			base.OnCreate(bundle);
 
 			// Launch the test activity
-			//StartActivity(typeof(TestActivity));
+			StartActivity(typeof(TestActivity));
 
 
 			// WE NEED TO SEND OVER CONVERSATIONS FROM THIS POINT
@@ -59,6 +59,7 @@ namespace AndroidMessenger {
 					}
 					else sms.isSent = false;
 					conversations.addMessage(sms);
+					c.MoveToNext();
 				}
 			}
 			return conversations;

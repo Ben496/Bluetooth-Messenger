@@ -31,6 +31,10 @@ namespace WindowsMessenger {
 			_incommingConnection.Start();
 		}
 
+		public bool sendMessage(Message msg) {
+			return _connection.SendObject<Message>(msg);
+		}
+
 		public PCBluetoothController(bool bluetoothDisable) {
 			if (bluetoothDisable) {
 				_connection = null;
