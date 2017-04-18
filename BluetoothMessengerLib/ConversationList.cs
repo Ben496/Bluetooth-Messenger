@@ -16,6 +16,11 @@ public class ConversationList
 		return null;
 	}
 
+	public Conversation AccessConversation(int location) {
+		if (_conversations == null) return null;
+		return _conversations[location];
+	}
+
 	public Conversation get(int i) {
 		if (_conversations != null)
 			return _conversations[i];

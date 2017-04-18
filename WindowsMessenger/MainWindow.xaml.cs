@@ -15,7 +15,7 @@ namespace WindowsMessenger {
 		public MainWindow() {
 			InitializeComponent();
 
-			_bluetooth = new PCBluetoothController(true);
+			_bluetooth = new PCBluetoothController();
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.UpdateMessageList += addNewMessage;
 
