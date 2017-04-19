@@ -13,16 +13,17 @@
 		</Grid.ColumnDefinitions>
 		<ListBox x:Name="listBox" 
 			ItemsSource="{Binding Conversations}"
+			SelectedItem="{Binding Selected}"
 			DisplayMemberPath="PhoneNumber"
 			HorizontalAlignment="Left" Height="278" Margin="10,34,0,0" VerticalAlignment="Top" Width="237"/>
 		<TextBox x:Name="Conversations"
-				 Text="{Binding ElementName=listBox, Path=SelectedItem.Text, Mode=OneWay}"
+				 Text="{Binding ElementName=listBox, Path=SelectedItem.Text, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
 				 IsReadOnly="True"
 				 Grid.Column="1" HorizontalAlignment="Left" Height="229" Margin="10,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" TextChanged="textBox_TextChanged"/>
-		<TextBox x:Name="textBox" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="10,268,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176"/>
-		<Button x:Name="sendButton" Content="Send" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="186,268,0,0" VerticalAlignment="Top" Width="64" Click="sendButton_Click"/>
-		<Button x:Name="connectionButton" Content="Connect" HorizontalAlignment="Left" Height="24" Margin="10,5,0,0" VerticalAlignment="Top" Width="237" Click="connectionButton_Click"/>
-		<TextBlock x:Name="ConnectedTo" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="10,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240"/>
+		<TextBox x:Name="MessageText" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="10,268,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176"/>
+		<Button x:Name="sendButton" Content="Reply" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="186,268,0,0" VerticalAlignment="Top" Width="64" Click="sendButton_Click"/>
+		<Button x:Name="connectionButton" Content="Connect" HorizontalAlignment="Left" Height="24" Margin="10,5,0,0" VerticalAlignment="Top" Width="237" Click="connectionButton_Click" Grid.Column="1"/>
+		<Button x:Name="sendNewButton" Content="Send New Message" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="237" Height="24" Click="sendNewButton_Click"/>
 
 	</Grid>
 </Window>

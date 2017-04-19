@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
-
-
-public class Conversation
+public class Conversation : INotifyPropertyChanged
 {
 	private List<Message> _messages;
 	private Contact _who;
 	private string _phoneNumber;
 	private string _text;
+
+	public event PropertyChangedEventHandler PropertyChanged;
+
+	private void RaisePropertyChanged(string property) {
+		if (PropertyChanged != null) {
+			PropertyChanged(this, new PropertyChangedEventArgs(property));
+		}
+	}
 
 	public Contact Who {
 		get { return _who; }
@@ -38,6 +45,7 @@ public class Conversation
 			_messages = new List<Message>();
 		}
 		_messages.Add(sms);
+		RaisePropertyChanged("Text");
 	}
 
 	public void DeleteMessage(int location)
@@ -47,19 +55,16 @@ public class Conversation
 
 	public override string ToString()
 	{
-		string result = "";
-		for (int i = 0; i < _messages.Count; i++) {
-			result += _messages[i].ToString();
-		}
-		return result;
+		return _phoneNumber;
 	}
 
 	public string Text {
 		get {
-			return ToString();
-		}
-		set {
-			_text = value;
+			string result = "";
+			for (int i = 0; i < _messages.Count; i++) {
+				result += _messages[i].ToString();
+			}
+			return result;
 		}
 	}
 
