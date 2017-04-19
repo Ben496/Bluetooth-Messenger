@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Windows;
+using InTheHand.Net.Sockets;
+using System.Collections.Generic;
 
 namespace WindowsMessenger {
 	public class PCBluetoothController {
@@ -31,10 +33,6 @@ namespace WindowsMessenger {
 			_incommingConnection.Start();
 		}
 
-		public bool sendMessage(Message msg) {
-			return _connection.SendObject<Message>(msg);
-		}
-
 		public PCBluetoothController(bool bluetoothDisable) {
 			if (bluetoothDisable) {
 				_connection = null;
@@ -50,6 +48,21 @@ namespace WindowsMessenger {
 				_incommingConnectionSuccess += null;
 				_bluetoothDisable = false;
 			}
+		}
+
+		public bool sendMessage(Message msg) {
+			return _connection.SendObject<Message>(msg);
+		}
+
+		// Improve this later
+		public bool connectToDevice() {
+			List<BluetoothDeviceInfo> devices = _connection.GetDeviceNames();
+			foreach (BluetoothDeviceInfo i in devices) {
+				if (string.Equals(i.DeviceName, "ASUS_Z00AD") || string.Equals(i.DeviceName, "ASUSZ00AD")) {
+					return _connection.Connect(i);
+				}
+			}
+			return false;
 		}
 
 		// The thread that is running this locks until an incomming connection is received.

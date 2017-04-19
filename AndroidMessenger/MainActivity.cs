@@ -10,37 +10,55 @@ namespace AndroidMessenger {
 	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity {
 		ConversationList _conversations = null;
-		Button _getConversations;
-		TextView _conversationOutput;
+		Button _connect;
+		Button _selectDevice;
+		Button _disconnect;
+		TextView _status;
+		TextView _displayMessage;
+		AndroidBluetoothController _controller;
 
 		protected override void OnCreate(Bundle bundle) {
 			base.OnCreate(bundle);
 
 			// Launch the test activity
-			StartActivity(typeof(TestActivity));
+			//StartActivity(typeof(TestActivity));
 
-
-			// WE NEED TO SEND OVER CONVERSATIONS FROM THIS POINT
-
-			// Set our view from the "main" layout resource
+			_controller = new AndroidBluetoothController();
+			_controller.IncommingConnectionSuccess += () => { _status.Text = "Status: Connected"; };
+			_controller.UpdateMessageList += NewReceivedMessage;
+			
 			SetContentView(Resource.Layout.Main);
 
-			_getConversations = FindViewById<Button>(Resource.Id.GetConversations);
-			_conversationOutput = FindViewById<TextView>(Resource.Id.ConversationOutput);
+			_connect = FindViewById<Button>(Resource.Id.Connect);
+			_selectDevice = FindViewById<Button>(Resource.Id.SelectDevice);
+			_disconnect = FindViewById<Button>(Resource.Id.Disconnect);
+			_status = FindViewById<TextView>(Resource.Id.Status);
+			_displayMessage = FindViewById<TextView>(Resource.Id.Status);
 
-			_getConversations.Click += (object sender, EventArgs e) => {
-				buttonClick();
-			};
+			_connect.Click += ConnectToPC;
+			_selectDevice.Click += SelectConnectionDevice;
+			_disconnect.Click += DisconnectFromPC;
+
 		}
 
-		private void buttonClick() {
-			_conversationOutput.Text = "";
-				_conversations = generateConversations();
-				int num = _conversations.Size();
-				for (int i = 0; i < num; i++) {
-					Conversation con = _conversations.AccessConversation(i);
-					_conversationOutput.Text += con.PhoneNumber + "\n";
-				}
+		private void ConnectToPC(object sender, EventArgs e) {
+			if (_controller.ConnectToPC())
+				_status.Text = "Status: Connected";
+			else
+				_status.Text = "Status: Connection Failed";
+		}
+
+		private void SelectConnectionDevice(object sender, EventArgs e) {
+
+		}
+
+		private void DisconnectFromPC(object sender, EventArgs e) {
+
+		}
+
+		public void NewReceivedMessage() {
+			Message msg = _controller.NewMessage;
+			_displayMessage.Text = msg.ToString();
 		}
 
 		public ConversationList generateConversations() {
