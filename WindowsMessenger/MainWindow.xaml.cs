@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
 using WindowsMessenger.ViewModel;
 
 namespace WindowsMessenger {
@@ -10,15 +11,16 @@ namespace WindowsMessenger {
 		//	PCBluetooth _connection;
 		//	List<BluetoothDeviceInfo> _devices;
 		ConversationList convos = new ConversationList();
+		ConversationViewModel cvm;
 		PCBluetoothController _bluetooth;
 
 		public MainWindow() {
 			InitializeComponent();
 
-			_bluetooth = new PCBluetoothController();
+			_bluetooth = new PCBluetoothController(true);
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.UpdateMessageList += addNewMessage;
-			
+
 			convos.addMessage(new Message("HEY FRIEND", "6156300003", true, 1));
 			convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
 			convos.addMessage(new Message("NAW", "6156300003", true, 2));
@@ -26,7 +28,7 @@ namespace WindowsMessenger {
 			convos.addMessage(new Message("WADDUP", "6157146407", true, 2));
 			convos.addMessage(new Message("NAWMUCH", "6157146407", false, 2));
 
-			ConversationViewModel cvm = new ConversationViewModel(convos);
+			cvm = new ConversationViewModel(convos);
 			DataContext = cvm;
 
 			// creating testing interface
@@ -40,7 +42,7 @@ namespace WindowsMessenger {
 		}
 
 		public void addNewMessage(Message newMessage) {
-			convos.addMessage(newMessage);
+			cvm.addMessage(newMessage);
 		}
 
 		// Temporary function to display a message box when application is connected.
@@ -53,28 +55,27 @@ namespace WindowsMessenger {
 		}
 
 		private void connectionButton_Click(object sender, RoutedEventArgs e) {
-		//	_devices = _connection.GetDeviceNames();
-		//	foreach (BluetoothDeviceInfo i in _devices) {
-		//		label.Content = i.DeviceName;
-		//	}
+			//	_devices = _connection.GetDeviceNames();
+			//	foreach (BluetoothDeviceInfo i in _devices) {
+			//		label.Content = i.DeviceName;
+			//	}
 		}
 
 		private void sendButton_Click(object sender, RoutedEventArgs e) {
-		/*	// Generating message
 			string messageContent;
 			string messageNumber;
-			if (text.Text != "" && phoneNumber.Text != "") {
-				messageContent = text.Text;
-				messageNumber = phoneNumber.Text;
+			if (MessageText.Text != "") {
+				messageContent = MessageText.Text;
+				messageNumber = cvm.Selected.ToString();
 			}
 			else {
-				messageNumber = "1234567890";
-				messageContent = "Hello World!";
+				return;
 			}
-			Message testMessage = new Message(messageContent, messageNumber);
-	
+			Message newMessage = new Message(messageContent, messageNumber, true);
+			addNewMessage(newMessage);
+
 			// determine device (ASUS Z00D)
-			if (_devices != null) {
+			/*if (_devices != null) {
 				foreach (var i in _devices) {
 					if (string.Equals(i.DeviceName, "ASUS_Z00AD") || string.Equals(i.DeviceName, "ASUSZ00AD")) {
 						Stream buffer = _connection.Connect(i);
@@ -86,6 +87,11 @@ namespace WindowsMessenger {
 
 		private void On_Closing(object sender, CancelEventArgs e) {
 			_bluetooth.stopListentingForMessages();
+		}
+
+		private void sendNewButton_Click(object sender, RoutedEventArgs e) {
+			Window newMessage = new NewMessageWindow(_bluetooth);
+			newMessage.Show();
 		}
 	}
 }

@@ -19,6 +19,16 @@ namespace WindowsMessenger.ViewModel {
 			Conversations = tmp;
 		}
 
+		public void addMessage(Message sms) {
+			for (int i = 0; i < Conversations.Count; i++) {
+				if (sms.PhoneNumber == Conversations[i].PhoneNumber) {
+					Conversations[i].AddMessage(sms);
+					return;
+				}
+			}
+			Conversations.Add(new Conversation(sms));
+		}
+
 		private object _selected;
 		public object Selected {
 			get {

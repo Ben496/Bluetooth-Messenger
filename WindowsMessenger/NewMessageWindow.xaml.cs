@@ -4,27 +4,28 @@ namespace WindowsMessenger {
 	/// <summary>
 	/// Interaction logic for TestMessageCreator.xaml
 	/// </summary>
-	public partial class TestMessageCreator : Window {
+	public partial class NewMessageWindow : Window {
 		private PCBluetoothController _controller = null;
 
-		public TestMessageCreator() {
+		public NewMessageWindow() {
 			InitializeComponent();
 		}
 
-		public TestMessageCreator(PCBluetoothController control) {
+		public NewMessageWindow(PCBluetoothController control) {
 			_controller = control;
 			InitializeComponent();
 		}
 
 		// This method goes through the BluetoothController testing setup.
-		private void sendTestMessage_Click(object sender, RoutedEventArgs e) {
+		private void sendNewMessage_Click(object sender, RoutedEventArgs e) {
 			// Eliminates the \r\n at the end in a quick and dirty way.
 			long tmp = long.Parse(number.Text);
 			string messageNumber = tmp.ToString();
 			string messageContent = message.Text;
-			Message newMessage = new Message(messageContent, messageNumber);
-		//	_controller.sendMessage(newMessage);
+			Message newMessage = new Message(messageContent, messageNumber, true);
 			_controller.createNewMessages(newMessage);
+			//_controller.sendMessage(newMessage);
+			this.Close();
 		}
 	}
 }
