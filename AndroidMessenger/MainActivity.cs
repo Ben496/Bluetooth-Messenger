@@ -14,12 +14,18 @@ namespace AndroidMessenger {
 		Button _selectDevice;
 		Button _disconnect;
 		TextView _status;
+		TextView _displayMessage;
+		AndroidBluetoothController _controller;
 
 		protected override void OnCreate(Bundle bundle) {
 			base.OnCreate(bundle);
 
 			// Launch the test activity
 			//StartActivity(typeof(TestActivity));
+
+			_controller = new AndroidBluetoothController();
+			_controller.IncommingConnectionSuccess += () => { _status.Text = "Status: Connected"; };
+			_controller.UpdateMessageList += NewReceivedMessage;
 			
 			SetContentView(Resource.Layout.Main);
 
@@ -27,6 +33,7 @@ namespace AndroidMessenger {
 			_selectDevice = FindViewById<Button>(Resource.Id.SelectDevice);
 			_disconnect = FindViewById<Button>(Resource.Id.Disconnect);
 			_status = FindViewById<TextView>(Resource.Id.Status);
+			_displayMessage = FindViewById<TextView>(Resource.Id.Status);
 
 			_connect.Click += ConnectToPC;
 			_selectDevice.Click += SelectConnectionDevice;
@@ -35,7 +42,10 @@ namespace AndroidMessenger {
 		}
 
 		private void ConnectToPC(object sender, EventArgs e) {
-
+			if (_controller.ConnectToPC())
+				_status.Text = "Status: Connected";
+			else
+				_status.Text = "Status: Connection Failed";
 		}
 
 		private void SelectConnectionDevice(object sender, EventArgs e) {
@@ -44,6 +54,11 @@ namespace AndroidMessenger {
 
 		private void DisconnectFromPC(object sender, EventArgs e) {
 
+		}
+
+		public void NewReceivedMessage() {
+			Message msg = _controller.NewMessage;
+			_displayMessage.Text = msg.ToString();
 		}
 
 		public ConversationList generateConversations() {

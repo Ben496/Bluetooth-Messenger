@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 
 using Android.App;
@@ -11,23 +12,36 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Bluetooth;
 
 namespace AndroidMessenger {
 	class AndroidBluetoothController {
 		event Action _incommingConnectionSuccess;
-		event Action<Message> _updateMessageList;
+		event Action _updateMessageList;
 		Thread _incommingConnection;
 		Thread _listenForNewMessage;
 		AndroidBluetooth _connection;
+		Message _message = null;
+		object _messageLock = new object();
 
 		public event Action IncommingConnectionSuccess {
 			add { _incommingConnectionSuccess += value; }
 			remove { _incommingConnectionSuccess -= value; }
 		}
 
-		public event Action<Message> UpdateMessageList {
+		public event Action UpdateMessageList {
 			add { _updateMessageList += value; }
 			remove { _updateMessageList -= value; }
+		}
+
+		public Message NewMessage {
+			get {
+				lock (_messageLock) {
+					Message msg = _message;
+					_message = null;	// Sets _message back to null (probably don't have to do this)
+					return msg;
+				}
+			}
 		}
 
 		public AndroidBluetoothController() {
@@ -38,11 +52,32 @@ namespace AndroidMessenger {
 			_incommingConnection.Start();
 		}
 
+		public bool ConnectToPC() {
+			List<BluetoothDevice> devices = _connection.GetPairedDevices();
+			foreach (BluetoothDevice i in devices) {
+				if (i.Name.Equals("TESLA-WIN")) { // "KEPLER-WIN" or "TESLA-WIN"
+					try {
+						_connection.Connect(i);
+						Parallel.Invoke(_incommingConnectionSuccess);
+						return true;
+					}
+					catch {
+						return false;
+					}
+				}
+			}
+			return false;
+		}
+
+		public bool sendMessage(Message msg) {
+			return _connection.SendObject<Message>(msg);
+		}
+
 		// The thread that is running this locks until an incomming connection is received.
 		private void incommingConnectionListener() {
 			_connection.GetIncommingConnection();
-			//if (_incommingConnectionSuccess != null)
-				//Application.Current.Dispatcher.Invoke(_incommingConnectionSuccess);
+			if (_incommingConnectionSuccess != null)
+				Parallel.Invoke(_incommingConnectionSuccess);
 		}
 
 		// The thread that is runing this will loop until terminated.
@@ -50,8 +85,11 @@ namespace AndroidMessenger {
 		private void listenForNewMessage() {
 			// Improve this so that the thread running this can be aborted/stopped.
 			while (true) {
-				Message receivedMessage = _connection.ReceiveObject<Message>();
-				//Application.Current.Dispatcher.Invoke(_updateMessageList, receivedMessage);
+				lock (_messageLock) {
+					Message receivedMessage = _connection.ReceiveObject<Message>();
+					_message = receivedMessage;
+				}
+				Parallel.Invoke(_updateMessageList);
 			}
 		}
 

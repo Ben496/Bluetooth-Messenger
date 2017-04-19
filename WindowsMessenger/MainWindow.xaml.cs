@@ -17,6 +17,7 @@ namespace WindowsMessenger {
 
 			_bluetooth = new PCBluetoothController();
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
+			_bluetooth.IncommingConnectionSuccess += testSendingMessage;
 			_bluetooth.UpdateMessageList += addNewMessage;
 			
 			convos.addMessage(new Message("HEY FRIEND", "6156300003", true, 1));
@@ -39,6 +40,11 @@ namespace WindowsMessenger {
 
 		}
 
+		public void testSendingMessage() {
+			Message msg = new Message("Hello World", "1234567000");
+			_bluetooth.sendMessage(msg);
+		}
+
 		public void addNewMessage(Message newMessage) {
 			convos.addMessage(newMessage);
 		}
@@ -53,10 +59,7 @@ namespace WindowsMessenger {
 		}
 
 		private void connectionButton_Click(object sender, RoutedEventArgs e) {
-		//	_devices = _connection.GetDeviceNames();
-		//	foreach (BluetoothDeviceInfo i in _devices) {
-		//		label.Content = i.DeviceName;
-		//	}
+			_bluetooth.connectToDevice();
 		}
 
 		private void sendButton_Click(object sender, RoutedEventArgs e) {
