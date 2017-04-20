@@ -18,11 +18,17 @@ namespace AndroidMessenger {
 	class AndroidBluetoothController {
 		event Action _incommingConnectionSuccess;
 		event Action _updateMessageList;
+		event Action _messageDisconnect;
 		Thread _incommingConnection;
 		Thread _listenForNewMessage;
 		AndroidBluetooth _connection;
 		Message _message = null;
 		object _messageLock = new object();
+
+		public event Action MessageDisconnect {
+			add { _messageDisconnect += value; }
+			remove { _messageDisconnect += value; }
+		}
 
 		public event Action IncommingConnectionSuccess {
 			add { _incommingConnectionSuccess += value; }
@@ -85,11 +91,16 @@ namespace AndroidMessenger {
 		private void listenForNewMessage() {
 			// Improve this so that the thread running this can be aborted/stopped.
 			while (true) {
-				lock (_messageLock) {
-					Message receivedMessage = _connection.ReceiveObject<Message>();
-					_message = receivedMessage;
+				try {
+					lock (_messageLock) {
+						Message receivedMessage = _connection.ReceiveObject<Message>();
+						_message = receivedMessage;
+					}
+					Parallel.Invoke(_updateMessageList);
 				}
-				Parallel.Invoke(_updateMessageList);
+				catch {
+					Parallel.Invoke(_messageDisconnect);
+				}
 			}
 		}
 

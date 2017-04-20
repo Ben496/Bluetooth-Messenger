@@ -8,10 +8,16 @@ namespace WindowsMessenger {
 	public class PCBluetoothController {
 		private event Action _incommingConnectionSuccess;
 		private event Action<Message> _updateMessageList;
+		private event Action _messasgeDisconnect;
 		private Thread _incommingConnection;
 		private Thread _listenForNewMessage;
 		private PCBluetooth _connection;
 		private bool _bluetoothDisable = false;
+
+		public event Action MessageDisconnect {
+			add { _messasgeDisconnect += value; }
+			remove { _messasgeDisconnect -= value; }
+		}
 
 		// Subscirbe using this action to be called when a device is connected.
 		public event Action IncommingConnectionSuccess {
@@ -77,8 +83,13 @@ namespace WindowsMessenger {
 		private void listenForNewMessage() {
 			// Improve this so that the thread running this can be aborted/stopped.
 			while (true) {
-				Message receivedMessage = _connection.ReceiveObject<Message>();
-				Application.Current.Dispatcher.Invoke(_updateMessageList, receivedMessage);
+				try {
+					Message receivedMessage = _connection.ReceiveObject<Message>();
+					Application.Current.Dispatcher.Invoke(_updateMessageList, receivedMessage);
+				}
+				catch {
+					Application.Current.Dispatcher.Invoke(_messasgeDisconnect);
+				}
 			}
 		}
 
