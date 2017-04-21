@@ -21,7 +21,7 @@ public class Message
 	// TODO add check to make sure phone number is valid
 	public string PhoneNumber {
 		get { return _phoneNumber; }
-		set { _phoneNumber = value; }
+		set { _phoneNumber = sterilizePhoneNumber(value); }
 	}
 
 	public bool IsMms {
@@ -52,22 +52,20 @@ public class Message
 		_isSent = false;
 	}
 
-	// TODO add check to make sure phone number is valid
 	public Message(string text, string phoneNumber) {
 		_timeStamp = 0;
 		_text = text;
 		_multi = null;
-		_phoneNumber = phoneNumber;
+		_phoneNumber = sterilizePhoneNumber(phoneNumber);
 		_isMMS = false;
 		_isSent = false;
 	}
 
-	// TODO add check to make sure phone number is valid
 	public Message(string text, string phoneNumber, bool sent) {
 		_timeStamp = 0;
 		_text = text;
 		_multi = null;
-		_phoneNumber = phoneNumber;
+		_phoneNumber = sterilizePhoneNumber(phoneNumber);
 		_isMMS = false;
 		_isSent = sent;
 	}
@@ -76,7 +74,7 @@ public class Message
 		_timeStamp = time;
 		_text = text;
 		_multi = null;
-		_phoneNumber = phoneNumber;
+		_phoneNumber = sterilizePhoneNumber(phoneNumber);
 		_isMMS = false;
 		_isSent = sent;
 	}
@@ -86,6 +84,17 @@ public class Message
 			return "Me: " + _text + "\n";
 		}
 		return _phoneNumber + ": " + _text + "\n";
+	}
+
+	private string sterilizePhoneNumber(string num) {
+		string sterilized = num;
+		if (sterilized.Length != 12 && sterilized.Length != 10) {
+			return "INVALID";
+		}
+		else if (sterilized.Length == 10) {
+			sterilized = "+1" + sterilized;
+		}
+		return sterilized;
 	}
 }
 

@@ -23,8 +23,14 @@ namespace WindowsMessenger {
 			string messageNumber = tmp.ToString();
 			string messageContent = message.Text;
 			Message newMessage = new Message(messageContent, messageNumber, true);
-			_controller.createNewMessages(newMessage);
-			//_controller.sendMessage(newMessage);
+			if (newMessage.PhoneNumber == "INVALID") {
+				MessageBox.Show("Invalid Number.");
+			}
+			else {
+				_controller.createNewMessages(newMessage);
+				//_controller.sendMessage(newMessage);
+			}
+
 			this.Close();
 		}
 	}

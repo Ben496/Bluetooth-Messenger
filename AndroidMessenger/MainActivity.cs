@@ -58,16 +58,6 @@ namespace AndroidMessenger {
 			SmsManager.Default.SendTextMessage(sms.PhoneNumber, null, sms.Text, null, null);
 		}
 
-		// Should fix any phone number problems. I'm not sure what other ways it enters, so Benji will need
-		// to test this problem.
-		private string sterilizePhoneNumber(string num) {
-			string sterilized = num;
-			if (num.Length == 10) {
-				sterilized = "+1" + sterilized;
-			}
-			return sterilized;
-		}
-
 		private void DisconnectFromPC(object sender, EventArgs e) {
 
 		}

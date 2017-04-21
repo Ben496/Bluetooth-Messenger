@@ -17,7 +17,7 @@ namespace WindowsMessenger {
 		public MainWindow() {
 			InitializeComponent();
 
-			_bluetooth = new PCBluetoothController();
+			_bluetooth = new PCBluetoothController(true);
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.IncommingConnectionSuccess += testSendingMessage;
 			_bluetooth.UpdateMessageList += addNewMessage;
@@ -80,17 +80,13 @@ namespace WindowsMessenger {
 				return;
 			}
 			Message newMessage = new Message(messageContent, messageNumber, true);
-			addNewMessage(newMessage);
-
-			// determine device (ASUS Z00D)
-			/*if (_devices != null) {
-				foreach (var i in _devices) {
-					if (string.Equals(i.DeviceName, "ASUS_Z00AD") || string.Equals(i.DeviceName, "ASUSZ00AD")) {
-						Stream buffer = _connection.Connect(i);
-						_connection.SendObject<Message>(buffer, testMessage);
-						status.Content = "Status: sending complete" + testMessage.ToString();
-				}
-			}*/
+			if (newMessage.PhoneNumber == "INVALID") {
+				MessageBox.Show("Invalid Number.");
+			}
+			else {
+				addNewMessage(newMessage);
+			//	_bluetooth.sendMessage(newMessage);
+			}
 		}
 
 		private void On_Closing(object sender, CancelEventArgs e) {
