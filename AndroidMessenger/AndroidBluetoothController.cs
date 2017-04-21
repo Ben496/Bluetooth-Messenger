@@ -49,7 +49,7 @@ namespace AndroidMessenger {
 			_incommingConnection = new Thread(incommingConnectionListener);
 			_listenForNewMessage = new Thread(listenForNewMessage);
 			_incommingConnectionSuccess += startListeningForMessages; // <=== TODO: should do something else for this later
-			_incommingConnection.Start();
+			//_incommingConnection.Start();	// Don't need to worry about this running right now. All connections initiated from phone.
 		}
 
 		public bool ConnectToPC() {
