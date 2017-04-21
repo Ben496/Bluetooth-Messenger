@@ -5,6 +5,7 @@ using Android.Content;
 using Android.Database;
 using Android.Widget;
 using System;
+using Android.Telephony;
 
 namespace AndroidMessenger {
 	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
@@ -52,6 +53,21 @@ namespace AndroidMessenger {
 
 		}
 
+		// Not really sure where to put this, but I added the function to send a text message over the network.
+		private void sendMessage(Message sms) {
+			SmsManager.Default.SendTextMessage(sms.PhoneNumber, null, sms.Text, null, null);
+		}
+
+		// Should fix any phone number problems. I'm not sure what other ways it enters, so Benji will need
+		// to test this problem.
+		private string sterilizePhoneNumber(string num) {
+			string sterilized = num;
+			if (num.Length == 10) {
+				sterilized = "+1" + sterilized;
+			}
+			return sterilized;
+		}
+
 		private void DisconnectFromPC(object sender, EventArgs e) {
 
 		}
@@ -61,7 +77,7 @@ namespace AndroidMessenger {
 			_displayMessage.Text = msg.ToString();
 		}
 
-		public ConversationList generateConversations() {
+		private ConversationList generateConversations() {
 			Android.Net.Uri inboxURI = Android.Net.Uri.Parse("content://sms/");
 			ConversationList conversations = new ConversationList();
 			ContentResolver cr = this.ContentResolver;
