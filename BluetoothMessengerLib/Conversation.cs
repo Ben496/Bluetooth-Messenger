@@ -29,12 +29,23 @@ public class Conversation : INotifyPropertyChanged
 
 	public string PhoneNumber {
 		get { return _phoneNumber; }
-		set { _phoneNumber = value; }
+		set { _phoneNumber = sterilizePhoneNumber(value); }
+	}
+
+	private string sterilizePhoneNumber(string num) {
+		string sterilized = num;
+		if (sterilized.Length != 12 && sterilized.Length != 10) {
+			return "INVALID";
+		}
+		else if (sterilized.Length == 10) {
+			sterilized = "+1" + sterilized;
+		}
+		return sterilized;
 	}
 
 	public Conversation(Message sms) {
 		_who = null;
-		_phoneNumber = sms.PhoneNumber;
+		_phoneNumber = sterilizePhoneNumber(sms.PhoneNumber);
 		_messages = new List<Message>();
 		_messages.Add(sms);
 	}
