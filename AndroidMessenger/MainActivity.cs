@@ -31,7 +31,7 @@ namespace AndroidMessenger {
 
 			_controller = new AndroidBluetoothController(this);
 			_controller.IncommingConnectionSuccess += () => { _status.Text = "Status: Connected"; };
-			_controller.UpdateMessageList += NewReceivedMessageFromPC;
+			_controller.UpdateMessageList += sendMessage;
 
 			_receiveController = new SmsReceiver(_controller);
 			_receiveController.NewMessage += _controller.sendMessage;

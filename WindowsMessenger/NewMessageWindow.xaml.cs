@@ -28,7 +28,7 @@ namespace WindowsMessenger {
 			}
 			else {
 				_controller.createNewMessages(newMessage);
-				//_controller.sendMessage(newMessage);
+				_controller.sendMessage(newMessage);
 			}
 
 			this.Close();
