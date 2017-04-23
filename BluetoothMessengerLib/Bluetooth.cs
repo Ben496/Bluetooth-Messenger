@@ -27,13 +27,18 @@ namespace BluetoothMessengerLib {
 		// The first 4 bytes received indicate the size of the object.
 		protected T Get<T>(Stream connectionStream) {
 			if (connectionStream != null) {
-				BinaryReader readLength = new BinaryReader(connectionStream, System.Text.Encoding.UTF8);
-				int length = readLength.ReadInt32();
-				byte[] buffer = new byte[length];
-				connectionStream.Read(buffer, 0, length);
-				string input = Encoding.UTF8.GetString(buffer, 0, length);
-				T dat = JsonConvert.DeserializeObject<T>(input);
-				return dat;
+				try {
+					BinaryReader readLength = new BinaryReader(connectionStream, System.Text.Encoding.UTF8);
+					int length = readLength.ReadInt32();
+					byte[] buffer = new byte[length];
+					connectionStream.Read(buffer, 0, length);
+					string input = Encoding.UTF8.GetString(buffer, 0, length);
+					T dat = JsonConvert.DeserializeObject<T>(input);
+					return dat;
+				}
+				catch {
+					return default(T);
+				}
 			}
 			return default(T);
 		}

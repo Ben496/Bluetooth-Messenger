@@ -21,6 +21,7 @@ namespace WindowsMessenger {
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.IncommingConnectionSuccess += testSendingMessage;
 			_bluetooth.UpdateMessageList += addNewMessage;
+			_bluetooth.Disconnected += disconnectedInfo;
 
 			convos.addMessage(new Message("HEY FRIEND", "6156300003", true, 1));
 			convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
@@ -54,6 +55,10 @@ namespace WindowsMessenger {
 		// Temporary function to display a message box when application is connected.
 		public void connectedInfo() {
 			MessageBox.Show("Connected to device");
+		}
+
+		public void disconnectedInfo() {
+			MessageBox.Show("Disconnected from device");
 		}
 
 		private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
@@ -90,7 +95,7 @@ namespace WindowsMessenger {
 		}
 
 		private void On_Closing(object sender, CancelEventArgs e) {
-			_bluetooth.stopListentingForMessages();
+			_bluetooth.disconnect();
 		}
 
 		private void sendNewButton_Click(object sender, RoutedEventArgs e) {

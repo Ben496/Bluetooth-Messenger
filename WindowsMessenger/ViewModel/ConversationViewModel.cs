@@ -26,7 +26,7 @@ namespace WindowsMessenger.ViewModel {
 					return;
 				}
 			}
-			Conversations.Add(new Conversation(sms));
+			Conversations.Add(new Conversation(sms));	
 		}
 
 		private object _selected;

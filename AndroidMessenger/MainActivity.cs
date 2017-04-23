@@ -72,7 +72,7 @@ namespace AndroidMessenger {
 		}
 
 		private void DisconnectFromPC(object sender, EventArgs e) {
-
+			_controller.DisconnectFromPC();
 		}
 
 		public void NewReceivedMessage(Message msg) {

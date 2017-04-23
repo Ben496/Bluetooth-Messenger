@@ -18,6 +18,7 @@ namespace AndroidMessenger {
 	class AndroidBluetoothController {
 		event Action _incommingConnectionSuccess;
 		event Action<Message> _updateMessageList;
+		event Action _disconnected;		// Theoretically things can be done with this
 		Thread _incommingConnection;
 		Thread _listenForNewMessage;
 		AndroidBluetooth _connection;
@@ -28,6 +29,11 @@ namespace AndroidMessenger {
 		public event Action IncommingConnectionSuccess {
 			add { _incommingConnectionSuccess += value; }
 			remove { _incommingConnectionSuccess -= value; }
+		}
+
+		public event Action Disconnected {
+			add { _disconnected += value; }
+			remove { _disconnected -= value; }
 		}
 
 		public event Action<Message> UpdateMessageList {
@@ -71,6 +77,16 @@ namespace AndroidMessenger {
 			return false;
 		}
 
+		public bool DisconnectFromPC() {
+			try {
+				_connection.Disconnect();
+				return true;
+			}
+			catch {
+				return false;
+			}
+		}
+
 		public bool sendMessage(Message msg) {
 			return _connection.SendObject<Message>(msg);
 		}
@@ -88,11 +104,13 @@ namespace AndroidMessenger {
 			// Improve this so that the thread running this can be aborted/stopped.
 			while (true) {
 				Message msg = new Message(_connection.ReceiveObject<Message>());
-				_message = msg;
-				// Need to invoke _updateMessageList on main thread here if you want to update ui
-				_updateMessageList(msg);	// This will run on current thread
-				
-				Thread.Sleep(1000);
+				if (msg != null)
+					// Need to invoke _updateMessageList on main thread here if you want to update ui
+					_updateMessageList(msg);	// This will run on current thread
+				else {
+					_disconnected();
+					return;
+				}
 			}
 		}
 

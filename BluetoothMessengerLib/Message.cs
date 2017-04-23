@@ -2,12 +2,12 @@
 
 public class Message
 {
-	private string _text;
-	private int _timeStamp;
-	private Stream _multi;		// not implemented yet
-	private string _phoneNumber;
-	private bool _isMMS;
-	private bool _isSent;
+	private string _text = "";
+	private int _timeStamp = 0;
+	private Stream _multi = null;		// not implemented yet
+	private string _phoneNumber = "0";
+	private bool _isMMS = false;
+	private bool _isSent = false;
 	public string Text {
 		get { return _text; }
 		set { _text = value; }
@@ -35,20 +35,17 @@ public class Message
 	}
 
 	public Message() {
-		_timeStamp = 0;
-		_text = null;
-		_multi = null;
-		_phoneNumber = null;
-		_isMMS = false;
-		_isSent = false;
+		// keep the default values
 	}
 
 	public Message(Message msg) {
-		_isMMS = msg.IsMms;
-		_isSent = msg.isSent;
-		_text = msg.Text;
-		_timeStamp = msg.Time;
-		_phoneNumber = msg.PhoneNumber;
+		if (msg != null) {
+			_isMMS = msg.IsMms;
+			_isSent = msg.isSent;
+			_text = msg.Text;
+			_timeStamp = msg.Time;
+			_phoneNumber = msg.PhoneNumber;
+		}
 	}
 
 	public Message(string text) {
