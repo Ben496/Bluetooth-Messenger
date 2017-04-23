@@ -15,7 +15,7 @@ using Android.Widget;
 using Android.Bluetooth;
 
 namespace AndroidMessenger {
-	class AndroidBluetoothController {
+	public class AndroidBluetoothController {
 		event Action _incommingConnectionSuccess;
 		event Action<Message> _updateMessageList;
 		event Action _disconnected;		// Theoretically things can be done with this
