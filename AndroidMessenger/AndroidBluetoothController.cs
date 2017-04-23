@@ -17,34 +17,36 @@ using Android.Bluetooth;
 namespace AndroidMessenger {
 	class AndroidBluetoothController {
 		event Action _incommingConnectionSuccess;
-		event Action _updateMessageList;
+		event Action<Message> _updateMessageList;
 		Thread _incommingConnection;
 		Thread _listenForNewMessage;
 		AndroidBluetooth _connection;
-		Message _message = null;
+		Message _message;
 		object _messageLock = new object();
+		MainActivity _callingActivity;
 
 		public event Action IncommingConnectionSuccess {
 			add { _incommingConnectionSuccess += value; }
 			remove { _incommingConnectionSuccess -= value; }
 		}
 
-		public event Action UpdateMessageList {
+		public event Action<Message> UpdateMessageList {
 			add { _updateMessageList += value; }
 			remove { _updateMessageList -= value; }
 		}
 
 		public Message NewMessage {
 			get {
-				lock (_messageLock) {
-					Message msg = _message;
+				//lock (_messageLock) {
+					Message msg = new Message(_message);
 					_message = null;	// Sets _message back to null (probably don't have to do this)
 					return msg;
-				}
+				//}
 			}
 		}
 
-		public AndroidBluetoothController() {
+		public AndroidBluetoothController(MainActivity caller) {
+			_callingActivity = caller;
 			_connection = new AndroidBluetooth();
 			_incommingConnection = new Thread(incommingConnectionListener);
 			_listenForNewMessage = new Thread(listenForNewMessage);
@@ -85,11 +87,12 @@ namespace AndroidMessenger {
 		private void listenForNewMessage() {
 			// Improve this so that the thread running this can be aborted/stopped.
 			while (true) {
-				lock (_messageLock) {
-					Message receivedMessage = _connection.ReceiveObject<Message>();
-					_message = receivedMessage;
-				}
-				Parallel.Invoke(_updateMessageList);
+				Message msg = new Message(_connection.ReceiveObject<Message>());
+				_message = msg;
+				// Need to invoke _updateMessageList on main thread here if you want to update ui
+				_updateMessageList(msg);	// This will run on current thread
+				
+				Thread.Sleep(1000);
 			}
 		}
 

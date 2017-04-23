@@ -74,11 +74,12 @@ namespace WindowsMessenger {
 		// Then sends the object 
 		public bool SendObject<T>(T data) {
 			bool succeed = false;
-			if (_bluetoothConnection.Connected) {
+			// For some reason _bluetoothConnection.Connected is false even when connected
+			//if (_bluetoothConnection.Connected) {
 				succeed = Send<T>(_bluetoothStream, data);
 				//if (succeed)
 				//	Disconnect();
-			}
+			//}
 			return succeed;
 		}
 

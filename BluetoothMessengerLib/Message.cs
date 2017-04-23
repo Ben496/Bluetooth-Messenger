@@ -43,6 +43,14 @@ public class Message
 		_isSent = false;
 	}
 
+	public Message(Message msg) {
+		_isMMS = msg.IsMms;
+		_isSent = msg.isSent;
+		_text = msg.Text;
+		_timeStamp = msg.Time;
+		_phoneNumber = msg.PhoneNumber;
+	}
+
 	public Message(string text) {
 		_timeStamp = 0;
 		_text = text;
@@ -80,10 +88,15 @@ public class Message
 	}
 
 	public override string ToString() {
-		if (_isSent) {
-			return "Me: " + _text + "\n";
+		if (this == null) {
+			return "null";
 		}
-		return _phoneNumber + ": " + _text + "\n";
+		else {
+			if (_isSent) {
+				return "Me: " + _text + "\n";
+			}
+			return _phoneNumber + ": " + _text + "\n";
+		}
 	}
 
 	private string sterilizePhoneNumber(string num) {

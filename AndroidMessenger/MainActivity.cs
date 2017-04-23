@@ -17,6 +17,9 @@ namespace AndroidMessenger {
 		TextView _status;
 		TextView _displayMessage;
 		AndroidBluetoothController _controller;
+		TextView _phoneNumber;
+		TextView _messageContent;
+		Button _sendButton;
 
 		protected override void OnCreate(Bundle bundle) {
 			base.OnCreate(bundle);
@@ -24,7 +27,7 @@ namespace AndroidMessenger {
 			// Launch the test activity
 			//StartActivity(typeof(TestActivity));
 
-			_controller = new AndroidBluetoothController();
+			_controller = new AndroidBluetoothController(this);
 			_controller.IncommingConnectionSuccess += () => { _status.Text = "Status: Connected"; };
 			_controller.UpdateMessageList += NewReceivedMessage;
 			
@@ -34,12 +37,22 @@ namespace AndroidMessenger {
 			_selectDevice = FindViewById<Button>(Resource.Id.SelectDevice);
 			_disconnect = FindViewById<Button>(Resource.Id.Disconnect);
 			_status = FindViewById<TextView>(Resource.Id.Status);
-			_displayMessage = FindViewById<TextView>(Resource.Id.Status);
+			//_displayMessage = FindViewById<TextView>(Resource.Id.ReceivedMessage);
+			_phoneNumber = FindViewById<TextView>(Resource.Id.Number);
+			_messageContent = FindViewById<TextView>(Resource.Id.MessageContent);
+			_sendButton = FindViewById<Button>(Resource.Id.SendButton);
 
 			_connect.Click += ConnectToPC;
 			_selectDevice.Click += SelectConnectionDevice;
 			_disconnect.Click += DisconnectFromPC;
 
+			_sendButton.Click += SendButtonClick;
+
+		}
+
+		private void SendButtonClick(object sender, EventArgs e) {
+			Message msg = new Message(_messageContent.Text, _phoneNumber.Text);
+			_controller.sendMessage(msg);
 		}
 
 		private void ConnectToPC(object sender, EventArgs e) {
@@ -62,9 +75,10 @@ namespace AndroidMessenger {
 
 		}
 
-		public void NewReceivedMessage() {
-			Message msg = _controller.NewMessage;
-			_displayMessage.Text = msg.ToString();
+		public void NewReceivedMessage(Message msg) {
+			msg.ToString();
+			// Do things here
+			return;
 		}
 
 		private ConversationList generateConversations() {
