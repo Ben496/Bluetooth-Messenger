@@ -74,19 +74,9 @@ namespace WindowsMessenger {
 		// The thread that is running this locks until an incomming connection is received.
 		private void incommingConnectionListener() {
 			_connection.GetIncommingConnection();
-			if (_incommingConnectionSuccess != null) {
+			if(_incommingConnectionSuccess != null)
 				Application.Current.Dispatcher.Invoke(_incommingConnectionSuccess);
-				ConversationList cons = _connection.ReceiveObject<ConversationList>();
-				int consCount = cons.Size();
-				for (int i = 0; i < consCount; i++) {
-					Conversation con = cons.get(i);
-					List<Message> msgList = con.Messages;
-					foreach (Message msg in msgList) {
-						Application.Current.Dispatcher.Invoke(_updateMessageList, msg);
-					}
-				}
-				startListeningForMessages();
-			}
+			startListeningForMessages();
 		}
 
 		// The thread that is runing this will loop until terminated.
