@@ -91,6 +91,10 @@ namespace AndroidMessenger {
 			return _connection.SendObject<Message>(msg);
 		}
 
+		public bool sendConversationList(ConversationList con) {
+			return _connection.SendObject<ConversationList>(con);
+		}
+
 		// The thread that is running this locks until an incomming connection is received.
 		private void incommingConnectionListener() {
 			_connection.GetIncommingConnection();
