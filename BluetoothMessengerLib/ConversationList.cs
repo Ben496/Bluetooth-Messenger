@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class ConversationList
 {
-	private List<Conversation> _conversations = new List<Conversation>();
+	public List<Conversation> _conversations = new List<Conversation>();
 
 	public Conversation AccessConversation(string number)
 	{
