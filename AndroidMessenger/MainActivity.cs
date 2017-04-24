@@ -21,7 +21,7 @@ namespace AndroidMessenger {
 		TextView _messageContent;
 		Button _sendButton;
 
-		SmsReceiver _receiveController;
+		//SmsReceiver _receiveController;
 
 		protected override void OnCreate(Bundle bundle) {
 			base.OnCreate(bundle);
@@ -33,8 +33,8 @@ namespace AndroidMessenger {
 			_controller.IncommingConnectionSuccess += () => { _status.Text = "Status: Connected"; };
 			_controller.UpdateMessageList += sendMessage;
 
-			_receiveController = new SmsReceiver(_controller);
-			_receiveController.NewMessage += _controller.sendMessage;
+			//_receiveController = new SmsReceiver();
+			SmsReceiver.NewMessage += _controller.sendMessage;
 
 			SetContentView(Resource.Layout.Main);
 
