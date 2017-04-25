@@ -15,8 +15,8 @@ namespace BluetoothMessengerLib {
 		// The first 4 bytes sent indicate the size of the object.
 		protected bool Send<T>(Stream connectionStream, T data) {
 			string output = JsonConvert.SerializeObject(data);
-			int length = output.Length;
 			var buffer = System.Text.Encoding.UTF8.GetBytes(output);
+			int length = buffer.Length;
 			BinaryWriter writeLength = new BinaryWriter(connectionStream);
 			writeLength.Write(length);
 			connectionStream.Write(buffer, 0, buffer.Length);
@@ -27,12 +27,21 @@ namespace BluetoothMessengerLib {
 		// The first 4 bytes received indicate the size of the object.
 		protected T Get<T>(Stream connectionStream) {
 			if (connectionStream != null) {
+				int length;
+				string input;
+				int i;
 				try {
 					BinaryReader readLength = new BinaryReader(connectionStream, System.Text.Encoding.UTF8);
-					int length = readLength.ReadInt32();
+					length = readLength.ReadInt32();
 					byte[] buffer = new byte[length];
-					connectionStream.Read(buffer, 0, length);
-					string input = Encoding.UTF8.GetString(buffer, 0, length);
+					for (i = 0; i < length; i++) {
+						buffer[i] = (byte)connectionStream.ReadByte();
+						//if (length - i > 1000)
+						//	connectionStream.Read(buffer, i, i + 1000);
+						//else
+						//	connectionStream.Read(buffer, i, length);
+					}
+					input = Encoding.UTF8.GetString(buffer, 0, length);
 					T dat = JsonConvert.DeserializeObject<T>(input);
 					return dat;
 				}

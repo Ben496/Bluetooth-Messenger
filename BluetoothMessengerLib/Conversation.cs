@@ -45,7 +45,10 @@ public class Conversation : INotifyPropertyChanged
 
 	public Conversation(Message sms) {
 		_who = null;
-		_phoneNumber = sterilizePhoneNumber(sms.PhoneNumber);
+		if (sms != null)
+			_phoneNumber = sterilizePhoneNumber(sms.PhoneNumber);
+		else
+			_phoneNumber = "null";
 		_messages = new List<Message>();
 		_messages.Add(sms);
 	}
