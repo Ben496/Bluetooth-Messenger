@@ -74,19 +74,18 @@ namespace WindowsMessenger {
 		// The thread that is running this locks until an incomming connection is received.
 		private void incommingConnectionListener() {
 			_connection.GetIncommingConnection();
-			if(_incommingConnectionSuccess != null)
+			if (_incommingConnectionSuccess != null)
 				Application.Current.Dispatcher.Invoke(_incommingConnectionSuccess);
-				List<Conversation> cons = _connection.ReceiveObject<List<Conversation>>();
-				ConversationList consList = new ConversationList(cons);
-				consList.SortByTime();
-				foreach(Conversation con in consList.Conversations) {
-					List<Message> msgList = con.Messages;
-					foreach (Message msg in msgList) {
-						Application.Current.Dispatcher.Invoke(_updateMessageList, msg);
-					}
+			List<Conversation> cons = _connection.ReceiveObject<List<Conversation>>();
+			ConversationList consList = new ConversationList(cons);
+			consList.SortByTime();
+			foreach (Conversation con in consList.Conversations) {
+				List<Message> msgList = con.Messages;
+				foreach (Message msg in msgList) {
+					Application.Current.Dispatcher.Invoke(_updateMessageList, msg);
 				}
-				startListeningForMessages();
 			}
+			startListeningForMessages();
 		}
 
 		// The thread that is runing this will loop until terminated.
@@ -119,7 +118,7 @@ namespace WindowsMessenger {
 		}
 
 		public void stopListentingForMessages() {
-			if(_listenForNewMessage != null)
+			if (_listenForNewMessage != null)
 				_listenForNewMessage.Abort();
 		}
 
