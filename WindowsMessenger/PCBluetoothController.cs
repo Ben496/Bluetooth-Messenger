@@ -74,7 +74,7 @@ namespace WindowsMessenger {
 		// The thread that is running this locks until an incomming connection is received.
 		private void incommingConnectionListener() {
 			_connection.GetIncommingConnection();
-			if (_incommingConnectionSuccess != null) {
+			if(_incommingConnectionSuccess != null)
 				Application.Current.Dispatcher.Invoke(_incommingConnectionSuccess);
 				List<Conversation> cons = _connection.ReceiveObject<List<Conversation>>();
 				ConversationList consList = new ConversationList(cons);

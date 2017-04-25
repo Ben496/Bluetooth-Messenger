@@ -41,7 +41,7 @@ namespace WindowsMessenger {
 			//win.Show();
 
 		}
-
+		
 		public void addNewMessage(Message newMessage) {
 			cvm.addMessage(newMessage);
 		}
