@@ -1,6 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
-public class Message
+public class Message : IComparable<Message>
 {
 	private string _text = "";
 	private int _timeStamp = 0;
@@ -105,6 +106,13 @@ public class Message
 			sterilized = "+1" + sterilized;
 		}
 		return sterilized;
+	}
+
+	public int CompareTo(Message other) {
+		if (other == null)
+			return 1;
+		else
+			return this.Time.CompareTo(other.Time);
 	}
 }
 

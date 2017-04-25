@@ -66,7 +66,7 @@ namespace AndroidMessenger {
 			else
 				_status.Text = "Status: Connection Failed";
 			ConversationList con = generateConversations();
-			_controller.sendConversations(con._conversations);
+			_controller.sendConversations(con.Conversations);
 		}
 
 		private void SelectConnectionDevice(object sender, EventArgs e) {

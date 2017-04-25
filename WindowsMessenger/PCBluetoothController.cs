@@ -77,7 +77,9 @@ namespace WindowsMessenger {
 			if (_incommingConnectionSuccess != null) {
 				Application.Current.Dispatcher.Invoke(_incommingConnectionSuccess);
 				List<Conversation> cons = _connection.ReceiveObject<List<Conversation>>();
-				foreach(Conversation con in cons) {
+				ConversationList consList = new ConversationList(cons);
+				consList.SortByTime();
+				foreach(Conversation con in consList.Conversations) {
 					List<Message> msgList = con.Messages;
 					foreach (Message msg in msgList) {
 						Application.Current.Dispatcher.Invoke(_updateMessageList, msg);
