@@ -76,7 +76,17 @@ namespace WindowsMessenger {
 			_connection.GetIncommingConnection();
 			if(_incommingConnectionSuccess != null)
 				Application.Current.Dispatcher.Invoke(_incommingConnectionSuccess);
-			startListeningForMessages();
+				List<Conversation> cons = _connection.ReceiveObject<List<Conversation>>();
+				ConversationList consList = new ConversationList(cons);
+				consList.SortByTime();
+				foreach(Conversation con in consList.Conversations) {
+					List<Message> msgList = con.Messages;
+					foreach (Message msg in msgList) {
+						Application.Current.Dispatcher.Invoke(_updateMessageList, msg);
+					}
+				}
+				startListeningForMessages();
+			}
 		}
 
 		// The thread that is runing this will loop until terminated.

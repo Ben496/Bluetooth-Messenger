@@ -19,7 +19,6 @@ namespace WindowsMessenger {
 
 			_bluetooth = new PCBluetoothController();
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
-			//_bluetooth.IncommingConnectionSuccess += testSendingMessage;
 			_bluetooth.UpdateMessageList += addNewMessage;
 			_bluetooth.Disconnected += disconnectedInfo;
 
@@ -42,12 +41,7 @@ namespace WindowsMessenger {
 			//win.Show();
 
 		}
-
-		//public void testSendingMessage() {
-		//	Message msg = new Message("Hello World", "1234567000");
-		//	_bluetooth.sendMessage(msg);
-		//}
-
+		
 		public void addNewMessage(Message newMessage) {
 			cvm.addMessage(newMessage);
 		}

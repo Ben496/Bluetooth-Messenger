@@ -65,6 +65,8 @@ namespace AndroidMessenger {
 				_status.Text = "Status: Connected";
 			else
 				_status.Text = "Status: Connection Failed";
+			ConversationList con = generateConversations();
+			_controller.sendConversations(con.Conversations);
 		}
 
 		private void SelectConnectionDevice(object sender, EventArgs e) {
@@ -85,11 +87,11 @@ namespace AndroidMessenger {
 		}
 
 		// Received from the phone
-		public void NewReceivedMessageFromPC(Message msg) {
-			msg.ToString();
-			// Do things here
-			return;
-		}
+		//public void NewReceivedMessageFromPC(Message msg) {
+		//	msg.ToString();
+		//	// Do things here
+		//	return;
+		//}
 
 		private ConversationList generateConversations() {
 			Android.Net.Uri inboxURI = Android.Net.Uri.Parse("content://sms/");
