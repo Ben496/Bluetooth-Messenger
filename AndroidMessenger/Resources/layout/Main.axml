@@ -26,18 +26,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Disconnect" />
-    <EditText
-        android:inputType="phone"
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Number" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/MessageContent" />
-    <Button
-        android:text="Send"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/SendButton" />
+        android:layout_height="match_parent"
+        android:id="@+id/DeviceList" />
 </LinearLayout>

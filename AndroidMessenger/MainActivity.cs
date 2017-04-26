@@ -6,20 +6,19 @@ using Android.Database;
 using Android.Widget;
 using System;
 using Android.Telephony;
+using Android.Bluetooth;
+using System.Collections.Generic;
 
 namespace AndroidMessenger {
 	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity {
-		ConversationList _conversations = null;
 		Button _connect;
 		Button _selectDevice;
 		Button _disconnect;
 		TextView _status;
-		TextView _displayMessage;
+		ListView _deviceList;
+
 		AndroidBluetoothController _controller;
-		TextView _phoneNumber;
-		TextView _messageContent;
-		Button _sendButton;
 
 		//SmsReceiver _receiveController;
 
@@ -42,22 +41,25 @@ namespace AndroidMessenger {
 			_selectDevice = FindViewById<Button>(Resource.Id.SelectDevice);
 			_disconnect = FindViewById<Button>(Resource.Id.Disconnect);
 			_status = FindViewById<TextView>(Resource.Id.Status);
-			//_displayMessage = FindViewById<TextView>(Resource.Id.ReceivedMessage);
-			_phoneNumber = FindViewById<TextView>(Resource.Id.Number);
-			_messageContent = FindViewById<TextView>(Resource.Id.MessageContent);
-			_sendButton = FindViewById<Button>(Resource.Id.SendButton);
+			_deviceList = FindViewById<ListView>(Resource.Id.DeviceList);
+
+			// Populating listview with paired devices
+			// TODO: make a controller for this
+			AndroidBluetooth connection = new AndroidBluetooth();
+			List<BluetoothDevice> devices = connection.GetPairedDevices();
+			string[] deviceNames = new string[devices.Count];
+			for (int i = 0; i < devices.Count; i++) {
+				deviceNames[i] = devices[i].Name;
+			}
+			ArrayAdapter<string> adapter =
+				new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, deviceNames);
+			_deviceList.Adapter = adapter;
+			_deviceList.SetSelector(Android.Resource.Drawable.AlertDarkFrame);
+			
 
 			_connect.Click += ConnectToPC;
-			_selectDevice.Click += SelectConnectionDevice;
+			//_selectDevice.Click += SelectConnectionDevice;
 			_disconnect.Click += DisconnectFromPC;
-
-			_sendButton.Click += SendButtonClick;
-
-		}
-
-		private void SendButtonClick(object sender, EventArgs e) {
-			Message msg = new Message(_messageContent.Text, _phoneNumber.Text);
-			_controller.sendMessage(msg);
 		}
 
 		private void ConnectToPC(object sender, EventArgs e) {
@@ -67,10 +69,6 @@ namespace AndroidMessenger {
 				_status.Text = "Status: Connection Failed";
 			ConversationList con = generateConversations();
 			_controller.sendConversations(con.Conversations);
-		}
-
-		private void SelectConnectionDevice(object sender, EventArgs e) {
-
 		}
 
 		// Not really sure where to put this, but I added the function to send a text message over the network.
@@ -85,13 +83,6 @@ namespace AndroidMessenger {
 		public void NewIncommingMessage(Message msg) {
 			_controller.sendMessage(msg);
 		}
-
-		// Received from the phone
-		//public void NewReceivedMessageFromPC(Message msg) {
-		//	msg.ToString();
-		//	// Do things here
-		//	return;
-		//}
 
 		private ConversationList generateConversations() {
 			Android.Net.Uri inboxURI = Android.Net.Uri.Parse("content://sms/");
