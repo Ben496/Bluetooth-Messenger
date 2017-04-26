@@ -8,15 +8,16 @@ using System;
 using Android.Telephony;
 using Android.Bluetooth;
 using System.Collections.Generic;
+using Android.Views;
 
 namespace AndroidMessenger {
 	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity {
 		Button _connect;
-		Button _selectDevice;
 		Button _disconnect;
 		TextView _status;
 		ListView _deviceList;
+		string _deviceName;
 
 		AndroidBluetoothController _controller;
 
@@ -38,7 +39,6 @@ namespace AndroidMessenger {
 			SetContentView(Resource.Layout.Main);
 
 			_connect = FindViewById<Button>(Resource.Id.Connect);
-			_selectDevice = FindViewById<Button>(Resource.Id.SelectDevice);
 			_disconnect = FindViewById<Button>(Resource.Id.Disconnect);
 			_status = FindViewById<TextView>(Resource.Id.Status);
 			_deviceList = FindViewById<ListView>(Resource.Id.DeviceList);
@@ -58,12 +58,16 @@ namespace AndroidMessenger {
 			
 
 			_connect.Click += ConnectToPC;
-			//_selectDevice.Click += SelectConnectionDevice;
 			_disconnect.Click += DisconnectFromPC;
+			_deviceList.ItemClick += Items;
+		}
+
+		private void Items(object sender, AdapterView.ItemClickEventArgs e) {
+			_deviceName = _deviceList.GetItemAtPosition(e.Position).ToString();
 		}
 
 		private void ConnectToPC(object sender, EventArgs e) {
-			if (_controller.ConnectToPC())
+			if (_controller.ConnectToPC(_deviceName))
 				_status.Text = "Status: Connected";
 			else
 				_status.Text = "Status: Connection Failed";

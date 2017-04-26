@@ -60,10 +60,10 @@ namespace AndroidMessenger {
 			//_incommingConnection.Start();	// Don't need to worry about this running right now. All connections initiated from phone.
 		}
 
-		public bool ConnectToPC() {
+		public bool ConnectToPC(string name) {
 			List<BluetoothDevice> devices = _connection.GetPairedDevices();
 			foreach (BluetoothDevice i in devices) {
-				if (i.Name.Equals("TESLA-WIN")) { // "KEPLER-WIN" or "TESLA-WIN"
+				if (i.Name.Equals(name)) {
 					try {
 						_connection.Connect(i);
 						Parallel.Invoke(_incommingConnectionSuccess);
