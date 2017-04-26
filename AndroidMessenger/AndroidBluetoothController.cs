@@ -57,7 +57,8 @@ namespace AndroidMessenger {
 			_incommingConnection = new Thread(incommingConnectionListener);
 			_listenForNewMessage = new Thread(listenForNewMessage);
 			_incommingConnectionSuccess += startListeningForMessages; // <=== TODO: should do something else for this later
-			//_incommingConnection.Start();	// Don't need to worry about this running right now. All connections initiated from phone.
+																	  //_incommingConnection.Start();	// Don't need to worry about this running right now. All connections initiated from phone.
+			_disconnected += DisconnectFromPC;
 		}
 
 		public bool ConnectToPC(string name) {
@@ -77,13 +78,11 @@ namespace AndroidMessenger {
 			return false;
 		}
 
-		public bool DisconnectFromPC() {
+		public void DisconnectFromPC() {
 			try {
 				_connection.Disconnect();
-				return true;
 			}
 			catch {
-				return false;
 			}
 		}
 
@@ -107,7 +106,7 @@ namespace AndroidMessenger {
 		private void listenForNewMessage() {
 			// Improve this so that the thread running this can be aborted/stopped.
 			while (true) {
-				Message msg = new Message(_connection.ReceiveObject<Message>());
+				Message msg = _connection.ReceiveObject<Message>();
 				if (msg != null)
 					// Need to invoke _updateMessageList on main thread here if you want to update ui
 					_updateMessageList(msg);	// This will run on current thread
