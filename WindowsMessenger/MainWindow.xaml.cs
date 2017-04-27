@@ -18,7 +18,7 @@ namespace WindowsMessenger {
 			InitializeComponent();
 
 			try {
-				_bluetooth = new PCBluetoothController();
+				_bluetooth = new PCBluetoothController(true);
 			}
 			catch (System.PlatformNotSupportedException) {
 				MessageBox.Show("This pc either has bluetooth disabled or doesn't have a compatable bluetooth adapter");
@@ -29,7 +29,7 @@ namespace WindowsMessenger {
 			_bluetooth.UpdateMessageList += addNewMessage;
 			_bluetooth.Disconnected += disconnectedInfo;
 
-			convos.addMessage(new Message("HEY FRIEND", "6156300003", true, 1));
+			convos.addMessage(new Message("HEY FRIEND", "(615)630-0003", true, 1));
 			convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
 			convos.addMessage(new Message("NAW", "6156300003", true, 2));
 			convos.addMessage(new Message("WHAT", "6156300003", false, 2));
