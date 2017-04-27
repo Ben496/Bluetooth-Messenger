@@ -17,7 +17,14 @@ namespace WindowsMessenger {
 		public MainWindow() {
 			InitializeComponent();
 
-			_bluetooth = new PCBluetoothController();
+			try {
+				_bluetooth = new PCBluetoothController();
+			}
+			catch (System.PlatformNotSupportedException) {
+				MessageBox.Show("This pc either has bluetooth disabled or doesn't have a compatable bluetooth adapter");
+				this.Close();
+				return;
+			}
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.UpdateMessageList += addNewMessage;
 			_bluetooth.Disconnected += disconnectedInfo;
@@ -89,7 +96,8 @@ namespace WindowsMessenger {
 		}
 
 		private void On_Closing(object sender, CancelEventArgs e) {
-			_bluetooth.disconnect();
+			if (_bluetooth != null)
+				_bluetooth.disconnect();
 		}
 
 		private void sendNewButton_Click(object sender, RoutedEventArgs e) {
