@@ -87,6 +87,10 @@ namespace AndroidMessenger {
 		private void PopulateDeviceList() {
 			AndroidBluetooth connection = new AndroidBluetooth();
 			List<BluetoothDevice> devices = connection.GetPairedDevices();
+			if (devices == null) {
+				_status.Text = "Bluetooth communication is necessary to run this software";
+				return;
+			}
 			string[] deviceNames = new string[devices.Count];
 			for (int i = 0; i < devices.Count; i++) {
 				deviceNames[i] = devices[i].Name;

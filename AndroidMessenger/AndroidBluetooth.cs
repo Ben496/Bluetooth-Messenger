@@ -33,14 +33,15 @@ namespace AndroidMessenger {
 		// Gets a list of paired devices.
 		// Returns null if bluetooth is disabled.
 		public List<BluetoothDevice> GetPairedDevices() {
-			if (_adapter.IsEnabled) {
-				ICollection<BluetoothDevice> devices = new List<BluetoothDevice>();
-				devices = _adapter.BondedDevices;
-				return devices.ToList();
+			if (_adapter != null) {
+				if (_adapter.IsEnabled) {
+					ICollection<BluetoothDevice> devices = new List<BluetoothDevice>();
+					devices = _adapter.BondedDevices;
+					return devices.ToList();
+				}
+				else return null;
 			}
-			else {
-				return null;
-			}
+			else return null;
 		}
 
 		// Gets a connection socket from a device address.
