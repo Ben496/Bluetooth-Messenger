@@ -33,13 +33,20 @@ public class Conversation : INotifyPropertyChanged
 	}
 
 	private string sterilizePhoneNumber(string num) {
-		string sterilized = num;
-		if (sterilized.Length != 12 && sterilized.Length != 10) {
-			return "INVALID";
+		string sterilized = "";
+		for (int i = 0; i < num.Length; i++) {
+			if (num[i] >= 48 && num[i] <= 57) {
+				sterilized += num[i];
+			}
 		}
-		else if (sterilized.Length == 10) {
+
+		if (sterilized.Length == 11)
+			sterilized = '+' + sterilized;
+		else if (sterilized.Length == 10)
 			sterilized = "+1" + sterilized;
-		}
+		else if (sterilized.Length == 5)
+			return sterilized;
+		else return "INVALID";
 		return sterilized;
 	}
 
