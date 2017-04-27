@@ -17,19 +17,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/Connect" />
     <Button
-        android:text="Select Device"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/SelectDevice" />
-    <Button
         android:text="Disconnect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Disconnect" />
-    <TextView
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ReceivedMessage" />
+        android:layout_height="match_parent"
+        android:id="@+id/DeviceList" />
 </LinearLayout>

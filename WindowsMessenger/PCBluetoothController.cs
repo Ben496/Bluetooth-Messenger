@@ -8,6 +8,7 @@ namespace WindowsMessenger {
 	public class PCBluetoothController {
 		private event Action _incommingConnectionSuccess;
 		private event Action<Message> _updateMessageList;
+		private event Action _disconnected;
 		private Thread _incommingConnection;
 		private Thread _listenForNewMessage;
 		private PCBluetooth _connection;
@@ -17,6 +18,11 @@ namespace WindowsMessenger {
 		public event Action IncommingConnectionSuccess {
 			add { _incommingConnectionSuccess += value; }
 			remove { _incommingConnectionSuccess -= value; }
+		}
+
+		public event Action Disconnected {
+			add { _disconnected += value; }
+			remove { _disconnected -= value; }
 		}
 
 		// Subscribe using this action to be called when a new message is received.
@@ -29,7 +35,7 @@ namespace WindowsMessenger {
 			_connection = new PCBluetooth();
 			_incommingConnection = new Thread(incommingConnectionListener);
 			_listenForNewMessage = new Thread(listenForNewMessage);
-			_incommingConnectionSuccess += startListeningForMessages; // <=== TODO: should do something else for this later
+			//_incommingConnectionSuccess += startListeningForMessages; // <=== TODO: should do something else for this later
 			_incommingConnection.Start();
 		}
 
@@ -68,8 +74,18 @@ namespace WindowsMessenger {
 		// The thread that is running this locks until an incomming connection is received.
 		private void incommingConnectionListener() {
 			_connection.GetIncommingConnection();
-			if(_incommingConnectionSuccess != null)
+			if (_incommingConnectionSuccess != null)
 				Application.Current.Dispatcher.Invoke(_incommingConnectionSuccess);
+			List<Conversation> cons = _connection.ReceiveObject<List<Conversation>>();
+			ConversationList consList = new ConversationList(cons);
+			consList.SortByTime();
+			foreach (Conversation con in consList.Conversations) {
+				List<Message> msgList = con.Messages;
+				foreach (Message msg in msgList) {
+					Application.Current.Dispatcher.Invoke(_updateMessageList, msg);
+				}
+			}
+			startListeningForMessages();
 		}
 
 		// The thread that is runing this will loop until terminated.
@@ -78,7 +94,12 @@ namespace WindowsMessenger {
 			// Improve this so that the thread running this can be aborted/stopped.
 			while (true) {
 				Message receivedMessage = _connection.ReceiveObject<Message>();
-				Application.Current.Dispatcher.Invoke(_updateMessageList, receivedMessage);
+				if (receivedMessage != null)
+					Application.Current.Dispatcher.Invoke(_updateMessageList, receivedMessage);
+				else {
+					Application.Current.Dispatcher.Invoke(_disconnected);
+					return;
+				}
 			}
 		}
 
@@ -92,8 +113,12 @@ namespace WindowsMessenger {
 			}
 		}
 
+		public void disconnect() {
+			_connection.Disconnect();
+		}
+
 		public void stopListentingForMessages() {
-			if(_listenForNewMessage != null)
+			if (_listenForNewMessage != null)
 				_listenForNewMessage.Abort();
 		}
 

@@ -1,13 +1,14 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
-public class Message
+public class Message : IComparable<Message>
 {
-	private string _text;
-	private int _timeStamp;
-	private Stream _multi;		// not implemented yet
-	private string _phoneNumber;
-	private bool _isMMS;
-	private bool _isSent;
+	private string _text = "";
+	private int _timeStamp = 0;
+	private Stream _multi = null;		// not implemented yet
+	private string _phoneNumber = "0";
+	private bool _isMMS = false;
+	private bool _isSent = false;
 	public string Text {
 		get { return _text; }
 		set { _text = value; }
@@ -35,12 +36,17 @@ public class Message
 	}
 
 	public Message() {
-		_timeStamp = 0;
-		_text = null;
-		_multi = null;
-		_phoneNumber = null;
-		_isMMS = false;
-		_isSent = false;
+		// keep the default values
+	}
+
+	public Message(Message msg) {
+		if (msg != null) {
+			_isMMS = msg.IsMms;
+			_isSent = msg.isSent;
+			_text = msg.Text;
+			_timeStamp = msg.Time;
+			_phoneNumber = msg.PhoneNumber;
+		}
 	}
 
 	public Message(string text) {
@@ -80,10 +86,15 @@ public class Message
 	}
 
 	public override string ToString() {
-		if (_isSent) {
-			return "Me: " + _text + "\n";
+		if (this == null) {
+			return "null";
 		}
-		return _phoneNumber + ": " + _text + "\n";
+		else {
+			if (_isSent) {
+				return "Me: " + _text + "\n";
+			}
+			return _phoneNumber + ": " + _text + "\n";
+		}
 	}
 
 	private string sterilizePhoneNumber(string num) {
@@ -95,6 +106,13 @@ public class Message
 			sterilized = "+1" + sterilized;
 		}
 		return sterilized;
+	}
+
+	public int CompareTo(Message other) {
+		if (other == null)
+			return 1;
+		else
+			return this.Time.CompareTo(other.Time);
 	}
 }
 

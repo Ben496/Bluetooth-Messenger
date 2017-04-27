@@ -5,6 +5,18 @@ public class ConversationList
 {
 	private List<Conversation> _conversations = new List<Conversation>();
 
+	public List<Conversation> Conversations {
+		get { return _conversations; }
+	}
+
+	public ConversationList() {
+
+	}
+
+	public ConversationList(List<Conversation> cons) {
+		_conversations = cons;
+	}
+
 	public Conversation AccessConversation(string number)
 	{
 		if (_conversations == null) return null;
@@ -27,7 +39,11 @@ public class ConversationList
 		else return null;
 	}
 
-		
+	public void SortByTime() {
+		foreach (Conversation con in _conversations) {
+			con.Messages.Sort();
+		}
+	}	
 
 	public int Size() {
 		return _conversations.Count;

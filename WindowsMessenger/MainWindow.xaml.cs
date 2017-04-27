@@ -17,10 +17,17 @@ namespace WindowsMessenger {
 		public MainWindow() {
 			InitializeComponent();
 
-			_bluetooth = new PCBluetoothController(true);
+			try {
+				_bluetooth = new PCBluetoothController();
+			}
+			catch (System.PlatformNotSupportedException) {
+				MessageBox.Show("This pc either has bluetooth disabled or doesn't have a compatable bluetooth adapter");
+				this.Close();
+				return;
+			}
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
-			_bluetooth.IncommingConnectionSuccess += testSendingMessage;
 			_bluetooth.UpdateMessageList += addNewMessage;
+			_bluetooth.Disconnected += disconnectedInfo;
 
 			convos.addMessage(new Message("HEY FRIEND", "6156300003", true, 1));
 			convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
@@ -41,12 +48,7 @@ namespace WindowsMessenger {
 			//win.Show();
 
 		}
-
-		public void testSendingMessage() {
-			Message msg = new Message("Hello World", "1234567000");
-			_bluetooth.sendMessage(msg);
-		}
-
+		
 		public void addNewMessage(Message newMessage) {
 			cvm.addMessage(newMessage);
 		}
@@ -54,6 +56,10 @@ namespace WindowsMessenger {
 		// Temporary function to display a message box when application is connected.
 		public void connectedInfo() {
 			MessageBox.Show("Connected to device");
+		}
+
+		public void disconnectedInfo() {
+			MessageBox.Show("Disconnected from device");
 		}
 
 		private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
@@ -85,12 +91,13 @@ namespace WindowsMessenger {
 			}
 			else {
 				addNewMessage(newMessage);
-			//	_bluetooth.sendMessage(newMessage);
+				_bluetooth.sendMessage(newMessage);
 			}
 		}
 
 		private void On_Closing(object sender, CancelEventArgs e) {
-			_bluetooth.stopListentingForMessages();
+			if (_bluetooth != null)
+				_bluetooth.disconnect();
 		}
 
 		private void sendNewButton_Click(object sender, RoutedEventArgs e) {

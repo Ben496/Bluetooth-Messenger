@@ -15,51 +15,62 @@ using Android.Widget;
 using Android.Bluetooth;
 
 namespace AndroidMessenger {
-	class AndroidBluetoothController {
+	public class AndroidBluetoothController {
 		event Action _incommingConnectionSuccess;
-		event Action _updateMessageList;
+		event Action<Message> _updateMessageList;
+		event Action _disconnected;		// Theoretically things can be done with this
 		Thread _incommingConnection;
 		Thread _listenForNewMessage;
 		AndroidBluetooth _connection;
-		Message _message = null;
+		Message _message;
 		object _messageLock = new object();
+		MainActivity _callingActivity;
 
 		public event Action IncommingConnectionSuccess {
 			add { _incommingConnectionSuccess += value; }
 			remove { _incommingConnectionSuccess -= value; }
 		}
 
-		public event Action UpdateMessageList {
+		public event Action Disconnected {
+			add { _disconnected += value; }
+			remove { _disconnected -= value; }
+		}
+
+		public event Action<Message> UpdateMessageList {
 			add { _updateMessageList += value; }
 			remove { _updateMessageList -= value; }
 		}
 
 		public Message NewMessage {
 			get {
-				lock (_messageLock) {
-					Message msg = _message;
+				//lock (_messageLock) {
+					Message msg = new Message(_message);
 					_message = null;	// Sets _message back to null (probably don't have to do this)
 					return msg;
-				}
+				//}
 			}
 		}
 
-		public AndroidBluetoothController() {
+		public AndroidBluetoothController(MainActivity caller) {
+			_callingActivity = caller;
 			_connection = new AndroidBluetooth();
 			_incommingConnection = new Thread(incommingConnectionListener);
 			_listenForNewMessage = new Thread(listenForNewMessage);
 			_incommingConnectionSuccess += startListeningForMessages; // <=== TODO: should do something else for this later
-			//_incommingConnection.Start();	// Don't need to worry about this running right now. All connections initiated from phone.
+																	  //_incommingConnection.Start();	// Don't need to worry about this running right now. All connections initiated from phone.
+			_disconnected += DisconnectFromPC;
 		}
 
-		public bool ConnectToPC() {
+		public bool ConnectToPC(string name) {
 			List<BluetoothDevice> devices = _connection.GetPairedDevices();
 			foreach (BluetoothDevice i in devices) {
-				if (i.Name.Equals("TESLA-WIN")) { // "KEPLER-WIN" or "TESLA-WIN"
+				if (i.Name.Equals(name)) {
 					try {
-						_connection.Connect(i);
-						Parallel.Invoke(_incommingConnectionSuccess);
-						return true;
+						if (_connection.Connect(i)) {
+							Parallel.Invoke(_incommingConnectionSuccess);
+							return true;
+						}
+						else return false;
 					}
 					catch {
 						return false;
@@ -69,10 +80,22 @@ namespace AndroidMessenger {
 			return false;
 		}
 
+		public void DisconnectFromPC() {
+			try {
+				_connection.Disconnect();
+			}
+			catch {
+			}
+		}
+
 		public bool sendMessage(Message msg) {
 			return _connection.SendObject<Message>(msg);
 		}
 
+		public bool sendConversations(List<Conversation> con) {
+			return _connection.SendObject<List<Conversation>>(con);
+		}
+    
 		// The thread that is running this locks until an incomming connection is received.
 		private void incommingConnectionListener() {
 			_connection.GetIncommingConnection();
@@ -85,11 +108,14 @@ namespace AndroidMessenger {
 		private void listenForNewMessage() {
 			// Improve this so that the thread running this can be aborted/stopped.
 			while (true) {
-				lock (_messageLock) {
-					Message receivedMessage = _connection.ReceiveObject<Message>();
-					_message = receivedMessage;
+				Message msg = _connection.ReceiveObject<Message>();
+				if (msg != null)
+					// Need to invoke _updateMessageList on main thread here if you want to update ui
+					_updateMessageList(msg);	// This will run on current thread
+				else {
+					_disconnected();
+					return;
 				}
-				Parallel.Invoke(_updateMessageList);
 			}
 		}
 

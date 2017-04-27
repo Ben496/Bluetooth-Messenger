@@ -6,17 +6,22 @@ using Android.Database;
 using Android.Widget;
 using System;
 using Android.Telephony;
+using Android.Bluetooth;
+using System.Collections.Generic;
+using Android.Views;
 
 namespace AndroidMessenger {
 	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity {
-		ConversationList _conversations = null;
 		Button _connect;
-		Button _selectDevice;
 		Button _disconnect;
 		TextView _status;
-		TextView _displayMessage;
+		ListView _deviceList;
+		string _deviceName = "";
+
 		AndroidBluetoothController _controller;
+
+		//SmsReceiver _receiveController;
 
 		protected override void OnCreate(Bundle bundle) {
 			base.OnCreate(bundle);
@@ -24,33 +29,46 @@ namespace AndroidMessenger {
 			// Launch the test activity
 			//StartActivity(typeof(TestActivity));
 
-			_controller = new AndroidBluetoothController();
+			_controller = new AndroidBluetoothController(this);
 			_controller.IncommingConnectionSuccess += () => { _status.Text = "Status: Connected"; };
-			_controller.UpdateMessageList += NewReceivedMessage;
-			
+			_controller.UpdateMessageList += sendMessage;
+
+			//_receiveController = new SmsReceiver();
+			SmsReceiver.NewMessage += _controller.sendMessage;
+
 			SetContentView(Resource.Layout.Main);
 
 			_connect = FindViewById<Button>(Resource.Id.Connect);
-			_selectDevice = FindViewById<Button>(Resource.Id.SelectDevice);
 			_disconnect = FindViewById<Button>(Resource.Id.Disconnect);
 			_status = FindViewById<TextView>(Resource.Id.Status);
-			_displayMessage = FindViewById<TextView>(Resource.Id.Status);
+			_deviceList = FindViewById<ListView>(Resource.Id.DeviceList);
+
+			// Populating listview with paired devices
+			// TODO: make a controller for this
+			PopulateDeviceList();
+			
 
 			_connect.Click += ConnectToPC;
-			_selectDevice.Click += SelectConnectionDevice;
 			_disconnect.Click += DisconnectFromPC;
+			_deviceList.ItemClick += Items;
+		}
 
+		private void Items(object sender, AdapterView.ItemClickEventArgs e) {
+			_deviceName = _deviceList.GetItemAtPosition(e.Position).ToString();
 		}
 
 		private void ConnectToPC(object sender, EventArgs e) {
-			if (_controller.ConnectToPC())
-				_status.Text = "Status: Connected";
+			if (_deviceName != "") {
+				if (_controller.ConnectToPC(_deviceName)) {
+					_status.Text = "Status: Connected";
+					ConversationList con = generateConversations();
+					_controller.sendConversations(con.Conversations);
+				}
+				else
+					_status.Text = "Status: Connection Failed";
+			}
 			else
-				_status.Text = "Status: Connection Failed";
-		}
-
-		private void SelectConnectionDevice(object sender, EventArgs e) {
-
+				_status.Text = "Status: Please select device";
 		}
 
 		// Not really sure where to put this, but I added the function to send a text message over the network.
@@ -59,12 +77,28 @@ namespace AndroidMessenger {
 		}
 
 		private void DisconnectFromPC(object sender, EventArgs e) {
-
+			_controller.DisconnectFromPC();
 		}
 
-		public void NewReceivedMessage() {
-			Message msg = _controller.NewMessage;
-			_displayMessage.Text = msg.ToString();
+		public void NewIncommingMessage(Message msg) {
+			_controller.sendMessage(msg);
+		}
+
+		private void PopulateDeviceList() {
+			AndroidBluetooth connection = new AndroidBluetooth();
+			List<BluetoothDevice> devices = connection.GetPairedDevices();
+			if (devices == null) {
+				_status.Text = "Bluetooth communication is necessary to run this software";
+				return;
+			}
+			string[] deviceNames = new string[devices.Count];
+			for (int i = 0; i < devices.Count; i++) {
+				deviceNames[i] = devices[i].Name;
+			}
+			ArrayAdapter<string> adapter =
+				new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, deviceNames);
+			_deviceList.Adapter = adapter;
+			_deviceList.SetSelector(Android.Resource.Drawable.AlertDarkFrame);
 		}
 
 		private ConversationList generateConversations() {
