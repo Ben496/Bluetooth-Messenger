@@ -17,7 +17,7 @@ namespace AndroidMessenger {
 		Button _disconnect;
 		TextView _status;
 		ListView _deviceList;
-		string _deviceName;
+		string _deviceName = "";
 
 		AndroidBluetoothController _controller;
 
@@ -45,16 +45,7 @@ namespace AndroidMessenger {
 
 			// Populating listview with paired devices
 			// TODO: make a controller for this
-			AndroidBluetooth connection = new AndroidBluetooth();
-			List<BluetoothDevice> devices = connection.GetPairedDevices();
-			string[] deviceNames = new string[devices.Count];
-			for (int i = 0; i < devices.Count; i++) {
-				deviceNames[i] = devices[i].Name;
-			}
-			ArrayAdapter<string> adapter =
-				new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, deviceNames);
-			_deviceList.Adapter = adapter;
-			_deviceList.SetSelector(Android.Resource.Drawable.AlertDarkFrame);
+			PopulateDeviceList();
 			
 
 			_connect.Click += ConnectToPC;
@@ -67,12 +58,17 @@ namespace AndroidMessenger {
 		}
 
 		private void ConnectToPC(object sender, EventArgs e) {
-			if (_controller.ConnectToPC(_deviceName))
-				_status.Text = "Status: Connected";
+			if (_deviceName != "") {
+				if (_controller.ConnectToPC(_deviceName)) {
+					_status.Text = "Status: Connected";
+					ConversationList con = generateConversations();
+					_controller.sendConversations(con.Conversations);
+				}
+				else
+					_status.Text = "Status: Connection Failed";
+			}
 			else
-				_status.Text = "Status: Connection Failed";
-			ConversationList con = generateConversations();
-			_controller.sendConversations(con.Conversations);
+				_status.Text = "Status: Please select device";
 		}
 
 		// Not really sure where to put this, but I added the function to send a text message over the network.
@@ -86,6 +82,19 @@ namespace AndroidMessenger {
 
 		public void NewIncommingMessage(Message msg) {
 			_controller.sendMessage(msg);
+		}
+
+		private void PopulateDeviceList() {
+			AndroidBluetooth connection = new AndroidBluetooth();
+			List<BluetoothDevice> devices = connection.GetPairedDevices();
+			string[] deviceNames = new string[devices.Count];
+			for (int i = 0; i < devices.Count; i++) {
+				deviceNames[i] = devices[i].Name;
+			}
+			ArrayAdapter<string> adapter =
+				new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, deviceNames);
+			_deviceList.Adapter = adapter;
+			_deviceList.SetSelector(Android.Resource.Drawable.AlertDarkFrame);
 		}
 
 		private ConversationList generateConversations() {

@@ -66,9 +66,11 @@ namespace AndroidMessenger {
 			foreach (BluetoothDevice i in devices) {
 				if (i.Name.Equals(name)) {
 					try {
-						_connection.Connect(i);
-						Parallel.Invoke(_incommingConnectionSuccess);
-						return true;
+						if (_connection.Connect(i)) {
+							Parallel.Invoke(_incommingConnectionSuccess);
+							return true;
+						}
+						else return false;
 					}
 					catch {
 						return false;
