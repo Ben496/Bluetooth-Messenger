@@ -18,7 +18,7 @@ namespace WindowsMessenger {
 			InitializeComponent();
 
 			try {
-				_bluetooth = new PCBluetoothController(true);
+				_bluetooth = new PCBluetoothController();
 			}
 			catch (System.PlatformNotSupportedException) {
 				MessageBox.Show("This pc either has bluetooth disabled or doesn't have a compatable bluetooth adapter");

@@ -111,7 +111,9 @@ namespace AndroidMessenger {
 					Message sms = new Message();
 					sms.Text = c.GetString(c.GetColumnIndexOrThrow("body")).ToString();
 					sms.PhoneNumber = c.GetString(c.GetColumnIndexOrThrow("address")).ToString();
-					sms.Time = c.GetInt(c.GetColumnIndexOrThrow("date"));
+					string tmp = c.GetString(c.GetColumnIndexOrThrow("date"));
+					sms.Time = ulong.Parse(tmp);
+					//sms.Time = (uint)c.GetInt(c.GetColumnIndexOrThrow("date"));
 					if (c.GetInt(c.GetColumnIndexOrThrow("type")) == 2) {
 						sms.isSent = true;
 					}

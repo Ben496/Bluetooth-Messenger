@@ -4,7 +4,7 @@ using System.IO;
 public class Message : IComparable<Message>
 {
 	private string _text = "";
-	private int _timeStamp = 0;
+	private ulong _timeStamp = 0;
 	private Stream _multi = null;		// not implemented yet
 	private string _phoneNumber = "0";
 	private bool _isMMS = false;
@@ -30,7 +30,7 @@ public class Message : IComparable<Message>
 		set { _isMMS = value; }
 	}
 
-	public int Time {
+	public ulong Time {
 		get { return _timeStamp; }
 		set { _timeStamp = value; }
 	}
@@ -76,7 +76,7 @@ public class Message : IComparable<Message>
 		_isSent = sent;
 	}
 
-	public Message(string text, string phoneNumber, bool sent, int time) {
+	public Message(string text, string phoneNumber, bool sent, ulong time) {
 		_timeStamp = time;
 		_text = text;
 		_multi = null;
