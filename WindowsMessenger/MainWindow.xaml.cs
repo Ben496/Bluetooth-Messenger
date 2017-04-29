@@ -29,19 +29,19 @@ namespace WindowsMessenger {
 			_bluetooth.UpdateMessageList += addNewMessage;
 			_bluetooth.Disconnected += disconnectedInfo;
 
-			convos.addMessage(new Message("HEY FRIEND", "(615)630-0003", true, 1));
-			convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
-			convos.addMessage(new Message("NAW", "6156300003", true, 2));
-			convos.addMessage(new Message("WHAT", "6156300003", false, 2));
-			convos.addMessage(new Message("WADDUP", "6157146407", true, 2));
-			convos.addMessage(new Message("NAWMUCH", "6157146407", false, 2));
+			//convos.addMessage(new Message("HEY FRIEND", "(615)630-0003", true, 1));
+			//convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
+			//convos.addMessage(new Message("NAW", "6156300003", true, 2));
+			//convos.addMessage(new Message("WHAT", "6156300003", false, 2));
+			//convos.addMessage(new Message("WADDUP", "6157146407", true, 2));
+			//convos.addMessage(new Message("NAWMUCH", "6157146407", false, 2));
 
 			cvm = new ConversationViewModel(convos);
 			DataContext = cvm;
 
 			// creating testing interface
-			Window messageTesting = new TestMessageCreator(_bluetooth);
-			messageTesting.Show();
+			//Window messageTesting = new TestMessageCreator(_bluetooth);
+			//messageTesting.Show();
 
 			// Show test window.
 			//Window win = new Test();

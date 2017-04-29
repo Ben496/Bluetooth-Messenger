@@ -9,6 +9,13 @@ public class Message : IComparable<Message>
 	private string _phoneNumber = "0";
 	private bool _isMMS = false;
 	private bool _isSent = false;
+	private string _who = "";
+	
+	public string Who {
+		get { return _who; }
+		set { _who = value; }
+	}
+
 	public string Text {
 		get { return _text; }
 		set { _text = value; }
@@ -93,7 +100,10 @@ public class Message : IComparable<Message>
 			if (_isSent) {
 				return "Me: " + _text + "\n";
 			}
-			return _phoneNumber + ": " + _text + "\n";
+			if (_who.CompareTo("") == 0)
+				return _phoneNumber + ": " + _text + "\n";
+			else
+				return _who + ": " + _text + "\n";
 		}
 	}
 
@@ -109,9 +119,9 @@ public class Message : IComparable<Message>
 			sterilized = '+' + sterilized;
 		else if (sterilized.Length == 10)
 			sterilized = "+1" + sterilized;
-		else if (sterilized.Length == 5)
-			return sterilized;
-		else return "INVALID";
+		//else if (sterilized.Length == 5)
+		//	return sterilized;
+		//else return "INVALID";
 		return sterilized;
 	}
 
