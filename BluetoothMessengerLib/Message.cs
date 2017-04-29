@@ -5,8 +5,8 @@ public class Message : IComparable<Message>
 {
 	private string _text = "";
 	private ulong _timeStamp = 0;
-	private Stream _multi = null;		// not implemented yet
-	private string _phoneNumber = "0";
+	private Stream _multi = null;       // not implemented yet
+	private PhoneNumber _phoneNumber;
 	private bool _isMMS = false;
 	private bool _isSent = false;
 	private string _who = "";
@@ -28,8 +28,8 @@ public class Message : IComparable<Message>
 
 	// TODO add check to make sure phone number is valid
 	public string PhoneNumber {
-		get { return _phoneNumber; }
-		set { _phoneNumber = sterilizePhoneNumber(value); }
+		get { return _phoneNumber.Number; }
+		set { _phoneNumber = new PhoneNumber(value); }
 	}
 
 	public bool IsMms {
@@ -52,7 +52,7 @@ public class Message : IComparable<Message>
 			_isSent = msg.isSent;
 			_text = msg.Text;
 			_timeStamp = msg.Time;
-			_phoneNumber = sterilizePhoneNumber(msg.PhoneNumber);
+			_phoneNumber = new PhoneNumber(msg.PhoneNumber);
 			_who = msg.Who;
 		}
 	}
@@ -70,7 +70,7 @@ public class Message : IComparable<Message>
 		_timeStamp = 0;
 		_text = text;
 		_multi = null;
-		_phoneNumber = sterilizePhoneNumber(phoneNumber);
+		_phoneNumber = new PhoneNumber(phoneNumber);
 		_isMMS = false;
 		_isSent = false;
 	}
@@ -79,7 +79,7 @@ public class Message : IComparable<Message>
 		_timeStamp = 0;
 		_text = text;
 		_multi = null;
-		_phoneNumber = sterilizePhoneNumber(phoneNumber);
+		_phoneNumber = new PhoneNumber(phoneNumber);
 		_isMMS = false;
 		_isSent = sent;
 	}
@@ -88,7 +88,7 @@ public class Message : IComparable<Message>
 		_timeStamp = time;
 		_text = text;
 		_multi = null;
-		_phoneNumber = sterilizePhoneNumber(phoneNumber);
+		_phoneNumber = new PhoneNumber(phoneNumber);
 		_isMMS = false;
 		_isSent = sent;
 	}
@@ -102,28 +102,10 @@ public class Message : IComparable<Message>
 				return "Me: " + _text + "\n";
 			}
 			if (_who.CompareTo("") == 0)
-				return _phoneNumber + ": " + _text + "\n";
+				return _phoneNumber.Number + ": " + _text + "\n";
 			else
 				return _who + ": " + _text + "\n";
 		}
-	}
-
-	private string sterilizePhoneNumber(string num) {
-		string sterilized = "";
-		for (int i = 0; i < num.Length; i++) {
-			if (num[i] >= 48 && num[i] <= 57) {
-				sterilized += num[i];
-			}
-		}
-
-		if (sterilized.Length == 11)
-			sterilized = '+' + sterilized;
-		else if (sterilized.Length == 10)
-			sterilized = "+1" + sterilized;
-		//else if (sterilized.Length == 5)
-		//	return sterilized;
-		//else return "INVALID";
-		return sterilized;
 	}
 
 	public int CompareTo(Message other) {

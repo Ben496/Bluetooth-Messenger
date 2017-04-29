@@ -6,7 +6,7 @@ public class Conversation : INotifyPropertyChanged
 {
 	private List<Message> _messages;
 	private string _who;
-	private string _phoneNumber;
+	private PhoneNumber _phoneNumber;
 	private string _text;
 
 	public event PropertyChangedEventHandler PropertyChanged;
@@ -20,7 +20,7 @@ public class Conversation : INotifyPropertyChanged
 	public string Who {
 		get {
 			if (_who.CompareTo("") == 0)
-				return _phoneNumber;
+				return _phoneNumber.Number;
 			else
 				return _who;
 		}
@@ -33,36 +33,18 @@ public class Conversation : INotifyPropertyChanged
 	}
 
 	public string PhoneNumber {
-		get { return _phoneNumber; }
-		set { _phoneNumber = sterilizePhoneNumber(value); }
-	}
-
-	private string sterilizePhoneNumber(string num) {
-		string sterilized = "";
-		for (int i = 0; i < num.Length; i++) {
-			if (num[i] >= 48 && num[i] <= 57) {
-				sterilized += num[i];
-			}
-		}
-
-		if (sterilized.Length == 11)
-			sterilized = '+' + sterilized;
-		else if (sterilized.Length == 10)
-			sterilized = "+1" + sterilized;
-		//else if (sterilized.Length == 5)
-		//	return sterilized;
-		//else return "INVALID";
-		return sterilized;
+		get { return _phoneNumber.Number; }
+		set { _phoneNumber = new PhoneNumber(value); }
 	}
 
 	public Conversation(Message sms) {
 		
 		if (sms != null) {
-			_phoneNumber = sterilizePhoneNumber(sms.PhoneNumber);
+			_phoneNumber = new PhoneNumber(sms.PhoneNumber);
 			_who = sms.Who;
 		}
 		else {
-			_phoneNumber = "null";
+			_phoneNumber = new global::PhoneNumber("");
 			_who = "";
 		}
 		_messages = new List<Message>();
@@ -88,7 +70,7 @@ public class Conversation : INotifyPropertyChanged
 	public override string ToString()
 	{
 		if (_who.CompareTo("") == 0)
-			return _phoneNumber;
+			return _phoneNumber.Number;
 		else
 			return _who;
 	}
