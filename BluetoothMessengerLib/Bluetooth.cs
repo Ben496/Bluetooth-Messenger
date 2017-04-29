@@ -34,12 +34,10 @@ namespace BluetoothMessengerLib {
 					BinaryReader readLength = new BinaryReader(connectionStream, System.Text.Encoding.UTF8);
 					length = readLength.ReadInt32();
 					byte[] buffer = new byte[length];
+					// For some reason reading the entire stream at once failed to read all the data
+					// This way somehow works better.
 					for (i = 0; i < length; i++) {
 						buffer[i] = (byte)connectionStream.ReadByte();
-						//if (length - i > 1000)
-						//	connectionStream.Read(buffer, i, i + 1000);
-						//else
-						//	connectionStream.Read(buffer, i, length);
 					}
 					input = Encoding.UTF8.GetString(buffer, 0, length);
 					T dat = JsonConvert.DeserializeObject<T>(input);

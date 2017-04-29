@@ -5,7 +5,7 @@ using System.ComponentModel;
 public class Conversation : INotifyPropertyChanged
 {
 	private List<Message> _messages;
-	private Contact _who;
+	private string _who;
 	private string _phoneNumber;
 	private string _text;
 
@@ -17,7 +17,7 @@ public class Conversation : INotifyPropertyChanged
 		}
 	}
 
-	public Contact Who {
+	public string Who {
 		get { return _who; }
 		set { _who = value; }
 	}
@@ -44,18 +44,22 @@ public class Conversation : INotifyPropertyChanged
 			sterilized = '+' + sterilized;
 		else if (sterilized.Length == 10)
 			sterilized = "+1" + sterilized;
-		else if (sterilized.Length == 5)
-			return sterilized;
-		else return "INVALID";
+		//else if (sterilized.Length == 5)
+		//	return sterilized;
+		//else return "INVALID";
 		return sterilized;
 	}
 
 	public Conversation(Message sms) {
-		_who = null;
-		if (sms != null)
+		
+		if (sms != null) {
 			_phoneNumber = sterilizePhoneNumber(sms.PhoneNumber);
-		else
+			_who = sms.Who;
+		}
+		else {
 			_phoneNumber = "null";
+			_who = "";
+		}
 		_messages = new List<Message>();
 		_messages.Add(sms);
 	}
@@ -65,6 +69,8 @@ public class Conversation : INotifyPropertyChanged
 		if (_messages == null) {
 			_messages = new List<Message>();
 		}
+		if (sms.Who.CompareTo("") == 0)
+			sms.Who = _who;
 		_messages.Add(sms);
 		RaisePropertyChanged("Text");
 	}
@@ -76,7 +82,10 @@ public class Conversation : INotifyPropertyChanged
 
 	public override string ToString()
 	{
-		return _phoneNumber;
+		if (_who.CompareTo("") == 0)
+			return _phoneNumber;
+		else
+			return _who;
 	}
 
 	public string Text {

@@ -3,6 +3,8 @@ using System.Threading;
 using System.Windows;
 using InTheHand.Net.Sockets;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace WindowsMessenger {
 	public class PCBluetoothController {

@@ -9,6 +9,8 @@ using Android.Telephony;
 using Android.Bluetooth;
 using System.Collections.Generic;
 using Android.Views;
+using Android.Provider;
+using Newtonsoft.Json;
 
 namespace AndroidMessenger {
 	[Activity(Label = "Android Messenger", MainLauncher = true, Icon = "@drawable/icon")]
@@ -17,6 +19,7 @@ namespace AndroidMessenger {
 		Button _disconnect;
 		TextView _status;
 		ListView _deviceList;
+		CheckBox _contactMatching;
 		string _deviceName = "";
 
 		AndroidBluetoothController _controller;
@@ -42,6 +45,7 @@ namespace AndroidMessenger {
 			_disconnect = FindViewById<Button>(Resource.Id.Disconnect);
 			_status = FindViewById<TextView>(Resource.Id.Status);
 			_deviceList = FindViewById<ListView>(Resource.Id.DeviceList);
+			_contactMatching = FindViewById<CheckBox>(Resource.Id.EnableContactMatching);
 
 			// Populating listview with paired devices
 			// TODO: make a controller for this
@@ -62,6 +66,9 @@ namespace AndroidMessenger {
 				if (_controller.ConnectToPC(_deviceName)) {
 					_status.Text = "Status: Connected";
 					ConversationList con = generateConversations();
+					if (_contactMatching.Checked) {
+						con = MatchContacts(con);
+					}
 					_controller.sendConversations(con.Conversations);
 				}
 				else
@@ -82,6 +89,104 @@ namespace AndroidMessenger {
 
 		public void NewIncommingMessage(Message msg) {
 			_controller.sendMessage(msg);
+		}
+
+		private ConversationList MatchContacts(ConversationList conList) {
+			List<Conversation> cons = conList.Conversations;
+			List<Contact> contacts = new List<Contact>();
+
+			// Reads phone contacts into the list
+			Android.Net.Uri contactsUri = ContactsContract.Contacts.ContentUri;
+			Android.Net.Uri phoneUri = ContactsContract.CommonDataKinds.Phone.ContentUri;
+			string[] projection = { ContactsContract.Contacts.InterfaceConsts.Id,
+				ContactsContract.Contacts.InterfaceConsts.DisplayName, ContactsContract.Contacts.InterfaceConsts.HasPhoneNumber };
+			string[] projectionPhone = { ContactsContract.Contacts.InterfaceConsts.Id,
+				ContactsContract.CommonDataKinds.Phone.Number, ContactsContract.Contacts.InterfaceConsts.DisplayName };
+			ContentResolver cr = this.ContentResolver;
+			ICursor c = cr.Query(contactsUri, projection, null, null, projection[0]);
+			ICursor cPhone = cr.Query(phoneUri, projectionPhone, null, null, projection[0]);
+			
+			if (c.MoveToFirst()) {
+				int j = 0;
+				for (int i = 0; i < c.Count; i++) {
+					try {
+						string id = c.GetString(c.GetColumnIndexOrThrow(projection[0]));
+						string name = c.GetString(c.GetColumnIndexOrThrow(projection[1]));
+						int hasPhone = int.Parse(c.GetString(c.GetColumnIndexOrThrow(projection[2])));
+						string phoneId = "";
+						string phoneName = "";
+						List<string> phone = new List<string>();
+						cPhone.MoveToFirst();
+						if (hasPhone == 1) {
+							// This loop is terribly inefficient but it works
+							do {
+								try {
+									phoneName = cPhone.GetString(cPhone.GetColumnIndexOrThrow(projectionPhone[2]));
+									if (phoneName.CompareTo(name) == 0) {
+										phoneId = cPhone.GetString(cPhone.GetColumnIndexOrThrow(projection[0]));
+										phone.Add(cPhone.GetString(cPhone.GetColumnIndexOrThrow(projectionPhone[1])));
+									}
+								}
+								catch {
+									break;
+								}
+							} while (cPhone.MoveToNext());
+						}
+						contacts.Add(new Contact(name, phone));
+						c.MoveToNext();
+					}
+					catch {
+						break;
+					}
+				}
+			}
+			c.Close();
+			cPhone.Close();
+
+			string output = JsonConvert.SerializeObject(contacts);
+
+			// Matching name with conversation
+			foreach (Conversation conv in cons) {
+				string convNumber = conv.PhoneNumber;
+				string person = MatchNumbers(contacts, convNumber);
+				conv.Who = person;
+				List<Message> msgs = conv.Messages;
+				foreach (Message msg in msgs) {
+					msg.Who = person;
+				}
+			}
+			ConversationList namedConList = new ConversationList(cons);
+			return namedConList;
+		}
+
+		private string MatchNumbers(List<Contact> contacts, string matchThis) {
+			foreach (Contact person in contacts) {
+				foreach (string number in person.Numbers) {
+					string numberSteralized = sterilizePhoneNumber(number);
+					if (numberSteralized.CompareTo(matchThis) == 0) {
+						return person.Name;
+					}
+				}
+			}
+			return "";
+		}
+
+		private string sterilizePhoneNumber(string num) {
+			string sterilized = "";
+			for (int i = 0; i < num.Length; i++) {
+				if (num[i] >= 48 && num[i] <= 57) {
+					sterilized += num[i];
+				}
+			}
+
+			if (sterilized.Length == 11)
+				sterilized = '+' + sterilized;
+			else if (sterilized.Length == 10)
+				sterilized = "+1" + sterilized;
+			//else if (sterilized.Length == 5)
+			//	return sterilized;
+			//else return "INVALID";
+			return sterilized;
 		}
 
 		private void PopulateDeviceList() {
@@ -111,7 +216,9 @@ namespace AndroidMessenger {
 					Message sms = new Message();
 					sms.Text = c.GetString(c.GetColumnIndexOrThrow("body")).ToString();
 					sms.PhoneNumber = c.GetString(c.GetColumnIndexOrThrow("address")).ToString();
-					sms.Time = c.GetInt(c.GetColumnIndexOrThrow("date"));
+					string tmp = c.GetString(c.GetColumnIndexOrThrow("date"));
+					sms.Time = ulong.Parse(tmp);
+					//sms.Time = (uint)c.GetInt(c.GetColumnIndexOrThrow("date"));
 					if (c.GetInt(c.GetColumnIndexOrThrow("type")) == 2) {
 						sms.isSent = true;
 					}
