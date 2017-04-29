@@ -115,7 +115,7 @@ namespace AndroidMessenger {
 						int hasPhone = int.Parse(c.GetString(c.GetColumnIndexOrThrow(projection[2])));
 						string phoneId = "";
 						string phoneName = "";
-						List<string> phone = new List<string>();
+						List<PhoneNumber> phone = new List<PhoneNumber>();
 						cPhone.MoveToFirst();
 						if (hasPhone == 1) {
 							// This loop is terribly inefficient but it works
@@ -124,7 +124,7 @@ namespace AndroidMessenger {
 									phoneName = cPhone.GetString(cPhone.GetColumnIndexOrThrow(projectionPhone[2]));
 									if (phoneName.CompareTo(name) == 0) {
 										phoneId = cPhone.GetString(cPhone.GetColumnIndexOrThrow(projection[0]));
-										phone.Add(cPhone.GetString(cPhone.GetColumnIndexOrThrow(projectionPhone[1])));
+										phone.Add(new PhoneNumber(cPhone.GetString(cPhone.GetColumnIndexOrThrow(projectionPhone[1]))));
 									}
 								}
 								catch {
@@ -161,9 +161,8 @@ namespace AndroidMessenger {
 
 		private string MatchNumbers(List<Contact> contacts, string matchThis) {
 			foreach (Contact person in contacts) {
-				foreach (string number in person.Numbers) {
-					string numberSteralized = sterilizePhoneNumber(number);
-					if (numberSteralized.CompareTo(matchThis) == 0) {
+				foreach (PhoneNumber number in person.Numbers) {
+					if (number.Number.CompareTo(matchThis) == 0) {
 						return person.Name;
 					}
 				}
@@ -171,23 +170,23 @@ namespace AndroidMessenger {
 			return "";
 		}
 
-		private string sterilizePhoneNumber(string num) {
-			string sterilized = "";
-			for (int i = 0; i < num.Length; i++) {
-				if (num[i] >= 48 && num[i] <= 57) {
-					sterilized += num[i];
-				}
-			}
+		//private string sterilizePhoneNumber(string num) {
+		//	string sterilized = "";
+		//	for (int i = 0; i < num.Length; i++) {
+		//		if (num[i] >= 48 && num[i] <= 57) {
+		//			sterilized += num[i];
+		//		}
+		//	}
 
-			if (sterilized.Length == 11)
-				sterilized = '+' + sterilized;
-			else if (sterilized.Length == 10)
-				sterilized = "+1" + sterilized;
-			//else if (sterilized.Length == 5)
-			//	return sterilized;
-			//else return "INVALID";
-			return sterilized;
-		}
+		//	if (sterilized.Length == 11)
+		//		sterilized = '+' + sterilized;
+		//	else if (sterilized.Length == 10)
+		//		sterilized = "+1" + sterilized;
+		//	//else if (sterilized.Length == 5)
+		//	//	return sterilized;
+		//	//else return "INVALID";
+		//	return sterilized;
+		//}
 
 		private void PopulateDeviceList() {
 			AndroidBluetooth connection = new AndroidBluetooth();
