@@ -154,7 +154,6 @@ namespace AndroidMessenger {
 				foreach (Message msg in msgs) {
 					msg.Who = person;
 				}
-				double dbl = 20;
 			}
 			ConversationList namedConList = new ConversationList(cons);
 			return namedConList;
