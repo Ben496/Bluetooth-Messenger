@@ -63,7 +63,9 @@ namespace WindowsMessenger {
 		}
 
 		private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
-
+			Conversations.Focus();
+			Conversations.CaretIndex = Conversations.Text.Length;
+			Conversations.ScrollToEnd();
 		}
 
 		private void connectionButton_Click(object sender, RoutedEventArgs e) {
