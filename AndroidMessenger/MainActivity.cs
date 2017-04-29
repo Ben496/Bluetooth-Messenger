@@ -118,6 +118,7 @@ namespace AndroidMessenger {
 						List<string> phone = new List<string>();
 						cPhone.MoveToFirst();
 						if (hasPhone == 1) {
+							// This loop is terribly inefficient but it works
 							do {
 								try {
 									phoneName = cPhone.GetString(cPhone.GetColumnIndexOrThrow(projectionPhone[2]));

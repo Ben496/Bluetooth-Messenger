@@ -53,6 +53,7 @@ public class Message : IComparable<Message>
 			_text = msg.Text;
 			_timeStamp = msg.Time;
 			_phoneNumber = sterilizePhoneNumber(msg.PhoneNumber);
+			_who = msg.Who;
 		}
 	}
 

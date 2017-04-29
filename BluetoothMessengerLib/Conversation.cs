@@ -51,11 +51,15 @@ public class Conversation : INotifyPropertyChanged
 	}
 
 	public Conversation(Message sms) {
-		_who = "";
-		if (sms != null)
+		
+		if (sms != null) {
 			_phoneNumber = sterilizePhoneNumber(sms.PhoneNumber);
-		else
+			_who = sms.Who;
+		}
+		else {
 			_phoneNumber = "null";
+			_who = "";
+		}
 		_messages = new List<Message>();
 		_messages.Add(sms);
 	}
@@ -65,6 +69,8 @@ public class Conversation : INotifyPropertyChanged
 		if (_messages == null) {
 			_messages = new List<Message>();
 		}
+		if (sms.Who.CompareTo("") == 0)
+			sms.Who = _who;
 		_messages.Add(sms);
 		RaisePropertyChanged("Text");
 	}

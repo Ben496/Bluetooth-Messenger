@@ -80,7 +80,8 @@ namespace WindowsMessenger {
 			string messageNumber;
 			if (MessageText.Text != "") {
 				messageContent = MessageText.Text;
-				messageNumber = cvm.Selected.ToString();
+				Conversation outgoing = (Conversation)cvm.Selected;
+				messageNumber = outgoing.PhoneNumber;
 			}
 			else {
 				return;
