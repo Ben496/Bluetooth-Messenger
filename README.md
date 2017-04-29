@@ -1,8 +1,8 @@
 # Bluetooth-Messenger
 
-###################################
-##    Why would I use this?      ##
-###################################
+
+##    Why would I use this?
+
 
 If you've ever seen a religious Apple user, you've probably been at least jealous
 of their integration. This project brings a degree of the messaging capability
@@ -20,6 +20,4 @@ the following:
 	to preseve privacy.
 	
 	
-#######################################
-##    Installation and Building      ##
-#######################################
+##    Installation and Building
