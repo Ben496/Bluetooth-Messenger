@@ -12,11 +12,11 @@ to text from your computer. The only time you have to take the phone out of your
 is to open the app to connect to your PC. As of right now, the application supports
 the following:
 
--Android 5.0 and Up (Only tested on 5.0 currently)
--Windows Vista and Up (Only tested on Windows 10 currently)
--Contact matching so computer application displays name of person you are messaging
--Previous Messages display so you can see all prior text messaging history on PC side
--Message deletion so upon disconnection, all messages saved on computer delete in order
+* Android 5.0 and Up (Only tested on 5.0 currently)
+* Windows Vista and Up (Only tested on Windows 10 currently)
+* Contact matching so computer application displays name of person you are messaging
+* Previous Messages display so you can see all prior text messaging history on PC side
+* Message deletion so upon disconnection, all messages saved on computer delete in order
 	to preseve privacy.
 	
 	
