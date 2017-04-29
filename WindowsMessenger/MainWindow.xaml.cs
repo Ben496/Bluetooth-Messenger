@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using WindowsMessenger.ViewModel;
 
 namespace WindowsMessenger {
@@ -28,6 +29,10 @@ namespace WindowsMessenger {
 			_bluetooth.IncommingConnectionSuccess += connectedInfo;
 			_bluetooth.UpdateMessageList += addNewMessage;
 			_bluetooth.Disconnected += disconnectedInfo;
+			_bluetooth.Disconnected += clearCVM;
+
+			cvm = new ConversationViewModel(convos);
+			DataContext = cvm;
 
 			//convos.addMessage(new Message("HEY FRIEND", "(615)630-0003", true, 1));
 			//convos.addMessage(new Message("WADDUP", "6156300003", false, 2));
@@ -36,8 +41,7 @@ namespace WindowsMessenger {
 			//convos.addMessage(new Message("WADDUP", "6157146407", true, 2));
 			//convos.addMessage(new Message("NAWMUCH", "6157146407", false, 2));
 
-			cvm = new ConversationViewModel(convos);
-			DataContext = cvm;
+
 
 			// creating testing interface
 			//Window messageTesting = new TestMessageCreator(_bluetooth);
@@ -55,15 +59,17 @@ namespace WindowsMessenger {
 
 		// Temporary function to display a message box when application is connected.
 		public void connectedInfo() {
-			MessageBox.Show("Connected to device");
+			BluetoothStatusBox.Text = "Connected to Device.";
 		}
 
 		public void disconnectedInfo() {
-			MessageBox.Show("Disconnected from device");
+			BluetoothStatusBox.Text = "Disconnected from Device.";
 		}
 
 		private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
-
+			Conversations.Focus();
+			Conversations.CaretIndex = Conversations.Text.Length;
+			Conversations.ScrollToEnd();
 		}
 
 		private void connectionButton_Click(object sender, RoutedEventArgs e) {
@@ -73,6 +79,10 @@ namespace WindowsMessenger {
 			//	foreach (BluetoothDeviceInfo i in _devices) {
 			//		label.Content = i.DeviceName;
 			//	}
+		}
+
+		private void clearCVM() {
+			cvm.clear();
 		}
 
 		private void sendButton_Click(object sender, RoutedEventArgs e) {
@@ -94,6 +104,7 @@ namespace WindowsMessenger {
 				addNewMessage(newMessage);
 				_bluetooth.sendMessage(newMessage);
 			}
+			MessageText.Text = "";
 		}
 
 		private void On_Closing(object sender, CancelEventArgs e) {
@@ -104,6 +115,12 @@ namespace WindowsMessenger {
 		private void sendNewButton_Click(object sender, RoutedEventArgs e) {
 			Window newMessage = new NewMessageWindow(_bluetooth);
 			newMessage.Show();
+		}
+
+		private void MessageText_KeyDown(object sender, System.Windows.Input.KeyEventArgs e) {
+			if (Keyboard.IsKeyDown(Key.Enter) ) {
+				sendButton_Click(this, new RoutedEventArgs());
+			}
 		}
 	}
 }

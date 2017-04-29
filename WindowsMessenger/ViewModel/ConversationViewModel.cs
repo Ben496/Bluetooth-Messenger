@@ -29,6 +29,10 @@ namespace WindowsMessenger.ViewModel {
 			Conversations.Add(new Conversation(sms));	
 		}
 
+		public void clear() {
+			Conversations.Clear();
+		}
+
 		private object _selected;
 		public object Selected {
 			get {

@@ -22,6 +22,7 @@ namespace WindowsMessenger {
 			remove { _incommingConnectionSuccess -= value; }
 		}
 
+
 		public event Action Disconnected {
 			add { _disconnected += value; }
 			remove { _disconnected -= value; }
@@ -87,7 +88,7 @@ namespace WindowsMessenger {
 					Application.Current.Dispatcher.Invoke(_updateMessageList, msg);
 				}
 			}
-			startListeningForMessages();
+			listenForNewMessage();
 		}
 
 		// The thread that is runing this will loop until terminated.
