@@ -11,7 +11,7 @@
 		<Label x:Name="label" Content="Phone Number :" HorizontalAlignment="Left" Margin="22,40,0,0" VerticalAlignment="Top"/>
 		<Label x:Name="label1" Content="Message Content:" HorizontalAlignment="Left" Margin="22,71,0,0" VerticalAlignment="Top"/>
 		<TextBox x:Name="number" HorizontalAlignment="Left" Height="23" Margin="136,44,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="120"/>
-		<TextBox x:Name="message" HorizontalAlignment="Left" Height="99" Margin="22,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234"/>
+		<TextBox x:Name="message" HorizontalAlignment="Left" Height="99" Margin="22,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" KeyDown="message_KeyDown"/>
 
 	</Grid>
 </Window>

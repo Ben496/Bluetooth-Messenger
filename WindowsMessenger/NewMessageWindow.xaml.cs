@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace WindowsMessenger {
 	/// <summary>
@@ -32,6 +33,11 @@ namespace WindowsMessenger {
 			}
 
 			this.Close();
+		}
+		private void message_KeyDown(object sender, System.Windows.Input.KeyEventArgs e) {
+			if (Keyboard.IsKeyDown(Key.Enter)) {
+				sendNewMessage_Click(this, new RoutedEventArgs());
+			}
 		}
 	}
 }

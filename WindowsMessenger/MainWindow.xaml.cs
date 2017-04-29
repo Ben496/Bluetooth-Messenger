@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using WindowsMessenger.ViewModel;
 
 namespace WindowsMessenger {
@@ -96,6 +97,7 @@ namespace WindowsMessenger {
 				addNewMessage(newMessage);
 				_bluetooth.sendMessage(newMessage);
 			}
+			MessageText.Text = "";
 		}
 
 		private void On_Closing(object sender, CancelEventArgs e) {
@@ -106,6 +108,12 @@ namespace WindowsMessenger {
 		private void sendNewButton_Click(object sender, RoutedEventArgs e) {
 			Window newMessage = new NewMessageWindow(_bluetooth);
 			newMessage.Show();
+		}
+
+		private void MessageText_KeyDown(object sender, System.Windows.Input.KeyEventArgs e) {
+			if (Keyboard.IsKeyDown(Key.Enter) ) {
+				sendButton_Click(this, new RoutedEventArgs());
+			}
 		}
 	}
 }
