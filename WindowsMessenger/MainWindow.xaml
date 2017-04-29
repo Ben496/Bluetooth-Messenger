@@ -14,7 +14,7 @@
 		<ListBox x:Name="listBox" 
 			ItemsSource="{Binding Conversations}"
 			SelectedItem="{Binding Selected}"
-			DisplayMemberPath="PhoneNumber"
+			DisplayMemberPath="Who"
 			HorizontalAlignment="Left" Height="278" Margin="10,34,0,0" VerticalAlignment="Top" Width="237"/>
 		<TextBox x:Name="Conversations"
 				 Text="{Binding ElementName=listBox, Path=SelectedItem.Text, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"

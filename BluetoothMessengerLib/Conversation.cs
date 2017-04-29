@@ -18,7 +18,12 @@ public class Conversation : INotifyPropertyChanged
 	}
 
 	public string Who {
-		get { return _who; }
+		get {
+			if (_who.CompareTo("") == 0)
+				return _phoneNumber;
+			else
+				return _who;
+		}
 		set { _who = value; }
 	}
 
