@@ -15,6 +15,9 @@ using Android.Widget;
 using Android.Bluetooth;
 
 namespace AndroidMessenger {
+
+	// No timeouts exist for functions that lock threads.
+	// So calling Abort on a thread will not gurantee aborting the thread
 	public class AndroidBluetoothController {
 		event Action _incommingConnectionSuccess;
 		event Action<Message> _updateMessageList;
@@ -23,7 +26,6 @@ namespace AndroidMessenger {
 		Thread _listenForNewMessage;
 		AndroidBluetooth _connection;
 		Message _message;
-		object _messageLock = new object();
 		MainActivity _callingActivity;
 
 		public event Action IncommingConnectionSuccess {
@@ -43,11 +45,9 @@ namespace AndroidMessenger {
 
 		public Message NewMessage {
 			get {
-				//lock (_messageLock) {
-					Message msg = new Message(_message);
-					_message = null;	// Sets _message back to null (probably don't have to do this)
-					return msg;
-				//}
+				Message msg = new Message(_message);
+				_message = null;	// Sets _message back to null (probably don't have to do this)
+				return msg;
 			}
 		}
 

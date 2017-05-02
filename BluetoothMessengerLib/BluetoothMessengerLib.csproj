@@ -39,10 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bluetooth.cs" />
-    <Compile Include="Command.cs" />
-    <Compile Include="Connection.cs" />
     <Compile Include="Contact.cs" />
-    <Compile Include="ContactList.cs" />
     <Compile Include="Conversation.cs" />
     <Compile Include="ConversationList.cs" />
     <Compile Include="Message.cs" />

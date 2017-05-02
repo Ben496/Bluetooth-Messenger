@@ -11163,7 +11163,7 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="dfb5658d-2190-41d2-ae59-3f2941168b6d"
+            Id="5d2400dd-961f-477c-88e5-3eff425fbe92"
             isDerived="false"
             sourceEndRoleName="Contact"
             targetEndRoleName="PhoneNumber"
@@ -11176,7 +11176,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="05f513fe-4054-47b4-a2a1-05067a05b87b"
+                  Id="b2170155-d489-48ea-8755-84d7426e38eb"
                   name="Contact"
                   isLeaf="false"
                   isStatic="false"
@@ -11189,7 +11189,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="06134252-d3d3-45ad-ad12-1fedc8f7c5f9"
+                  Id="e3be3fa5-67d8-4bf2-82b2-86eaa732f232"
                   name="PhoneNumber"
                   isLeaf="false"
                   isStatic="false"
@@ -11197,20 +11197,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="fcb532da-9f7e-483d-a86b-253fa14c0fb5"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="e04f4b8e-29ab-4055-9970-5afb37046a4c"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -11293,82 +11280,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="1fe0c686-5a48-4a12-8be8-323818be60d6"
-            name="_picture"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="38ff5d13-325a-4969-8a43-4bf6113b9773"
-                name="property"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="a078d6fa-a2b4-406e-a901-5ea6cd7898fd">
-                    <propertyInstance
-                      Id="1896b3ce-64c8-4ce1-94d6-87f7d05d31ed"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="31de969d-1b19-4cd1-b771-d1875a67d6de">
-                    <propertyInstance
-                      Id="648df56c-dc26-4afe-91a8-0ecbcc194241"
-                      name="Get"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="fd3921f9-0469-41bb-a0e5-94709cc8972c">
-                    <propertyInstance
-                      Id="823fdc42-52d6-49a4-b091-f4d3cd2319f9"
-                      name="HasBody"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="8c5449a9-2e62-4212-9465-b0c23fe465c3">
-                    <propertyInstance
-                      Id="ce26796a-655a-41a0-add6-e79e61549b30"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="3c2643e0-b020-43b5-a934-f6c1db6de2b4">
-                    <propertyInstance
-                      Id="a47cd4c5-ac00-4852-8317-45479894436c"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="b27fbf84-2cee-4ffc-aa2e-0887aab4e42d">
-                    <propertyInstance
-                      Id="0a9f8d45-a506-4648-88d1-cad00d69b6fb"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="4b3e5815-826d-4705-a3a5-cc8784cd8485">
-                    <propertyInstance
-                      Id="de451b5b-b512-440a-b753-f4af4677f1f0"
-                      name="Set"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="b0610bfb-3766-4263-8828-a0d1430eb33b"
-                LastKnownName="Stream"
-                LastKnownLocation="UMLDiagrams.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="9c0878a0-4fb4-4826-9028-8085fb5f09db"
             name="_numbers"
             visibility="Private"
@@ -11439,8 +11350,8 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="fee271fd-2e4e-4c14-8098-3e0be7f80065"
-                LastKnownName="List&lt;PhoneNum&gt;"
+                Id="99a6c1de-b7db-476e-a658-6202735dabed"
+                LastKnownName="List&lt;PhoneNumber&gt;"
                 LastKnownLocation="UMLDiagrams.uml" />
             </type_NamedElement>
           </property>
@@ -11720,9 +11631,9 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
-                LastKnownName="string"
+              <classMoniker
+                Id="293cf5ce-66dd-4023-9d31-7519f418487f"
+                LastKnownName="PhoneNumber"
                 LastKnownLocation="UMLDiagrams.uml" />
             </type_NamedElement>
           </property>
@@ -11802,7 +11713,128 @@
                 LastKnownLocation="UMLDiagrams.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="b60b46ee-d553-46bb-baf5-c9c70218b8b1"
+            name="_who"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                LastKnownName="string"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3dc9edeb-d89e-4722-ab0c-48e3896b4103"
+            name="_timeStamp"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ab62bc44-a415-4e1b-bbac-2e0d0482bef7"
+                LastKnownName="ulong"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c38a2b0b-08e9-47aa-8144-0ffa9629ebd8"
+            name="_isSent"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                LastKnownName="bool"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="521a195a-4e32-4b20-a624-a6c7e345fe1b"
+            name="ToString"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c9216c6c-d439-43d0-85be-fc06d2d5f38f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                      LastKnownName="string"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="276fcf2e-6b12-45e2-96eb-268657cb524d"
+            name="CompareTo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="95d30ac5-5ad5-4784-b9e2-8356dd7405c7"
+                  name="other"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+                      LastKnownName="Message"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="30e4b667-5a9b-462b-abf1-b5be81d671b8"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1770af4a-66a2-46bc-a1ed-f27b7bfdf847"
+                      LastKnownName="int"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -12379,6 +12411,47 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d1814703-a558-4c6c-9c49-04de1ac6f831"
+            name="sterilizePhoneNumber"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="21992f67-4bff-4fa4-be35-e8943ad679e1"
+                  name="num"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                      LastKnownName="string"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="62304906-ec59-40f8-aba6-a44f433ac76d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                      LastKnownName="string"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -12433,45 +12506,6 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="ba63e732-5d35-4fba-b5cc-2a074ae2a0da"
-            isDerived="false"
-            sourceEndRoleName="Conversation"
-            targetEndRoleName="Contact"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="42cdf442-578f-470f-a202-0a8d6edcd2b2"
-              LastKnownName="Contact"
-              LastKnownLocation="UMLDiagrams.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="697da89a-74d9-4c55-8936-e76e58ff735e"
-                  name="Conversation"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="89294383-bc7d-40ce-b367-e4e6e73939ea"
-                  name="Contact"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="1ff6e79e-fad6-49a1-8c59-2a07b62558c3"
             isDerived="false"
             sourceEndRoleName="Conversation"
@@ -12520,6 +12554,45 @@
                       value="*" />
                   </upperValueInternal>
                 </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ab16ffe7-b410-4a85-a9a9-d9798431bbf6"
+            isDerived="false"
+            sourceEndRoleName="Conversation"
+            targetEndRoleName="PhoneNumber"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="293cf5ce-66dd-4023-9d31-7519f418487f"
+              LastKnownName="PhoneNumber"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="48d9f334-1b7d-4a04-bb7c-613b59a5912d"
+                  name="Conversation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1389deff-56da-4570-9c35-92513608a57c"
+                  name="PhoneNumber"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -12671,9 +12744,9 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <type_NamedElement>
-              <classMoniker
-                Id="42cdf442-578f-470f-a202-0a8d6edcd2b2"
-                LastKnownName="Contact"
+              <undefinedTypeMoniker
+                Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                LastKnownName="string"
                 LastKnownLocation="UMLDiagrams.uml" />
             </type_NamedElement>
           </property>
@@ -12746,6 +12819,12 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="293cf5ce-66dd-4023-9d31-7519f418487f"
+                LastKnownName="PhoneNumber"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
@@ -12810,8 +12889,8 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="8f8e5017-032d-4248-b859-fed6286eb5b8"
-                  name="message"
+                  Id="a950afcc-cc88-4a93-abe7-178e8452ce8e"
+                  name="sms"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
@@ -12900,80 +12979,62 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="36d33142-499c-4feb-b6e7-4cbcbce57df2"
-            name="GetMessage"
+            Id="0eee64bb-11d1-4992-9203-e3922c2e60e4"
+            name="RaisePropertyChanged"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="21de7865-f1cf-44b3-9041-73f1502df839"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="44e8bc76-66a3-4462-ad47-6b6f9da9a2ab">
-                    <propertyInstance
-                      Id="b2102a0a-5b71-4ad4-a429-75e084337227"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="05e729a0-4b2c-45e3-a3ce-4c7ba64850b6">
-                    <propertyInstance
-                      Id="6d408d1a-0a0a-4b6b-826f-111ba1e63f6a"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="4cc69742-fee8-41e0-b9f1-43a68c6d96a3">
-                    <propertyInstance
-                      Id="0e845f48-1d77-4285-aa46-bb8091e650f1"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="4ff05288-9c2a-4c32-afd6-43899a6e51ee">
-                    <propertyInstance
-                      Id="2d104bed-6145-47c9-aa15-bfe198a091d5"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="1f81e343-5cbc-4fbf-8bca-2f8aca908ea2">
-                    <propertyInstance
-                      Id="68e03add-b4ec-48b0-b3ec-c21e329956f4"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="293e6fe9-dea7-4ece-9658-efddf0a34d83">
-                    <propertyInstance
-                      Id="b26c722a-1c15-49c1-af76-e855404afad3"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="5dceea6b-e74b-4914-ae91-b52bb252876a"
-                  name="location"
+                  Id="0416813b-7a0e-45a7-974d-fb87eefe0c62"
+                  name="property"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="1770af4a-66a2-46bc-a1ed-f27b7bfdf847"
-                      LastKnownName="int"
+                      Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                      LastKnownName="string"
                       LastKnownLocation="UMLDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="cf533086-34b1-4343-967c-8fc6e4dc3311"
+            name="ToString"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="842bc4c4-953b-4feb-9608-91a4e7f8ad64"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                      LastKnownName="string"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="850d1e76-2d23-4b7a-ad78-f7bb0fbdb36b"
+            name="Sort"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -13166,80 +13227,6 @@
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="9bf8a1a9-c1d3-4dc9-8d2f-8885902a01c3"
-            name="GenerateConversations"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="36751cb5-2d47-4299-b7aa-e38f08923664"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="0f394533-e214-493c-880d-535372364c43">
-                    <propertyInstance
-                      Id="346e25cf-67ac-42c1-b87b-ec35474ef0f4"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="9110e26d-d2da-449a-88ab-5a4c408587f1">
-                    <propertyInstance
-                      Id="f88fded7-fb5a-40f9-96e0-c112f0e47d84"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="be250b88-dd39-4d95-87cc-02faf1c022d2">
-                    <propertyInstance
-                      Id="dd4f8e91-e94b-4360-a6ff-62a467d275c0"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="d25e0ff8-91c1-4d9b-b83b-87edf973dec4">
-                    <propertyInstance
-                      Id="c52a0696-ecc4-4d66-b351-5d5b81f921a6"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="462d8f39-524b-4199-95a7-c880f63f600e">
-                    <propertyInstance
-                      Id="6f9cc7ec-964c-4ad2-af98-a53d53880424"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="713a862e-c8ac-45f5-bc45-9c7d2693cf3e">
-                    <propertyInstance
-                      Id="aa714672-c1a7-4a75-bd11-947007796a4a"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="6e110977-38f9-49b4-a295-0b35ded9badc"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="1ca04f52-8d89-4edb-a362-99372fa62479"
-                      LastKnownName="List&lt;Conversation&gt;"
-                      LastKnownLocation="UMLDiagrams.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="95b085aa-e29a-44b1-acf2-557732f5df40"
             name="AccessConversation"
             isLeaf="false"
@@ -13389,13 +13376,177 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="0df98a0b-8663-4c77-896d-67ecbcca633e"
-                  name="contact"
+                  name="sms"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <classMoniker
-                      Id="42cdf442-578f-470f-a202-0a8d6edcd2b2"
-                      LastKnownName="Contact"
+                      Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+                      LastKnownName="Message"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="381cb069-aa2a-4665-89c0-88cc3ccb20f8"
+            name="AccessConversation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="13e50d92-c8b1-4059-acc1-67baa6de0e6f"
+                  name="number"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                      LastKnownName="string"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="be718837-719a-4157-bae9-764298d8bb17"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="71116ea4-79b6-4a34-b084-a3306c0c3f73"
+                      LastKnownName="Conversation"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ccdc2544-435b-4cfa-a77b-86c3de535c3b"
+            name="Get"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="475bfdb6-e7d1-4c0a-8f19-f17e14415158"
+                  name="i"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1770af4a-66a2-46bc-a1ed-f27b7bfdf847"
+                      LastKnownName="int"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9fbd2a7b-3562-4bc5-957d-22450707c23b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="71116ea4-79b6-4a34-b084-a3306c0c3f73"
+                      LastKnownName="Conversation"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="fb5946f9-8eb4-43c3-bff5-2a4aadc7477f"
+            name="SortByTime"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="98a80b5d-784c-4625-9d94-18a3cd7fac97"
+                  direction="Return"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="23251d81-7dfa-4b0e-97b0-bf6dac21ba53"
+            name="Size"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="dc124f3e-b014-4b6b-ab1f-05cf8eab76db"
+            name="hasConversation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cf3f49da-d70b-458a-9eac-0a39277256d4"
+                  name="phoneNumber"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                      LastKnownName="string"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b0c88c6b-c400-4994-85d5-2e9e328fb796"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1770af4a-66a2-46bc-a1ed-f27b7bfdf847"
+                      LastKnownName="int"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f80c6c9a-2c7c-4421-8904-633fdc7b6de3"
+            name="addMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="183ec045-d37f-4973-9a95-9d6875975aa2"
+                  name="sms"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+                      LastKnownName="Message"
                       LastKnownLocation="UMLDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -13949,6 +14100,47 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="ecdd1e9f-2885-484f-8646-efab54eebffd"
+            isDerived="false"
+            sourceEndRoleName="PCBluetooth"
+            targetEndRoleName="PCBluetoothController"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="97738c54-71f8-400a-a3e7-0be45b76883e"
+              LastKnownName="PCBluetoothController"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="54cf37a6-41ce-4391-85d6-504e9465f318"
+                  name="PCBluetooth"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="84fdf2ad-4e6c-4188-aa5c-997587bf1630"
+                  name="PCBluetoothController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="99f60a68-fd64-4152-8691-01db5df850c0"
@@ -14249,6 +14441,47 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="662d192f-41b8-44ef-84d3-2010b705028b"
+            isDerived="false"
+            sourceEndRoleName="AndroidBluetooth"
+            targetEndRoleName="AndroidBluetoothController"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="64bc7bb8-ab3e-411b-962a-ba57eafbe43f"
+              LastKnownName="AndroidBluetoothController"
+              LastKnownLocation="UMLDiagrams.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="61f35efe-1154-40fa-adb5-f7d1732eb916"
+                  name="AndroidBluetooth"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="31ef21a4-6d3e-44c8-a55a-1a323fd1fe6d"
+                  name="AndroidBluetoothController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="9a505033-5d4f-453c-81a4-b0151e149f3b"
@@ -14565,6 +14798,641 @@
       <undefinedType
         Id="e872dbf6-9e72-4b9a-b993-ca091e3e1cdf"
         name="List&lt;BluetoothDevice&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="a12e27fc-2227-450b-a454-d3feada31089"
+        name="void" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ab62bc44-a415-4e1b-bbac-2e0d0482bef7"
+        name="ulong" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="99a6c1de-b7db-476e-a658-6202735dabed"
+        name="List&lt;PhoneNumber&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="97738c54-71f8-400a-a3e7-0be45b76883e"
+        name="PCBluetoothController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="d3c013ce-3b6f-4e1b-97da-89c210e70684"
+            name="_incommingConnectionSuccess"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="f6a9293c-9b98-4f20-8f82-b5fd725254a1"
+                LastKnownName="Action"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f3b88766-1e2b-4d3f-97ca-fcdbf649454b"
+            name="_updateMessageList"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d3fb6f76-0629-4518-9e6c-641c30ef76c5"
+                LastKnownName="Action&lt;Message&gt;"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4a1b69b0-fc3b-4be8-8d66-84f1cbd2ae1e"
+            name="_disconnected"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="f6a9293c-9b98-4f20-8f82-b5fd725254a1"
+                LastKnownName="Action"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="fc6d6f6c-0f13-4aa6-a8de-e948bc5d1496"
+            name="_incommingConnection"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7620db9a-c468-4662-af8d-c58a34a1fefe"
+                LastKnownName="Thread"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="594a2c5d-79c7-45c1-b3df-3bd8df8d2897"
+            name="_listenForNewMessage"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7620db9a-c468-4662-af8d-c58a34a1fefe"
+                LastKnownName="Thread"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1374c087-5812-48c4-9c6a-59d390945b68"
+            name="_connection"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="1ac1a5d0-ed99-4563-a4c7-6302c0e4aefb"
+                LastKnownName="PCBluetooth"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="872b9708-1f24-41f4-b278-bd044611f6d0"
+            name="_bluetoothDisable"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                LastKnownName="bool"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8e1a69a9-22fd-4941-b5ad-f6713fb2d92c"
+            name="sendMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ccc6f39c-2df6-4e29-b24a-631675685dff"
+                  name="msg"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+                      LastKnownName="Message"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="98df3500-509a-4257-bfb5-38168d0482d3"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                      LastKnownName="bool"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="68e4be2c-4980-4ca1-92c4-3719edb39560"
+            name="connectToDevice"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="404f7524-f376-4857-adb3-9eebeb926a28"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                      LastKnownName="bool"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="93176735-645d-4932-a5b2-291947cf343a"
+            name="incommingConnectionListener"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="47922bdb-e8b0-40f8-ad60-37062aa05de1"
+            name="listenForNewMessage"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="dc257d66-39db-44f6-bf6f-a965141debdb"
+            name="startListeningForMessages"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f847c2e9-e533-45ae-b1e5-c875d2ce255e"
+            name="disconnect"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0fe3e3b7-e21f-4416-a942-ca95ef39cf17"
+            name="stopListeningForMessages"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e9326cda-1092-4015-b676-1f7ef44a23a3"
+            name="createNewMessages"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fc80ed80-c1bb-47ae-b3ab-9c554568d1bc"
+                  name="newMessage"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+                      LastKnownName="Message"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f6a9293c-9b98-4f20-8f82-b5fd725254a1"
+        name="Action" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d3fb6f76-0629-4518-9e6c-641c30ef76c5"
+        name="Action&lt;Message&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7620db9a-c468-4662-af8d-c58a34a1fefe"
+        name="Thread" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="64bc7bb8-ab3e-411b-962a-ba57eafbe43f"
+        name="AndroidBluetoothController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="032e5363-a48d-4d76-aaa1-22e4f5a856ce"
+            name="_incommingConnectionSuccess"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="f6a9293c-9b98-4f20-8f82-b5fd725254a1"
+                LastKnownName="Action"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="353f5905-ab8a-4e3a-b5f2-78377e1e9378"
+            name="_updateMessageList"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d3fb6f76-0629-4518-9e6c-641c30ef76c5"
+                LastKnownName="Action&lt;Message&gt;"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="59289871-1ba9-4383-9685-3c9c7e24977f"
+            name="_disconnected"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="f6a9293c-9b98-4f20-8f82-b5fd725254a1"
+                LastKnownName="Action"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6ba7ab46-9862-4083-beea-4bf6572c2b16"
+            name="_incommingConnection"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7620db9a-c468-4662-af8d-c58a34a1fefe"
+                LastKnownName="Thread"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="da113a09-8ea8-4876-9711-784dd7f67b98"
+            name="_listenForNewMessage"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7620db9a-c468-4662-af8d-c58a34a1fefe"
+                LastKnownName="Thread"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e83183c1-967c-4833-97a1-13e2e6e85b7b"
+            name="_connection"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="69459560-1e51-4648-a42d-cef6ec1eb558"
+                LastKnownName="AndroidBluetooth"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7e3e4502-9645-440f-b9db-85b2074efd0b"
+            name="_message"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+                LastKnownName="Message"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="52f5a4f3-61d1-40d7-8344-7373047ff885"
+            name="_callingActivity"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="28ff30ad-48b7-40f1-aeb3-af146c3bd60e"
+                LastKnownName="mainActivity"
+                LastKnownLocation="UMLDiagrams.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f09893b2-03ad-4523-b549-a84ca8805977"
+            name="ConnectToPC"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e68b7ad6-6e34-4404-9d38-87f940c0cc03"
+                  name="name"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="bbf2aec6-dc82-4d74-8041-1d5edaea6273"
+                      LastKnownName="string"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6621d849-b3d1-429f-a276-cb1959d4d695"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                      LastKnownName="bool"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="91b53dfe-dc03-4b82-b9e5-a2a02af8bfd0"
+            name="DisconnectFromPC"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="eca5d000-b127-4a1e-9c62-e3d45a9ac666"
+            name="sendMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c6aae661-82fc-463c-8738-de6b1daec068"
+                  name="msg"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2412f9a1-0f8a-4056-980b-00fd5781c51d"
+                      LastKnownName="Message"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7f18bd7e-329c-44a1-92e0-73855a5f8b71"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                      LastKnownName="bool"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="92182453-f81d-46c5-b236-fed875a6f7b1"
+            name="sendConversations"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2d920bcb-2627-4058-8bf5-f234c676d963"
+                  name="con"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1ca04f52-8d89-4edb-a362-99372fa62479"
+                      LastKnownName="List&lt;Conversation&gt;"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="53693dc7-39b6-4ac0-a102-84a5a332c52f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fcbca74e-a884-4ad4-9c40-d16e7b417d17"
+                      LastKnownName="bool"
+                      LastKnownLocation="UMLDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="16f60763-8f90-411d-8033-d30e7bf18259"
+            name="incommingConnectionListener"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="94bc1e78-c4c8-4834-8d0e-046159dd8667"
+            name="listenForNewMessage"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0f66b93a-aa50-4ce3-ae42-39d429307ad6"
+            name="startListeningForMessages"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="330a6a21-1e91-42cd-ba1b-28f714511a5b"
+            name="stopListeningForMessages"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="e447217c-0cd4-4cb7-b53b-698f23dbd1ef"
+        name="object" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="28ff30ad-48b7-40f1-aeb3-af146c3bd60e"
+        name="mainActivity" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

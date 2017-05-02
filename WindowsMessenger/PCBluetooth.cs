@@ -14,7 +14,6 @@ namespace WindowsMessenger {
 		private List<BluetoothDeviceInfo> _pairedDevices = null;
 		private BluetoothDeviceInfo _device = null;
 		private Stream _bluetoothStream = null;
-		private int _length;
 
 		public Guid Uuid {
 			get { return _uuid; }
@@ -93,7 +92,6 @@ namespace WindowsMessenger {
 				BluetoothListener listener = new BluetoothListener(_uuid);
 				listener.Start();
 				var client = listener.AcceptBluetoothClient();
-				_length = client.Available;
 				_bluetoothStream = client.GetStream();
 				return true;
 			}

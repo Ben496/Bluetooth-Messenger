@@ -7,6 +7,9 @@ using Newtonsoft.Json;
 using System.IO;
 
 namespace WindowsMessenger {
+
+	// No timeouts exist for functions that lock threads.
+	// So calling Abort on a thread will not gurantee aborting the thread
 	public class PCBluetoothController {
 		private event Action _incommingConnectionSuccess;
 		private event Action<Message> _updateMessageList;

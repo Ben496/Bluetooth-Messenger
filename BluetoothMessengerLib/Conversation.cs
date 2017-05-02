@@ -7,7 +7,6 @@ public class Conversation : INotifyPropertyChanged
 	private List<Message> _messages;
 	private string _who;
 	private PhoneNumber _phoneNumber;
-	private string _text;
 
 	public event PropertyChangedEventHandler PropertyChanged;
 
