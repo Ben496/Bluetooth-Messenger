@@ -89,11 +89,10 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BluetoothMessengerLib\BluetoothMessengerLib.csproj">
-      <Project>{089d8096-2614-4925-8c00-67d50d6db4a5}</Project>
+      <Project>{136cb681-6ec3-4677-a85e-1f6aaf0de924}</Project>
       <Name>BluetoothMessengerLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>

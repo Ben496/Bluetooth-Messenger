@@ -132,13 +132,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BluetoothMessengerLib\BluetoothMessengerLib.csproj">
-      <Project>{089d8096-2614-4925-8c00-67d50d6db4a5}</Project>
-      <Name>BluetoothMessengerLib</Name>
-    </ProjectReference>
+    <Resource Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icon.ico" />
+    <ProjectReference Include="..\BluetoothMessengerLib\BluetoothMessengerLib.csproj">
+      <Project>{136cb681-6ec3-4677-a85e-1f6aaf0de924}</Project>
+      <Name>BluetoothMessengerLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
