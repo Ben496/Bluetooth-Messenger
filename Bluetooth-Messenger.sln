@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMLDiagramsLib", "UMLDiagra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluetoothMessengerLib", "BluetoothMessengerLib\BluetoothMessengerLib.csproj", "{136CB681-6EC3-4677-A85E-1F6AAF0DE924}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluetoothMessengerLibTest", "BluetoothMessengerLibTest\BluetoothMessengerLibTest.csproj", "{915AA2AF-68E0-4572-B2C6-5A9C1601800C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{136CB681-6EC3-4677-A85E-1F6AAF0DE924}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{136CB681-6EC3-4677-A85E-1F6AAF0DE924}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{136CB681-6EC3-4677-A85E-1F6AAF0DE924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915AA2AF-68E0-4572-B2C6-5A9C1601800C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915AA2AF-68E0-4572-B2C6-5A9C1601800C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915AA2AF-68E0-4572-B2C6-5A9C1601800C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915AA2AF-68E0-4572-B2C6-5A9C1601800C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
