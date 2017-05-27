@@ -58,5 +58,69 @@ namespace BluetoothMessengerLibTest {
 			Assert.AreEqual(contact.Name, "");
 			Assert.AreEqual(contact.Numbers.Count, 0);
 		}
+
+		[TestMethod]
+		public void ConstructorTest1() {
+			List<PhoneNumber> numbers = new List<PhoneNumber>();
+			numbers.Add(new PhoneNumber("1234567890"));
+			Contact contact = new Contact("John", numbers);
+			Assert.AreEqual(contact.Name, "John");
+			Assert.AreEqual(contact.Numbers[0].Number, (new PhoneNumber("1234567890")).Number);
+		}
+
+		[TestMethod]
+		public void ConstructorTest2() {
+			List<PhoneNumber> numbers = null;
+			Contact contact = new Contact("John", numbers);
+			Assert.AreEqual(contact.Name, "John");
+			Assert.IsNull(contact.Numbers);
+		}
+
+		[TestMethod]
+		public void ConstructorTest3() {
+			List<PhoneNumber> numbers = new List<PhoneNumber>();
+			numbers.Add(new PhoneNumber("1234567890"));
+			Contact contact = new Contact(null, numbers);
+			Assert.IsNull(contact.Name);
+			Assert.AreEqual(contact.Numbers[0].Number, (new PhoneNumber("1234567890")).Number);
+		}
+
+		[TestMethod]
+		public void ConstructorTest4() {
+			List<PhoneNumber> numbers = null;
+			Contact contact = new Contact(null, numbers);
+			Assert.IsNull(contact.Name);
+			Assert.IsNull(contact.Numbers);
+		}
+
+		[TestMethod]
+		public void NameTest0() {
+			Contact contact = new Contact();
+			contact.Name = "Robert";
+			Assert.AreEqual(contact.Name, "Robert");
+		}
+
+		[TestMethod]
+		public void NameTest1() {
+			Contact contact = new Contact();
+			contact.Name = null;
+			Assert.IsNull(contact.Name);
+		}
+
+		[TestMethod]
+		public void NumbersTest0() {
+			Contact contact = new Contact();
+			List<PhoneNumber> phone = new List<PhoneNumber>();
+			phone.Add(new PhoneNumber("1234567890"));
+			contact.Numbers = phone;
+			Assert.AreEqual(contact.Numbers[0].Number, (new PhoneNumber("1234567890")).Number);
+		}
+
+		[TestMethod]
+		public void NumbersTest1() {
+			Contact contact = new Contact();
+			contact.Numbers.Add(new PhoneNumber("1234567890"));
+			Assert.AreEqual(contact.Numbers[0].Number, (new PhoneNumber("1234567890")).Number);
+		}
 	}
 }
