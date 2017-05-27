@@ -52,7 +52,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BluetoothTest.cs" />
     <Compile Include="ContactTest.cs" />
+    <Compile Include="ConversationList.cs" />
+    <Compile Include="ConversationTest.cs" />
+    <Compile Include="MessageTest.cs" />
+    <Compile Include="PhoneNumberTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

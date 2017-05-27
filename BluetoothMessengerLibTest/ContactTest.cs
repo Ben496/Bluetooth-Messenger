@@ -53,14 +53,14 @@ namespace BluetoothMessengerLibTest {
 		#endregion
 
 		[TestMethod]
-		public void ConstructorTest0() {
+		public void ContactConstructorTest0() {
 			Contact contact = new Contact();
 			Assert.AreEqual(contact.Name, "");
 			Assert.AreEqual(contact.Numbers.Count, 0);
 		}
 
 		[TestMethod]
-		public void ConstructorTest1() {
+		public void ContactConstructorTest1() {
 			List<PhoneNumber> numbers = new List<PhoneNumber>();
 			numbers.Add(new PhoneNumber("1234567890"));
 			Contact contact = new Contact("John", numbers);
@@ -69,7 +69,7 @@ namespace BluetoothMessengerLibTest {
 		}
 
 		[TestMethod]
-		public void ConstructorTest2() {
+		public void ContactConstructorTest2() {
 			List<PhoneNumber> numbers = null;
 			Contact contact = new Contact("John", numbers);
 			Assert.AreEqual(contact.Name, "John");
@@ -77,7 +77,7 @@ namespace BluetoothMessengerLibTest {
 		}
 
 		[TestMethod]
-		public void ConstructorTest3() {
+		public void ContactConstructorTest3() {
 			List<PhoneNumber> numbers = new List<PhoneNumber>();
 			numbers.Add(new PhoneNumber("1234567890"));
 			Contact contact = new Contact(null, numbers);
@@ -86,7 +86,7 @@ namespace BluetoothMessengerLibTest {
 		}
 
 		[TestMethod]
-		public void ConstructorTest4() {
+		public void ContactConstructorTest4() {
 			List<PhoneNumber> numbers = null;
 			Contact contact = new Contact(null, numbers);
 			Assert.IsNull(contact.Name);
@@ -94,21 +94,21 @@ namespace BluetoothMessengerLibTest {
 		}
 
 		[TestMethod]
-		public void NameTest0() {
+		public void ContactNameTest0() {
 			Contact contact = new Contact();
 			contact.Name = "Robert";
 			Assert.AreEqual(contact.Name, "Robert");
 		}
 
 		[TestMethod]
-		public void NameTest1() {
+		public void ContactNameTest1() {
 			Contact contact = new Contact();
 			contact.Name = null;
 			Assert.IsNull(contact.Name);
 		}
 
 		[TestMethod]
-		public void NumbersTest0() {
+		public void ContactNumbersTest0() {
 			Contact contact = new Contact();
 			List<PhoneNumber> phone = new List<PhoneNumber>();
 			phone.Add(new PhoneNumber("1234567890"));
@@ -117,7 +117,7 @@ namespace BluetoothMessengerLibTest {
 		}
 
 		[TestMethod]
-		public void NumbersTest1() {
+		public void ContactNumbersTest1() {
 			Contact contact = new Contact();
 			contact.Numbers.Add(new PhoneNumber("1234567890"));
 			Assert.AreEqual(contact.Numbers[0].Number, (new PhoneNumber("1234567890")).Number);
