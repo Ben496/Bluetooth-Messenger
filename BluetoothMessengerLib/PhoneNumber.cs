@@ -15,7 +15,7 @@
 		}
 	}
 
-	private string sterilizePhoneNumber(string num) {
+	public static string sterilizePhoneNumber(string num) {
 		string sterilized = "";
 		for (int i = 0; i < num.Length; i++) {
 			if (num[i] >= 48 && num[i] <= 57) {

@@ -14,14 +14,16 @@ public class ConversationList
 	}
 
 	public ConversationList(List<Conversation> cons) {
-		_conversations = cons;
+		if (cons != null)
+			_conversations = cons;
 	}
 
 	public Conversation AccessConversation(string number)
 	{
+		string snumber = PhoneNumber.sterilizePhoneNumber(number);
 		if (_conversations == null) return null;
 		for (int i = 0; i < _conversations.Count; i++) {
-			if (_conversations[i].PhoneNumber == number) {
+			if (_conversations[i].PhoneNumber == snumber) {
 				return _conversations[i];
 			}
 		}
