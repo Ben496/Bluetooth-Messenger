@@ -14,6 +14,8 @@ namespace BluetoothMessengerLib {
 		
 		// The first 4 bytes sent indicate the size of the object.
 		protected bool Send<T>(Stream connectionStream, T data) {
+			if (data == null || connectionStream == null)
+				return false;
 			string output = JsonConvert.SerializeObject(data);
 			var buffer = System.Text.Encoding.UTF8.GetBytes(output);
 			int length = buffer.Length;
