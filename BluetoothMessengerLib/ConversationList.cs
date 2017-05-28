@@ -20,6 +20,8 @@ public class ConversationList
 
 	public Conversation AccessConversation(string number)
 	{
+		if (number == null)
+			return null;
 		string snumber = PhoneNumber.sterilizePhoneNumber(number);
 		if (_conversations == null) return null;
 		for (int i = 0; i < _conversations.Count; i++) {
@@ -32,13 +34,12 @@ public class ConversationList
 
 	public Conversation AccessConversation(int location) {
 		if (_conversations == null) return null;
-		return _conversations[location];
-	}
-
-	public Conversation get(int i) {
-		if (_conversations != null)
-			return _conversations[i];
-		else return null;
+		try {
+			return _conversations[location];
+		}
+		catch (Exception e) {
+			return null;
+		}
 	}
 
 	public void SortByTime() {

@@ -14,7 +14,7 @@ namespace WindowsMessenger.ViewModel {
 		public ConversationViewModel(ConversationList convos) {
 			ObservableCollection<Conversation> tmp = new ObservableCollection<Conversation>();
 			for (int i = 0; i < convos.Size(); i++) {
-				tmp.Add(convos.get(i));
+				tmp.Add(convos.AccessConversation(i));
 			}
 			Conversations = tmp;
 		}

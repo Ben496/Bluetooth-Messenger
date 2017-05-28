@@ -9,12 +9,10 @@ namespace BluetoothMessengerLibTest {
 	/// </summary>
 	[TestClass]
 	public class ConversationListTest {
-		private readonly List<Conversation> _conversationList;
+		private List<Conversation> _conversationList;
 
 		public ConversationListTest() {
-			_conversationList = new List<Conversation>();
-			_conversationList.Add(new Conversation(new Message("Hello World 0", "1234567890")));
-			_conversationList.Add(new Conversation(new Message("Hello World 1", "0987654321")));
+
 		}
 
 		private TestContext testContextInstance;
@@ -54,6 +52,13 @@ namespace BluetoothMessengerLibTest {
 		//
 		#endregion
 
+		[TestInitialize]
+		public void TestInitialize() {
+			_conversationList = new List<Conversation>();
+			_conversationList.Add(new Conversation(new Message("Hello World 0", "1234567890")));
+			_conversationList.Add(new Conversation(new Message("Hello World 1", "0987654321")));
+		}
+
 		[TestMethod]
 		public void ConversationListConstructor0() {
 			ConversationList cons = new ConversationList();
@@ -81,11 +86,51 @@ namespace BluetoothMessengerLibTest {
 		}
 
 		[TestMethod]
-		public void AccessConversation0() {
+		public void ConversationListAccessConversation0() {
 			ConversationList cons = new ConversationList(_conversationList);
 			Conversation c = cons.AccessConversation("1234567890");
 
 			Assert.AreEqual(c.PhoneNumber, "+11234567890");
+		}
+
+		[TestMethod]
+		public void ConversationListAccessConversation1() {
+			ConversationList cons = new ConversationList(_conversationList);
+			Conversation c = cons.AccessConversation("hello");
+
+			Assert.IsNull(c);
+		}
+
+		[TestMethod]
+		public void ConversationListAccessConversation2() {
+			ConversationList cons = new ConversationList(_conversationList);
+			Conversation c = cons.AccessConversation(null);
+
+			Assert.IsNull(c);
+		}
+
+		[TestMethod]
+		public void ConversationListAccessConversation3() {
+			ConversationList cons = new ConversationList(_conversationList);
+			Conversation c = cons.AccessConversation(0);
+
+			Assert.AreEqual(c.PhoneNumber, "+11234567890");
+		}
+
+		[TestMethod]
+		public void ConversationListAccessConversation4() {
+			ConversationList cons = new ConversationList(_conversationList);
+			Conversation c = cons.AccessConversation(3);
+
+			Assert.IsNull(c);
+		}
+
+		[TestMethod]
+		public void ConversationListAccessConversation5() {
+			ConversationList cons = new ConversationList(_conversationList);
+			Conversation c = cons.AccessConversation(-3);
+
+			Assert.IsNull(c);
 		}
 	}
 }
