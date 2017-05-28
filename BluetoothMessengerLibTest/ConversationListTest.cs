@@ -8,8 +8,8 @@ namespace BluetoothMessengerLibTest {
 	/// Summary description for ConversationList
 	/// </summary>
 	[TestClass]
-	public class ConversationList {
-		public ConversationList() {
+	public class ConversationListTest {
+		public ConversationListTest() {
 			//
 			// TODO: Add constructor logic here
 			//
@@ -53,10 +53,8 @@ namespace BluetoothMessengerLibTest {
 		#endregion
 
 		[TestMethod]
-		public void TestMethod1() {
-			//
-			// TODO: Add test logic here
-			//
+		public void ConversationListConstructor0() {
+			
 		}
 	}
 }
