@@ -120,17 +120,31 @@ namespace BluetoothMessengerLibTest {
 		[TestMethod]
 		public void ConversationListAccessConversation4() {
 			ConversationList cons = new ConversationList(_conversationList);
-			Conversation c = cons.AccessConversation(3);
-
-			Assert.IsNull(c);
+			try {
+				Conversation c = cons.AccessConversation(3);
+				Assert.Fail();
+			}
+			catch (Exception e) {
+				if (!(e is ArgumentOutOfRangeException))
+					Assert.Fail();
+			}
 		}
 
 		[TestMethod]
 		public void ConversationListAccessConversation5() {
 			ConversationList cons = new ConversationList(_conversationList);
-			Conversation c = cons.AccessConversation(-3);
+			try {
+				Conversation c = cons.AccessConversation(-3);
+			}
+			catch (Exception e) {
+				if (!(e is ArgumentOutOfRangeException))
+					Assert.Fail();
+			}
+		}
 
-			Assert.IsNull(c);
+		[TestMethod]
+		public void ConversationListSort0() {
+
 		}
 	}
 }

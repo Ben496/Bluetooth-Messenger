@@ -38,7 +38,7 @@ public class ConversationList
 			return _conversations[location];
 		}
 		catch (Exception e) {
-			return null;
+			throw e;
 		}
 	}
 
