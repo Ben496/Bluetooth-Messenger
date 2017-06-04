@@ -89,7 +89,9 @@ namespace AndroidMessenger {
 		}
 
 		public bool sendMessage(Message msg) {
-			return _connection.SendObject<Message>(msg);
+			if(_connection.IsConnected)
+				return _connection.SendObject<Message>(msg);
+			return false;
 		}
 
 		public bool sendConversations(List<Conversation> con) {

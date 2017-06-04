@@ -16,6 +16,11 @@ namespace AndroidMessenger {
 		private ICollection<BluetoothDevice> _pairedDevices = null;
 		private BluetoothDevice _device = null;
 		private BluetoothSocket _socket = null;
+		private bool _isConnected = false;
+
+		public bool IsConnected {
+			get { return _isConnected; }
+		}
 
 		public UUID Uuid {
 			get { return _uuid; }
@@ -55,6 +60,7 @@ namespace AndroidMessenger {
 			try {
 				sock.Connect();
 				_socket = sock;
+				_isConnected = true;
 				return true;
 			}
 			catch {
@@ -68,6 +74,7 @@ namespace AndroidMessenger {
 		public bool Disconnect() {
 			try {
 				_socket.Close();
+				_isConnected = false;
 				return true;
 			}
 			catch {
