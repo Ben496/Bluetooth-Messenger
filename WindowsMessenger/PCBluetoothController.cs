@@ -91,6 +91,7 @@ namespace WindowsMessenger {
 					Application.Current.Dispatcher.Invoke(_updateMessageList, msg);
 				}
 			}
+			UpdateMessageList += Notification.createToastNotification;
 			listenForNewMessage();
 		}
 
