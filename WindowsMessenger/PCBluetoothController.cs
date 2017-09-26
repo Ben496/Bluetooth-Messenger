@@ -41,6 +41,8 @@ namespace WindowsMessenger {
 			_connection = new PCBluetooth();
 			_incommingConnection = new Thread(incommingConnectionListener);
 			_listenForNewMessage = new Thread(listenForNewMessage);
+			_incommingConnection.IsBackground = true;
+			_listenForNewMessage.IsBackground = true;
 			//_incommingConnectionSuccess += startListeningForMessages; // <=== TODO: should do something else for this later
 			_incommingConnection.Start();
 		}
